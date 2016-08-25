@@ -1,0 +1,15 @@
+<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ output extension=".cmd" #>
+rem//  $LastChangedDate$
+rem//  $Rev$
+rem//  $LastChangedBy$
+rem//  $URL$
+rem//  $Id$
+
+<#
+  string _rel =  DPPAssemblyFileVersion.Replace(".", "_");
+#>
+./create_branch rel_<#=_rel#> tags
+pause Tag created ....
+
+<#@ include file = "..\..\PR39-CommonResources\T4Definitions\AssemblyInfo.t4" #>
