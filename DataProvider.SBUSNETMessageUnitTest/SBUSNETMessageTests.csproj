@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6AAE3974-4946-4692-AC44-372B01C24782}</ProjectGuid>
+    <ProjectGuid>{6436BC24-48D6-4AC7-96E1-0AA87C99DEDA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CAS.UnitTests.CommonBus.ApplicationLayer.SBUS</RootNamespace>
-    <AssemblyName>CASSBUSRSMessageTests</AssemblyName>
+    <RootNamespace>CAS.UnitTests.CommonBus.ApplicationLayer.SBUS.NET</RootNamespace>
+    <AssemblyName>CASSBUSNETMessageTests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -34,13 +34,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup>
-    <SignAssembly>false</SignAssembly>
-  </PropertyGroup>
-  <PropertyGroup>
-    <AssemblyOriginatorKeyFile>
-    </AssemblyOriginatorKeyFile>
-  </PropertyGroup>
   <ItemGroup>
     <Reference Include="CAS.CommonBus">
       <HintPath>..\..\..\CommonBinaries\PR36-CAS_MAIN_CORE_PCKG\CAS.CommonBus.dll</HintPath>
@@ -63,13 +56,19 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="RSUnitTest.cs" />
+    <Compile Include="BlockAddress.cs" />
+    <Compile Include="FrameBitConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RequestDataTestt.cs" />
+    <Compile Include="RequestSimulator.cs" />
+    <Compile Include="RequestWriteTest.cs" />
+    <Compile Include="ResponseExpectedException.cs" />
+    <Compile Include="ResponseSimulator.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\DataProvider.SBUS\SBUSonRS\DP.Plugin_SBUSRS.csproj">
-      <Project>{51e91469-c15d-4ef3-8952-f027bf4e5450}</Project>
-      <Name>DP.Plugin_SBUSRS</Name>
+    <ProjectReference Include="..\DataProvider.SBUS\SBUSonNET\DataProvide.BUSNET.csproj">
+      <Project>{5c7a7d63-2828-465a-8bdd-1df6c9e8f189}</Project>
+      <Name>DataProvide.BUSNET</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

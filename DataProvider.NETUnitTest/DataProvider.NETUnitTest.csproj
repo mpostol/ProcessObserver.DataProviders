@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{8DC2BB1C-D9B9-4CC8-828D-8CEE4761DBB0}</ProjectGuid>
+    <ProjectGuid>{068A5C7C-BCE4-4696-AB60-490ECBE634F6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CAS.Lib.CommonBus.ApplicationLayer.UT</RootNamespace>
-    <AssemblyName>CAS.UT.Plugin_MODBUSNET</AssemblyName>
+    <RootNamespace>CAS.Lib.CommonBus.ApplicationLayer.NET</RootNamespace>
+    <AssemblyName>CAS.UT.CommonBusApplicationLayerNET</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -60,29 +60,28 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\CommonBinaries\PR36-CAS_MAIN_CORE_PCKG\CAS.CommonBus.dll</HintPath>
     </Reference>
+    <Reference Include="CAS.RTLibComm, Version=3.70.0.21642, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\CommonBinaries\PR36-CAS_MAIN_CORE_PCKG\CAS.RTLibComm.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MBUS_ApplicationLayerPluginHelperTest.cs" />
     <Compile Include="MODBUS_ApplicationLayerPluginHelperTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SBUS_ApplicationLayerPluginHelperTest.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\DataProvider.MBUS\DP.Plugin_MBUS.csproj">
-      <Project>{238FD122-6152-43BB-B17B-6ACDAC2AB5E1}</Project>
-      <Name>DP.Plugin_MBUS</Name>
+    <ProjectReference Include="..\DataProvider.MODBUS\DataProvider.MODBUSNET.csproj">
+      <Project>{A7F0C2D6-335C-4ABD-842D-D24C447DD2E0}</Project>
+      <Name>DataProvider.MODBUSNET</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\DataProvider.MODBUS\DP.Plugin_MODBUS.csproj">
-      <Project>{238FD122-6152-43BB-B17B-6ACDAC2AB5E9}</Project>
-      <Name>DP.Plugin_MODBUS</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\DataProvider.SBUS\SBUSonRS\DP.Plugin_SBUSRS.csproj">
-      <Project>{51E91469-C15D-4EF3-8952-F027BF4E5450}</Project>
-      <Name>DP.Plugin_SBUSRS</Name>
+    <ProjectReference Include="..\DataProvider.SBUS\SBUSonNET\DataProvide.BUSNET.csproj">
+      <Project>{5C7A7D63-2828-465A-8BDD-1DF6C9E8F189}</Project>
+      <Name>DataProvide.BUSNET</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
