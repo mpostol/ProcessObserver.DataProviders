@@ -224,35 +224,35 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PR31-DataProviders\DP.DDE\DP.DDE.Excel.csproj">
+    <ProjectReference Include="..\DataProvider.DDE\DP.DDE.Excel.csproj">
       <Project>{5ba85cea-a237-4fd0-96f3-96b176198081}</Project>
       <Name>DP.DDE.Excel</Name>
     </ProjectReference>
-    <ProjectReference Include="..\PR31-DataProviders\DP.DemoSimulator\DP.DemoSimulator.csproj">
+    <ProjectReference Include="..\DataProvider.DemoSimulator\DP.DemoSimulator.csproj">
       <Project>{14804f95-2d79-46b5-a4c7-5305632ca1c5}</Project>
       <Name>DP.DemoSimulator</Name>
     </ProjectReference>
-    <ProjectReference Include="..\PR31-DataProviders\DP.MBUS\DP.Plugin_MBUS.csproj">
+    <ProjectReference Include="..\DataProvider.MBUS\DP.Plugin_MBUS.csproj">
       <Project>{238fd122-6152-43bb-b17b-6acdac2ab5e1}</Project>
       <Name>DP.Plugin_MBUS</Name>
     </ProjectReference>
-    <ProjectReference Include="..\PR31-DataProviders\DP.MODBUS\DP.Plugin_MODBUS.csproj">
+    <ProjectReference Include="..\DataProvider.MODBUS\DP.Plugin_MODBUS.csproj">
       <Project>{238fd122-6152-43bb-b17b-6acdac2ab5e9}</Project>
       <Name>DP.Plugin_MODBUS</Name>
     </ProjectReference>
-    <ProjectReference Include="..\PR31-DataProviders\DP.MODBUS\DP.Plugin_MODBUSNET.csproj">
+    <ProjectReference Include="..\DataProvider.MODBUS\DP.Plugin_MODBUSNET.csproj">
       <Project>{a7f0c2d6-335c-4abd-842d-d24c447dd2e0}</Project>
       <Name>DP.Plugin_MODBUSNET</Name>
     </ProjectReference>
-    <ProjectReference Include="..\PR31-DataProviders\DP.NULLbus\DP.Plugin_NULLbus.csproj">
+    <ProjectReference Include="..\DataProvider.NULLbus\DP.Plugin_NULLbus.csproj">
       <Project>{145fbc93-8a0c-45d0-b7ec-db02fa3dfd07}</Project>
       <Name>DP.Plugin_NULLbus</Name>
     </ProjectReference>
-    <ProjectReference Include="..\PR31-DataProviders\DP.SBUS\SBUSonNET\DP.Plugin_SBUSNET.csproj">
+    <ProjectReference Include="..\DataProvider.SBUS\SBUSonNET\DP.Plugin_SBUSNET.csproj">
       <Project>{5c7a7d63-2828-465a-8bdd-1df6c9e8f189}</Project>
       <Name>DP.Plugin_SBUSNET</Name>
     </ProjectReference>
-    <ProjectReference Include="..\PR31-DataProviders\DP.SBUS\SBUSonRS\DP.Plugin_SBUSRS.csproj">
+    <ProjectReference Include="..\DataProvider.SBUS\SBUSonRS\DP.Plugin_SBUSRS.csproj">
       <Project>{51e91469-c15d-4ef3-8952-f027bf4e5450}</Project>
       <Name>DP.Plugin_SBUSRS</Name>
     </ProjectReference>

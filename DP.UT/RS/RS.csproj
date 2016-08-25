@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -72,15 +72,15 @@
     <Compile Include="SBUS_ApplicationLayerPluginHelperTest.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\DP.MBUS\DP.Plugin_MBUS.csproj">
+    <ProjectReference Include="..\..\DataProvider.MBUS\DP.Plugin_MBUS.csproj">
       <Project>{238FD122-6152-43BB-B17B-6ACDAC2AB5E1}</Project>
       <Name>DP.Plugin_MBUS</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\DP.MODBUS\DP.Plugin_MODBUS.csproj">
+    <ProjectReference Include="..\..\DataProvider.MODBUS\DP.Plugin_MODBUS.csproj">
       <Project>{238FD122-6152-43BB-B17B-6ACDAC2AB5E9}</Project>
       <Name>DP.Plugin_MODBUS</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\DP.SBUS\SBUSonRS\DP.Plugin_SBUSRS.csproj">
+    <ProjectReference Include="..\..\DataProvider.SBUS\SBUSonRS\DP.Plugin_SBUSRS.csproj">
       <Project>{51E91469-C15D-4EF3-8952-F027BF4E5450}</Project>
       <Name>DP.Plugin_SBUSRS</Name>
     </ProjectReference>

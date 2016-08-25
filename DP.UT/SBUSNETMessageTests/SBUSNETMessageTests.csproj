@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -66,7 +66,7 @@
     <Compile Include="ResponseSimulator.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\DP.SBUS\SBUSonNET\DP.Plugin_SBUSNET.csproj">
+    <ProjectReference Include="..\..\DataProvider.SBUS\SBUSonNET\DP.Plugin_SBUSNET.csproj">
       <Project>{5c7a7d63-2828-465a-8bdd-1df6c9e8f189}</Project>
       <Name>DP.Plugin_SBUSNET</Name>
     </ProjectReference>

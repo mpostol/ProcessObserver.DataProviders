@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -75,11 +75,11 @@
     <Compile Include="SBUS_ApplicationLayerPluginHelperTest.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\DP.MODBUS\DP.Plugin_MODBUSNET.csproj">
+    <ProjectReference Include="..\..\DataProvider.MODBUS\DP.Plugin_MODBUSNET.csproj">
       <Project>{A7F0C2D6-335C-4ABD-842D-D24C447DD2E0}</Project>
       <Name>DP.Plugin_MODBUSNET</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\DP.SBUS\SBUSonNET\DP.Plugin_SBUSNET.csproj">
+    <ProjectReference Include="..\..\DataProvider.SBUS\SBUSonNET\DP.Plugin_SBUSNET.csproj">
       <Project>{5C7A7D63-2828-465A-8BDD-1DF6C9E8F189}</Project>
       <Name>DP.Plugin_SBUSNET</Name>
     </ProjectReference>
