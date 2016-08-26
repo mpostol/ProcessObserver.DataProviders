@@ -2,19 +2,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UT", "UT", "{F6DD0E64-3858-4288-9B34-325CD817881E}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{2CFD4E63-EBD3-4201-A037-5247331F49C9}"
-	ProjectSection(SolutionItems) = preProject
-		Scripts\build.cmd = Scripts\build.cmd
-		Scripts\clean.cmd = Scripts\clean.cmd
-		Scripts\create_branch.cmd = Scripts\create_branch.cmd
-		Scripts\create_tag.cmd = Scripts\create_tag.cmd
-	EndProjectSection
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_UnitTests", "_UnitTests", "{F6DD0E64-3858-4288-9B34-325CD817881E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataProvider.DDE", "DataProvider.DDE\DataProvider.DDE.csproj", "{5BA85CEA-A237-4FD0-96F3-96B176198081}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataProvider.DemoSimulator", "DataProvider.DemoSimulator\DataProvider.DemoSimulator.csproj", "{14804F95-2D79-46B5-A4C7-5305632CA1C5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataProvider.MemoryCache", "DataProvider.MemoryCache\DataProvider.MemoryCache.csproj", "{14804F95-2D79-46B5-A4C7-5305632CA1C5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataProvider.EC2-3SYM2", "DataProvider.EC2-3SYM2\DataProvider.EC2-3SYM2.csproj", "{834B2A33-8B0F-4097-A7F7-A56D639B6A5E}"
 EndProject
@@ -26,26 +18,26 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataProvider.MODBUSNET", "D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataProvider.NULLbus", "DataProvider.NULLbus\DataProvider.NULLbus.csproj", "{145FBC93-8A0C-45D0-B7EC-DB02FA3DFD07}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataProvide.BUSNET", "DataProvider.SBUS\SBUSonNET\DataProvide.BUSNET.csproj", "{5C7A7D63-2828-465A-8BDD-1DF6C9E8F189}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataProvider.SBUSNET", "DataProvider.SBUS\SBUSonNET\DataProvider.SBUSNET.csproj", "{5C7A7D63-2828-465A-8BDD-1DF6C9E8F189}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataProvide.SBUSRS", "DataProvider.SBUS\SBUSonRS\DataProvide.SBUSRS.csproj", "{51E91469-C15D-4EF3-8952-F027BF4E5450}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataProvider.SBUSRS", "DataProvider.SBUS\SBUSonRS\DataProvider.SBUSRS.csproj", "{51E91469-C15D-4EF3-8952-F027BF4E5450}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{48C76628-66A3-4DFD-90F3-337D2C0CB2C5}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Solution Items", "_Solution Items", "{48C76628-66A3-4DFD-90F3-337D2C0CB2C5}"
 	ProjectSection(SolutionItems) = preProject
 		UTConfiguration.runsettings = UTConfiguration.runsettings
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataProvider.DataProvidersPackage", "DataProvider.DataProvidersPackage\DataProvider.DataProvidersPackage.csproj", "{14C190A8-D436-427A-8E74-10BD8E7C71E7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataProvider.Package", "DataProvider.Package\DataProvider.Package.csproj", "{14C190A8-D436-427A-8E74-10BD8E7C71E7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataProvider.DiagnosticTool", "DataProvider.DiagnosticTool\DataProvider.DiagnosticTool.csproj", "{00A98823-6D81-41E1-AA80-16A937B52D83}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataProvider.NETUnitTest", "DataProvider.NETUnitTest\DataProvider.NETUnitTest.csproj", "{068A5C7C-BCE4-4696-AB60-490ECBE634F6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RS", "DataProvider.RSUnitTest\RS.csproj", "{8DC2BB1C-D9B9-4CC8-828D-8CEE4761DBB0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataProvider.RSUnitTest", "DataProvider.RSUnitTest\DataProvider.RSUnitTest.csproj", "{8DC2BB1C-D9B9-4CC8-828D-8CEE4761DBB0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SBUSNETMessageTests", "DataProvider.SBUSNETMessageUnitTest\SBUSNETMessageTests.csproj", "{6436BC24-48D6-4AC7-96E1-0AA87C99DEDA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataProvider.SBUSNETUnitTest", "DataProvider.SBUSNETMessageUnitTest\DataProvider.SBUSNETUnitTest.csproj", "{6436BC24-48D6-4AC7-96E1-0AA87C99DEDA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SBUSRSMessageTests", "DataProvider.SBUSRSMessageUnitTest\SBUSRSMessageTests.csproj", "{6AAE3974-4946-4692-AC44-372B01C24782}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataProvider.SBUSRSUnitTest", "DataProvider.SBUSRSMessageUnitTest\DataProvider.SBUSRSUnitTest.csproj", "{6AAE3974-4946-4692-AC44-372B01C24782}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -228,9 +228,9 @@
       <Project>{5ba85cea-a237-4fd0-96f3-96b176198081}</Project>
       <Name>DataProvider.DDE</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DataProvider.DemoSimulator\DataProvider.DemoSimulator.csproj">
+    <ProjectReference Include="..\DataProvider.MemoryCache\DataProvider.MemoryCache.csproj">
       <Project>{14804f95-2d79-46b5-a4c7-5305632ca1c5}</Project>
-      <Name>DataProvider.DemoSimulator</Name>
+      <Name>DataProvider.MemoryCache</Name>
     </ProjectReference>
     <ProjectReference Include="..\DataProvider.MBUS\DataProvider.MBUS.csproj">
       <Project>{238fd122-6152-43bb-b17b-6acdac2ab5e1}</Project>
@@ -248,13 +248,13 @@
       <Project>{145fbc93-8a0c-45d0-b7ec-db02fa3dfd07}</Project>
       <Name>DataProvider.NULLbus</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DataProvider.SBUS\SBUSonNET\DataProvide.BUSNET.csproj">
+    <ProjectReference Include="..\DataProvider.SBUS\SBUSonNET\DataProvider.SBUSNET.csproj">
       <Project>{5c7a7d63-2828-465a-8bdd-1df6c9e8f189}</Project>
-      <Name>DataProvide.BUSNET</Name>
+      <Name>DataProvider.SBUSNET</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DataProvider.SBUS\SBUSonRS\DataProvide.SBUSRS.csproj">
+    <ProjectReference Include="..\DataProvider.SBUS\SBUSonRS\DataProvider.SBUSRS.csproj">
       <Project>{51e91469-c15d-4ef3-8952-f027bf4e5450}</Project>
-      <Name>DataProvide.SBUSRS</Name>
+      <Name>DataProvider.SBUSRS</Name>
     </ProjectReference>
     <ProjectReference Include="..\PR39-CommonResources\LicensesContainer\LicensesContainer.csproj">
       <Project>{234a138e-4e17-4f12-84a3-a920ddae0d86}</Project>

@@ -79,9 +79,9 @@
       <Project>{A7F0C2D6-335C-4ABD-842D-D24C447DD2E0}</Project>
       <Name>DataProvider.MODBUSNET</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DataProvider.SBUS\SBUSonNET\DataProvide.BUSNET.csproj">
+    <ProjectReference Include="..\DataProvider.SBUS\SBUSonNET\DataProvider.SBUSNET.csproj">
       <Project>{5C7A7D63-2828-465A-8BDD-1DF6C9E8F189}</Project>
-      <Name>DataProvide.BUSNET</Name>
+      <Name>DataProvider.SBUSNET</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -67,9 +67,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DataProvider.SBUS\SBUSonRS\DataProvide.SBUSRS.csproj">
+    <ProjectReference Include="..\DataProvider.SBUS\SBUSonRS\DataProvider.SBUSRS.csproj">
       <Project>{51e91469-c15d-4ef3-8952-f027bf4e5450}</Project>
-      <Name>DataProvide.SBUSRS</Name>
+      <Name>DataProvider.SBUSRS</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>
