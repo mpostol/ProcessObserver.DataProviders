@@ -38,4 +38,4 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyVersion("<#=DPPAssemblyVersion#>")]
 [assembly: AssemblyFileVersion("<#=DPPAssemblyFileVersion#>")]
 
-<#@ include file = "..\..\..\PR39-CommonResources\T4Definitions\AssemblyInfo.t4" #>
+<#@ include file = "..\..\..\PR39-CommonResources\T4Definitions\CAS.OPC.t4" #>

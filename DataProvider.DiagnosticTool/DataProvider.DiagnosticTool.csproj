@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
   <PropertyGroup>
     <ProjectType>Local</ProjectType>
     <ProductVersion>9.0.30729</ProductVersion>
@@ -25,7 +25,7 @@
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
     <OldToolsVersion>3.5</OldToolsVersion>
-    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <TargetFrameworkProfile />
     <IsWebBootstrapper>true</IsWebBootstrapper>
     <PublishUrl>Publish\</PublishUrl>
@@ -114,23 +114,6 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CAS.CodeProtect">
-      <HintPath>..\CommonBinaries\PR36-CAS_MAIN_CORE_PCKG\CAS.CodeProtect.dll</HintPath>
-    </Reference>
-    <Reference Include="CAS.CommonBus">
-      <HintPath>..\CommonBinaries\PR36-CAS_MAIN_CORE_PCKG\CAS.CommonBus.dll</HintPath>
-    </Reference>
-    <Reference Include="CAS.ControlLibrary">
-      <HintPath>..\CommonBinaries\PR37-CAS_LIB_PCKG\CAS.ControlLibrary.dll</HintPath>
-    </Reference>
-    <Reference Include="CAS.RTLib, Version=3.61.0.20970, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\CommonBinaries\PR37-CAS_LIB_PCKG\CAS.RTLib.dll</HintPath>
-    </Reference>
-    <Reference Include="CAS.RTLibComm, Version=3.70.0.21642, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\CommonBinaries\PR36-CAS_MAIN_CORE_PCKG\CAS.RTLibComm.dll</HintPath>
-    </Reference>
     <Reference Include="System">
       <Name>System</Name>
     </Reference>
@@ -153,9 +136,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\PR24-Biblioteka\NetworkConfig\HMI\WrappersHelpers.cs">
-      <Link>WrappersHelpers.cs</Link>
-    </Compile>
     <Compile Include="BLOK.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -255,10 +235,6 @@
     <ProjectReference Include="..\DataProvider.SBUS\SBUSonRS\DataProvider.SBUSRS.csproj">
       <Project>{51e91469-c15d-4ef3-8952-f027bf4e5450}</Project>
       <Name>DataProvider.SBUSRS</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\PR39-CommonResources\LicensesContainer\LicensesContainer.csproj">
-      <Project>{234a138e-4e17-4f12-84a3-a920ddae0d86}</Project>
-      <Name>LicensesContainer</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -12,4 +12,4 @@ rem//  $Id$
 ./create_branch rel_<#=_rel#> tags
 pause Tag created ....
 
-<#@ include file = "..\..\PR39-CommonResources\T4Definitions\AssemblyInfo.t4" #>
+<#@ include file = "..\..\PR39-CommonResources\T4Definitions\CAS.OPC.t4" #>

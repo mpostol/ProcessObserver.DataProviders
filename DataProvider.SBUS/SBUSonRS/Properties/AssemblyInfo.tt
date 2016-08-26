@@ -52,4 +52,4 @@ using System.Runtime.InteropServices;
 [assembly:InternalsVisibleToAttribute("CASSBUSRSMessageTests")]
 [assembly:InternalsVisibleToAttribute("CASTestsSBUSSimulator")] 
 
-<#@ include file = "..\..\..\..\PR39-CommonResources\T4Definitions\AssemblyInfo.t4" #>
+<#@ include file = "..\..\..\..\PR39-CommonResources\T4Definitions\CAS.OPC.t4" #>

@@ -49,4 +49,4 @@ using System.Runtime.InteropServices;
   )
 ]
 
-<#@ include file = "..\..\..\PR39-CommonResources\T4Definitions\AssemblyInfo.t4" #>
+<#@ include file = "..\..\..\PR39-CommonResources\T4Definitions\CAS.OPC.t4" #>
