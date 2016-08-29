@@ -1,27 +1,25 @@
-﻿//<summary>
-//  Title   : Common ModBus parameters
-//  System  : Microsoft Visual C# .NET 2008
+﻿//_______________________________________________________________
+//  Title   : Name of Application
+//  System  : Microsoft VisualStudio 2015 / C#
 //  $LastChangedDate$
 //  $Rev$
 //  $LastChangedBy$
 //  $URL$
 //  $Id$
 //
-//  Copyright (C)2009, CAS LODZ POLAND.
+//  Copyright (C) 2016, CAS LODZ POLAND.
 //  TEL: +48 (42) 686 25 47
 //  mailto://techsupp@cas.eu
 //  http://www.cas.eu
-//</summary>
+//_______________________________________________________________
 
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 using CAS.Lib.CommonBus.ApplicationLayer;
-using System.Xml;
 using CAS.Lib.CommonBus.Xml;
 using System.ComponentModel;
+using System.Xml;
 
-namespace CAS.Lib.CommonBus.ApplicationLayer.ModBus.Common
+namespace CAS.CommServer.DataProvider.MODBUSCore
 {
   /// <summary>
   /// ProtocolParameters for Modbus
@@ -57,12 +55,14 @@ namespace CAS.Lib.CommonBus.ApplicationLayer.ModBus.Common
       /// </summary>
       Inverted_SecondRegisterIsMoreSignificant = 1
     }
+
     #region PRIVATE
     #region XML identifiers
     private const string m_Tag_RegisterOrderIn32mode = "RegisterOrderIn32mode";
     private const string m_Tag_FloatingPoint = "FloatingPoint";
     #endregion
     #endregion
+
     #region PUBLIC
     /// <summary>
     /// Gets or sets a value indicating whether [first register is more significant in32mode].
@@ -83,17 +83,17 @@ namespace CAS.Lib.CommonBus.ApplicationLayer.ModBus.Common
     /// <summary>
     /// this function  reads settings from xml stream
     /// </summary>
-    /// <param name="pSettings">XmlReader strea</param>
-    protected void CommonReadSettings( System.Xml.XmlReader pSettings )
+    /// <param name="settings">XmlReader stream</param>
+    protected void CommonReadSettings( XmlReader settings )
     {
-      RegisterOrderIn32mode = (RegisterOrderEnum)XmlHelper.ReadStandardIntegerValue( pSettings, m_Tag_RegisterOrderIn32mode );
-      FloatingPoint = (FloatingPointType) XmlHelper.ReadStandardIntegerValue( pSettings, m_Tag_FloatingPoint );
+      RegisterOrderIn32mode = (RegisterOrderEnum)XmlHelper.ReadStandardIntegerValue( settings, m_Tag_RegisterOrderIn32mode );
+      FloatingPoint = (FloatingPointType) XmlHelper.ReadStandardIntegerValue( settings, m_Tag_FloatingPoint );
     }
     /// <summary>
     /// this function  writes settings to xml stream
     /// </summary>
-    /// <param name="pSettings">XmlWriter strea</param>
-    protected void CommonWriteSettings( System.Xml.XmlWriter pSettings )
+    /// <param name="pSettings">XmlWriter stream</param>
+    protected void CommonWriteSettings(XmlWriter pSettings )
     {
       XmlHelper.WriteStandardIntegerVale( pSettings, m_Tag_RegisterOrderIn32mode,(int) RegisterOrderIn32mode );
       XmlHelper.WriteStandardIntegerVale( pSettings, m_Tag_FloatingPoint, (int)FloatingPoint );
@@ -101,7 +101,7 @@ namespace CAS.Lib.CommonBus.ApplicationLayer.ModBus.Common
     /// <summary>
     /// Creator
     /// </summary>
-    /// <param name="portSpeed">Baudrate of the communication line.</param>
+    /// <param name="portSpeed">Baud rate of the communication line.</param>
     /// <param name="TimeoutResponse">Maximum response time this station is willing to wait.</param>
     /// <param name="NumberOfRetries">Maximum number of retries this station will try.</param>
     public ModBus_CommonProtocolParameters( uint portSpeed, uint TimeoutResponse, ushort NumberOfRetries )
@@ -111,5 +111,6 @@ namespace CAS.Lib.CommonBus.ApplicationLayer.ModBus.Common
       FloatingPoint=FloatingPointType.Standard_Modicon;
     }
     #endregion
+
   }
 }

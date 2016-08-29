@@ -39,7 +39,6 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Reflection;
 using System.Windows.Forms;
-using BaseStation.Management;
 using CAS.DPDiagnostics.Properties;
 using CAS.Lib.CodeProtect.Controls;
 using CAS.Lib.CodeProtect.LicenseDsc;
@@ -47,6 +46,7 @@ using CAS.Lib.CommonBus;
 using CAS.Lib.CommonBus.Components;
 using CAS.Lib.ControlLibrary;
 using CAS.Lib.RTLib.Management;
+using CAS.CommServer.CommonBus;
 
 namespace CAS.DPDiagnostics
 {
@@ -437,7 +437,7 @@ namespace CAS.DPDiagnostics
     }
     private short ResourceSelected()
     {
-      Int16 m_ResourceSelected = Convert.ToInt16( NetworkConfig.HMI.WrappersHelpers.GetID( m_DataProviderID.GetAvailiableAddressspaces(), @_ResourceComboBox.Text ) );
+      Int16 m_ResourceSelected = Convert.ToInt16(WrappersHelpers.GetID( m_DataProviderID.GetAvailiableAddressspaces(), @_ResourceComboBox.Text ) );
       return m_ResourceSelected;
     }
     private void radioButtonDBWrite_CheckedChanged( object sender, EventArgs e )
@@ -514,7 +514,7 @@ namespace CAS.DPDiagnostics
     private Guid m_LastGuid = Guid.Empty;
     private string m_LastSettings = string.Empty;
     private IProtocolParent m_ProtocolParent = Protocol.CreateNewProtocol( "*********", "Diagnostic", 0, "not set" );
-    private BaseStation.Management.IProtocol m_Statistic;
+    private IProtocol m_Statistic;
     private IContainer components;
     private LicenseFile m_license = null;
     private IDataProviderID m_DataProviderID;

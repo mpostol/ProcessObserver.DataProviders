@@ -21,9 +21,9 @@
 using System;
 using System.ComponentModel;
 using System.Xml;
-using CAS.Lib.CommonBus.ApplicationLayer.ModBus.Common;
 using CAS.Lib.CommonBus.Xml;
 using CAS.Lib.RTLib.Processes;
+using CAS.CommServer.DataProvider.MODBUSCore;
 
 namespace CAS.Lib.CommonBus.ApplicationLayer.Modbus
 {

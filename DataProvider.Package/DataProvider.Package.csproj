@@ -82,10 +82,6 @@
       <Project>{238FD122-6152-43BB-B17B-6ACDAC2AB5E1}</Project>
       <Name>DataProvider.MBUS</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DataProvider.MODBUS\DataProvider.MODBUS.csproj">
-      <Project>{238FD122-6152-43BB-B17B-6ACDAC2AB5E9}</Project>
-      <Name>DataProvider.MODBUS</Name>
-    </ProjectReference>
     <ProjectReference Include="..\DataProvider.MODBUS\DataProvider.MODBUSNET.csproj">
       <Project>{A7F0C2D6-335C-4ABD-842D-D24C447DD2E0}</Project>
       <Name>DataProvider.MODBUSNET</Name>
@@ -150,7 +146,7 @@
   </Target>
   -->
   <PropertyGroup>
-    <PostBuildEvent>copy "$(TargetDir)*.dll" "$(SolutionDir)..\CommonBinaries\PR31-DataProviders\"
-copy "$(TargetDir)*.xml" "$(SolutionDir)..\CommonBinaries\PR31-DataProviders\"</PostBuildEvent>
+    <PostBuildEvent>rem copy "$(TargetDir)*.dll" "$(SolutionDir)..\CommonBinaries\PR31-DataProviders\"
+rem copy "$(TargetDir)*.xml" "$(SolutionDir)..\CommonBinaries\PR31-DataProviders\"</PostBuildEvent>
   </PropertyGroup>
 </Project>

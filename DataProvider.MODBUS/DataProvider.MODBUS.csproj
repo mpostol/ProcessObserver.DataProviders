@@ -104,47 +104,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Common\ItemDefaultSettings.cs" />
-    <Compile Include="Common\ModBusPDUMessage.cs" />
-    <Compile Include="Common\ModBusProtocol.Common.cs" />
-    <Compile Include="Common\ModBus_ApplicationLayerMaster.cs" />
-    <Compile Include="Common\ModBus_ApplicationLayerPluginHelper.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Common\ModBus_ApplicationLayerPluginHelper.Designer.cs">
-      <DependentUpon>ModBus_ApplicationLayerPluginHelper.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Common\ModBus_ApplicationLayerSlave.cs" />
-    <Compile Include="Common\ModBus_CommonProtocolParameters.cs" />
-    <Compile Include="Common\ModBus_enums.cs" />
-    <Compile Include="ModBus\ModBusMessage.CRC.cs" />
-    <Compile Include="ModBus\ModBusMessage.cs" />
-    <Compile Include="ModBus\ModBusProtocol.cs" />
-    <Compile Include="ModBus\ModBus_ApplicationLayerPluginHelper.ProtocolSpecific.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="ModBus\ModBus_DataProviderID.cs" />
-    <Compile Include="ModBus\ModBus_ProtocolParameters.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AssemblyInfo.tt</DependentUpon>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Diagrams\DataProviderID.cd" />
-    <None Include="Properties\AssemblyInfo.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>AssemblyInfo.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Common\ModBus_ApplicationLayerPluginHelper.resx">
-      <DependentUpon>ModBus_ApplicationLayerPluginHelper.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
       <Visible>False</Visible>
       <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
@@ -158,6 +117,12 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Common\" />
+    <Folder Include="Diagrams\" />
+    <Folder Include="ModBus\" />
+    <Folder Include="Properties\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

@@ -1,27 +1,22 @@
-// <summary>
+//_______________________________________________________________
 //  Title   : COMMUNICATIONS LIBRARY - Protocols Application layer interface - additional data for plugin interface
-//  Author  : M.Zbrzezny
-//  System  : Microsoft Visual C# .NET
-//  History :
+//  System  : Microsoft VisualStudio 2015 / C#
 //  $LastChangedDate$
 //  $Rev$
 //  $LastChangedBy$
 //  $URL$
 //  $Id$
-//    MPOstol - 21-03-07: 
-//      created compnent and added licensing
-//    MZbrzezny - 05-02-2005:
-//    Description: Created 
 //
-//  Copyright (C), CAS LODZ POLAND.
-//  TEL: 42' 686 25 47
-//  mailto:techsupp@cas.eu
+//  Copyright (C) 2016, CAS LODZ POLAND.
+//  TEL: +48 (42) 686 25 47
+//  mailto://techsupp@cas.eu
 //  http://www.cas.eu
-// </summary>
+//_______________________________________________________________
 
-namespace CAS.Lib.CommonBus.ApplicationLayer.ModBus
+
+namespace CAS.CommServer.DataProvider.MODBUSCore
 {
-  public partial class ModBus_ApplicationLayerPluginHelper
+  public abstract partial class ModBus_ApplicationLayerPluginHelperBase<TModbusMessage, TProtocolParameters, TModbusProtocol>
   {
     /// <summary>
     /// Required designer variable.
@@ -39,6 +34,7 @@ namespace CAS.Lib.CommonBus.ApplicationLayer.ModBus
       }
       base.Dispose( disposing );
     }
+
     #region Component Designer generated code
     /// <summary>
     /// Required method for Designer support - do not modify

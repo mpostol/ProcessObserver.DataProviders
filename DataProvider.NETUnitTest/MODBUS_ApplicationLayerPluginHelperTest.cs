@@ -75,7 +75,7 @@ namespace CAS.Lib.CommonBus.ApplicationLayer.NET.UT
     public void ModBus_ApplicationLayerPluginHelperConstructorTest()
     {
       Type tp = typeof( ModBus_ApplicationLayerPluginHelper );
-      Assert.AreEqual( tp.GUID.CompareTo( new Guid( "1c38514b-6801-44de-aab9-1e406b3aae77" ) ), 0, "Guid odes not much" );
+      Assert.AreEqual( tp.GUID.CompareTo( new Guid( "1c38514b-6801-44de-aab9-1e406b3aae77" ) ), 0, "Guid does not much" );
       try
       {
         ModBus_ApplicationLayerPluginHelper target = new ModBus_ApplicationLayerPluginHelper();

@@ -1,13 +1,13 @@
 ﻿<#@ template debug="false" hostspecific="false" language="C#" #>
 <#@ output extension=".cs" #>
 //_______________________________________________________________
-//  Title   : CommSever DataProvider plug-in providing MODBUS/IP implementation 
+//  Title   : CommSever MODBUS Core Library
 //  System  : Microsoft VisualStudio 2015 / C#
-//  $LastChangedDate$
-//  $Rev$
-//  $LastChangedBy$
-//  $URL$
-//  $Id$
+//  $LastChangedDate:  $
+//  $Rev: $
+//  $LastChangedBy: $
+//  $URL: $
+//  $Id:  $
 //
 //  Copyright (C) 2016, CAS LODZ POLAND.
 //  TEL: +48 (42) 686 25 47
@@ -15,11 +15,12 @@
 //  http://www.cas.eu
 //_______________________________________________________________
 
+
 using System.Reflection;
 using System.Runtime.InteropServices;
 
-[assembly: AssemblyTitle("CAS.CommServer.DataProvider.MODBUSNET")]
-[assembly: AssemblyDescription("CommSever plug-in providing MODBUS/IP implementation")]
+[assembly: AssemblyTitle("CAS.CommServer.DataProvider.MODBUSCore")]
+[assembly: AssemblyDescription("CommSever MODBUS Core Library")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("<#=AssemblyCompany#>")]
 [assembly: AssemblyProduct("<#=AssemblyProduct#>")]
@@ -27,17 +28,17 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTrademark("<#=AssemblyTrademark#>")]
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]
-[assembly: Guid("82B8811C-9D78-40f2-8EF5-6B1DFA22D735")]
+[assembly: Guid("F04263FD-4438-4BEC-8E54-6CB4D7E3CC75")] 
 [assembly: AssemblyVersion("<#=DPPAssemblyVersion#>")]
 [assembly: AssemblyFileVersion("<#=DPPAssemblyFileVersion#>")]
-[assembly: CAS.Lib.CodeProtect.AssemblyKey( "9655312A-E5B4-40ff-AF59-B4EF91EDB2A8" )]
+[assembly: CAS.Lib.CodeProtect.AssemblyKey( "F04263FD-4438-4BEC-8E54-6CB4D7E3CC75" )]
 [assembly: CAS.Lib.CodeProtect.AssemblyHelper
   (
-    Product = "CommSever DataProvider plug-in providing MODBUS/IP implementation ",
-    Company = "CAS",
-    Url = "www.cas.eu",
-    Email = "techsupp@cas.eu",
-    Phone = "+48(42)686 25 47"
+  Product = "Commsever DataProvider plug-in providing MODBUS/RS implementation",
+  Company = "CAS",
+  Url = "www.cas.eu",
+  Email = "techsupp@cas.eu",
+  Phone = "+48(42)686 25 47"
   )
 ]
 

@@ -1,82 +1,74 @@
-﻿//<summary>
+﻿//_______________________________________________________________
 //  Title   : NULL plugin Data Provider Item Default Settings
-//  System  : Microsoft Visual C# .NET 2005
+//  System  : Microsoft VisualStudio 2015 / C#
 //  $LastChangedDate$
 //  $Rev$
 //  $LastChangedBy$
 //  $URL$
 //  $Id$
-//  History :
-//    20081002 mzbrzezny: created
 //
-//  Copyright (C)2008, CAS LODZ POLAND.
+//  Copyright (C) 2016, CAS LODZ POLAND.
 //  TEL: +48 (42) 686 25 47
-//  mailto:techsupp@cas.eu
+//  mailto://techsupp@cas.eu
 //  http://www.cas.eu
-//</summary>
+//_______________________________________________________________
 
-using System;
-using CAS.Lib.CommonBus.ApplicationLayer.ModBus.PRIVATE;
+using CAS.Lib.CommonBus;
 using CAS.Lib.RTLib;
+using System;
 
-namespace CAS.Lib.CommonBus.ApplicationLayer.ModBus
+namespace CAS.CommServer.DataProvider.MODBUSCore
 {
-  class ItemDefaultSettings: IItemDefaultSettings
+  public class ItemDefaultSettings : IItemDefaultSettings
   {
+
     #region private
-    private Medium_T addressSpace;
-    private ulong address;
+    private Medium_T m_AddressSpace;
+    private ulong m_Address;
     #endregion private
+
     #region IItemDefaultSettings Members
     string IItemDefaultSettings.Name
     {
-      get { return addressSpace.ToString().Substring( 0, 1 ) + "/" + address.ToString( "d4" ); }
+      get { return m_AddressSpace.ToString().Substring(0, 1) + "/" + m_Address.ToString("d4"); }
     }
     Type IItemDefaultSettings.DefaultType
     {
       get
       {
-        switch ( addressSpace )
+        switch (m_AddressSpace)
         {
           case Medium_T.Coil:
           case Medium_T.Discrete_input:
-            return typeof( bool );
+            return typeof(bool);
           case Medium_T.Holding_register:
           case Medium_T.Input_register:
           case Medium_T.Register_MemoryBank_CONTROL:
-            return typeof( System.Int16 );
+            return typeof(short);
           case Medium_T.Holding_8bit_register_CONTROL:
-            return typeof( byte );
+            return typeof(byte);
         }
-        return typeof( object );
+        return typeof(object);
       }
     }
     Type[] IItemDefaultSettings.AvailiableTypes
     {
       get
       {
-        switch ( addressSpace )
+        switch (m_AddressSpace)
         {
           case Medium_T.Coil:
           case Medium_T.Discrete_input:
-            return new Type[] { typeof( object ), typeof( bool ) };
+            return new Type[] { typeof(object), typeof(bool) };
           case Medium_T.Holding_register:
           case Medium_T.Input_register:
           case Medium_T.Register_MemoryBank_CONTROL:
           case Medium_T.Holding_8bit_register_CONTROL:
-            return new Type[]{typeof(object),
-          typeof(short),
-          typeof(ushort),
-          typeof(string)
-          };
+            return new Type[] { typeof(object), typeof(short), typeof(ushort), typeof(string) };
           case Medium_T.Holding_32bit_register:
-            return new Type[]{typeof(object),
-          typeof(System.Int32),
-          typeof(System.UInt32),
-          typeof(System.Single)
-          };
+            return new Type[] { typeof(object), typeof(int), typeof(uint), typeof(float) };
         }
-        return new Type[] { typeof( object ) };
+        return new Type[] { typeof(object) };
       }
     }
     ItemAccessRights IItemDefaultSettings.AccessRights
@@ -84,10 +76,13 @@ namespace CAS.Lib.CommonBus.ApplicationLayer.ModBus
       get { return ItemAccessRights.ReadWrite; }
     }
     #endregion
-    internal ItemDefaultSettings( Medium_T AddressSpace, ulong Address )
+
+    #region creator
+    public ItemDefaultSettings(Medium_T AddressSpace, ulong Address)
     {
-      addressSpace = AddressSpace;
-      address = Address;
+      m_AddressSpace = AddressSpace;
+      m_Address = Address;
     }
+    #endregion
   }
 }

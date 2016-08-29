@@ -26,14 +26,16 @@
 
 using CAS.Lib.CommonBus.CommunicationLayer.Generic;
 using CAS.Lib.CommonBus.ApplicationLayer.Modbus;
+using CAS.CommServer.DataProvider.MODBUSCore;
 
 namespace CAS.Lib.CommonBus.ApplicationLayer.ModBus.PRIVATE
 {
   /// <summary>
   /// ModBUS RTU message implementation
   /// </summary>
-  internal partial class ModBusMessage: ModBusPDUMessage
+  public class ModBusMessage : ModBusPDUMessageBase<ModBusMessage>
   {
+
     #region PRIVATE
     //Note: values below are based on MODBUS RTU, so:
     //- NET Frame has  longer header than RTU frame: 6 bytes (7 bytes of MBAP header - 1 byte station address), thats why we are adding 6
@@ -107,7 +109,7 @@ namespace CAS.Lib.CommonBus.ApplicationLayer.ModBus.PRIVATE
       {
         ushort tempoffset = this.offset;
         this.offset = const_TransactionIdentifierOffset;
-        myAssert.Assert( this.WriteInt16( value ), 106, "ModBUS: Cannot write TransactionIdentifier" );
+        myAssert.Assert(this.WriteInt16(value), 106, "ModBUS: Cannot write TransactionIdentifier");
         this.offset = tempoffset;
       }
     }
@@ -125,52 +127,53 @@ namespace CAS.Lib.CommonBus.ApplicationLayer.ModBus.PRIVATE
       {
         ushort tempoffset = this.offset;
         this.offset = const_ProtocolIdentifierOffset;
-        myAssert.Assert( this.WriteInt16( value ), 124, "ModBUS: Cannot write ProtocolIdentifierOffset" );
+        myAssert.Assert(this.WriteInt16(value), 124, "ModBUS: Cannot write ProtocolIdentifierOffset");
         this.offset = tempoffset;
       }
     }
     #endregion
+
     #region PUBLIC
-    public override void WriteValue( object pValue, int pRegAddress )
+    public override void WriteValue(object pValue, int pRegAddress)
     {
-      base.WriteValue( pValue, pRegAddress );
+      base.WriteValue(pValue, pRegAddress);
     }
-    protected override void PrepareRequest( int station, IBlockDescription block )
+    protected override void PrepareRequest(int station, IBlockDescription block)
     {
-      base.PrepareRequest( station, block );
+      base.PrepareRequest(station, block);
       //MBAP header:
       TransactionIdentifier = TransactionIdentifierCouter++;
       ProtocolIdentifierOffset = 0;
       this.offset = const_LengthOffset;
-      myAssert.Assert( this.WriteInt16( (short)( RequestLength - 6 ) ),
-        142, "ModBUS: PrepareRequest: Cannot write RequestLength - 6" );// nie wliczamy do tego poczatku naglowka
+      myAssert.Assert(this.WriteInt16((short)(RequestLength - 6)),
+        142, "ModBUS: PrepareRequest: Cannot write RequestLength - 6");// nie wliczamy do tego poczatku naglowka
     }
-    protected override void PrepareReqWriteValue( IBlockDescription block, int station )
+    protected override void PrepareReqWriteValue(IBlockDescription block, int station)
     {
-      base.PrepareReqWriteValue( block, station );
+      base.PrepareReqWriteValue(block, station);
       //MBAP header:
       TransactionIdentifier = TransactionIdentifierCouter++;
       ProtocolIdentifierOffset = 0;
       this.offset = const_LengthOffset;
-      myAssert.Assert( this.WriteInt16( (short)( RequestLength - 6 ) ),
-        151, "ModBUS: PrepareReqWriteValue: Cannot write RequestLength - 6" );// nie wliczamy do tego poczatku naglowka
+      myAssert.Assert(this.WriteInt16((short)(RequestLength - 6)),
+        151, "ModBUS: PrepareReqWriteValue: Cannot write RequestLength - 6");// nie wliczamy do tego poczatku naglowka
     }
-    public override ProtocolALMessage.CheckResponseResult CheckResponseFrame( ProtocolALMessage tMes )
+    public override ProtocolALMessage.CheckResponseResult CheckResponseFrame(ProtocolALMessage tMes)
     {
       ModBusMessage TXModBusMessage = (ModBusMessage)tMes;
-      if ( this.TransactionIdentifier != TXModBusMessage.TransactionIdentifier )
+      if (this.TransactionIdentifier != TXModBusMessage.TransactionIdentifier)
         return CheckResponseResult.CR_SynchError;
-      if ( this.ProtocolIdentifierOffset != 0 )
+      if (this.ProtocolIdentifierOffset != 0)
         return CheckResponseResult.CR_Invalid;
-      return base.CheckResponseFrame( tMes );
+      return base.CheckResponseFrame(tMes);
     }
     /// <summary>
     /// Initializes a new instance of the <see cref="ModBusMessage"/> class.
     /// </summary>
     /// <param name="homePool">The home pool.</param>
     /// <param name="myProtocolParameters">My protocol parameters.</param>
-    internal ModBusMessage( IBufferLink homePool, ModBus_ProtocolParameters myProtocolParameters )
-      : base(  homePool , myProtocolParameters)
+    internal ModBusMessage(IBufferLink homePool, ModBus_ProtocolParameters myProtocolParameters)
+      : base(homePool, myProtocolParameters)
     {
     }
     #endregion

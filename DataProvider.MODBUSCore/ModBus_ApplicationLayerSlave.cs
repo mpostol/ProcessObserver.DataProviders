@@ -1,33 +1,28 @@
-//<summary>
+//_______________________________________________________________
 //  Title   : MBUS_ApplicationLayerSlave
-//  System  : Microsoft Visual C# .NET 
+//  System  : Microsoft VisualStudio 2015 / C#
 //  $LastChangedDate$
 //  $Rev$
 //  $LastChangedBy$
 //  $URL$
 //  $Id$
-//  History :
-//    MZbrzezny 2007-01-31
-//    usuwanie mechanizmu bazujacego na porcie 
-//    w application layer i communication layer
 //
-//
-//  Copyright (C)2006, CAS LODZ POLAND.
+//  Copyright (C) 2016, CAS LODZ POLAND.
 //  TEL: +48 (42) 686 25 47
-//  mailto:techsupp@cas.eu
+//  mailto://techsupp@cas.eu
 //  http://www.cas.eu
-//</summary>
+//_______________________________________________________________
 
-using CAS.Lib.CommonBus.ApplicationLayer.ModBus.PRIVATE;
+using CAS.Lib.CommonBus.ApplicationLayer;
 using CAS.Lib.CommonBus.CommunicationLayer;
 
-namespace CAS.Lib.CommonBus.ApplicationLayer.ModBus
+namespace CAS.CommServer.DataProvider.MODBUSCore
 {
 
   /// <summary>
   /// Modbus Application Layer slave implementation
   /// </summary>
-  internal class ModBus_ApplicationLayerSlave: ApplicationLayerCommon, IApplicationLayerSlave
+  internal class ModBus_ApplicationLayerSlave<ModBusMessage>: ApplicationLayerCommon, IApplicationLayerSlave
   {
     //private IProtocolParent myStatistic = null;
     //    private class MODBUS_buf_pool: CAPI.Session.SesDBufferPool

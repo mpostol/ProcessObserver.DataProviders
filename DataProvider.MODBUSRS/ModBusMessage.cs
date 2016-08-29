@@ -23,6 +23,7 @@
 //  http://www.cas.eu
 //</summary>
 
+using CAS.CommServer.DataProvider.MODBUSCore;
 using CAS.Lib.CommonBus.ApplicationLayer.Modbus;
 using CAS.Lib.CommonBus.CommunicationLayer.Generic;
 
@@ -31,8 +32,9 @@ namespace CAS.Lib.CommonBus.ApplicationLayer.ModBus.PRIVATE
   /// <summary>
   /// ModBUS RTU message implementation
   /// </summary>
-  internal partial class ModBusMessage: ModBusPDUMessage
+  public partial class ModBusMessage: ModBusPDUMessageBase<ModBusMessage>
   {
+
     #region PRIVATE
     private const byte const_stationAddressPos = 0;
     private const byte const_dataTypePos = 1;
@@ -80,6 +82,7 @@ namespace CAS.Lib.CommonBus.ApplicationLayer.ModBus.PRIVATE
     }
     #endregion abstract place in frame definition
     #endregion
+
     #region PUBLIC
     public override void WriteValue( object pValue, int pRegAddress )
     {

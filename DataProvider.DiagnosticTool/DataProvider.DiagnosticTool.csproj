@@ -101,7 +101,7 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>C12982E675A7527F1DB6BB03D6E21921B73493C5</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>502D68F34386F28801A8BF04EA024544899F9713</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestKeyFile>
@@ -114,6 +114,26 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CAS.CodeProtect, Version=5.0.2.39087, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
+      <HintPath>..\packages\CAS.CodeProtect.5.0.2\lib\net35\CAS.CodeProtect.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CAS.CommServer.CommonBus, Version=5.1.2.24438, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
+      <HintPath>..\packages\CAS.CommServer.CommonBus.5.01.02-Charlie\lib\net451\CAS.CommServer.CommonBus.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CAS.RTLib, Version=5.0.2.39089, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
+      <HintPath>..\packages\CAS.RealTime.5.0.2\lib\net35\CAS.RTLib.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CAS.RTLibComm, Version=5.0.2.39088, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
+      <HintPath>..\packages\CAS.RealTime.5.0.2\lib\net35\CAS.RTLibComm.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CAS.Windows.Forms, Version=5.0.6.33053, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
+      <HintPath>..\packages\CAS.Windows.Forms.5.0.6-Charlie\lib\net451\CAS.Windows.Forms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System">
       <Name>System</Name>
     </Reference>
@@ -139,7 +159,9 @@
     <Compile Include="BLOK.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ParallelDebugWindow.cs" />
+    <Compile Include="ParallelDebugWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Operation.cs" />
     <Compile Include="OperationResult.cs" />
     <Compile Include="Program.cs">
@@ -177,6 +199,7 @@
   <ItemGroup>
     <None Include="cas.snk" />
     <None Include="DPDiagnostic_Full.ico" />
+    <None Include="packages.config" />
     <None Include="Properties\AssemblyInfo.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>AssemblyInfo.cs</LastGenOutput>
@@ -216,9 +239,9 @@
       <Project>{238fd122-6152-43bb-b17b-6acdac2ab5e1}</Project>
       <Name>DataProvider.MBUS</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DataProvider.MODBUS\DataProvider.MODBUS.csproj">
-      <Project>{238fd122-6152-43bb-b17b-6acdac2ab5e9}</Project>
-      <Name>DataProvider.MODBUS</Name>
+    <ProjectReference Include="..\DataProvider.MODBUSRS\DataProvider.MODBUSRS.csproj">
+      <Project>{5fc5796f-eb7e-4d85-a6e8-f7d579d1f452}</Project>
+      <Name>DataProvider.MODBUSRS</Name>
     </ProjectReference>
     <ProjectReference Include="..\DataProvider.MODBUS\DataProvider.MODBUSNET.csproj">
       <Project>{a7f0c2d6-335c-4abd-842d-d24c447dd2e0}</Project>

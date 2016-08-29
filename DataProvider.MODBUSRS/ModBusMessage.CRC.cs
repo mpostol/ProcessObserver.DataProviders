@@ -25,7 +25,7 @@ namespace CAS.Lib.CommonBus.ApplicationLayer.ModBus.PRIVATE
   /// <summary>
   /// ModBus message implementation (CRC)
   /// </summary>
-  internal partial class ModBusMessage
+  public partial class ModBusMessage
   {
     #region PRIVATE
     #region CRC tables

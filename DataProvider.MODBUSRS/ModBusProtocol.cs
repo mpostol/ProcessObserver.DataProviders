@@ -22,14 +22,19 @@
 using CAS.Lib.CommonBus.ApplicationLayer.ModBus.PRIVATE;
 using CAS.Lib.CommonBus.CommunicationLayer;
 using CAS.Lib.CommonBus.ApplicationLayer.Modbus;
+using CAS.Lib.CommonBus.CommunicationLayer.Generic;
 
 namespace CAS.Lib.CommonBus.ApplicationLayer.ModBus
 {
   /// <summary>
   /// MODBUS implementation of the Application Layer Protocol
   /// </summary>
-  internal partial class ModBusProtocol: ALProtocol<ModBusMessage>
+  public partial class ModBusProtocol : CommServer.DataProvider.MODBUSCore.ModbusProtocol<ModBusMessage>
   {
+    public ModBusProtocol(ICommunicationLayer pCommLayer, ProtocolParameters pProtParameters, CAS.Lib.RTLib.Management.IProtocolParent pStatistic, SesDBufferPool<ModBusMessage> pPool) :
+     base(pCommLayer, pProtParameters, pStatistic, pPool)
+    { }
+
     #region ALProtocol
     /// <summary>
     /// This function gets message from the remote unit.
@@ -44,19 +49,19 @@ namespace CAS.Lib.CommonBus.ApplicationLayer.ModBus
     ///   ALRes_DisInd: Disconnect indication – connection has been shut down remotely or lost because of 
     ///      communication error. Data is unavailable
     /// </returns>
-    protected override AL_ReadData_Result GetMessage( out ModBusMessage Rxmsg, ModBusMessage Txmsg )
+    protected override AL_ReadData_Result GetMessage(out ModBusMessage Rxmsg, ModBusMessage Txmsg)
     {
       Rxmsg = null;
       try
       {
-        IntercharStopwatch.Reset();
-        IntercharStopwatch.Start();
-        if ( !CheckCharTimeout( GetProtocolParameters.ResponseTimeOutSpan, IntercharStopwatch ) )
+        InterCharStopwatch.Reset();
+        InterCharStopwatch.Start();
+        if (!CheckCharTimeout(GetProtocolParameters.ResponseTimeOutSpan, InterCharStopwatch))
         {
           GetIProtocolParent.IncStRxNoResponseCounter();
           return AL_ReadData_Result.ALRes_DatTransferErrr;
         }
-        GetIProtocolParent.TimeMaxResponseDelayAdd( IntercharStopwatch.ElapsedMilliseconds );
+        GetIProtocolParent.TimeMaxResponseDelayAdd(InterCharStopwatch.ElapsedMilliseconds);
         Rxmsg = m_Pool.GetEmptyISesDBuffer();
         Rxmsg.userDataLength = Rxmsg.userBuffLength;
         Rxmsg.offset = 0;
@@ -64,31 +69,31 @@ namespace CAS.Lib.CommonBus.ApplicationLayer.ModBus
         do
         {
           byte lastChar;
-          IntercharStopwatch.Reset();
-          IntercharStopwatch.Start();
-          switch ( GetICommunicationLayer.GetChar( out lastChar ) )
+          InterCharStopwatch.Reset();
+          InterCharStopwatch.Start();
+          switch (GetICommunicationLayer.GetChar(out lastChar))
           {
             case TGetCharRes.Success:
-              if ( !Rxmsg.WriteByte( lastChar ) )
+              if (!Rxmsg.WriteByte(lastChar))
               {
-                TraceEvent.Tracer.TraceWarning( 77, "ModBusProtocol.GetMessage", "cannot write character received from  GetICommunicationLayer.GetChar( out lastChar )" );
+                TraceEvent.Tracer.TraceWarning(77, "ModBusProtocol.GetMessage", "cannot write character received from  GetICommunicationLayer.GetChar( out lastChar )");
                 return AL_ReadData_Result.ALRes_DatTransferErrr;
               }
-              if ( first )
+              if (first)
                 first = false;
               else
-                GetIProtocolParent.TimeCharGapAdd( CAS.Lib.RTLib.Processes.Timer.ToUSeconds( IntercharStopwatch.Elapsed ) );
+                GetIProtocolParent.TimeCharGapAdd(CAS.Lib.RTLib.Processes.Timer.ToUSeconds(InterCharStopwatch.Elapsed));
               break;
             case TGetCharRes.DisInd:
               return AL_ReadData_Result.ALRes_DisInd;
           }
         }
-        while ( CheckCharTimeout( ( (ModBus_ProtocolParameters)GetProtocolParameters ).Timeout15Span, IntercharStopwatch ) );
+        while (CheckCharTimeout(((ModBus_ProtocolParameters)GetProtocolParameters).Timeout15Span, InterCharStopwatch));
         Rxmsg.userDataLength = Rxmsg.offset;
         Rxmsg.offset = 0;
-        if ( CheckCharTimeout( ( (ModBus_ProtocolParameters)GetProtocolParameters ).Timeout35Span, IntercharStopwatch ) )
+        if (CheckCharTimeout(((ModBus_ProtocolParameters)GetProtocolParameters).Timeout35Span, InterCharStopwatch))
         {
-          Flush( ( (ModBus_ProtocolParameters)GetProtocolParameters ).Timeout35Span );
+          Flush(((ModBus_ProtocolParameters)GetProtocolParameters).Timeout35Span);
           Rxmsg.ReturnEmptyEnvelope();
           Rxmsg = null;
           GetIProtocolParent.IncStRxFragmentedCounter();
@@ -96,7 +101,7 @@ namespace CAS.Lib.CommonBus.ApplicationLayer.ModBus
         }
         return AL_ReadData_Result.ALRes_Success;
       }
-      catch ( DisconnectException ) { return AL_ReadData_Result.ALRes_DisInd; }
+      catch (DisconnectException) { return AL_ReadData_Result.ALRes_DisInd; }
     }
     /// <summary>
     /// Transmit message to the remote unit.
@@ -109,20 +114,20 @@ namespace CAS.Lib.CommonBus.ApplicationLayer.ModBus
     ///      Disconnect indication – connection has been shut down remotely or lost because of 
     ///      communication error. Data is unavailable
     /// </returns>
-    protected override AL_ReadData_Result TransmitMessage( ModBusMessage Txmsg )
+    protected override AL_ReadData_Result TransmitMessage(ModBusMessage Txmsg)
     {
       try
       {
-        Flush( ( (ModBus_ProtocolParameters)GetProtocolParameters ).Timeout35Span );
+        Flush(((ModBus_ProtocolParameters)GetProtocolParameters).Timeout35Span);
         //flush may throw DisconnectException
       }
-      catch ( DisconnectException ex )
+      catch (DisconnectException ex)
       {
-        TraceEvent.Tracer.TraceInformation( 120, "ModBusProtocol.TransmitMessage.Flush", ex.Message );
+        TraceEvent.Tracer.TraceInformation(120, "ModBusProtocol.TransmitMessage.Flush", ex.Message);
         return AL_ReadData_Result.ALRes_DisInd;
       }
       GetIProtocolParent.IncStTxFrameCounter();
-      switch ( GetICommunicationLayer.FrameEndSignal( Txmsg ) )
+      switch (GetICommunicationLayer.FrameEndSignal(Txmsg))
       {
         case TFrameEndSignalRes.Success:
           break;

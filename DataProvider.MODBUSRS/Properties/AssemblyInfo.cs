@@ -1,24 +1,22 @@
-﻿//<summary>
-//  Title   : Commsever DataProvider plug-in providing MODBUS/RS implementation 
-//  System  : Microsoft Visual C# .NET
+﻿//_______________________________________________________________
+//  Title   : CommSever DataProvider plug-in providing MODBUS/RS implementation 
+//  System  : Microsoft VisualStudio 2015 / C#
 //  $LastChangedDate$
 //  $Rev$
 //  $LastChangedBy$
 //  $URL$
 //  $Id$
-//  History :
-//  20080905: mzbrzezny: Created based on BK.Plugin_NULLbus.csproj
 //
-//  Copyright (C)2008, CAS LODZ POLAND.
+//  Copyright (C) 2016, CAS LODZ POLAND.
 //  TEL: +48 (42) 686 25 47
-//  mailto:techsupp@cas.eu
+//  mailto://techsupp@cas.eu
 //  http://www.cas.eu
-//</summary>
+//_______________________________________________________________
 
 using System.Reflection;
 using System.Runtime.InteropServices;
 
-[assembly: AssemblyTitle("MODBUS/RS DataProvider")]
+[assembly: AssemblyTitle("CAS.CommServer.DataProvider.MODBUSRS")]
 [assembly: AssemblyDescription("CommSever plug-in providing MODBUS/RS implementation")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("CAS")]
@@ -26,20 +24,14 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyCopyright("Copyright (c) 2000-2016 CAS LODZ POLAND")]
 [assembly: AssemblyTrademark("CommServer")]
 [assembly: AssemblyCulture("")]
-
-// Setting ComVisible to false makes the types in this assembly not visible 
-// to COM components.  If you need to access a type in this assembly from 
-// COM, set the ComVisible attribute to true on that type.
 [assembly: ComVisible(false)]
-
-// The following GUID is for the ID of the typelib if this project is exposed to COM
 [assembly: Guid("4C3D8EA4-A3F6-46d5-8066-11620DEAAE60")]
 [assembly: AssemblyVersion("3.80.01.*")]
 [assembly: AssemblyFileVersion("3.80.01")]
 [assembly: CAS.Lib.CodeProtect.AssemblyKey( "2D0C30B3-ED45-4292-8CB3-ADB0E739E03E" )]
 [assembly: CAS.Lib.CodeProtect.AssemblyHelper
   (
-  Product = "Commsever DataProvider plug-in providing MODBUS/RS implementation",
+  Product = "CommSever DataProvider plug-in providing MODBUS/RS implementation",
   Company = "CAS",
   Url = "www.cas.eu",
   Email = "techsupp@cas.eu",

@@ -19,7 +19,7 @@
     <DefaultTargetSchema>IE50</DefaultTargetSchema>
     <DelaySign>false</DelaySign>
     <OutputType>Library</OutputType>
-    <RootNamespace>Plugin_MODBUS</RootNamespace>
+    <RootNamespace>CAS.CommServer.DataProvider.MODBUSNET</RootNamespace>
     <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
     <StartupObject>
     </StartupObject>
@@ -120,19 +120,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Common\ItemDefaultSettings.cs" />
-    <Compile Include="Common\ModBusPDUMessage.cs" />
-    <Compile Include="Common\ModBusProtocol.Common.cs" />
-    <Compile Include="Common\ModBus_ApplicationLayerMaster.cs" />
-    <Compile Include="Common\ModBus_ApplicationLayerPluginHelper.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Common\ModBus_ApplicationLayerPluginHelper.Designer.cs">
-      <DependentUpon>ModBus_ApplicationLayerPluginHelper.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Common\ModBus_ApplicationLayerSlave.cs" />
-    <Compile Include="Common\ModBus_CommonProtocolParameters.cs" />
-    <Compile Include="Common\ModBus_enums.cs" />
     <Compile Include="ModBusNet\ModBusMessage.cs" />
     <Compile Include="ModBusNet\ModBusProtocol.cs" />
     <Compile Include="ModBusNet\ModBus_ApplicationLayerPluginHelper.ProtocolSpecific.cs">
@@ -147,18 +134,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Diagrams\DataProviderID.cd" />
     <None Include="packages.config" />
     <None Include="Properties\AssemblyInfoNET.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>AssemblyInfoNET.cs</LastGenOutput>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Common\ModBus_ApplicationLayerPluginHelper.resx">
-      <DependentUpon>ModBus_ApplicationLayerPluginHelper.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
@@ -174,6 +154,16 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Common\" />
+    <Folder Include="Diagrams\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataProvider.MODBUSCore\DataProvider.MODBUSCore.csproj">
+      <Project>{eaf8646d-2a1b-4de2-ade4-fe7b370a27a0}</Project>
+      <Name>DataProvider.MODBUSCore</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

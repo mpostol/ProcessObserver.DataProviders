@@ -1,25 +1,21 @@
-//<summary>
+//_______________________________________________________________
 //  Title   : Modbus Exceptions and Enums
-//  System  : Microsoft Visual C# .NET 
+//  System  : Microsoft VisualStudio 2015 / C#
 //  $LastChangedDate$
 //  $Rev$
 //  $LastChangedBy$
 //  $URL$
 //  $Id$
-//  History :
-//  20080826: mzbrzezny: not suppoorted data types are commented
-//  20080825: mzbrzezny: enums for CONTROL Micro XL added
-//  2002: mpostol: created
 //
-//  Copyright (C)2008, CAS LODZ POLAND.
+//  Copyright (C) 2016, CAS LODZ POLAND.
 //  TEL: +48 (42) 686 25 47
-//  mailto:techsupp@cas.eu
+//  mailto://techsupp@cas.eu
 //  http://www.cas.eu
-//</summary>
+//_______________________________________________________________
 
-namespace CAS.Lib.CommonBus.ApplicationLayer.ModBus.PRIVATE
+namespace CAS.CommServer.DataProvider.MODBUSCore
 {
-  internal enum Medium_T: short
+  public enum Medium_T: short
   {
     Coil = 0,
     Discrete_input = 1,
@@ -51,7 +47,7 @@ namespace CAS.Lib.CommonBus.ApplicationLayer.ModBus.PRIVATE
     ILLEGAL_CRC = 0x0C,
     OK = 0x0F,
   };
-  internal enum Modbus_Functions: byte
+  public enum Modbus_Functions: byte
   {
     ERORR = 0x00,
     READ_COILS = 0x01,
@@ -109,4 +105,4 @@ namespace CAS.Lib.CommonBus.ApplicationLayer.ModBus.PRIVATE
     RX_BP_Uncompl,
     RX_BP_NotAwaiting
   };
-}//namespace BaseStation.ModBus.PRIVATE
+}

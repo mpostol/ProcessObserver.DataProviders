@@ -18,12 +18,12 @@
 //  http://www.cas.eu
 //</summary>
 
+using CAS.CommServer.DataProvider.MODBUSCore;
+using CAS.Lib.CommonBus.Xml;
+using CAS.Lib.RTLib.Processes;
 using System;
 using System.ComponentModel;
 using System.Xml;
-using CAS.Lib.CommonBus.ApplicationLayer.ModBus.Common;
-using CAS.Lib.CommonBus.Xml;
-using CAS.Lib.RTLib.Processes;
 
 namespace CAS.Lib.CommonBus.ApplicationLayer.Modbus
 {
@@ -33,12 +33,14 @@ namespace CAS.Lib.CommonBus.ApplicationLayer.Modbus
   [System.Serializable]
   public class ModBus_ProtocolParameters: ModBus_CommonProtocolParameters
   {
+
     #region PRIVATE
     #region XML identifiers
     private const string m_Tag_TimeoutCharacter = "TimeoutCharacter";
     #endregion
     private TimeSpan ppTimeoutCharacter;
     #endregion
+
     #region PUBLIC
     /// <summary>
     /// Gets a time interval equal to at least 1.5 characters in internal ticks.
@@ -63,13 +65,13 @@ namespace CAS.Lib.CommonBus.ApplicationLayer.Modbus
       get { return Timer.ToUSeconds( ppTimeoutCharacter ); }
     }
     /// <summary>
-    /// Set all parameters according to the baudrate.
+    /// Set all parameters according to the baud rate.
     /// </summary>
     public override uint LineSpeed
     {
       set
       {
-        //TODO it is intentionaly empty??;
+        //TODO it is intentionally empty??;
       }
     }
     /// <summary>
@@ -85,7 +87,7 @@ namespace CAS.Lib.CommonBus.ApplicationLayer.Modbus
     /// <summary>
     /// this function  writes settings to xml stream
     /// </summary>
-    /// <param name="pSettings">XmlWriter strea</param>
+    /// <param name="pSettings">XmlWriter stream</param>
     public override void WriteSettings( System.Xml.XmlWriter pSettings )
     {
       pSettings.WriteStartElement( m_TagClass );
@@ -99,23 +101,23 @@ namespace CAS.Lib.CommonBus.ApplicationLayer.Modbus
     /// <summary>
     /// this function  reads settings from xml stream
     /// </summary>
-    /// <param name="pSettings">XmlReader strea</param>
-    public override void ReadSettings( System.Xml.XmlReader pSettings )
+    /// <param name="settings">XmlReader stream</param>
+    public override void ReadSettings( XmlReader settings )
     {
-      if ( !pSettings.IsStartElement( m_TagClass ) )
+      if ( !settings.IsStartElement( m_TagClass ) )
         throw new XmlException
           ( string.Format( "Expected element {0} not found at current position of the configuration file", m_TagClass ) );
-      ppInterfameGap = XmlHelper.ReadTimeFromMicroseconds( pSettings, m_Tag_InterfameGap );
-      ppNumberOfRetries = (ushort)XmlHelper.ReadStandardIntegerValue( pSettings, m_Tag_NumberOfRetries );
-      ppTimeoutCharacter = XmlHelper.ReadTimeFromMicroseconds( pSettings, m_Tag_TimeoutCharacter );
-      ppTimeoutResponse = XmlHelper.ReadTimeFromMicroseconds( pSettings, m_Tag_TimeoutResponse );
-      CommonReadSettings( pSettings );
-      pSettings.ReadStartElement( m_TagClass );
+      ppInterfameGap = XmlHelper.ReadTimeFromMicroseconds( settings, m_Tag_InterfameGap );
+      ppNumberOfRetries = (ushort)XmlHelper.ReadStandardIntegerValue( settings, m_Tag_NumberOfRetries );
+      ppTimeoutCharacter = XmlHelper.ReadTimeFromMicroseconds( settings, m_Tag_TimeoutCharacter );
+      ppTimeoutResponse = XmlHelper.ReadTimeFromMicroseconds( settings, m_Tag_TimeoutResponse );
+      CommonReadSettings( settings );
+      settings.ReadStartElement( m_TagClass );
     }
     /// <summary>
     /// Creator
     /// </summary>
-    /// <param name="portSpeed">Baudrate of the communication line.</param>
+    /// <param name="portSpeed">Baud rate of the communication line.</param>
     /// <param name="TimeoutResponse">Maximum response time this station is willing to wait.</param>
     /// <param name="NumberOfRetries">Maximum number of retries this station will try.</param>
     public ModBus_ProtocolParameters( uint portSpeed, uint TimeoutResponse, ushort NumberOfRetries )
@@ -125,5 +127,6 @@ namespace CAS.Lib.CommonBus.ApplicationLayer.Modbus
       this.ppNumberOfRetries = NumberOfRetries;
     }
     #endregion
+
   } //ProtocolParameters
 }
