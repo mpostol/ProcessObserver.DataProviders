@@ -120,19 +120,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="NBUS\ItemDefaultSettings.cs" />
-    <Compile Include="NBUS\NULL_ApplicationLayerMaster.cs" />
-    <Compile Include="NBUS\NULL_ApplicationLayerPluginHelper.cs">
+    <Compile Include="ItemDefaultSettings.cs" />
+    <Compile Include="NULL_ApplicationLayerMaster.cs" />
+    <Compile Include="NULL_ApplicationLayerPluginHelper.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="NBUS\NULL_ApplicationLayerPluginHelper.Designer.cs">
+    <Compile Include="NULL_ApplicationLayerPluginHelper.Designer.cs">
       <DependentUpon>NULL_ApplicationLayerPluginHelper.cs</DependentUpon>
     </Compile>
-    <Compile Include="NBUS\NULL_ApplicationLayerSlave.cs" />
-    <Compile Include="NBUS\NULL_ApplicationLayerSniffer.cs" />
-    <Compile Include="NBUS\NULL_DataProviderID.cs" />
-    <Compile Include="NBUS\NULL_enums.cs" />
-    <Compile Include="NBUS\NULL_message.cs" />
+    <Compile Include="NULL_ApplicationLayerSlave.cs" />
+    <Compile Include="NULL_ApplicationLayerSniffer.cs" />
+    <Compile Include="NULL_DataProviderID.cs" />
+    <Compile Include="NULL_enums.cs" />
+    <Compile Include="NULL_message.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

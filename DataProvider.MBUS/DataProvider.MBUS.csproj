@@ -120,30 +120,30 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MBUS\ItemDefaultSettings.cs" />
-    <Compile Include="MBUS\MBUSApplicationLayerMessage\MBUSApplicationLayerDIF.cs" />
-    <Compile Include="MBUS\MBUSApplicationLayerMessage\MBUSApplicationLayerDIFE.cs" />
-    <Compile Include="MBUS\MBUSApplicationLayerMessage\MBUSApplicationLayerExtendableDataInformation.cs" />
-    <Compile Include="MBUS\MBUSApplicationLayerMessage\MBUSApplicationLayerMMVS.cs" />
-    <Compile Include="MBUS\MBUSApplicationLayerMessage\MBUSApplicationLayerVIF.cs" />
-    <Compile Include="MBUS\MBUSApplicationLayerMessage\MBUSApplicationLayerMessageAnalyser.cs" />
-    <Compile Include="MBUS\MBUSApplicationLayerMessage\MBUSApplicationLayerVIFBase.cs" />
-    <Compile Include="MBUS\MBUSApplicationLayerMessage\MBUSApplicationLayerVIFE.cs" />
-    <Compile Include="MBUS\MBUSApplicationLayerMessage\MBUSApplicationLayerVIF_Extended_TypeA_FD.cs" />
-    <Compile Include="MBUS\MBUSApplicationLayerMessage\MBUSApplicationLayerVIF_Extended_TypeB_FB.cs" />
-    <Compile Include="MBUS\MBUS_ApplicationLayerMaster.cs" />
-    <Compile Include="MBUS\MBUS_ApplicationLayerPluginHelper.cs">
+    <Compile Include="ItemDefaultSettings.cs" />
+    <Compile Include="MBUSApplicationLayerMessage\MBUSApplicationLayerDIF.cs" />
+    <Compile Include="MBUSApplicationLayerMessage\MBUSApplicationLayerDIFE.cs" />
+    <Compile Include="MBUSApplicationLayerMessage\MBUSApplicationLayerExtendableDataInformation.cs" />
+    <Compile Include="MBUSApplicationLayerMessage\MBUSApplicationLayerMessageAnalyser.cs" />
+    <Compile Include="MBUSApplicationLayerMessage\MBUSApplicationLayerMMVS.cs" />
+    <Compile Include="MBUSApplicationLayerMessage\MBUSApplicationLayerVIF.cs" />
+    <Compile Include="MBUSApplicationLayerMessage\MBUSApplicationLayerVIFBase.cs" />
+    <Compile Include="MBUSApplicationLayerMessage\MBUSApplicationLayerVIFE.cs" />
+    <Compile Include="MBUSApplicationLayerMessage\MBUSApplicationLayerVIF_Extended_TypeA_FD.cs" />
+    <Compile Include="MBUSApplicationLayerMessage\MBUSApplicationLayerVIF_Extended_TypeB_FB.cs" />
+    <Compile Include="MBUSProtocol.cs" />
+    <Compile Include="MBUS_ApplicationLayerMaster.cs" />
+    <Compile Include="MBUS_ApplicationLayerPluginHelper.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="MBUS\MBUS_ApplicationLayerPluginHelper.Designer.cs">
+    <Compile Include="MBUS_ApplicationLayerPluginHelper.Designer.cs">
       <DependentUpon>MBUS_ApplicationLayerPluginHelper.cs</DependentUpon>
     </Compile>
-    <Compile Include="MBUS\MBUS_ApplicationLayerSlave.cs" />
-    <Compile Include="MBUS\MBUS_enums.cs" />
-    <Compile Include="MBUS\MBUS_message.cs" />
-    <Compile Include="MBUS\MBUSProtocol.cs" />
-    <Compile Include="MBUS\MBUS_DataProviderID.cs" />
-    <Compile Include="MBUS\MBUS_ProtocolParameters.cs" />
+    <Compile Include="MBUS_ApplicationLayerSlave.cs" />
+    <Compile Include="MBUS_DataProviderID.cs" />
+    <Compile Include="MBUS_enums.cs" />
+    <Compile Include="MBUS_message.cs" />
+    <Compile Include="MBUS_ProtocolParameters.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -151,18 +151,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Diagrams\DataProviderID.cd" />
     <None Include="packages.config" />
     <None Include="Properties\AssemblyInfo.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>AssemblyInfo.cs</LastGenOutput>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="MBUS\MBUS_ApplicationLayerPluginHelper.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>MBUS_ApplicationLayerPluginHelper.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
@@ -178,6 +171,11 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="MBUS_ApplicationLayerPluginHelper.resx">
+      <DependentUpon>MBUS_ApplicationLayerPluginHelper.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

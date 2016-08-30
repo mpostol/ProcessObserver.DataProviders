@@ -1,38 +1,31 @@
-﻿//<summary>
-//  Title   : AssemblyInfo of DDE implementation 
-//  System  : Microsoft Visual C# .NET
+﻿//_______________________________________________________________
+//  Title   : CommSever DataProvider Collection Package
+//  System  : Microsoft VisualStudio 2015 / C#
 //  $LastChangedDate$
 //  $Rev$
 //  $LastChangedBy$
 //  $URL$
 //  $Id$
-//  History :
 //
-//  Copyright (C)2008, CAS LODZ POLAND.
+//  Copyright (C) 2016, CAS LODZ POLAND.
 //  TEL: +48 (42) 686 25 47
-//  mailto:techsupp@cas.eu
+//  mailto://techsupp@cas.eu
 //  http://www.cas.eu
-//</summary>
+//_______________________________________________________________
 
 using System.Reflection;
 using System.Runtime.InteropServices;
 
-[assembly: AssemblyTitle("DP.DDE.ExcelClient")]
-[assembly: AssemblyDescription("CommSever plug-in providing a data from Excel via DDE")]
+[assembly: AssemblyTitle("CAS.CommServer.DataProvider.Package")]
+[assembly: AssemblyDescription("CommSever DataProvider Collection Package")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("CAS")]
 [assembly: AssemblyProduct("CAS CommServer Family")]
 [assembly: AssemblyCopyright("Copyright (c) 2000-2016 CAS LODZ POLAND")]
 [assembly: AssemblyTrademark("CommServer")]
 [assembly: AssemblyCulture("")]
-
-// Setting ComVisible to false makes the types in this assembly not visible 
-// to COM components.  If you need to access a type in this assembly from 
-// COM, set the ComVisible attribute to true on that type.
 [assembly: ComVisible(false)]
-
-// The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("EC49D65A-1477-43a7-92A9-68A770667F1D")]
+[assembly: Guid("1E1B7015-9007-46F7-9317-02DEA0498444")]
 [assembly: AssemblyVersion("3.80.01.*")]
 [assembly: AssemblyFileVersion("3.80.01")]
 

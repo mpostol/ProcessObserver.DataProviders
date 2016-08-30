@@ -120,13 +120,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ModBusNet\ModBusMessage.cs" />
-    <Compile Include="ModBusNet\ModBusProtocol.cs" />
-    <Compile Include="ModBusNet\ModBus_ApplicationLayerPluginHelper.ProtocolSpecific.cs">
+    <Compile Include="ModBusMessage.cs" />
+    <Compile Include="ModBusProtocol.cs" />
+    <Compile Include="ModBus_ApplicationLayerPluginHelper.ProtocolSpecific.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="ModBusNet\ModBus_DataProviderID.cs" />
-    <Compile Include="ModBusNet\ModBus_ProtocolParameters.cs" />
+    <Compile Include="ModBus_DataProviderID.cs" />
+    <Compile Include="ModBus_ProtocolParameters.cs" />
     <Compile Include="Properties\AssemblyInfoNET.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -155,10 +155,7 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Common\" />
-    <Folder Include="Diagrams\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\DataProvider.MODBUSCore\DataProvider.MODBUSCore.csproj">
       <Project>{eaf8646d-2a1b-4de2-ade4-fe7b370a27a0}</Project>

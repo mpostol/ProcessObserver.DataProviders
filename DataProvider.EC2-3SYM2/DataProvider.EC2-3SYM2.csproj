@@ -125,18 +125,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AssemblyInfo.tt</DependentUpon>
     </Compile>
-    <Compile Include="EC2-3SYM2\EC2-3S_ApplicationLayerMaster.cs" />
-    <Compile Include="EC2-3SYM2\EC2-3S_ApplicationLayerPluginHelper.cs">
+    <Compile Include="EC2-3S_ApplicationLayerMaster.cs" />
+    <Compile Include="EC2-3S_ApplicationLayerPluginHelper.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="EC2-3SYM2\EC2-3S_ApplicationLayerPluginHelper.Designer.cs">
+    <Compile Include="EC2-3S_ApplicationLayerPluginHelper.Designer.cs">
       <DependentUpon>EC2-3S_ApplicationLayerPluginHelper.cs</DependentUpon>
     </Compile>
-    <Compile Include="EC2-3SYM2\EC2-3S_messageComplianceTest.cs" />
-    <Compile Include="EC2-3SYM2\ItemDefaultSettings.cs" />
-    <Compile Include="EC2-3SYM2\NULL_DataProviderID.cs" />
-    <Compile Include="EC2-3SYM2\NULL_enums.cs" />
-    <Compile Include="EC2-3SYM2\Symulator.cs" />
+    <Compile Include="EC2-3S_messageComplianceTest.cs" />
+    <Compile Include="ItemDefaultSettings.cs" />
+    <Compile Include="NULL_DataProviderID.cs" />
+    <Compile Include="NULL_enums.cs" />
+    <Compile Include="Symulator.cs" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">

@@ -1,11 +1,11 @@
 ﻿//_______________________________________________________________
-//  Title   : CommSever DataProvider plug-in providing MODBUS/RS implementation 
+//  Title   : CommSever MODBUS Core Library
 //  System  : Microsoft VisualStudio 2015 / C#
-//  $LastChangedDate$
-//  $Rev$
-//  $LastChangedBy$
-//  $URL$
-//  $Id$
+//  $LastChangedDate:  $
+//  $Rev: $
+//  $LastChangedBy: $
+//  $URL: $
+//  $Id:  $
 //
 //  Copyright (C) 2016, CAS LODZ POLAND.
 //  TEL: +48 (42) 686 25 47
@@ -13,11 +13,12 @@
 //  http://www.cas.eu
 //_______________________________________________________________
 
+
 using System.Reflection;
 using System.Runtime.InteropServices;
 
-[assembly: AssemblyTitle("CAS.CommServer.DataProvider.MODBUSRS")]
-[assembly: AssemblyDescription("CommSever plug-in providing MODBUS/RS implementation")]
+[assembly: AssemblyTitle("CAS.CommServer.DataProvider.MODBUSCore")]
+[assembly: AssemblyDescription("CommSever MODBUS Core Library")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("CAS")]
 [assembly: AssemblyProduct("CAS CommServer Family")]
@@ -25,10 +26,10 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTrademark("CommServer")]
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]
-[assembly: Guid("4C3D8EA4-A3F6-46d5-8066-11620DEAAE60")]
+[assembly: Guid("F04263FD-4438-4BEC-8E54-6CB4D7E3CC75")] 
 [assembly: AssemblyVersion("3.80.01.*")]
 [assembly: AssemblyFileVersion("3.80.01")]
-[assembly: CAS.Lib.CodeProtect.AssemblyKey( "2D0C30B3-ED45-4292-8CB3-ADB0E739E03E" )]
+[assembly: CAS.Lib.CodeProtect.AssemblyKey( "F04263FD-4438-4BEC-8E54-6CB4D7E3CC75" )]
 [assembly: CAS.Lib.CodeProtect.AssemblyHelper
   (
   Product = "Commsever DataProvider plug-in providing MODBUS/RS implementation",

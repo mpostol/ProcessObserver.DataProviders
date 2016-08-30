@@ -21,10 +21,11 @@
 //  http://www.cas.eu
 //</summary>
 
-using System;
-using System.Diagnostics;
 using CAS.Lib.CommonBus.ApplicationLayer.MBUS.PRIVATE.MBUSApplicationLayerMessage;
 using CAS.Lib.CommonBus.CommunicationLayer.Generic;
+using CAS.Lib.RTLib.Processes;
+using System;
+using System.Diagnostics;
 
 namespace CAS.Lib.CommonBus.ApplicationLayer.MBUS.PRIVATE
 {
@@ -95,8 +96,7 @@ namespace CAS.Lib.CommonBus.ApplicationLayer.MBUS.PRIVATE
     private const byte LongFrame_StartUserDataPos = 7;
     private const byte ShortFrame_ControlFieldPos = 1;
     private const byte startbytepos = 0;
-    private static CAS.Lib.RTLib.Processes.Assertion myAssert =
-      new CAS.Lib.RTLib.Processes.Assertion( "myAssert.Assert error in MBUS_message", 200, false );
+    private static Assertion myAssert = new Assertion( "myAssert.Assert error in MBUS_message", 200, false );
     private MBusFrameTypes expectedframetype = MBusFrameTypes.Invalid;
     private DataAnalysisMode expectedDataAnalysisMode = DataAnalysisMode.Full;
     private MBUSApplicationLayerMessageAnalyser MbusApplicationLayerMessageAnalyser = new MBUSApplicationLayerMessageAnalyser();
