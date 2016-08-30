@@ -26,20 +26,18 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyCopyright("Copyright (c) 2000-2016 CAS LODZ POLAND")]
 [assembly: AssemblyTrademark("CommServer")]
 [assembly: AssemblyCulture("")]
-
 [assembly: ComVisible(false)]
-// The following GUID is for the ID of the typelib if this project is exposed to COM
 [assembly: Guid("E5A6BC97-5F87-4A34-90B6-E9F4A943ABA5")]
-[assembly: AssemblyVersion("2.00.01.*")]
-[assembly: AssemblyFileVersion("2.00.01")]
+[assembly: AssemblyVersion("3.80.02.*")]
+[assembly: AssemblyFileVersion("3.80.02")]
 [assembly: CAS.Lib.CodeProtect.AssemblyKey( "3891BDDB-56C2-4afa-8B7F-4A7CE7164B9" )]
 [assembly: CAS.Lib.CodeProtect.AssemblyHelper
   (
-  Product = "Commsever DataProvider plug-in providing SBUS/IP implementation",
-  Company = "CAS",
-  Url = "www.cas.eu",
-  Email = "techsupp@cas.eu",
-  Phone = "+48(42)686 25 47"
+    Product = "CommSever DataProvider plug-in providing SBUS/IP implementation",
+    Company = "CAS",
+    Url = "www.cas.eu",
+    Email = "techsupp@cas.eu",
+    Phone = "+48(42)686 25 47"
   )
 ]
 

@@ -27,12 +27,12 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]
 [assembly: Guid("F04263FD-4438-4BEC-8E54-6CB4D7E3CC75")] 
-[assembly: AssemblyVersion("3.80.01.*")]
-[assembly: AssemblyFileVersion("3.80.01")]
+[assembly: AssemblyVersion("3.80.02.*")]
+[assembly: AssemblyFileVersion("3.80.02")]
 [assembly: CAS.Lib.CodeProtect.AssemblyKey( "F04263FD-4438-4BEC-8E54-6CB4D7E3CC75" )]
 [assembly: CAS.Lib.CodeProtect.AssemblyHelper
   (
-  Product = "Commsever DataProvider plug-in providing MODBUS/RS implementation",
+  Product = "CommSever DataProvider plug-in providing MODBUS/RS implementation",
   Company = "CAS",
   Url = "www.cas.eu",
   Email = "techsupp@cas.eu",

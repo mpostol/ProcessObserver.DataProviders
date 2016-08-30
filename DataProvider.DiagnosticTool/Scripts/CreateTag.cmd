@@ -7,8 +7,8 @@ rem//  $Id: create_branch.cmd 4116 2009-10-27 12:31:11Z mzbrzezny $
 
 
 set branchtype=tags
-set TagFolder=rel_2_00_01
-set TagPath=svn://svnserver.hq.cas.com.pl/VS/%branchtype%/DataProvidersAndDiagnostic/rel_2_00_01
+set TagFolder=rel_3_80_02
+set TagPath=svn://svnserver.hq.cas.com.pl/VS/%branchtype%/DataProvidersAndDiagnostic/rel_3_80_02
 
 svn mkdir %TagPath%  -m "created new %TagPath% (in %branchtype% folder)"
 svn copy svn://svnserver.hq.cas.com.pl/VS/trunk/CommonBinaries %TagPath%/CommonBinaries -m "created copy in %TagPath% of the project CommonBinaries"

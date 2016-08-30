@@ -8,7 +8,7 @@ rem//  $URL: svn://svnserver.hq.cas.com.pl/VS/trunk/PR31-DataProviders/Scripts/c
 rem//  $Id: create_branch.cmd 4116 2009-10-27 12:31:11Z mzbrzezny $
 
 <#
-  string _rel =  DPDiagnosticAssemblyFileVersion.Replace(".", "_");
+  string _rel =  CASCommServerDataProviderPackageVersion.Replace(".", "_");
 #>
 
 set branchtype=tags

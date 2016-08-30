@@ -127,17 +127,17 @@
     </Compile>
     <Compile Include="ModBus_DataProviderID.cs" />
     <Compile Include="ModBus_ProtocolParameters.cs" />
-    <Compile Include="Properties\AssemblyInfoNET.cs">
+    <Compile Include="Properties\AssemblyInfo.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AssemblyInfoNET.tt</DependentUpon>
+      <DependentUpon>AssemblyInfo.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="Properties\AssemblyInfoNET.tt">
+    <None Include="Properties\AssemblyInfo.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>AssemblyInfoNET.cs</LastGenOutput>
+      <LastGenOutput>AssemblyInfo.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>

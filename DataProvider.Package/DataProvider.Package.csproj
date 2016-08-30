@@ -8,8 +8,8 @@
     <ProjectGuid>{14C190A8-D436-427A-8E74-10BD8E7C71E7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PR31_DataProvidersPackage</RootNamespace>
-    <AssemblyName>PR31-DataProvidersPackage</AssemblyName>
+    <RootNamespace>CAS.CommServer.DataProvider.Package</RootNamespace>
+    <AssemblyName>CAS.CommServer.DataProvider.Package</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <FileUpgradeFlags>
@@ -113,6 +113,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="build.cmd" />
+    <None Include="DataProvider.Package.nuspec">
+      <DependentUpon>DataProvider.Package.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </None>
     <None Include="clean.cmd" />
     <None Include="create_branch.cmd" />
     <None Include="create_tag.cmd">
@@ -135,6 +140,13 @@
   <ItemGroup>
     <None Include="ReadMe.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DataProvider.Package.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DataProvider.Package.nuspec</LastGenOutput>
+      <SubType>Designer</SubType>
     </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,0 +1,63 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ output extension=".nuspec" #>
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id><#=m_AssemblyTitle#></id>
+    <version><#= CASCommServerDataProviderPackageVersion #><#= CASCommServerDataProviderPackagePrerelase #>
+    </version>
+    <title>CommSever DataProvider Collection Package</title>
+    <authors><#=AssemblyCompany#></authors>
+    <owners><#=Owner#></owners>
+    <projectUrl>svn://svnserver.hq.cas.com.pl/VS/trunk/CommServer.DataProvider</projectUrl>
+    <licenseUrl>http://www.commsvr.com/DownloadCenter/ProductSoftware/LicenseAgreement.aspx</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <developmentDependency>true</developmentDependency>
+    <description>
+      CommSever DataProvider Collection Package contains all available data providers for development purpose
+    </description>
+    <summary>
+      CommSever DataProvider Collection Package for development purpose
+    </summary>
+    <releaseNotes>
+      Released for Maintenace 2016
+    </releaseNotes>
+    <copyright><#=AssemblyCopyright#></copyright>
+    <tags>CommServer, DataBinding</tags>
+  </metadata>
+  <files>
+	    <file src="bin\Debug\CAS.CommServer.DataProvider.MODBUSCore.dll" target="lib\net451\CAS.CommServer.DataProvider.MODBUSCore.dll" />
+	    <file src="bin\Debug\CAS.CommServer.DataProvider.MODBUSCore.pdb" target="lib\net451\CAS.CommServer.DataProvider.MODBUSCore.pdb" />
+	    <file src="bin\Debug\CAS.CommServer.DataProvider.MODBUSCore.xml" target="lib\net451\CAS.CommServer.DataProvider.MODBUSCore.xml" />
+	    <file src="bin\Debug\CAS.CommSvrPlugin_DemoSimulator.dll" target="lib\net451\CAS.CommSvrPlugin_DemoSimulator.dll" />
+	    <file src="bin\Debug\CAS.CommSvrPlugin_DemoSimulator.pdb" target="lib\net451\CAS.CommSvrPlugin_DemoSimulator.pdb" />
+	    <file src="bin\Debug\CAS.CommSvrPlugin_DemoSimulator.xml" target="lib\net451\CAS.CommSvrPlugin_DemoSimulator.xml" />
+	    <file src="bin\Debug\CAS.CommSvrPlugin_EC2-3SYM2.dll" target="lib\net451\CAS.CommSvrPlugin_EC2-3SYM2.dll" />
+	    <file src="bin\Debug\CAS.CommSvrPlugin_EC2-3SYM2.pdb" target="lib\net451\CAS.CommSvrPlugin_EC2-3SYM2.pdb" />
+	    <file src="bin\Debug\CAS.CommSvrPlugin_EC2-3SYM2.xml" target="lib\net451\CAS.CommSvrPlugin_EC2-3SYM2.xml" />
+	    <file src="bin\Debug\CAS.CommSvrPlugin_ExcelDDE.dll" target="lib\net451\CAS.CommSvrPlugin_ExcelDDE.dll" />
+	    <file src="bin\Debug\CAS.CommSvrPlugin_ExcelDDE.pdb" target="lib\net451\CAS.CommSvrPlugin_ExcelDDE.pdb" />
+	    <file src="bin\Debug\CAS.CommSvrPlugin_ExcelDDE.xml" target="lib\net451\CAS.CommSvrPlugin_ExcelDDE.xml" />
+	    <file src="bin\Debug\CAS.CommSvrPlugin_MBUS.dll" target="lib\net451\CAS.CommSvrPlugin_MBUS.dll" />
+	    <file src="bin\Debug\CAS.CommSvrPlugin_MBUS.pdb" target="lib\net451\CAS.CommSvrPlugin_MBUS.pdb" />
+	    <file src="bin\Debug\CAS.CommSvrPlugin_MBUS.xml" target="lib\net451\CAS.CommSvrPlugin_MBUS.xml" />
+	    <file src="bin\Debug\CAS.CommSvrPlugin_MODBUSNet.dll" target="lib\net451\CAS.CommSvrPlugin_MODBUSNet.dll" />
+	    <file src="bin\Debug\CAS.CommSvrPlugin_MODBUSNet.pdb" target="lib\net451\CAS.CommSvrPlugin_MODBUSNet.pdb" />
+	    <file src="bin\Debug\CAS.CommSvrPlugin_MODBUSNet.xml" target="lib\net451\CAS.CommSvrPlugin_MODBUSNet.xml" />
+	    <file src="bin\Debug\CAS.CommSvrPlugin_NULLbus.dll" target="lib\net451\CAS.CommSvrPlugin_NULLbus.dll" />
+	    <file src="bin\Debug\CAS.CommSvrPlugin_NULLbus.pdb" target="lib\net451\CAS.CommSvrPlugin_NULLbus.pdb" />
+	    <file src="bin\Debug\CAS.CommSvrPlugin_NULLbus.xml" target="lib\net451\CAS.CommSvrPlugin_NULLbus.xml" />
+	    <file src="bin\Debug\CAS.CommSvrPlugin_SBUSNET.dll" target="lib\net451\CAS.CommSvrPlugin_SBUSNET.dll" />
+	    <file src="bin\Debug\CAS.CommSvrPlugin_SBUSNET.pdb" target="lib\net451\CAS.CommSvrPlugin_SBUSNET.pdb" />
+	    <file src="bin\Debug\CAS.CommSvrPlugin_SBUSNET.xml" target="lib\net451\CAS.CommSvrPlugin_SBUSNET.xml" />
+	    <file src="bin\Debug\CAS.CommSvrPlugin_SBUSRS.dll" target="lib\net451\CAS.CommSvrPlugin_SBUSRS.dll" />
+	    <file src="bin\Debug\CAS.CommSvrPlugin_SBUSRS.pdb" target="lib\net451\CAS.CommSvrPlugin_SBUSRS.pdb" />
+	    <file src="bin\Debug\CAS.CommSvrPlugin_SBUSRS.xml" target="lib\net451\CAS.CommSvrPlugin_SBUSRS.xml" />
+  </files>
+</package>
+
+<#@ include file = "..\PR39-CommonResources\T4Definitions\CAS.OPC.t4" #>
+
+<#+
+string m_AssemblyTitle = "CAS.CommServer.DataProvider.Package";
+#>

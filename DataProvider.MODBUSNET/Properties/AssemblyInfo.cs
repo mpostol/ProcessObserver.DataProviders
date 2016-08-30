@@ -1,6 +1,4 @@
-﻿<#@ template debug="false" hostspecific="false" language="C#" #>
-<#@ output extension=".cs" #>
-//_______________________________________________________________
+﻿//_______________________________________________________________
 //  Title   : CommSever DataProvider plug-in providing MODBUS/IP implementation 
 //  System  : Microsoft VisualStudio 2015 / C#
 //  $LastChangedDate$
@@ -21,15 +19,15 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("CAS.CommServer.DataProvider.MODBUSNET")]
 [assembly: AssemblyDescription("CommSever plug-in providing MODBUS/IP implementation")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("<#=AssemblyCompany#>")]
-[assembly: AssemblyProduct("<#=AssemblyProduct#>")]
-[assembly: AssemblyCopyright("<#=AssemblyCopyright#>")]
-[assembly: AssemblyTrademark("<#=AssemblyTrademark#>")]
+[assembly: AssemblyCompany("CAS")]
+[assembly: AssemblyProduct("CAS CommServer Family")]
+[assembly: AssemblyCopyright("Copyright (c) 2000-2016 CAS LODZ POLAND")]
+[assembly: AssemblyTrademark("CommServer")]
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]
 [assembly: Guid("82B8811C-9D78-40f2-8EF5-6B1DFA22D735")]
-[assembly: AssemblyVersion("<#=DPPAssemblyVersion#>")]
-[assembly: AssemblyFileVersion("<#=DPPAssemblyFileVersion#>")]
+[assembly: AssemblyVersion("3.80.02.*")]
+[assembly: AssemblyFileVersion("3.80.02")]
 [assembly: CAS.Lib.CodeProtect.AssemblyKey( "9655312A-E5B4-40ff-AF59-B4EF91EDB2A8" )]
 [assembly: CAS.Lib.CodeProtect.AssemblyHelper
   (
@@ -41,4 +39,3 @@ using System.Runtime.InteropServices;
   )
 ]
 
-<#@ include file = "..\..\..\PR39-CommonResources\T4Definitions\CAS.OPC.t4" #>
