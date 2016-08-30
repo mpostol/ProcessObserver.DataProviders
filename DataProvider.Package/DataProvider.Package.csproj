@@ -117,6 +117,7 @@
       <DependentUpon>DataProvider.Package.tt</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <SubType>Designer</SubType>
     </None>
     <None Include="clean.cmd" />
     <None Include="create_branch.cmd" />
