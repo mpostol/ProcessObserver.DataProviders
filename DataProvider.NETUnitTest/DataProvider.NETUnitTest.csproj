@@ -70,7 +70,7 @@
     <Compile Include="SBUS_ApplicationLayerPluginHelperTest.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DataProvider.MODBUS\DataProvider.MODBUSNET.csproj">
+    <ProjectReference Include="..\DataProvider.MODBUSNET\DataProvider.MODBUSNET.csproj">
       <Project>{A7F0C2D6-335C-4ABD-842D-D24C447DD2E0}</Project>
       <Name>DataProvider.MODBUSNET</Name>
     </ProjectReference>

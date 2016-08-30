@@ -243,7 +243,7 @@
       <Project>{5fc5796f-eb7e-4d85-a6e8-f7d579d1f452}</Project>
       <Name>DataProvider.MODBUSRS</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DataProvider.MODBUS\DataProvider.MODBUSNET.csproj">
+    <ProjectReference Include="..\DataProvider.MODBUSNET\DataProvider.MODBUSNET.csproj">
       <Project>{a7f0c2d6-335c-4abd-842d-d24c447dd2e0}</Project>
       <Name>DataProvider.MODBUSNET</Name>
     </ProjectReference>
