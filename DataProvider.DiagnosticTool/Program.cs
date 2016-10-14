@@ -34,19 +34,19 @@
 //  http://www.cas.eu
 //</summary>
 
-using System;
-using System.ComponentModel;
-using System.Diagnostics;
-using System.Reflection;
-using System.Windows.Forms;
+using CAS.CommServer.CommonBus;
 using CAS.DPDiagnostics.Properties;
-using CAS.Lib.CodeProtect.Controls;
 using CAS.Lib.CodeProtect.LicenseDsc;
 using CAS.Lib.CommonBus;
 using CAS.Lib.CommonBus.Components;
 using CAS.Lib.ControlLibrary;
 using CAS.Lib.RTLib.Management;
-using CAS.CommServer.CommonBus;
+using CAS.Windows.Forms.CodeProtectControls;
+using System;
+using System.ComponentModel;
+using System.Diagnostics;
+using System.Reflection;
+using System.Windows.Forms;
 
 namespace CAS.DPDiagnostics
 {
@@ -491,7 +491,7 @@ namespace CAS.DPDiagnostics
       Assembly _EntryAssembly = Assembly.GetEntryAssembly();
       using ( LicenseForm cAboutForm = new CAS.Lib.ControlLibrary.LicenseForm( null, usr, _EntryAssembly ) )
       {
-        using ( Licences cLicDial = new Licences() )
+        using (Licenses cLicDial = new Licenses() )
         {
           cAboutForm.SetAdditionalControl = cLicDial;
           cAboutForm.ShowDialog();
@@ -500,7 +500,7 @@ namespace CAS.DPDiagnostics
     }
     private void enterTheUnlockCodeToolStripMenuItem_Click( object sender, EventArgs e )
     {
-      using ( UlockKeyDialog dialog = new UlockKeyDialog() )
+      using (UnlockKeyDialog dialog = new UnlockKeyDialog() )
       {
         dialog.ShowDialog();
       }

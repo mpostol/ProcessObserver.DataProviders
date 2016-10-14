@@ -7,7 +7,7 @@ rem//  $URL$
 rem//  $Id$
 
 <#
-  string _rel =  DPPAssemblyFileVersion.Replace(".", "_");
+  string _rel =  CASCommServerDataProviderPackageVersion.Replace(".", "_");
 #>
 ./create_branch rel_<#=_rel#> tags
 pause Tag created ....

@@ -1,26 +1,22 @@
-//<summary>
+//_______________________________________________________________
 //  Title   : DP Diagnostics starting point
-//  System  : Microsoft Visual C# .NET 2005
+//  System  : Microsoft VisualStudio 2015 / C#
 //  $LastChangedDate$
 //  $Rev$
 //  $LastChangedBy$
 //  $URL$
 //  $Id$
-//  History :
-//   20090119: mschabowski: try catch - in licence installlation is added
-//    mzbrzezny - 2007:
-//    created
 //
-//  Copyright (C)2006, CAS LODZ POLAND.
+//  Copyright (C) 2016, CAS LODZ POLAND.
 //  TEL: +48 (42) 686 25 47
-//  mailto:techsupp@cas.com.pl
+//  mailto://techsupp@cas.eu
 //  http://www.cas.eu
-//</summary>
+//_______________________________________________________________
 
+using CAS.Lib.CodeProtect;
 using System;
 using System.Deployment.Application;
 using System.Windows.Forms;
-using CAS.Lib.CodeProtect;
 
 namespace CAS.DPDiagnostics
 {
@@ -29,11 +25,11 @@ namespace CAS.DPDiagnostics
     [STAThread]
     static void Main()
     {
-      string m_cmmdLine = Environment.CommandLine;
-      if ( ( ApplicationDeployment.IsNetworkDeployed && ApplicationDeployment.CurrentDeployment.IsFirstRun ) || m_cmmdLine.ToLower().Contains( "installic" ) )
+      string _commandLine = Environment.CommandLine;
+      if ( ( ApplicationDeployment.IsNetworkDeployed && ApplicationDeployment.CurrentDeployment.IsFirstRun ) || _commandLine.ToLower().Contains( "installic" ) )
         try
         {
-          LibInstaller.InstalLicense( true );
+          LibInstaller.InstallLicense( true );
         }
         catch ( Exception ex )
         {
