@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Text;
-using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CAS.Lib.CommonBus.ApplicationLayer.SBUS.PRIVATE;
 
@@ -64,6 +62,9 @@ namespace CAS.UnitTests.CommonBus.ApplicationLayer.SBUS.NET
     [ExpectedException( typeof( ApplicationException ), "Expected ApplicationException" )]
     public void ResponseWriteValue()
     {
+#if !DEBUG
+      Assert.Inconclusive("This test requires DEBUG context");
+#endif
       using ( SBUSNet_message _frame = new SBUSNet_message( null ) )
       {
         Assert.IsNotNull( _frame, "Message is not created." );

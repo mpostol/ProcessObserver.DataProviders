@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using CAS.Lib.CommonBus.ApplicationLayer;
+﻿
 using CAS.Lib.CommonBus.ApplicationLayer.SBUS.PRIVATE;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace CAS.UnitTests.CommonBus.ApplicationLayer.SBUS.NET
 {
@@ -134,6 +134,9 @@ namespace CAS.UnitTests.CommonBus.ApplicationLayer.SBUS.NET
     [TestCategoryAttribute( "NET SBUS message" )]
     public void ResponseReadValue()
     {
+#if !DEBUG
+      Assert.Inconclusive("This test requires DEBUG context");
+#endif
       foreach ( Medium_T _enumIdx in Enum.GetValues( typeof( Medium_T ) ) )
       {
         using ( SBUSNet_message _frame = new SBUSNet_message( null ) )

@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>CAS.CommServer.DataProvider.Package</id>
-    <version>3.80.02-Bravo</version>
+    <version>3.80.03</version>
     <title>CommSever DataProvider Collection Package</title>
     <authors>CAS</authors>
     <owners>commsvr.com</owners>

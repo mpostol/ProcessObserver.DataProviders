@@ -1,6 +1,4 @@
-﻿using System;
-using CAS.Lib.CommonBus.ApplicationLayer.SBUS;
-using CAS.Lib.CommonBus.ApplicationLayer.SBUS.PRIVATE;
+﻿using CAS.Lib.CommonBus.ApplicationLayer.SBUS.PRIVATE;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CAS.UnitTests.CommonBus.ApplicationLayer.SBUS
@@ -47,6 +45,9 @@ namespace CAS.UnitTests.CommonBus.ApplicationLayer.SBUS
     [TestCategoryAttribute("SBUS message")]
     public void CreationRS()
     {
+#if !DEBUG
+      Assert.Inconclusive("This test requires DEBUG context");
+#endif
       SBUSRS_message _msg = new SBUSRS_message( null );
       Assert.IsNotNull( _msg, "Message is not created." );
       BlockAddress _tb = new BlockAddress();

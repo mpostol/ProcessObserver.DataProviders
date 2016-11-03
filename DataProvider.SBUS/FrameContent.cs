@@ -26,10 +26,10 @@
 //  http://www.cas.eu
 //</summary>
 
+using CAS.Lib.CommonBus.CommunicationLayer.Generic;
 using System;
 using System.Diagnostics;
 using System.Text;
-using CAS.Lib.CommonBus.CommunicationLayer.Generic;
 
 namespace CAS.Lib.CommonBus.ApplicationLayer.SBUS.PRIVATE
 {
@@ -687,17 +687,17 @@ namespace CAS.Lib.CommonBus.ApplicationLayer.SBUS.PRIVATE
     }
     #endregion
 
-#if DEBUG
     //Unit tests accessor.
-    public void Test_PrepareRequest( int station, IBlockDescription block )
+    [Conditional("DEBUG")]
+    internal void Test_PrepareRequest( int station, IBlockDescription block )
     {
       PrepareRequest( station, block );
     }
-    public void Test_PrepareReqWriteValue( IBlockDescription block, int station )
+    [Conditional("DEBUG")]
+    internal void Test_PrepareReqWriteValue( IBlockDescription block, int station )
     {
       PrepareReqWriteValue( block, station );
     }
-#endif
 
   }
 
