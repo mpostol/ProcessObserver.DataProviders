@@ -112,24 +112,11 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
-    <None Include="build.cmd" />
     <None Include="DataProvider.Package.nuspec">
       <DependentUpon>DataProvider.Package.tt</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <SubType>Designer</SubType>
-    </None>
-    <None Include="clean.cmd" />
-    <None Include="create_branch.cmd" />
-    <None Include="create_tag.cmd">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>create_tag.tt</DependentUpon>
-    </None>
-    <None Include="create_tag.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>create_tag.cmd</LastGenOutput>
     </None>
     <None Include="Properties\AssemblyInfo.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
