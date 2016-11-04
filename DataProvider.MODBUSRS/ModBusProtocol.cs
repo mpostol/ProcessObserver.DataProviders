@@ -7,7 +7,7 @@
 //  $URL$
 //  $Id$
 //  History :
-//    20080904: mzbrzezny: adaptation for new umessage that supports returning of information about status of write operation
+//    20080904: mzbrzezny: adaptation for new message that supports returning of information about status of write operation
 //    20080828: mzbrzezny: some parts are extracted to common (modbus rtu and net) file 
 //    2008-08-26: mzbrzezny: synchronization Modbus RTU i Modbus NET
 //    2008-06-19: mzbrzezny: Modbus uses now ulong to store number of ticks instead of uint, thats why there is change to flush
@@ -19,10 +19,11 @@
 //  http://www.cas.eu
 //</summary>
 
+using CAS.Lib.CommonBus.ApplicationLayer.Modbus;
 using CAS.Lib.CommonBus.ApplicationLayer.ModBus.PRIVATE;
 using CAS.Lib.CommonBus.CommunicationLayer;
-using CAS.Lib.CommonBus.ApplicationLayer.Modbus;
 using CAS.Lib.CommonBus.CommunicationLayer.Generic;
+using System.Diagnostics;
 
 namespace CAS.Lib.CommonBus.ApplicationLayer.ModBus
 {
@@ -31,7 +32,7 @@ namespace CAS.Lib.CommonBus.ApplicationLayer.ModBus
   /// </summary>
   public partial class ModBusProtocol : CommServer.DataProvider.MODBUSCore.ModbusProtocol<ModBusMessage>
   {
-    public ModBusProtocol(ICommunicationLayer pCommLayer, ProtocolParameters pProtParameters, CAS.Lib.RTLib.Management.IProtocolParent pStatistic, SesDBufferPool<ModBusMessage> pPool) :
+    public ModBusProtocol(ICommunicationLayer pCommLayer, ProtocolParameters pProtParameters, RTLib.Management.IProtocolParent pStatistic, SesDBufferPool<ModBusMessage> pPool) :
      base(pCommLayer, pProtParameters, pStatistic, pPool)
     { }
 
@@ -39,19 +40,19 @@ namespace CAS.Lib.CommonBus.ApplicationLayer.ModBus
     /// <summary>
     /// This function gets message from the remote unit.
     /// </summary>
-    /// <param name="Rxmsg">Received message</param>
-    /// <param name="Txmsg">Transmited message, information about this frmae could be necessary to properly init received frame.
+    /// <param name="receiveMessage">Received message</param>
+    /// <param name="transmitMessage">Transited message, information about this frame could be necessary to properly initialize received frame.
     /// </param>
     /// <returns>
     ///   ALRes_Success: Operation accomplished successfully 
-    ///   ALRes_DatTransferErrr: Data transfer is imposible because of a communication error – loss of 
+    ///   ALRes_DatTransferErrr: Data transfer is imposable because of a communication error – loss of 
     ///      communication with a station
     ///   ALRes_DisInd: Disconnect indication – connection has been shut down remotely or lost because of 
     ///      communication error. Data is unavailable
     /// </returns>
-    protected override AL_ReadData_Result GetMessage(out ModBusMessage Rxmsg, ModBusMessage Txmsg)
+    protected override AL_ReadData_Result GetMessage(out ModBusMessage receiveMessage, ModBusMessage transmitMessage)
     {
-      Rxmsg = null;
+      receiveMessage = null;
       try
       {
         InterCharStopwatch.Reset();
@@ -62,9 +63,9 @@ namespace CAS.Lib.CommonBus.ApplicationLayer.ModBus
           return AL_ReadData_Result.ALRes_DatTransferErrr;
         }
         GetIProtocolParent.TimeMaxResponseDelayAdd(InterCharStopwatch.ElapsedMilliseconds);
-        Rxmsg = m_Pool.GetEmptyISesDBuffer();
-        Rxmsg.userDataLength = Rxmsg.userBuffLength;
-        Rxmsg.offset = 0;
+        receiveMessage = m_Pool.GetEmptyISesDBuffer();
+        receiveMessage.userDataLength = receiveMessage.userBuffLength;
+        receiveMessage.offset = 0;
         bool first = true;
         do
         {
@@ -74,9 +75,9 @@ namespace CAS.Lib.CommonBus.ApplicationLayer.ModBus
           switch (GetICommunicationLayer.GetChar(out lastChar))
           {
             case TGetCharRes.Success:
-              if (!Rxmsg.WriteByte(lastChar))
+              if (!receiveMessage.WriteByte(lastChar))
               {
-                TraceEvent.Tracer.TraceWarning(77, "ModBusProtocol.GetMessage", "cannot write character received from  GetICommunicationLayer.GetChar( out lastChar )");
+                AssemblyTraceEvent.Tracer.TraceEvent(TraceEventType.Warning, 77, "ModBusProtocol.GetMessage: cannot write character received from the Communication Layer");
                 return AL_ReadData_Result.ALRes_DatTransferErrr;
               }
               if (first)
@@ -89,24 +90,27 @@ namespace CAS.Lib.CommonBus.ApplicationLayer.ModBus
           }
         }
         while (CheckCharTimeout(((ModBus_ProtocolParameters)GetProtocolParameters).Timeout15Span, InterCharStopwatch));
-        Rxmsg.userDataLength = Rxmsg.offset;
-        Rxmsg.offset = 0;
+        receiveMessage.userDataLength = receiveMessage.offset;
+        receiveMessage.offset = 0;
         if (CheckCharTimeout(((ModBus_ProtocolParameters)GetProtocolParameters).Timeout35Span, InterCharStopwatch))
         {
           Flush(((ModBus_ProtocolParameters)GetProtocolParameters).Timeout35Span);
-          Rxmsg.ReturnEmptyEnvelope();
-          Rxmsg = null;
+          receiveMessage.ReturnEmptyEnvelope();
+          receiveMessage = null;
           GetIProtocolParent.IncStRxFragmentedCounter();
           return AL_ReadData_Result.ALRes_DatTransferErrr;
         }
         return AL_ReadData_Result.ALRes_Success;
       }
-      catch (DisconnectException) { return AL_ReadData_Result.ALRes_DisInd; }
+      catch (DisconnectException)
+      {
+        return AL_ReadData_Result.ALRes_DisInd;
+      }
     }
     /// <summary>
     /// Transmit message to the remote unit.
     /// </summary>
-    /// <param name="Txmsg">Message to be transmitted</param>
+    /// <param name="message">Message to be transmitted</param>
     /// <returns>
     ///   ALRes_Success: 
     ///      Operation accomplished successfully 
@@ -114,7 +118,7 @@ namespace CAS.Lib.CommonBus.ApplicationLayer.ModBus
     ///      Disconnect indication – connection has been shut down remotely or lost because of 
     ///      communication error. Data is unavailable
     /// </returns>
-    protected override AL_ReadData_Result TransmitMessage(ModBusMessage Txmsg)
+    protected override AL_ReadData_Result TransmitMessage(ModBusMessage message)
     {
       try
       {
@@ -123,11 +127,11 @@ namespace CAS.Lib.CommonBus.ApplicationLayer.ModBus
       }
       catch (DisconnectException ex)
       {
-        TraceEvent.Tracer.TraceInformation(120, "ModBusProtocol.TransmitMessage.Flush", ex.Message);
+        AssemblyTraceEvent.Tracer.TraceEvent(TraceEventType.Information, 130, $"ModBusProtocol.TransmitMessage.Flush: exception has been caught {ex.Message}");
         return AL_ReadData_Result.ALRes_DisInd;
       }
       GetIProtocolParent.IncStTxFrameCounter();
-      switch (GetICommunicationLayer.FrameEndSignal(Txmsg))
+      switch (GetICommunicationLayer.FrameEndSignal(message))
       {
         case TFrameEndSignalRes.Success:
           break;

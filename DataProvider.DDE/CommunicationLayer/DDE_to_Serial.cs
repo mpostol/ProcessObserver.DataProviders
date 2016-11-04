@@ -179,8 +179,7 @@ namespace CAS.Lib.CommonBus.CommunicationLayer.DDE
       }
       catch ( Exception ex )
       {
-        TraceEvent.Tracer.TraceInformation( 127, "DDE Application Layer Master",
-          "Cannot Connect to" + remoteAddress.address.ToString() + "reason:" + ex.Message );
+        AssemblyTraceEvent.Tracer.TraceEvent(System.Diagnostics.TraceEventType.Information, 127, $"DDE Application Layer Master: Cannot Connect to {remoteAddress.address}, reason: {ex.Message}" );
         return TConnectReqRes.NoConnection;
       }
     }

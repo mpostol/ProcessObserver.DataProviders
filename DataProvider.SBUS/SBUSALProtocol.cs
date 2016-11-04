@@ -27,18 +27,19 @@
 //  http://www.cas.eu
 //</summary>
 
-using System;
 using CAS.Lib.CommonBus.ApplicationLayer.SBUS.PRIVATE;
 using CAS.Lib.CommonBus.CommunicationLayer;
 using CAS.Lib.CommonBus.CommunicationLayer.Generic;
 using CAS.Lib.RTLib.Management;
+using System;
+using System.Diagnostics;
 
 namespace CAS.Lib.CommonBus.ApplicationLayer.SBUS
 {
   ///<summary>
   /// SBus implementation of the Application Layer Protocol.
   ///</summary>
-  internal class SBUSProtocol: ALProtocol<FrameStateMachine>
+  internal class SBUSProtocol : ALProtocol<FrameStateMachine>
   {
     #region private
     private SesDBufferPool<FrameStateMachine> m_Pool;
@@ -66,34 +67,33 @@ namespace CAS.Lib.CommonBus.ApplicationLayer.SBUS
     ///   ALRes_DisInd: Disconnect indication – connection has been shut down remotely or lost because of 
     ///      communication error. Data is unavailable
     /// </returns>
-    private AL_ReadData_Result GetMessage
-      ( out FrameStateMachine cRxmsg, FrameStateMachine cTxmsg, bool cInfinitewait, int cStation_addrress, ref bool cReset )
+    private AL_ReadData_Result GetMessage(out FrameStateMachine cRxmsg, FrameStateMachine cTxmsg, bool cInfinitewait, int cStation_addrress, ref bool cReset)
     {
       IntercharStopwatch.StartReset();
       TimeSpan currTimeOut;
-      if ( !cInfinitewait )
+      if (!cInfinitewait)
         currTimeOut = this.GetProtocolParameters.ResponseTimeOutSpan;
       else
         currTimeOut = TimeSpan.MaxValue;
       RecStateEnum currRecState = RecStateEnum.RSE_BeforeHeading;
       cRxmsg = m_Pool.GetEmptyISesDBuffer();
-      cRxmsg.InitMsg( cTxmsg );
+      cRxmsg.InitMsg(cTxmsg);
       bool continueDo = true;
       bool flushWait = false;
       do
       {
         RecEventEnum lastRecEvent = RecEventEnum.REE_TimeOut;
         byte lastChar;
-        switch ( GetICommunicationLayer.GetChar( out lastChar, Convert.ToInt32( currTimeOut.TotalMilliseconds ) ) )
+        switch (GetICommunicationLayer.GetChar(out lastChar, Convert.ToInt32(currTimeOut.TotalMilliseconds)))
         {
           case TGetCharRes.Success:
-            switch ( cRxmsg.DepositeChar( lastChar ) )
+            switch (cRxmsg.DepositeChar(lastChar))
             {
               case FrameStateMachine.DepCharacterTypeEnum.DCT_Last:
                 lastRecEvent = RecEventEnum.REE_NewCharLastOne;
                 break;
               case FrameStateMachine.DepCharacterTypeEnum.DCT_Reset_Answer:
-                GetIProtocolParent.IncStRxSynchError(); //dostalismy ramke nie taka jak trzeba wiec ustawiamy blad jako blad synchronizacji
+                GetIProtocolParent.IncStRxSynchError(); //wrong frame type so synchronization error must be monitored
                 cReset = true;
                 lastRecEvent = RecEventEnum.REE_NewChar;
                 break;
@@ -111,31 +111,33 @@ namespace CAS.Lib.CommonBus.ApplicationLayer.SBUS
           case TGetCharRes.DisInd:
             cRxmsg.ReturnEmptyEnvelope();
             cRxmsg = null;
-            TraceEvent.Tracer.TraceVerbose( 155, "SBUSProtocol.GetMessage()", "DisInd has occured during receiving frame, I am exitting the receiving loop and returning AL_ReadData_Result.ALRes_DisInd" );
+            AssemblyTraceEvent.Tracer.TraceEvent(TraceEventType.Verbose, 115, $"SBUSProtocol.GetMessage(): {nameof(TGetCharRes.DisInd)} has occured during receiving frame, I am exitting the receiving loop and returning AL_ReadData_Result.ALRes_DisInd");
             return AL_ReadData_Result.ALRes_DisInd;
         }
-        switch ( currRecState )
+        switch (currRecState)
         {
           case RecStateEnum.RSE_BeforeHeading:
             {
               #region RecStateEnum.RSE_BeforeHeading
-              switch ( lastRecEvent )
+              switch (lastRecEvent)
               {
                 case RecEventEnum.REE_NewChar:
                   break;
                 case RecEventEnum.REE_NewCharSOH:
                   {
                     currRecState = RecStateEnum.RSE_InsideFrame;
-                    GetIProtocolParent.TimeMaxResponseDelayAdd( (long)( CAS.Lib.RTLib.Processes.Stopwatch.ConvertTo_ms( IntercharStopwatch.Reset ) ) );
-                    currTimeOut = ( (SBUS_ProtocolParameters)GetProtocolParameters ).TimeoutSpanAfterFrame;
+                    GetIProtocolParent.TimeMaxResponseDelayAdd((long)(CAS.Lib.RTLib.Processes.Stopwatch.ConvertTo_ms(IntercharStopwatch.Reset)));
+                    currTimeOut = ((SBUS_ProtocolParameters)GetProtocolParameters).TimeoutSpanAfterFrame;
                     break;
                   }
                 case RecEventEnum.REE_TimeOut:
                   GetIProtocolParent.IncStRxNoResponseCounter();
                   cRxmsg.ReturnEmptyEnvelope();
                   cRxmsg = null;
-                  TraceEvent.Tracer.TraceVerbose( 178, "SBUSProtocol.GetMessage():RecStateEnum.RSE_BeforeHeading",
-                    "RecEventEnum.REE_TimeOut has occured during receiving frame, I am exitting the receiving loop and returning AL_ReadData_Result.ALRes_DatTransferErrr" );
+                  AssemblyTraceEvent.Tracer.TraceEvent
+                    (
+                      TraceEventType.Verbose, 137, "SBUSProtocol.GetMessage():RecStateEnum.RSE_BeforeHeading: RecEventEnum.REE_TimeOut has occurred during receiving frame, I am exiting the receiving loop with AL_ReadData_Result.ALRes_DatTransferErrr"
+                    );
                   return AL_ReadData_Result.ALRes_DatTransferErrr;
               };
               break;
@@ -144,25 +146,25 @@ namespace CAS.Lib.CommonBus.ApplicationLayer.SBUS
           case RecStateEnum.RSE_InsideFrame:
             {
               #region RecStateEnum.RSE_InsideFrame
-              switch ( lastRecEvent )
+              switch (lastRecEvent)
               {
                 case RecEventEnum.REE_NewChar:
-                  GetIProtocolParent.TimeCharGapAdd( (long)( CAS.Lib.RTLib.Processes.Stopwatch.ConvertTo_us( IntercharStopwatch.Reset ) ) );
+                  GetIProtocolParent.TimeCharGapAdd((long)(CAS.Lib.RTLib.Processes.Stopwatch.ConvertTo_us(IntercharStopwatch.Reset)));
                   break;
                 case RecEventEnum.REE_NewCharLastOne:
-                  GetIProtocolParent.TimeCharGapAdd( (long)( CAS.Lib.RTLib.Processes.Stopwatch.ConvertTo_us( IntercharStopwatch.Reset ) ) );
+                  GetIProtocolParent.TimeCharGapAdd((long)(CAS.Lib.RTLib.Processes.Stopwatch.ConvertTo_us(IntercharStopwatch.Reset)));
                   continueDo = false;
                   break;
                 case RecEventEnum.REE_TimeOut:
-                  if ( flushWait )
+                  if (flushWait)
                   {
-                    TraceEvent.Tracer.TraceInformation( 200, "SBUSProtocol.GetMessage()", "Timeout has occured during receiving frame, I am exitting the receiving loop" );
+                    AssemblyTraceEvent.Tracer.TraceEvent(TraceEventType.Information, 200, "SBUSProtocol.GetMessage(): Timeout has occurred during receiving frame, I am emitting the receiving loop");
                     continueDo = false;
                     break;
                   }
                   else
                   {
-                    currTimeOut = ( (SBUS_ProtocolParameters)GetProtocolParameters ).TimeoutSpanAfterFrame;
+                    currTimeOut = ((SBUS_ProtocolParameters)GetProtocolParameters).TimeoutSpanAfterFrame;
                     flushWait = true;
                     break;
                   }
@@ -172,7 +174,7 @@ namespace CAS.Lib.CommonBus.ApplicationLayer.SBUS
             }
         }
       }
-      while ( continueDo );
+      while (continueDo);
       return AL_ReadData_Result.ALRes_Success;
     }//GetMessage
     #endregion
@@ -191,10 +193,10 @@ namespace CAS.Lib.CommonBus.ApplicationLayer.SBUS
     ///   ALRes_DisInd: Disconnect indication – connection has been shut down remotely or lost because of 
     ///      communication error. Data is unavailable
     /// </returns>
-    protected override AL_ReadData_Result GetMessage( out FrameStateMachine Rxmsg, FrameStateMachine Txmsg )
+    protected override AL_ReadData_Result GetMessage(out FrameStateMachine Rxmsg, FrameStateMachine Txmsg)
     {
       bool reset = false;
-      return GetMessage( out Rxmsg, Txmsg, false, 0, ref reset );
+      return GetMessage(out Rxmsg, Txmsg, false, 0, ref reset);
     }
     /// <summary>
     /// Transmit message to the remote unit.
@@ -207,12 +209,12 @@ namespace CAS.Lib.CommonBus.ApplicationLayer.SBUS
     ///   ALRes_DisInd: Disconnect indication – connection has been shut down remotely or lost because of 
     ///      communication error. Data is unavailable
     /// </returns>
-    protected override AL_ReadData_Result TransmitMessage( FrameStateMachine toSendMessage )
+    protected override AL_ReadData_Result TransmitMessage(FrameStateMachine toSendMessage)
     {
       FrameStateMachine preparedToSend = m_Pool.GetEmptyISesDBuffer();
       //tworzymy nowego message'a do wyslania- bedzie on zawieral dodatkowo bajty sumy kontrolna i wstawione znaki
-      preparedToSend.PrepareFrameToBeSend( toSendMessage );
-      switch ( GetICommunicationLayer.FrameEndSignal( preparedToSend ) )
+      preparedToSend.PrepareFrameToBeSend(toSendMessage);
+      switch (GetICommunicationLayer.FrameEndSignal(preparedToSend))
       {
         case TFrameEndSignalRes.Success:
           GetIProtocolParent.IncStTxFrameCounter(); //uzupelniamy statystyki
@@ -248,9 +250,9 @@ namespace CAS.Lib.CommonBus.ApplicationLayer.SBUS
     /// <param name="pCommLayer">Interface responsible for providing the communication</param>
     /// <param name="pProtParameters">Protocol parameters</param>
     /// <param name="cPool">Empty data messages pool to be used by the protocol.</param>
-    internal SBUSProtocol( IProtocolParent pStatistic, ICommunicationLayer pCommLayer,
-      ProtocolParameters pProtParameters, SesDBufferPool<FrameStateMachine> cPool )
-      : base( pCommLayer, pProtParameters, pStatistic )
+    internal SBUSProtocol(IProtocolParent pStatistic, ICommunicationLayer pCommLayer,
+      ProtocolParameters pProtParameters, SesDBufferPool<FrameStateMachine> cPool)
+      : base(pCommLayer, pProtParameters, pStatistic)
     {
       this.m_Pool = cPool;
     }

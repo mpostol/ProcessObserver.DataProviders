@@ -16,8 +16,8 @@
 //  http://www.cas.eu
 //</summary>
 
-using System;
 using CAS.Lib.CommonBus.ApplicationLayer.DemoSimulator.PRIVATE;
+using System;
 
 namespace CAS.Lib.CommonBus.ApplicationLayer.DemoSimulator
 {
@@ -81,6 +81,7 @@ namespace CAS.Lib.CommonBus.ApplicationLayer.DemoSimulator
       return source;
     }
     #endregion
+
     #region ProtocolALMessage
     public override void SetBlockDescription( int station, IBlockDescription block )
     {
@@ -136,6 +137,7 @@ namespace CAS.Lib.CommonBus.ApplicationLayer.DemoSimulator
       buffor[ regAddress ] = regValue;
     }
     #endregion
+
     #region PUBLIC
     internal void setDBTag( int _station, int _address, short _datatype, object _value )
     {
@@ -436,15 +438,13 @@ namespace CAS.Lib.CommonBus.ApplicationLayer.DemoSimulator
     {
       return mSym.TestCommunication( station );
     }
-
-    internal void TrasmitterON( int station )
+    internal void TransmitterON( int station )
     {
-      mSym.TrasmitterON( station );
+      mSym.TransmitterON( station );
     }
-
-    internal void TrasmitterOFF( int station )
+    internal void TransmitterOFF( int station )
     {
-      mSym.TrasmitterOFF( station );
+      mSym.TransmitterOFF( station );
     }
   }
 }

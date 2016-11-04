@@ -66,7 +66,7 @@ namespace CAS.Lib.CommonBus.ApplicationLayer.DemoSimulator
         bool TransmissionIsOK = true;
         data = (IReadValue)pool.GetEmptyISesDBuffer();
         //informacja ze dziala transmitter:
-        ( (Message)data ).TrasmitterON( station );
+        ( (Message)data ).TransmitterON( station );
         //Timer.Wait( Timer.TInOneSecond );
         ( (Message)data ).SetBlockDescription( station, block );
         ( (Message)data ).ReadFromDB();
@@ -74,7 +74,7 @@ namespace CAS.Lib.CommonBus.ApplicationLayer.DemoSimulator
         myStatistic.IncStRxFrameCounter();
         myStatistic.TimeCharGapAdd( 1 );
         myStatistic.TimeMaxResponseDelayAdd( InterFrameStopwatch.ElapsedMilliseconds );
-        ( (Message)data ).TrasmitterOFF( station );
+        ( (Message)data ).TransmitterOFF( station );
         if ( m_errorfrequency > 0 && ( m_rPackNum % ( 100 / (ulong)m_errorfrequency ) ) == 0 )
         {
           TransmissionIsOK = false;

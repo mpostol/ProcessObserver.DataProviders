@@ -55,8 +55,8 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CAS.CommServer.CommonBus, Version=5.1.2.20298, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
-      <HintPath>..\packages\CAS.CommServer.CommonBus.5.01.02-Echo\lib\net451\CAS.CommServer.CommonBus.dll</HintPath>
+    <Reference Include="CAS.CommServer.CommonBus, Version=5.1.6.25005, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
+      <HintPath>..\packages\CAS.CommServer.CommonBus.5.01.06\lib\net451\CAS.CommServer.CommonBus.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />

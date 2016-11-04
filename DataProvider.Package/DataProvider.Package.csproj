@@ -112,6 +112,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="build.cmd" />
     <None Include="DataProvider.Package.nuspec">
       <DependentUpon>DataProvider.Package.tt</DependentUpon>
