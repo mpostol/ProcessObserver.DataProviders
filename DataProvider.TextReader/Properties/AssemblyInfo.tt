@@ -1,0 +1,47 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ output extension=".cs" #>
+
+//_______________________________________________________________
+//  Title   : CAS.CommServer.DataProvider.TextReader
+//  System  : Microsoft VisualStudio 2015 / C#
+//  $LastChangedDate:  $
+//  $Rev: $
+//  $LastChangedBy: $
+//  $URL: $
+//  $Id:  $
+//
+//  Copyright (C) 2017, CAS LODZ POLAND.
+//  TEL: +48 608 61 98 99 
+//  mailto://techsupp@cas.eu
+//  http://www.cas.eu
+//_______________________________________________________________
+
+using System.Reflection;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+
+[assembly: AssemblyTitle("CAS.CommServer.DataProvider.TextReader")]
+[assembly: AssemblyDescription("CommServer plug-in providing DataProvider TextReader implementation")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("<#=AssemblyCompany#>")]
+[assembly: AssemblyProduct("<#=AssemblyProduct#>")]
+[assembly: AssemblyCopyright("<#=AssemblyCopyright#>")]
+[assembly: AssemblyTrademark("<#=AssemblyTrademark#>")]
+[assembly: AssemblyCulture("")]
+[assembly: ComVisible(false)]
+[assembly: Guid("6a158b80-cdbe-4bb1-b202-17c5a4101da2")]
+[assembly: AssemblyVersion("<#=CASCommServerDataProviderPackageVersion#>.*")]
+[assembly: AssemblyFileVersion("<#=CASCommServerDataProviderPackageVersion#>")]
+[assembly: CAS.Lib.CodeProtect.AssemblyKey( "7EC9FC9E-3396-4CDA-B886-5C17EEC6EC2F" )]
+[assembly: CAS.Lib.CodeProtect.AssemblyHelper
+  (
+    Product = "CommServer DataProvider plug-in providing TextReader implementation",
+    Company = "CAS",
+    Url = "www.cas.eu",
+    Email = "techsupp@cas.eu",
+    Phone = "+48 608 61 98 99"
+  )
+]
+[assembly: InternalsVisibleToAttribute("CAS.CommServer.DataProvider.TextReader.UnitTest")]
+
+<#@ include file = "..\..\PR39-CommonResources\T4Definitions\CAS.OPC.t4" #>

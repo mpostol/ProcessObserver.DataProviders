@@ -36,17 +36,17 @@ namespace CAS.DPDiagnostics
     #endregion
 
     #region public
-    [System.Diagnostics.CodeAnalysis.SuppressMessage( "Microsoft.Usage", "CA2237:MarkISerializableTypesWithSerializable" )]
-    internal class ConnectReqResException: Exception
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2237:MarkISerializableTypesWithSerializable")]
+    internal class ConnectReqResException : Exception
     {
       public ConnectReqResException() { }
-      public ConnectReqResException( TConnectReqRes result, string message )
-        : base( message )
+      public ConnectReqResException(TConnectReqRes result, string message)
+        : base(message)
       {
         Result = result;
       }
-      public ConnectReqResException( TConnectReqRes result, string message, Exception inner )
-        : base( message, inner )
+      public ConnectReqResException(TConnectReqRes result, string message, Exception inner)
+        : base(message, inner)
       {
         Result = result;
       }
@@ -54,24 +54,24 @@ namespace CAS.DPDiagnostics
     }
     internal void DoOperation()
     {
-      Debug.Assert( m_DoOperation != null, "Application error m_DoOperation is not assigned" );
+      Debug.Assert(m_DoOperation != null, "Application error m_DoOperation is not assigned");
       m_OperationResult.OperationsRunTime.Start();
-      m_DoOperation( ref m_NumberOfBytes );
+      m_DoOperation(ref m_NumberOfBytes);
       m_OperationResult.OperationsRunTime.Stop();
       m_OperationResult.NumberOfOperationCycles++;
     }
     internal void ConnectReq()
     {
-      TConnectReqRes _connectReqResult = ApplicationLayerMaster.ConnectReq( m_Commlayeraddress );
-      if ( _connectReqResult != TConnectReqRes.Success )
+      TConnectReqRes _connectReqResult = ApplicationLayerMaster.ConnectReq(m_Commlayeraddress);
+      if (_connectReqResult != TConnectReqRes.Success)
       {
-        string _msg = String.Format( "Connect request to remote {0} failed the with error: {1}.", m_Commlayeraddress, _connectReqResult );
-        throw new ConnectReqResException( _connectReqResult, _msg );
+        string _msg = String.Format("Connect request to remote {0} failed the with error: {1}.", m_Commlayeraddress, _connectReqResult);
+        throw new ConnectReqResException(_connectReqResult, _msg);
       }
     }
     internal void DisReq()
     {
-      if ( !ApplicationLayerMaster.Connected )
+      if (!ApplicationLayerMaster.Connected)
         return;
       ApplicationLayerMaster.DisReq();
     }
@@ -86,7 +86,7 @@ namespace CAS.DPDiagnostics
     #endregion
 
     #region private
-    private class OperationResult: IOperationResult
+    private class OperationResult : IOperationResult
     {
       #region IOperationResult Members
       IEnumerable<string> IOperationResult.Log
@@ -117,9 +117,9 @@ namespace CAS.DPDiagnostics
       internal Stopwatch OperationsRunTime = new Stopwatch();
       internal long NumberOfBytes = 0;
     }
-    private delegate void ReadWriteAction( ref long bytesCounter );
+    private delegate void ReadWriteAction(ref long bytesCounter);
     #region abstract
-    protected abstract object ValueToBeWritten( Type dataTypeOfConversion );
+    protected abstract object ValueToBeWritten(Type dataTypeOfConversion);
     protected abstract int Length { get; }
     protected abstract short ResourceSelected { get; }
     protected abstract int StationAddress { get; }
@@ -146,75 +146,76 @@ namespace CAS.DPDiagnostics
     private Stopwatch m_TestTimeStopWatch = new Stopwatch();
     #endregion
 
-    protected void InitializeOperation( IDataProviderID dataProviderID, CommonBusControl commonBusControl, IProtocolParent protocolParent, bool readOperation )
+    protected void InitializeOperation(IDataProviderID dataProviderID, CommonBusControl commonBusControl, IProtocolParent protocolParent, bool readOperation)
     {
       m_ResourceSelected = ResourceSelected;
       m_StationAddress = StationAddress;
       m_RegisterAddress = RegisterStartAddress;
       m_DataTypeOfConversion = DataTypeOfConversion;
       m_Length = Length;
-      if ( m_DataTypeOfConversion == typeof( string ) )
+      if (m_DataTypeOfConversion == typeof(string))
         m_RegistersCount = 1;
       else
         m_RegistersCount = Length;
       m_Commlayeraddress = Commlayeraddress;
-      ApplicationLayerMaster = dataProviderID.GetApplicationLayerMaster( protocolParent, commonBusControl );
-      if ( readOperation )
+      ApplicationLayerMaster = dataProviderID.GetApplicationLayerMaster(protocolParent, commonBusControl);
+      if (readOperation)
         m_DoOperation = ReadOperation;
       else
       {
-        m_ValueToBeWritten = ValueToBeWritten( m_DataTypeOfConversion );
+        m_ValueToBeWritten = ValueToBeWritten(m_DataTypeOfConversion);
         m_DoOperation = WriteOperation;
       }
     }
-    private void ReadOperation( ref long bytesCounter )
+    private void ReadOperation(ref long bytesCounter)
     {
-      m_Blok.Change( m_RegisterAddress, m_Length, m_ResourceSelected );
+      m_Blok.Change(m_RegisterAddress, m_Length, m_ResourceSelected);
       IReadValue _data;
-      m_OperationResult.Log.Add( String.Format( Properties.Resources.OperationLogHeaderFormat, m_Blok.dataType, m_Blok.length, m_Blok.startAddress, StationAddress, "Read" ) );
-      switch ( ApplicationLayerMaster.ReadData( m_Blok, StationAddress, out _data, c_Retries ) )
+      m_OperationResult.Log.Add(String.Format(Properties.Resources.OperationLogHeaderFormat, m_Blok.dataType, m_Blok.length, m_Blok.startAddress, StationAddress, "Read"));
+      switch (ApplicationLayerMaster.ReadData(m_Blok, StationAddress, out _data, c_Retries))
       {
         case AL_ReadData_Result.ALRes_DatTransferErrr:
-          m_OperationResult.Log.Add( "-- Reading is copleted, but communication errors occured." );
+          m_OperationResult.Log.Add("-- Reading is copleted, but communication errors occured.");
           break;
         case AL_ReadData_Result.ALRes_DisInd:
-          m_OperationResult.Log.Add( "-- Reading is copleted, but disconnect indication received." );
+          m_OperationResult.Log.Add("-- Reading is copleted, but disconnect indication received.");
           break;
         case AL_ReadData_Result.ALRes_Success:
-          Debug.Assert( _data != null );
-          bytesCounter += ( (ProtocolALMessage)_data ).userDataLength;
-          m_OperationResult.Log.Add( "-- Reading is copleted, data:" );
-          if ( m_DataTypeOfConversion == null )
-            m_DataTypeOfConversion = typeof( object );
+          Debug.Assert(_data != null);
+          if (_data is ProtocolALMessage)
+            bytesCounter += ((ProtocolALMessage)_data).userDataLength;
+          m_OperationResult.Log.Add("-- Reading is copleted, data:");
+          if (m_DataTypeOfConversion == null)
+            m_DataTypeOfConversion = typeof(object);
           try
           {
-            if ( m_DataTypeOfConversion == typeof( String ) )
-              m_OperationResult.Log.Add( string.Format( "---- data[{0}]={1}", 0, _data.ReadValue( 0, m_DataTypeOfConversion ) ) );
+            if (m_DataTypeOfConversion == typeof(String))
+              m_OperationResult.Log.Add(string.Format("---- data[{0}]={1}", 0, _data.ReadValue(0, m_DataTypeOfConversion)));
             else
-              for ( int idx = 0; idx < m_Blok.length; idx++ )
-                m_OperationResult.Log.Add( string.Format( "---- data[{0}]={1}", idx, _data.ReadValue( idx, m_DataTypeOfConversion ) ) );
+              for (int idx = 0; idx < m_Blok.length; idx++)
+                m_OperationResult.Log.Add(string.Format("---- data[{0}]={1}", idx, _data.ReadValue(idx, m_DataTypeOfConversion)));
           }
-          catch ( Exception ex )
+          catch (Exception ex)
           {
-            m_OperationResult.Log.Add( ex.ToString() );
+            m_OperationResult.Log.Add(ex.ToString());
           }
           break;
         default:
           break;
       }
       //return to pool
-      if ( _data != null )
+      if (_data != null)
         _data.ReturnEmptyEnvelope();
     }
-    private void WriteOperation( ref long bytesCounter )
+    private void WriteOperation(ref long bytesCounter)
     {
-      m_Blok.Change( m_RegisterAddress, m_Length, m_ResourceSelected );
-      m_OperationResult.Log.Add( String.Format( Properties.Resources.OperationLogHeaderFormat, m_Blok.dataType, m_Blok.length, m_Blok.startAddress, StationAddress, "Write" ) );
-      IWriteValue _value = ApplicationLayerMaster.GetEmptyWriteDataBuffor( m_Blok, m_StationAddress );
-      for ( int _vix = 0; _vix < m_RegistersCount; _vix++ )
-        _value.WriteValue( m_ValueToBeWritten, _vix );
-      bytesCounter += ( (ProtocolALMessage)_value ).userDataLength;
-      ApplicationLayerMaster.WriteData( ref _value, c_Retries );
+      m_Blok.Change(m_RegisterAddress, m_Length, m_ResourceSelected);
+      m_OperationResult.Log.Add(String.Format(Properties.Resources.OperationLogHeaderFormat, m_Blok.dataType, m_Blok.length, m_Blok.startAddress, StationAddress, "Write"));
+      IWriteValue _value = ApplicationLayerMaster.GetEmptyWriteDataBuffor(m_Blok, m_StationAddress);
+      for (int _vix = 0; _vix < m_RegistersCount; _vix++)
+        _value.WriteValue(m_ValueToBeWritten, _vix);
+      bytesCounter += ((ProtocolALMessage)_value).userDataLength;
+      ApplicationLayerMaster.WriteData(ref _value, c_Retries);
     }
     #endregion
 
