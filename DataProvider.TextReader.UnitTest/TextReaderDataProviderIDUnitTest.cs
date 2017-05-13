@@ -1,0 +1,163 @@
+﻿
+using CAS.Lib.CommonBus;
+using CAS.Lib.CommonBus.ApplicationLayer;
+using CAS.Lib.CommonBus.CommunicationLayer;
+using CAS.Lib.RTLib;
+using CAS.Lib.RTLib.Management;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.IO;
+using System.Linq;
+
+namespace CAS.CommServer.DataProvider.TextReader.UnitTest
+{
+  [TestClass]
+  [DeploymentItem(@"TestingData\", "TestingData")]
+  public class TextReaderDataProviderIDUnitTest
+  {
+    private TextReaderDataProviderID m_TestingProvider = new TextReaderDataProviderID();
+
+    [TestMethod]
+    public void ConstructorTestMethod()
+    {
+      Assert.AreEqual<int>(1, m_TestingProvider.Count());
+      ICommunicationLayerId _layerDefault = m_TestingProvider.SelectedCommunicationLayer;
+      Assert.IsNotNull(_layerDefault);
+      ICommunicationLayerId _layerDefault2 = m_TestingProvider["Simulator"];
+      Assert.IsNotNull(_layerDefault2);
+      Assert.AreSame(_layerDefault, _layerDefault);
+      Assert.AreEqual<string>("CAS.CommServer.DataProvider.TextReader", m_TestingProvider.Title);
+    }
+    [TestMethod]
+    public void GetApplicationLayerMasterTest()
+    {
+      using (CommonBusParent _parent = new CommonBusParent())
+      {
+        IApplicationLayerMaster _al = m_TestingProvider.GetApplicationLayerMaster(new ProtocolParent(), _parent);
+        Assert.IsNotNull(_al);
+        Assert.AreEqual<int>(0, _parent.GetNumberOfComponents);
+      }
+    }
+    [TestMethod]
+    [ExpectedException(typeof(ArgumentNullException))]
+    public void GetApplicationLayerMasterNullOarentTest()
+    {
+      IApplicationLayerMaster _al2 = m_TestingProvider.GetApplicationLayerMaster(new ProtocolParent(), null);
+    }
+    [TestMethod]
+    [ExpectedException(typeof(ArgumentNullException))]
+    public void GetApplicationLayerMasterNullStatiosticsParent()
+    {
+      IApplicationLayerMaster _al = m_TestingProvider.GetApplicationLayerMaster(null, null);
+    }
+    [TestMethod]
+    public void GetAvailiableAddressspacesTestMethod()
+    {
+      IAddressSpaceDescriptor[] _desriptorsArray = m_TestingProvider.GetAvailiableAddressspaces();
+      Assert.AreEqual<int>(1, _desriptorsArray.Length);
+      Assert.AreEqual<long>(255, _desriptorsArray[0].EndAddress);
+      Assert.AreEqual<short>(0, _desriptorsArray[0].Identifier);
+      Assert.AreEqual<string>("Text File", _desriptorsArray[0].Name);
+      Assert.AreEqual<long>(0, _desriptorsArray[0].StartAddress);
+    }
+    [TestMethod]
+    public void GetItemDefaultSettingsTestMethod()
+    {
+      IItemDefaultSettings _settings = m_TestingProvider.GetItemDefaultSettings(0, 123);
+      Assert.AreEqual<ItemAccessRights>(ItemAccessRights.ReadOnly, _settings.AccessRights);
+      Assert.AreEqual<int>(1, _settings.AvailiableTypes.Length);
+      Assert.AreSame(typeof(float), _settings.DefaultType);
+      Assert.AreEqual<String>("Cplumn[123]", _settings.Name);
+    }
+    [TestMethod]
+    public void GetSettingsTestMethod()
+    {
+      string _settings = m_TestingProvider.GetSettings();
+      Assert.AreEqual<int>(342, _settings.Length);
+      Console.Write(_settings);
+    }
+    [TestMethod]
+    public void SetSettingsTestMethod()
+    {
+      FileInfo _configurationFile = new FileInfo(@"TestingData\ProviderIDConfiguration.xml");
+      Assert.IsTrue(_configurationFile.Exists);
+      FileStream _configurationStream = _configurationFile.OpenRead();
+      string _configurationText = String.Empty;
+      using (System.IO.TextReader _tr = new System.IO.StreamReader(_configurationStream))
+        _configurationText = _tr.ReadToEnd();
+      Assert.AreEqual<int>(287, _configurationText.Length);
+      m_TestingProvider.SetSettings(_configurationText);
+    }
+    private class CommonBusParent : CommonBusControl
+    {
+      internal int GetNumberOfComponents { get { return this.Components.Count; } }
+    }
+    private class ProtocolParent : IProtocolParent
+    {
+
+      #region IProtocolParent
+      public void IncStRxCRCErrorCounter()
+      {
+        throw new NotImplementedException();
+      }
+      public void IncStRxFragmentedCounter()
+      {
+        throw new NotImplementedException();
+      }
+      public void IncStRxFrameCounter()
+      {
+        throw new NotImplementedException();
+      }
+      public void IncStRxInvalid()
+      {
+        throw new NotImplementedException();
+      }
+      public void IncStRxNAKCounter()
+      {
+        throw new NotImplementedException();
+      }
+      public void IncStRxNoResponseCounter()
+      {
+        throw new NotImplementedException();
+      }
+      public void IncStRxSynchError()
+      {
+        throw new NotImplementedException();
+      }
+      public void IncStTxACKCounter()
+      {
+        throw new NotImplementedException();
+      }
+      public void IncStTxDATACounter()
+      {
+        throw new NotImplementedException();
+      }
+      public void IncStTxFrameCounter()
+      {
+        throw new NotImplementedException();
+      }
+      public void IncStTxNAKCounter()
+      {
+        throw new NotImplementedException();
+      }
+      public void RxDataBlock(bool succ)
+      {
+        throw new NotImplementedException();
+      }
+      public void TimeCharGapAdd(long val)
+      {
+        throw new NotImplementedException();
+      }
+      public void TimeMaxResponseDelayAdd(long val)
+      {
+        throw new NotImplementedException();
+      }
+      public void TxDataBlock(bool succ)
+      {
+        throw new NotImplementedException();
+      }
+      #endregion
+
+    }
+  }
+}

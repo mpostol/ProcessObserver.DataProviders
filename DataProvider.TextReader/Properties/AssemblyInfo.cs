@@ -2,11 +2,11 @@
 //_______________________________________________________________
 //  Title   : CAS.CommServer.DataProvider.TextReader
 //  System  : Microsoft VisualStudio 2015 / C#
-//  $LastChangedDate:  $
-//  $Rev: $
-//  $LastChangedBy: $
-//  $URL: $
-//  $Id:  $
+//  $LastChangedDate$
+//  $Rev$
+//  $LastChangedBy$
+//  $URL$
+//  $Id$
 //
 //  Copyright (C) 2017, CAS LODZ POLAND.
 //  TEL: +48 608 61 98 99 

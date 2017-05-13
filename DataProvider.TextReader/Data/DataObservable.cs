@@ -4,7 +4,7 @@ using System.Reactive;
 
 namespace CAS.CommServer.DataProvider.TextReader.Data
 {
-  internal class DataObservable : ObservableBase<DataEntity>
+  public class DataObservable : ObservableBase<DataEntity>
   {
     protected override IDisposable SubscribeCore(IObserver<DataEntity> observer)
     {
@@ -19,7 +19,7 @@ namespace CAS.CommServer.DataProvider.TextReader.Data
       //  _configurationText = _tr.ReadToEnd();
     }
   }
-  internal class DataEntity
+  public class DataEntity
   {
     public DateTime TimeStamp { get; set; }
     public float[] Tags { get; set; }

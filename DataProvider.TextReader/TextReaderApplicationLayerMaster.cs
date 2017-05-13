@@ -1,11 +1,11 @@
 ﻿//_______________________________________________________________
 //  Title   : Name of Application
 //  System  : Microsoft VisualStudio 2015 / C#
-//  $LastChangedDate:  $
-//  $Rev: $
-//  $LastChangedBy: $
-//  $URL: $
-//  $Id:  $
+//  $LastChangedDate$
+//  $Rev$
+//  $LastChangedBy$
+//  $URL$
+//  $Id$
 //
 //  Copyright (C) 2017, CAS LODZ POLAND.
 //  TEL: +48 608 61 98 99 
@@ -77,6 +77,7 @@ namespace CAS.CommServer.DataProvider.TextReader
     private IComponent m_parentComponent;
     private IProtocolParent m_statistic;
     private ProcessData m_LastProcessData = null;
+    private CAS.Lib.RTLib.Processes.EventsSynchronization m_Fifo = new Lib.RTLib.Processes.EventsSynchronization();
     private bool UpdateData(FileInfo _dataFile)
     {
       m_LastProcessData = new ProcessData()
@@ -116,6 +117,7 @@ namespace CAS.CommServer.DataProvider.TextReader
         return TConnectReqRes.NoConnection;
       if (!UpdateData(_dataFile))
         return TConnectReqRes.NoConnection;
+      m_Fifo.SetEvent(m_LastProcessData);
       Connected = true;
       return TConnectReqRes.Success;
     }
@@ -126,8 +128,10 @@ namespace CAS.CommServer.DataProvider.TextReader
         throw new ArgumentOutOfRangeException($"Only data type = 0 is expected");
       if (!Connected)
         return AL_ReadData_Result.ALRes_DisInd;
-      pData = m_LastProcessData;
-      return AL_ReadData_Result.ALRes_Success;
+      object _retValue = null;
+      bool _retResult = m_Fifo.GetEvent(out _retValue, m_TimeOut);
+      pData = (IReadValue)_retValue;
+      return _retResult?  AL_ReadData_Result.ALRes_Success : AL_ReadData_Result.ALRes_DatTransferErrr;
     }
 
     #region Intentionally NotImplemented
@@ -153,6 +157,8 @@ namespace CAS.CommServer.DataProvider.TextReader
 
     #region IDisposable Support
     private bool disposedValue = false; // To detect redundant calls
+    private int m_TimeOut = 500;
+
     protected virtual void Dispose(bool disposing)
     {
       if (disposedValue)
