@@ -18,13 +18,18 @@ namespace CAS.CommServer.DataProvider.TextReader.Tests
     {
       m_Item2Test = LocalTextReaderApplicationLayerMaster.Instance();
     }
+    [TestCleanup]
+    public void TestCleanupMethod()
+    {
+      m_Item2Test.Dispose();
+    }
     private LocalTextReaderApplicationLayerMaster m_Item2Test;
     private const string m_TestFileName = @"TestingData\ProviderIDConfiguration.xml";
     [TestMethod()]
     public void ConnectReqTest()
     {
       Assert.IsFalse(m_Item2Test.Connected);
-      switch (m_Item2Test.ConnectReq(RemoteAddress.Instance("bleble")))
+      switch (m_Item2Test.ConnectReq(RemoteAddress.Instance(String.Empty)))
       {
         case TConnectReqRes.Success:
           Assert.Fail();
@@ -50,6 +55,7 @@ namespace CAS.CommServer.DataProvider.TextReader.Tests
           break;
       }
       Assert.IsTrue(m_Item2Test.Connected);
+      m_Item2Test.DisReq();
 
     }
     [TestMethod()]
@@ -87,19 +93,20 @@ namespace CAS.CommServer.DataProvider.TextReader.Tests
         Assert.IsNotNull(_value);
         Assert.AreEqual<int>(0, _value.dataType);
         Assert.IsFalse(_value.InPool);
-        Assert.AreEqual<int>(10, _value.length);
+        Assert.AreEqual<int>(5, _value.length);
         Assert.AreEqual<int>(0, _value.startAddress);
         float _tagValue = 0;
         for (int i = 0; i < _value.length; i++)
           _tagValue = (float)_value.ReadValue(i, typeof(float));
         _value.ReturnEmptyEnvelope();
-        Assert.AreEqual<AL_ReadData_Result>(AL_ReadData_Result.ALRes_DatTransferErrr, m_Item2Test.ReadData(new TestBlockDescription(0, int.MaxValue, 0), 0, out _value, 0));
+        Assert.AreEqual<AL_ReadData_Result>(AL_ReadData_Result.ALRes_Success, m_Item2Test.ReadData(new TestBlockDescription(0, int.MaxValue, 0), 0, out _value, 0));
+        Assert.AreEqual<float>(1, (float)_value.ReadValue(0, typeof(float)));
         m_Item2Test.DisReq();
         Assert.IsFalse(m_Item2Test.Connected);
         Assert.AreEqual<AL_ReadData_Result>(AL_ReadData_Result.ALRes_DisInd, m_Item2Test.ReadData(new TestBlockDescription(0, int.MaxValue, 0), 0, out _value, 0));
       }
       _sw.Stop();
-      Assert.IsTrue(_sw.ElapsedMilliseconds > 500);
+      Assert.IsTrue(_sw.ElapsedMilliseconds > 200, $"Elapsed {_sw.ElapsedMilliseconds } mS");
     }
 
     #region Not Implemented
@@ -151,11 +158,11 @@ namespace CAS.CommServer.DataProvider.TextReader.Tests
       public LocalTextReaderApplicationLayerMaster(IProtocolParent statistic, IComponent parentComponent) : base(statistic, parentComponent) { }
       internal static LocalTextReaderApplicationLayerMaster Instance()
       {
-        return new LocalTextReaderApplicationLayerMaster(LocalProtocolParent.Instance(), LocalComponent.Instance() );
+        return new LocalTextReaderApplicationLayerMaster(LocalProtocolParent.Instance(), LocalComponent.Instance());
       }
       internal static LocalTextReaderApplicationLayerMaster Instance(LocalComponent _component, Action disposedFunction)
       {
-        return new LocalTextReaderApplicationLayerMaster(LocalProtocolParent.Instance(), _component ) { m_DisposedCalled = disposedFunction };
+        return new LocalTextReaderApplicationLayerMaster(LocalProtocolParent.Instance(), _component) { m_DisposedCalled = disposedFunction };
       }
       protected override void Dispose(bool disposing)
       {
@@ -181,9 +188,7 @@ namespace CAS.CommServer.DataProvider.TextReader.Tests
 
         public void IncStRxFrameCounter()
         {
-          throw new NotImplementedException();
         }
-
         public void IncStRxInvalid()
         {
           throw new NotImplementedException();
@@ -196,7 +201,6 @@ namespace CAS.CommServer.DataProvider.TextReader.Tests
 
         public void IncStRxNoResponseCounter()
         {
-          throw new NotImplementedException();
         }
 
         public void IncStRxSynchError()
@@ -216,9 +220,7 @@ namespace CAS.CommServer.DataProvider.TextReader.Tests
 
         public void IncStTxFrameCounter()
         {
-          throw new NotImplementedException();
         }
-
         public void IncStTxNAKCounter()
         {
           throw new NotImplementedException();
@@ -226,7 +228,6 @@ namespace CAS.CommServer.DataProvider.TextReader.Tests
 
         public void RxDataBlock(bool succ)
         {
-          throw new NotImplementedException();
         }
 
         public void TimeCharGapAdd(long val)
@@ -236,7 +237,6 @@ namespace CAS.CommServer.DataProvider.TextReader.Tests
 
         public void TimeMaxResponseDelayAdd(long val)
         {
-          throw new NotImplementedException();
         }
 
         public void TxDataBlock(bool succ)

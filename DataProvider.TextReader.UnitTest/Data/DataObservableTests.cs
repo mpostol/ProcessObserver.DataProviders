@@ -1,11 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using CAS.CommServer.DataProvider.TextReader.Data;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Reactive;
 using System.Reactive.Linq;
 
 namespace CAS.CommServer.DataProvider.TextReader.Data.Tests
@@ -16,7 +11,7 @@ namespace CAS.CommServer.DataProvider.TextReader.Data.Tests
     [TestMethod()]
     public void DataObservableTest()
     {
-      IObservable<long> _observer = System.Reactive.Linq.Observable.Interval(TimeSpan.FromSeconds(1));
+      IObservable<long> _observer = Observable.Interval(TimeSpan.FromSeconds(1));
       List<long> _buffer = new List<long>();
       IDisposable _client = _observer.Subscribe(x => { _buffer.Add(x); });
       while (_buffer.Count < 2)
@@ -27,32 +22,29 @@ namespace CAS.CommServer.DataProvider.TextReader.Data.Tests
     [TestMethod]
     public void TimeoutTestMethod()
     {
-      ProcessDataObservable _mainDataSource = new ProcessDataObservable();
-      IObservable<DataEntity> _timout = _mainDataSource.Timeout(TimeSpan.FromMilliseconds(100));
+      IObservable<DataEntity> _timout =
+        Observable.Interval(TimeSpan.FromMilliseconds(100)).
+                   Where<long>(x => x < 10).
+                   Select<long, DataEntity>(x => new DataEntity() { TimeStamp = DateTime.Now, Tags = new float[] { x, x, x, x, x } }).
+                   Timeout<DataEntity>(TimeSpan.FromMilliseconds(2000));
+      Queue<DataEntity> _buffer = new Queue<DataEntity>();
       Exception _lastError = null;
+      bool _finished = false;
       IDisposable _observer = _timout.Subscribe<DataEntity>
         (
-         x => { },
+         x => _buffer.Enqueue(x),
          exception => { _lastError = exception; },
-         () => { }
+         () => _finished = true
         );
-      System.Threading.Thread.Sleep(2300);
+      System.Threading.Thread.Sleep(4000);
+      Assert.AreEqual<int>(10, _buffer.Count);
       Assert.IsNotNull(_lastError);
       Console.WriteLine(_lastError);
-    }
-    private class ProcessDataObservable : IObservable<DataEntity>
-    {
-      public IDisposable Subscribe(IObserver<DataEntity> observer)
+      Assert.IsFalse(_finished);
+      while (_buffer.Count > 0)
       {
-        Assert.IsNotNull(observer);
-        return new MyObserver();
-      }
-      private class MyObserver : IDisposable
-      {
-        public void Dispose()
-        {
-          throw new NotImplementedException();
-        }
+        DataEntity _last = _buffer.Dequeue();
+        Console.WriteLine($"{_last.TimeStamp.ToLongTimeString()}: {string.Join(", ", _last.Tags) }");
       }
     }
   }

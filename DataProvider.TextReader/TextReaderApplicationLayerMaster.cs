@@ -13,80 +13,77 @@
 //  http://www.cas.eu
 //_______________________________________________________________
 
+using CAS.CommServer.DataProvider.TextReader.Data;
 using CAS.Lib.CommonBus;
 using CAS.Lib.CommonBus.ApplicationLayer;
 using CAS.Lib.RTLib.Management;
 using System;
 using System.ComponentModel;
 using System.IO;
+using System.Reactive;
+using System.Reactive.Linq;
 
 namespace CAS.CommServer.DataProvider.TextReader
 {
   public class TextReaderApplicationLayerMaster : IApplicationLayerMaster
   {
-    private class ProcessData : IReadValue
-    {
-      public DateTime TimeStamp { get; set; }
-      public float[] Tags { get; set; }
+    //private class ProcessData : IReadValue
+    //{
+    //  public DateTime TimeStamp { get; set; }
+    //  public float[] Tags { get; set; }
 
-      #region IReadValue
-      public int startAddress
-      {
-        get { return 0; }
-      }
-      public int length
-      {
-        get
-        {
-          return Tags.Length;
-        }
-      }
-      public short dataType
-      {
-        get { return 0; }
-      }
-      public bool InPool
-      {
-        get
-        {
-          return false;
-        }
-        set { }
-      }
-      public bool IsInBlock(uint station, ushort address, short type)
-      {
-        return (station == 0) && (address <= startAddress + Tags.Length) && (type == dataType);
-      }
-      /// <summary>
-      /// Reads the value.
-      /// </summary>
-      /// <param name="regAddress">The reg address.</param>
-      /// <param name="pCanonicalType">Type of the p canonical.</param>
-      /// <returns>System.Object.</returns>
-      public object ReadValue(int regAddress, Type pCanonicalType)
-      {
-        if (pCanonicalType != typeof(float))
-          throw new NotImplementedException($"The canical type {pCanonicalType.ToString()} is not implemented - only {typeof(float).ToString()} is supported");
-        if (!IsInBlock(0, (ushort)regAddress, 0))
-          throw new ArgumentOutOfRangeException($"The register address is out of the expected range");
-        return Tags[regAddress - startAddress];
-      }
-      public void ReturnEmptyEnvelope() { }
-      #endregion
-    }
+    //  #region IReadValue
+    //  public int startAddress
+    //  {
+    //    get { return 0; }
+    //  }
+    //  public int length
+    //  {
+    //    get
+    //    {
+    //      return Tags.Length;
+    //    }
+    //  }
+    //  public short dataType
+    //  {
+    //    get { return 0; }
+    //  }
+    //  public bool InPool
+    //  {
+    //    get
+    //    {
+    //      return false;
+    //    }
+    //    set { }
+    //  }
+    //  public bool IsInBlock(uint station, ushort address, short type)
+    //  {
+    //    return (station == 0) && (address <= startAddress + Tags.Length) && (type == dataType);
+    //  }
+    //  /// <summary>
+    //  /// Reads the value.
+    //  /// </summary>
+    //  /// <param name="regAddress">The reg address.</param>
+    //  /// <param name="pCanonicalType">Type of the p canonical.</param>
+    //  /// <returns>System.Object.</returns>
+    //  public object ReadValue(int regAddress, Type pCanonicalType)
+    //  {
+    //    if (pCanonicalType != typeof(float))
+    //      throw new NotImplementedException($"The canical type {pCanonicalType.ToString()} is not implemented - only {typeof(float).ToString()} is supported");
+    //    if (!IsInBlock(0, (ushort)regAddress, 0))
+    //      throw new ArgumentOutOfRangeException($"The register address is out of the expected range");
+    //    return Tags[regAddress - startAddress];
+    //  }
+    //  public void ReturnEmptyEnvelope() { }
+    //  #endregion
+    //}
     private IComponent m_parentComponent;
     private IProtocolParent m_statistic;
-    private ProcessData m_LastProcessData = null;
     private CAS.Lib.RTLib.Processes.EventsSynchronization m_Fifo = new Lib.RTLib.Processes.EventsSynchronization();
-    private bool UpdateData(FileInfo _dataFile)
-    {
-      m_LastProcessData = new ProcessData()
-      {
-        TimeStamp = DateTime.Now,
-        Tags = new float[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 }
-      };
-      return true;
-    }
+    IObservable<DataEntity> m_DataSource = Observable.Interval(TimeSpan.FromMilliseconds(100)).Where<long>(x => x % 100 < 90).Select<long, DataEntity>(x => new DataEntity() { TimeStamp = DateTime.Now, Tags = new float[] { x, x, x, x, x } });
+    IDisposable m_Observer = null;
+    private int m_TimeOut = 150;
+
     private void ParentComponent_Disposed(object sender, EventArgs e)
     {
       Dispose();
@@ -112,17 +109,27 @@ namespace CAS.CommServer.DataProvider.TextReader
         throw new InvalidOperationException($"Operation {nameof(Connected)} is not allowed because the connection has been instantiated alredy");
       if (!(remoteAddress.address is string))
         throw new ArgumentException("Wrong address format type");
-      FileInfo _dataFile = new FileInfo((string)remoteAddress.address);
-      if (!_dataFile.Exists)
+      //FileInfo _dataFile = new FileInfo((string)remoteAddress.address);
+      if (String.IsNullOrEmpty((string)remoteAddress.address))
         return TConnectReqRes.NoConnection;
-      if (!UpdateData(_dataFile))
-        return TConnectReqRes.NoConnection;
-      m_Fifo.SetEvent(m_LastProcessData);
+      //if (!UpdateData(_dataFile))
+      //  return TConnectReqRes.NoConnection;
+      //Queue<DataEntity> _buffer = new Queue<DataEntity>();
+      Exception _lastError = null;
+      bool _finished = false;
+      m_Observer = m_DataSource.Subscribe<DataEntity>
+       (
+        x => m_Fifo.SetEvent(x),
+        exception => { _lastError = exception; },
+        () => _finished = true
+       );
       Connected = true;
       return TConnectReqRes.Success;
     }
     public AL_ReadData_Result ReadData(IBlockDescription pBlock, int pStation, out IReadValue pData, byte pRetries)
     {
+      System.Diagnostics.Stopwatch _responseTime = new System.Diagnostics.Stopwatch();
+      _responseTime.Start(); 
       pData = null;
       if (pBlock.dataType != 0)
         throw new ArgumentOutOfRangeException($"Only data type = 0 is expected");
@@ -130,8 +137,21 @@ namespace CAS.CommServer.DataProvider.TextReader
         return AL_ReadData_Result.ALRes_DisInd;
       object _retValue = null;
       bool _retResult = m_Fifo.GetEvent(out _retValue, m_TimeOut);
-      pData = (IReadValue)_retValue;
-      return _retResult?  AL_ReadData_Result.ALRes_Success : AL_ReadData_Result.ALRes_DatTransferErrr;
+      m_statistic.IncStTxFrameCounter();
+      m_statistic.RxDataBlock(_retResult);
+      if (_retResult)
+      {
+        m_statistic.IncStRxFrameCounter();
+        pData = (IReadValue)_retValue;
+        _responseTime.Stop();
+        m_statistic.TimeMaxResponseDelayAdd(_responseTime.ElapsedMilliseconds);
+      }
+      else
+      {
+        m_statistic.IncStRxNoResponseCounter();
+        return AL_ReadData_Result.ALRes_DatTransferErrr;
+      }
+      return _retResult ? AL_ReadData_Result.ALRes_Success : AL_ReadData_Result.ALRes_DatTransferErrr;
     }
 
     #region Intentionally NotImplemented
@@ -157,7 +177,6 @@ namespace CAS.CommServer.DataProvider.TextReader
 
     #region IDisposable Support
     private bool disposedValue = false; // To detect redundant calls
-    private int m_TimeOut = 500;
 
     protected virtual void Dispose(bool disposing)
     {
