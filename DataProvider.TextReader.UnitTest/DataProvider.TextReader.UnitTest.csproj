@@ -117,6 +117,9 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>AssemblyInfo.cs</LastGenOutput>
     </Content>
+    <None Include="TestingData\g1765xa1.1">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="TestingData\ProviderIDConfiguration.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -134,6 +137,8 @@
     <Compile Include="TextReaderApplicationLayerMasterTests.cs" />
     <Compile Include="TextReaderDataProviderIDUnitTest.cs" />
     <Compile Include="IsLicensedTextReaderDataProviderIDUnitTest.cs" />
+    <Compile Include="AssemblyTraceEventUnitTest.cs" />
+    <Compile Include="TextReaderProtocolParametersUnitTest.cs" />
   </ItemGroup>
   <ItemGroup />
   <Choose>

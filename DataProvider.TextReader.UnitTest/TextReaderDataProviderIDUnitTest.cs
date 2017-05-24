@@ -15,25 +15,24 @@ namespace CAS.CommServer.DataProvider.TextReader.UnitTest
   [DeploymentItem(@"TestingData\", "TestingData")]
   public class TextReaderDataProviderIDUnitTest
   {
-    private TextReaderDataProviderID m_TestingProvider = new TextReaderDataProviderID();
 
     [TestMethod]
     public void ConstructorTestMethod()
     {
-      Assert.AreEqual<int>(1, m_TestingProvider.Count());
-      ICommunicationLayerId _layerDefault = m_TestingProvider.SelectedCommunicationLayer;
+      Assert.AreEqual<int>(1, m_TestingProviderID.Count());
+      ICommunicationLayerId _layerDefault = m_TestingProviderID.SelectedCommunicationLayer;
       Assert.IsNotNull(_layerDefault);
-      ICommunicationLayerId _layerDefault2 = m_TestingProvider["Simulator"];
+      ICommunicationLayerId _layerDefault2 = m_TestingProviderID["Simulator"];
       Assert.IsNotNull(_layerDefault2);
       Assert.AreSame(_layerDefault, _layerDefault);
-      Assert.AreEqual<string>("CAS.CommServer.DataProvider.TextReader", m_TestingProvider.Title);
+      Assert.AreEqual<string>("CAS.CommServer.DataProvider.TextReader", m_TestingProviderID.Title);
     }
     [TestMethod]
     public void GetApplicationLayerMasterTest()
     {
       using (CommonBusParent _parent = new CommonBusParent())
       {
-        IApplicationLayerMaster _al = m_TestingProvider.GetApplicationLayerMaster(new ProtocolParent(), _parent);
+        IApplicationLayerMaster _al = m_TestingProviderID.GetApplicationLayerMaster(new ProtocolParent(), _parent);
         Assert.IsNotNull(_al);
         Assert.AreEqual<int>(0, _parent.GetNumberOfComponents);
       }
@@ -42,18 +41,18 @@ namespace CAS.CommServer.DataProvider.TextReader.UnitTest
     [ExpectedException(typeof(ArgumentNullException))]
     public void GetApplicationLayerMasterNullOarentTest()
     {
-      IApplicationLayerMaster _al2 = m_TestingProvider.GetApplicationLayerMaster(new ProtocolParent(), null);
+      IApplicationLayerMaster _al2 = m_TestingProviderID.GetApplicationLayerMaster(new ProtocolParent(), null);
     }
     [TestMethod]
     [ExpectedException(typeof(ArgumentNullException))]
     public void GetApplicationLayerMasterNullStatiosticsParent()
     {
-      IApplicationLayerMaster _al = m_TestingProvider.GetApplicationLayerMaster(null, null);
+      IApplicationLayerMaster _al = m_TestingProviderID.GetApplicationLayerMaster(null, null);
     }
     [TestMethod]
     public void GetAvailiableAddressspacesTestMethod()
     {
-      IAddressSpaceDescriptor[] _desriptorsArray = m_TestingProvider.GetAvailiableAddressspaces();
+      IAddressSpaceDescriptor[] _desriptorsArray = m_TestingProviderID.GetAvailiableAddressspaces();
       Assert.AreEqual<int>(1, _desriptorsArray.Length);
       Assert.AreEqual<long>(255, _desriptorsArray[0].EndAddress);
       Assert.AreEqual<short>(0, _desriptorsArray[0].Identifier);
@@ -63,17 +62,17 @@ namespace CAS.CommServer.DataProvider.TextReader.UnitTest
     [TestMethod]
     public void GetItemDefaultSettingsTestMethod()
     {
-      IItemDefaultSettings _settings = m_TestingProvider.GetItemDefaultSettings(0, 123);
+      IItemDefaultSettings _settings = m_TestingProviderID.GetItemDefaultSettings(0, 123);
       Assert.AreEqual<ItemAccessRights>(ItemAccessRights.ReadOnly, _settings.AccessRights);
       Assert.AreEqual<int>(1, _settings.AvailiableTypes.Length);
       Assert.AreSame(typeof(float), _settings.DefaultType);
-      Assert.AreEqual<String>("Cplumn[123]", _settings.Name);
+      Assert.AreEqual<String>("Column[123]", _settings.Name);
     }
     [TestMethod]
     public void GetSettingsTestMethod()
     {
-      string _settings = m_TestingProvider.GetSettings();
-      Assert.AreEqual<int>(342, _settings.Length);
+      string _settings = m_TestingProviderID.GetSettings();
+      Assert.AreEqual<int>(426, _settings.Length);
       Console.Write(_settings);
     }
     [TestMethod]
@@ -85,9 +84,12 @@ namespace CAS.CommServer.DataProvider.TextReader.UnitTest
       string _configurationText = String.Empty;
       using (System.IO.TextReader _tr = new System.IO.StreamReader(_configurationStream))
         _configurationText = _tr.ReadToEnd();
-      Assert.AreEqual<int>(287, _configurationText.Length);
-      m_TestingProvider.SetSettings(_configurationText);
+      Assert.AreEqual<int>(369, _configurationText.Length);
+      m_TestingProviderID.SetSettings(_configurationText);
     }
+
+    #region private instrumentation
+    private TextReaderDataProviderID m_TestingProviderID = new TextReaderDataProviderID();
     private class CommonBusParent : CommonBusControl
     {
       internal int GetNumberOfComponents { get { return this.Components.Count; } }
@@ -159,5 +161,7 @@ namespace CAS.CommServer.DataProvider.TextReader.UnitTest
       #endregion
 
     }
+    #endregion
+
   }
 }

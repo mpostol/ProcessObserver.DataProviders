@@ -17,83 +17,39 @@ using CAS.CommServer.DataProvider.TextReader.Data;
 using CAS.Lib.CommonBus;
 using CAS.Lib.CommonBus.ApplicationLayer;
 using CAS.Lib.RTLib.Management;
+using CAS.Lib.RTLib.Processes;
 using System;
 using System.ComponentModel;
-using System.IO;
-using System.Reactive;
+using System.Diagnostics;
 using System.Reactive.Linq;
 
 namespace CAS.CommServer.DataProvider.TextReader
 {
   public class TextReaderApplicationLayerMaster : IApplicationLayerMaster
   {
-    //private class ProcessData : IReadValue
-    //{
-    //  public DateTime TimeStamp { get; set; }
-    //  public float[] Tags { get; set; }
 
-    //  #region IReadValue
-    //  public int startAddress
-    //  {
-    //    get { return 0; }
-    //  }
-    //  public int length
-    //  {
-    //    get
-    //    {
-    //      return Tags.Length;
-    //    }
-    //  }
-    //  public short dataType
-    //  {
-    //    get { return 0; }
-    //  }
-    //  public bool InPool
-    //  {
-    //    get
-    //    {
-    //      return false;
-    //    }
-    //    set { }
-    //  }
-    //  public bool IsInBlock(uint station, ushort address, short type)
-    //  {
-    //    return (station == 0) && (address <= startAddress + Tags.Length) && (type == dataType);
-    //  }
-    //  /// <summary>
-    //  /// Reads the value.
-    //  /// </summary>
-    //  /// <param name="regAddress">The reg address.</param>
-    //  /// <param name="pCanonicalType">Type of the p canonical.</param>
-    //  /// <returns>System.Object.</returns>
-    //  public object ReadValue(int regAddress, Type pCanonicalType)
-    //  {
-    //    if (pCanonicalType != typeof(float))
-    //      throw new NotImplementedException($"The canical type {pCanonicalType.ToString()} is not implemented - only {typeof(float).ToString()} is supported");
-    //    if (!IsInBlock(0, (ushort)regAddress, 0))
-    //      throw new ArgumentOutOfRangeException($"The register address is out of the expected range");
-    //    return Tags[regAddress - startAddress];
-    //  }
-    //  public void ReturnEmptyEnvelope() { }
-    //  #endregion
-    //}
     private IComponent m_parentComponent;
     private IProtocolParent m_statistic;
-    private CAS.Lib.RTLib.Processes.EventsSynchronization m_Fifo = new Lib.RTLib.Processes.EventsSynchronization();
-    IObservable<DataEntity> m_DataSource = Observable.Interval(TimeSpan.FromMilliseconds(100)).Where<long>(x => x % 100 < 90).Select<long, DataEntity>(x => new DataEntity() { TimeStamp = DateTime.Now, Tags = new float[] { x, x, x, x, x } });
-    IDisposable m_Observer = null;
-    private int m_TimeOut = 150;
-
+    private EventsSynchronization m_Fifo = new EventsSynchronization();
+    private IDisposable m_Observer = null;
+    private DataObservable m_Observable;
+    private ITextReaderProtocolParameters m_TextReaderProtocolParameters = null;
     private void ParentComponent_Disposed(object sender, EventArgs e)
     {
       Dispose();
     }
+    /// <summary>
+    /// Gets or sets the trace source.
+    /// </summary>
+    /// <value>The trace source to be used for logging important data.</value>
+    public ITraceSource TraceSource { get; set; } = AssemblyTraceEvent.Tracer;
 
     #region constructors
-    public TextReaderApplicationLayerMaster(IProtocolParent statistic, IComponent parentComponent)
+    public TextReaderApplicationLayerMaster(IProtocolParent statistic, IComponent parentComponent, ITextReaderProtocolParameters setting)
     {
       m_statistic = statistic;
       m_parentComponent = parentComponent;
+      m_TextReaderProtocolParameters = setting;
       m_parentComponent.Disposed += ParentComponent_Disposed;
     }
     #endregion
@@ -109,19 +65,14 @@ namespace CAS.CommServer.DataProvider.TextReader
         throw new InvalidOperationException($"Operation {nameof(Connected)} is not allowed because the connection has been instantiated alredy");
       if (!(remoteAddress.address is string))
         throw new ArgumentException("Wrong address format type");
-      //FileInfo _dataFile = new FileInfo((string)remoteAddress.address);
       if (String.IsNullOrEmpty((string)remoteAddress.address))
         return TConnectReqRes.NoConnection;
-      //if (!UpdateData(_dataFile))
-      //  return TConnectReqRes.NoConnection;
-      //Queue<DataEntity> _buffer = new Queue<DataEntity>();
-      Exception _lastError = null;
-      bool _finished = false;
-      m_Observer = m_DataSource.Subscribe<DataEntity>
+      m_Observable = new Data.DataObservable((string)remoteAddress.address, m_TextReaderProtocolParameters, AssemblyTraceEvent.Tracer);
+      m_Observer = m_Observable.Subscribe<DataEntity>
        (
         x => m_Fifo.SetEvent(x),
-        exception => { _lastError = exception; },
-        () => _finished = true
+        exception => { TraceSource.TraceMessage(TraceEventType.Error, 75, $"ConnectReq - an exception has been caught: {exception}"); Connected = false; m_Observable.Dispose(); },
+        () => { Connected = false; m_Observable.Dispose(); }
        );
       Connected = true;
       return TConnectReqRes.Success;
@@ -129,36 +80,34 @@ namespace CAS.CommServer.DataProvider.TextReader
     public AL_ReadData_Result ReadData(IBlockDescription pBlock, int pStation, out IReadValue pData, byte pRetries)
     {
       System.Diagnostics.Stopwatch _responseTime = new System.Diagnostics.Stopwatch();
-      _responseTime.Start(); 
+      _responseTime.Start();
       pData = null;
       if (pBlock.dataType != 0)
         throw new ArgumentOutOfRangeException($"Only data type = 0 is expected");
       if (!Connected)
         return AL_ReadData_Result.ALRes_DisInd;
-      object _retValue = null;
-      bool _retResult = m_Fifo.GetEvent(out _retValue, m_TimeOut);
       m_statistic.IncStTxFrameCounter();
+      object _retValue = null;
+      bool _retResult = m_Fifo.GetEvent(out _retValue, Convert.ToInt32(m_TextReaderProtocolParameters.FileModificationNotificationTimeout));
       m_statistic.RxDataBlock(_retResult);
-      if (_retResult)
-      {
-        m_statistic.IncStRxFrameCounter();
-        pData = (IReadValue)_retValue;
-        _responseTime.Stop();
-        m_statistic.TimeMaxResponseDelayAdd(_responseTime.ElapsedMilliseconds);
-      }
-      else
+      _responseTime.Stop();
+      m_statistic.TimeMaxResponseDelayAdd(_responseTime.ElapsedMilliseconds);
+      if (!_retResult)
       {
         m_statistic.IncStRxNoResponseCounter();
         return AL_ReadData_Result.ALRes_DatTransferErrr;
       }
-      return _retResult ? AL_ReadData_Result.ALRes_Success : AL_ReadData_Result.ALRes_DatTransferErrr;
+      m_statistic.IncStRxFrameCounter();
+      pData = (IReadValue)_retValue;
+      return AL_ReadData_Result.ALRes_Success;
+    }
+    public void DisReq()
+    {
+      m_Observer?.Dispose();
+      Connected = false;
     }
 
     #region Intentionally NotImplemented
-    public void DisReq()
-    {
-      Connected = false;
-    }
     public TConnIndRes ConnectInd(IAddress pRemoteAddress, int pTimeOutInMilliseconds)
     {
       throw new NotImplementedException();
@@ -176,17 +125,16 @@ namespace CAS.CommServer.DataProvider.TextReader
     #endregion
 
     #region IDisposable Support
-    private bool disposedValue = false; // To detect redundant calls
-
+    private bool m_DisposedValue = false; // To detect redundant calls
     protected virtual void Dispose(bool disposing)
     {
-      if (disposedValue)
+      if (m_DisposedValue)
         return;
       if (disposing)
         DisReq();
       // TODO: free unmanaged resources (unmanaged objects) and override a finalizer below.
       // TODO: set large fields to null.
-      disposedValue = true;
+      m_DisposedValue = true;
     }
     // TODO: override a finalizer only if Dispose(bool disposing) above has code to free unmanaged resources.
     // ~TextReaderApplicationLayerMaster() {

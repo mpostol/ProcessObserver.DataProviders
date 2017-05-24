@@ -19,6 +19,7 @@ using CAS.Lib.CommonBus.CommunicationLayer.NULL;
 using CAS.Lib.RTLib;
 using CAS.Lib.RTLib.Management;
 using System;
+using System.ComponentModel;
 using System.Xml;
 
 namespace CAS.CommServer.DataProvider.TextReader
@@ -39,7 +40,7 @@ namespace CAS.CommServer.DataProvider.TextReader
         throw new ArgumentNullException($"{pStatistic} cannot me null");
       if (pParent == null)
         throw new ArgumentNullException($"{pParent} cannot me null");
-      return new TextReaderApplicationLayerMaster(pStatistic, pParent);
+      return new TextReaderApplicationLayerMaster(pStatistic, pParent, ProtocolParameters);
     }
     public override IAddressSpaceDescriptor[] GetAvailiableAddressspaces()
     {
@@ -51,20 +52,29 @@ namespace CAS.CommServer.DataProvider.TextReader
     }
     #endregion
 
+    #region Settings
+    /// <summary>
+    /// Gets or sets the S bus protocol parameters.
+    /// </summary>
+    /// <value>The S bus protocol parameters.</value>
+    [TypeConverterAttribute(typeof(ExpandableObjectConverter))]
+    [DisplayName("Parameters")]
+    [Description("TextReader DataProvider Specific Parameters")]
+    public TextReaderProtocolParameters ProtocolParameters
+    {
+      get; private set;
+    } = new TextReaderProtocolParameters();
+    #endregion
+
     #region private
     protected override void ReadSettings(XmlReader pSettings)
     {
-      pSettings.ReadStartElement("StringFormat");
-      string _StringFormat = pSettings.ReadContentAsString();
-      pSettings.ReadEndElement();
+      ProtocolParameters.ReadSettings(pSettings);
     }
     protected override void WriteSettings(XmlWriter pSettings)
     {
-      pSettings.WriteStartElement("StringFormat");
-      pSettings.WriteValue("Dot delimiter");
-      pSettings.WriteEndElement();
+      ProtocolParameters.WriteSettings(pSettings);
     }
-
     private class ItemDefaultSettings : IItemDefaultSettings
     {
       private ulong m_AddressInTheAddressSpace;
@@ -83,6 +93,7 @@ namespace CAS.CommServer.DataProvider.TextReader
       {
         get; set;
       } = new Type[] { typeof(float) };
+
       public Type DefaultType
       {
         get; private set;
@@ -91,7 +102,7 @@ namespace CAS.CommServer.DataProvider.TextReader
       {
         get
         {
-          return $"Cplumn[{m_AddressInTheAddressSpace}]";
+          return $"Column[{m_AddressInTheAddressSpace}]";
         }
       }
     }

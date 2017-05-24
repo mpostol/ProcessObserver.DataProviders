@@ -1,4 +1,5 @@
-﻿using CAS.Lib.CommonBus;
+﻿
+using CAS.Lib.CommonBus;
 using CAS.Lib.CommonBus.ApplicationLayer;
 using CAS.Lib.RTLib.Management;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -10,21 +11,12 @@ using System.IO;
 namespace CAS.CommServer.DataProvider.TextReader.Tests
 {
   [TestClass()]
+  [DeploymentItem(@"TestingData\", "TestingData")]
   public class TextReaderApplicationLayerMasterTests
   {
 
-    [TestInitialize]
-    public void TestInitializeMethod()
-    {
-      m_Item2Test = LocalTextReaderApplicationLayerMaster.Instance();
-    }
-    [TestCleanup]
-    public void TestCleanupMethod()
-    {
-      m_Item2Test.Dispose();
-    }
-    private LocalTextReaderApplicationLayerMaster m_Item2Test;
-    private const string m_TestFileName = @"TestingData\ProviderIDConfiguration.xml";
+
+    #region tests
     [TestMethod()]
     public void ConnectReqTest()
     {
@@ -82,13 +74,21 @@ namespace CAS.CommServer.DataProvider.TextReader.Tests
     [TestMethod()]
     public void ReadDataTest()
     {
+      Assert.Inconclusive();
       Stopwatch _sw = new Stopwatch();
       _sw.Start();
+      string _fileName = @"TestingData\g1765xa1.1";
+      FileInfo _testFile = new FileInfo(_fileName);
+      Assert.IsTrue(File.Exists(_fileName));
       using (LocalTextReaderApplicationLayerMaster m_Item2Test = LocalTextReaderApplicationLayerMaster.Instance())
       {
-        Assert.AreEqual<TConnectReqRes>(TConnectReqRes.Success, m_Item2Test.ConnectReq(RemoteAddress.Instance(m_TestFileName)));
+        Assert.AreEqual<TConnectReqRes>(TConnectReqRes.Success, m_Item2Test.ConnectReq(RemoteAddress.Instance(_fileName)));
         Assert.IsTrue(m_Item2Test.Connected);
         IReadValue _value = null;
+        Assert.AreEqual<AL_ReadData_Result>(AL_ReadData_Result.ALRes_DatTransferErrr, m_Item2Test.ReadData(new TestBlockDescription(0, int.MaxValue, 0), 0, out _value, 0));
+        string[] _content = File.ReadAllLines(_fileName);
+        Assert.AreEqual<int>(2422, _content.Length);
+        File.WriteAllLines(_fileName, _content);
         Assert.AreEqual<AL_ReadData_Result>(AL_ReadData_Result.ALRes_Success, m_Item2Test.ReadData(new TestBlockDescription(0, int.MaxValue, 0), 0, out _value, 0));
         Assert.IsNotNull(_value);
         Assert.AreEqual<int>(0, _value.dataType);
@@ -97,19 +97,22 @@ namespace CAS.CommServer.DataProvider.TextReader.Tests
         Assert.AreEqual<int>(0, _value.startAddress);
         float _tagValue = 0;
         for (int i = 0; i < _value.length; i++)
+        {
           _tagValue = (float)_value.ReadValue(i, typeof(float));
+          Assert.AreEqual<float>(5.0f, _tagValue);
+        }
         _value.ReturnEmptyEnvelope();
-        Assert.AreEqual<AL_ReadData_Result>(AL_ReadData_Result.ALRes_Success, m_Item2Test.ReadData(new TestBlockDescription(0, int.MaxValue, 0), 0, out _value, 0));
-        Assert.AreEqual<float>(1, (float)_value.ReadValue(0, typeof(float)));
+        Assert.AreEqual<AL_ReadData_Result>(AL_ReadData_Result.ALRes_DatTransferErrr, m_Item2Test.ReadData(new TestBlockDescription(0, int.MaxValue, 0), 0, out _value, 0));
         m_Item2Test.DisReq();
         Assert.IsFalse(m_Item2Test.Connected);
         Assert.AreEqual<AL_ReadData_Result>(AL_ReadData_Result.ALRes_DisInd, m_Item2Test.ReadData(new TestBlockDescription(0, int.MaxValue, 0), 0, out _value, 0));
       }
       _sw.Stop();
-      Assert.IsTrue(_sw.ElapsedMilliseconds > 200, $"Elapsed {_sw.ElapsedMilliseconds } mS");
+      Assert.IsTrue(_sw.ElapsedMilliseconds > 4000, $"Elapsed {_sw.ElapsedMilliseconds } mS");
     }
 
-    #region Not Implemented
+    #endregion
+    #region Not Implemented API
     [TestMethod()]
     [ExpectedException(typeof(NotImplementedException))]
     public void ConnectIndTest()
@@ -118,7 +121,7 @@ namespace CAS.CommServer.DataProvider.TextReader.Tests
     }
     [TestMethod()]
     [ExpectedException(typeof(NotImplementedException))]
-    public void GetEmptyWriteDataBufforTest()
+    public void GetEmptyWriteDataBufferTest()
     {
       m_Item2Test.GetEmptyWriteDataBuffor(null, 0);
     }
@@ -131,7 +134,19 @@ namespace CAS.CommServer.DataProvider.TextReader.Tests
     }
     #endregion
 
-    #region private instrumentation
+    #region instrumentation
+    [TestInitialize]
+    public void TestInitializeMethod()
+    {
+      m_Item2Test = LocalTextReaderApplicationLayerMaster.Instance();
+    }
+    [TestCleanup]
+    public void TestCleanupMethod()
+    {
+      m_Item2Test.Dispose();
+    }
+    private LocalTextReaderApplicationLayerMaster m_Item2Test;
+    private const string m_TestFileName = @"TestingData\ProviderIDConfiguration.xml";
     private class TestBlockDescription : IBlockDescription
     {
       public TestBlockDescription(short typeOfData, int lengthOfData, int startAddressOfData)
@@ -155,7 +170,7 @@ namespace CAS.CommServer.DataProvider.TextReader.Tests
     }
     private class LocalTextReaderApplicationLayerMaster : TextReaderApplicationLayerMaster
     {
-      public LocalTextReaderApplicationLayerMaster(IProtocolParent statistic, IComponent parentComponent) : base(statistic, parentComponent) { }
+      public LocalTextReaderApplicationLayerMaster(IProtocolParent statistic, IComponent parentComponent) : base(statistic, parentComponent, new TextReaderProtocolParameters() { FileModificationNotificationTimeout = 100000 }) { }
       internal static LocalTextReaderApplicationLayerMaster Instance()
       {
         return new LocalTextReaderApplicationLayerMaster(LocalProtocolParent.Instance(), LocalComponent.Instance());
@@ -186,9 +201,7 @@ namespace CAS.CommServer.DataProvider.TextReader.Tests
           throw new NotImplementedException();
         }
 
-        public void IncStRxFrameCounter()
-        {
-        }
+        public void IncStRxFrameCounter() { }
         public void IncStRxInvalid()
         {
           throw new NotImplementedException();
@@ -244,13 +257,6 @@ namespace CAS.CommServer.DataProvider.TextReader.Tests
           throw new NotImplementedException();
         }
       }
-      //private class LocalTextReaderMessagesPool : TextReaderMessagesPool
-      //{
-      //  internal static TextReaderMessagesPool Instance()
-      //  {
-      //    return new LocalTextReaderMessagesPool();
-      //  }
-      //}
       private Action m_DisposedCalled = () => { };
 
     }

@@ -1,50 +1,104 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Reactive.Linq;
+using System.Diagnostics;
+using System.Linq;
+using System.Threading;
 
 namespace CAS.CommServer.DataProvider.TextReader.Data.Tests
 {
   [TestClass()]
+  [DeploymentItem(@"TestingData\", "TestingData")]
   public class DataObservableTests
   {
     [TestMethod()]
     public void DataObservableTest()
     {
-      IObservable<long> _observer = Observable.Interval(TimeSpan.FromSeconds(1));
-      List<long> _buffer = new List<long>();
-      IDisposable _client = _observer.Subscribe(x => { _buffer.Add(x); });
-      while (_buffer.Count < 2)
-        System.Threading.Thread.Sleep(800);
-      _client.Dispose();
-
+      Assert.IsTrue(File.Exists(_fileName));
+      List<DataEntity> _buffer = new List<DataEntity>();
+      Stopwatch _watch = Stopwatch.StartNew();
+      TestTraceSource _trace = new TestTraceSource();
+      using (DataObservable _dataSource = new DataObservable(_fileName, TestTextReaderProtocolParameters.InstanceData(), _trace))
+      {
+        Exception _exception = null;
+        int _nextExecutedCount = 0;
+        using (IDisposable _client = _dataSource
+          .Do<DataEntity>(x => _nextExecutedCount++)
+          .Subscribe(x => { _buffer.Add(x); _watch.Stop(); }, exception => _exception = exception))
+        {
+          Assert.AreEqual<int>(0, _buffer.Count);
+          string[] _content = File.ReadAllLines(_fileName);
+          Assert.AreEqual<int>(2422, _content.Length);
+          File.WriteAllLines(_fileName, _content);
+          Thread.Sleep(2000);
+          Assert.IsNull(_exception, $"{_exception}");
+          Assert.AreEqual<int>(2, _trace.TraceBuffer.Count);
+          Console.WriteLine(_trace.TraceBuffer[0].ToString());
+          Console.WriteLine(_trace.TraceBuffer[1].ToString());
+          Assert.AreEqual<int>(1, _nextExecutedCount, $"Execution cout: {_nextExecutedCount}");
+          Assert.AreEqual<int>(1, _buffer.Count);
+          Assert.IsTrue(_watch.ElapsedMilliseconds < 1500, $"Elapsed: {_watch.ElapsedMilliseconds}");
+          Console.WriteLine($"Time execution: {_watch.ElapsedMilliseconds}");
+        }
+      }
     }
     [TestMethod]
     public void TimeoutTestMethod()
     {
-      IObservable<DataEntity> _timout =
-        Observable.Interval(TimeSpan.FromMilliseconds(100)).
-                   Where<long>(x => x < 10).
-                   Select<long, DataEntity>(x => new DataEntity() { TimeStamp = DateTime.Now, Tags = new float[] { x, x, x, x, x } }).
-                   Timeout<DataEntity>(TimeSpan.FromMilliseconds(2000));
-      Queue<DataEntity> _buffer = new Queue<DataEntity>();
-      Exception _lastError = null;
-      bool _finished = false;
-      IDisposable _observer = _timout.Subscribe<DataEntity>
-        (
-         x => _buffer.Enqueue(x),
-         exception => { _lastError = exception; },
-         () => _finished = true
-        );
-      System.Threading.Thread.Sleep(4000);
-      Assert.AreEqual<int>(10, _buffer.Count);
-      Assert.IsNotNull(_lastError);
-      Console.WriteLine(_lastError);
-      Assert.IsFalse(_finished);
-      while (_buffer.Count > 0)
+      Assert.IsTrue(File.Exists(_fileName));
+      List<DataEntity> _buffer = new List<DataEntity>();
+      Stopwatch _watch = Stopwatch.StartNew();
+      TestTraceSource _trace = new TestTraceSource();
+      using (DataObservable _dataSource = new DataObservable(_fileName, new TestTextReaderProtocolParameters() { FileModificationNotificationTimeout = 10000 }, _trace))
       {
-        DataEntity _last = _buffer.Dequeue();
-        Console.WriteLine($"{_last.TimeStamp.ToLongTimeString()}: {string.Join(", ", _last.Tags) }");
+        Exception _exception = null;
+        int _nextExecutedCount = 0;
+        using (IDisposable _client = _dataSource
+          .Do<DataEntity>(x => _nextExecutedCount++)
+          .Subscribe(x => { _buffer.Add(x); _watch.Stop(); }, exception => _exception = exception))
+        {
+          string[] _content = File.ReadAllLines(_fileName);
+          File.WriteAllLines(_fileName, _content);
+          Thread.Sleep(12000);
+          Assert.IsNotNull(_exception, $"{_exception}");
+          Assert.IsTrue(_exception is TimeoutException);
+          Assert.AreEqual<int>(3, _trace.TraceBuffer.Count);
+          Console.WriteLine(_trace.TraceBuffer[0].ToString());
+          Console.WriteLine(_trace.TraceBuffer[1].ToString());
+          Console.WriteLine(_trace.TraceBuffer[2].ToString());
+          Assert.AreEqual<int>(1, _nextExecutedCount, $"Execution cout: {_nextExecutedCount}");
+          Assert.AreEqual<int>(1, _buffer.Count);
+          Assert.IsTrue(_watch.ElapsedMilliseconds < 1500, $"Elapsed: {_watch.ElapsedMilliseconds}");
+          Console.WriteLine($"Time execution: {_watch.ElapsedMilliseconds}");
+        }
+      }
+    }
+    private const string _fileName = @"TestingData\g1765xa1.1";
+
+    private class TestTraceSource : ITraceSource
+    {
+
+      public List<Tuple<TraceEventType, int, string>> TraceBuffer { get; private set; } = new List<Tuple<TraceEventType, int, string>>();
+      public void TraceMessage(TraceEventType eventType, int id, string message)
+      {
+        TraceBuffer.Add(new Tuple<TraceEventType, int, string>(eventType, id, message));
+      }
+    }
+    private class TestTextReaderProtocolParameters : TextReaderProtocolParameters
+    {
+      private static TestTextReaderProtocolParameters m_Signleton;
+      public static TestTextReaderProtocolParameters InstanceData()
+      {
+        if (m_Signleton == null)
+          m_Signleton = new TestTextReaderProtocolParameters();
+        return m_Signleton;
+      }
+      public override string ToString()
+      {
+        return $"ColumnSeparator: \"{ColumnSeparator}\", DelayFileScann: {TimeSpan.FromMilliseconds(DelayFileScann)}, Timeou: {TimeSpan.FromMilliseconds(FileModificationNotificationTimeout)}";
       }
     }
   }
