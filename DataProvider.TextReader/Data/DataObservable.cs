@@ -1,5 +1,18 @@
-﻿
-using CAS.Lib.CommonBus.ApplicationLayer;
+﻿//_______________________________________________________________
+//  Title   : DataObservable
+//  System  : Microsoft VisualStudio 2015 / C#
+//  $LastChangedDate$
+//  $Rev$
+//  $LastChangedBy$
+//  $URL$
+//  $Id$
+//
+//  Copyright (C) 2017, CAS LODZ POLAND.
+//  TEL: +48 608 61 98 99 
+//  mailto://techsupp@cas.eu
+//  http://www.cas.eu
+//_______________________________________________________________
+
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -11,11 +24,10 @@ namespace CAS.CommServer.DataProvider.TextReader.Data
 {
 
   /// <summary>
-  /// Class DataObservable.
+  /// Class DataObservable - captures file watching functionality and provides services as <see cref="IObservable{T}"/>
   /// </summary>
-  /// <seealso cref="System.Reactive.ObservableBase{CAS.CommServer.DataProvider.TextReader.Data.DataEntity}" />
+  /// <seealso cref="System.Reactive.ObservableBase{DataEntity}" />
   /// <seealso cref="System.IDisposable" />
-  /// TODO Edit XML Comment Template for DataObservable
   internal class DataObservable : ObservableBase<DataEntity>, IDisposable
   {
 
@@ -46,24 +58,23 @@ namespace CAS.CommServer.DataProvider.TextReader.Data
     }
     private FileSystemWatcher m_FileSystemWatcher;
     private string m_FileFullPath;
-
     private IObservable<DataEntity> m_DataEntityObservable = null;
     private void LogData(DataEntity data)
     {
       DateTime _now = DateTime.Now;
-      TraceSource.TraceMessage(TraceEventType.Verbose, 46, $"Recorded data modification at: {_now.ToLongTimeString()}.{_now.Millisecond} from file {m_FileFullPath} modified at: {data.TimeStamp}");
+      TraceSource.TraceMessage(TraceEventType.Verbose, 66, $"Recorded data modification at: {_now.ToLongTimeString()}.{_now.Millisecond} from file {m_FileFullPath} modified at: {data.TimeStamp}");
     }
     private void LogException(Exception exception)
     {
       DateTime _now = DateTime.Now;
-      TraceSource.TraceMessage(TraceEventType.Error, 46, $"Recorded exception at: {_now.ToLongTimeString()}.{_now.Millisecond} message {exception}");
+      TraceSource.TraceMessage(TraceEventType.Error, 71, $"Recorded exception at: {_now.ToLongTimeString()}.{_now.Millisecond} message {exception}");
     }
     private DataEntity ParseText(EventPattern<FileSystemEventArgs> eventArgs)
     {
       DataEntity _ret = null;
       string[] _content = File.ReadAllLines(eventArgs.EventArgs.FullPath);
       int _line2Read = Int32.Parse(_content[0].Trim());
-      _ret = new DataEntity() { TimeStamp = File.GetLastWriteTime(eventArgs.EventArgs.FullPath), Tags = _content[_line2Read - 1].Split(new string[] { m_Settings.ColumnSeparator }, StringSplitOptions.None) };
+      _ret = new DataEntity() { TimeStamp = File.GetLastWriteTime(eventArgs.EventArgs.FullPath), Tags = _content[_line2Read].Split(new string[] { m_Settings.ColumnSeparator }, StringSplitOptions.None) };
       return _ret;
     }
     #endregion
@@ -80,7 +91,7 @@ namespace CAS.CommServer.DataProvider.TextReader.Data
     /// Initializes a new instance of the <see cref="DataObservable" /> class.
     /// </summary>
     /// <param name="filename">The filename to be scanned.</param>
-    /// <param name="dueTime">The due time - applies a timeout policy for file modification notification. If the next file modification notification isn't received within the specified timeout duration starting from
+    /// <param name="dueTime">The duetime - applies a timeout policy for file modification notification. If the next file modification notification isn't received within the specified timeout duration starting from
     /// its predecessor, a <see cref="TimeoutException"/> is propagated to the observer.</param>
     internal DataObservable(string filename, ITextReaderProtocolParameters settings, ITraceSource traceSource)
     {
@@ -114,27 +125,23 @@ namespace CAS.CommServer.DataProvider.TextReader.Data
     #region IDisposable Support
     private bool disposedValue = false; // To detect redundant calls
     private ITextReaderProtocolParameters m_Settings;
-
+    /// <summary>
+    /// Releases unmanaged and - optionally - managed resources.
+    /// </summary>
+    /// <param name="disposing"><c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only unmanaged resources.</param>
+    /// TODO Edit XML Comment Template for Dispose
     protected virtual void Dispose(bool disposing)
     {
       if (!disposedValue)
       {
         if (disposing)
-        {
           m_FileSystemWatcher.Dispose();
-        }
-        // TODO: free unmanaged resources (unmanaged objects) and override a finalizer below.
-        // TODO: set large fields to null.
         disposedValue = true;
       }
     }
-    // TODO: override a finalizer only if Dispose(bool disposing) above has code to free unmanaged resources.
-    // ~DataObservable() {
-    //   // Do not change this code. Put cleanup code in Dispose(bool disposing) above.
-    //   Dispose(false);
-    // }
-
-    // This code added to correctly implement the disposable pattern.
+    /// <summary>
+    /// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+    /// </summary>
     public void Dispose()
     {
       // Do not change this code. Put cleanup code in Dispose(bool disposing) above.
@@ -142,58 +149,6 @@ namespace CAS.CommServer.DataProvider.TextReader.Data
       // TODO: uncomment the following line if the finalizer is overridden above.
       // GC.SuppressFinalize(this);
     }
-    #endregion
-
-  }
-
-  public class DataEntity : IReadValue
-  {
-    public DateTime TimeStamp { get; set; }
-    public string[] Tags { get; set; }
-
-    #region IReadValue
-    public int startAddress
-    {
-      get { return 0; }
-    }
-    public int length
-    {
-      get
-      {
-        return Tags.Length;
-      }
-    }
-    public short dataType
-    {
-      get { return 0; }
-    }
-    public bool InPool
-    {
-      get
-      {
-        return false;
-      }
-      set { }
-    }
-    public bool IsInBlock(uint station, ushort address, short type)
-    {
-      return (station == 0) && (address <= startAddress + Tags.Length) && (type == dataType);
-    }
-    /// <summary>
-    /// Reads the value.
-    /// </summary>
-    /// <param name="regAddress">The reg address.</param>
-    /// <param name="pCanonicalType">Type of the p canonical.</param>
-    /// <returns>System.Object.</returns>
-    public object ReadValue(int regAddress, Type pCanonicalType)
-    {
-      if (pCanonicalType != typeof(float))
-        throw new NotImplementedException($"The canical type {pCanonicalType.ToString()} is not implemented - only {typeof(float).ToString()} is supported");
-      if (!IsInBlock(0, (ushort)regAddress, 0))
-        throw new ArgumentOutOfRangeException($"The register address is out of the expected range");
-      return Tags[regAddress - startAddress];
-    }
-    public void ReturnEmptyEnvelope() { }
     #endregion
 
   }

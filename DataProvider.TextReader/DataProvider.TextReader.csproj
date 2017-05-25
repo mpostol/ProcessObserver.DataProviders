@@ -92,6 +92,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyTraceEvent.cs" />
+    <Compile Include="Data\DataEntity.cs" />
     <Compile Include="Data\DataObservable.cs" />
     <Compile Include="ITextReaderProtocolParameters.cs" />
     <Compile Include="Properties\Settings.Designer.cs">

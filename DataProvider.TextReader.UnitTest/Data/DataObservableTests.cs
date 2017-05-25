@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Reactive.Linq;
 using System.Diagnostics;
-using System.Linq;
 using System.Threading;
 
 namespace CAS.CommServer.DataProvider.TextReader.Data.Tests
@@ -40,6 +39,10 @@ namespace CAS.CommServer.DataProvider.TextReader.Data.Tests
           Console.WriteLine(_trace.TraceBuffer[1].ToString());
           Assert.AreEqual<int>(1, _nextExecutedCount, $"Execution cout: {_nextExecutedCount}");
           Assert.AreEqual<int>(1, _buffer.Count);
+          Assert.AreEqual<int>(39, _buffer[0].Tags.Length);
+          Assert.AreEqual<string>("09-12-16", _buffer[0].Tags[0]);
+          Assert.AreEqual<string>("09:24:02", _buffer[0].Tags[1]);
+          Assert.AreEqual<string>("", _buffer[0].Tags[38]);
           Assert.IsTrue(_watch.ElapsedMilliseconds < 1500, $"Elapsed: {_watch.ElapsedMilliseconds}");
           Console.WriteLine($"Time execution: {_watch.ElapsedMilliseconds}");
         }
