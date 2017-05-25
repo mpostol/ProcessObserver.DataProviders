@@ -83,23 +83,32 @@ namespace CAS.CommServer.DataProvider.TextReader.Data
     /// <returns>true if address belongs to the block</returns>
     public bool IsInBlock(uint station, ushort address, short type)
     {
-      return (station == 0) && (address <= startAddress + Tags.Length) && (type == dataType);
+      return (station == 0) && (address <= startAddress + Tags.Length - 1) && (type == dataType);
     }
     /// <summary>
-    /// Reads the value.
+    /// Reads the value and convert it to canonical type if possible.
     /// </summary>
     /// <param name="regAddress">The register address.</param>
-    /// <param name="pCanonicalType">Canonical type of the tag.</param>
+    /// <param name="canonicalType">Canonical type of the tag.</param>
     /// <returns>System.Object.</returns>
-    /// <exception cref="System.NotImplementedException"></exception>
-    /// <exception cref="System.ArgumentOutOfRangeException"></exception>
-    public object ReadValue(int regAddress, Type pCanonicalType)
+    /// <exception cref="System.NotImplementedException">Is thrown if the value cannot be converted to the requested canonical value.</exception>
+    /// <exception cref="System.ArgumentOutOfRangeException">Is thrown if the requested address index is out of range.</exception>
+    public object ReadValue(int regAddress, Type canonicalType)
     {
-      if (pCanonicalType != typeof(float))
-        throw new NotImplementedException($"The canical type {pCanonicalType.ToString()} is not implemented - only {typeof(float).ToString()} is supported");
       if (!IsInBlock(0, (ushort)regAddress, 0))
-        throw new ArgumentOutOfRangeException($"The register address is out of the expected range");
-      return Tags[regAddress - startAddress];
+        throw new ArgumentOutOfRangeException($"The register address is out of the expected range"); 
+      string _value = Tags[regAddress - startAddress];
+      if (canonicalType == typeof(string))
+        return _value;
+      if (canonicalType == typeof(float))
+        return float.Parse(_value, System.Globalization.CultureInfo.InvariantCulture);
+      if (canonicalType == typeof(long))
+        return long.Parse(_value, System.Globalization.CultureInfo.InvariantCulture);
+      if (canonicalType == typeof(int))
+        return int.Parse(_value, System.Globalization.CultureInfo.InvariantCulture);
+      if (canonicalType == typeof(short))
+        return short.Parse(_value, System.Globalization.CultureInfo.InvariantCulture);
+      throw new NotImplementedException($"The canical type {canonicalType.ToString()} is not implemented - only {typeof(float).ToString()} is supported");
     }
     /// <summary>
     /// Used by a user to return an empty envelope to the common pool. It also resets the message content.
