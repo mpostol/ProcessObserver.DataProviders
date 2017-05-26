@@ -130,6 +130,7 @@
   <ItemGroup>
     <Compile Include="Data\DataObservableTests.cs" />
     <Compile Include="Data\DataEntityUnitTest.cs" />
+    <Compile Include="Data\ReadDataEntityUnitTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

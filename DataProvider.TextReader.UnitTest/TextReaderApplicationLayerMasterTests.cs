@@ -85,15 +85,15 @@ namespace CAS.CommServer.DataProvider.TextReader.Tests
       {
         Assert.AreEqual<TConnectReqRes>(TConnectReqRes.Success, _textReader.ConnectReq(RemoteAddress.Instance(_fileName)));
         Assert.IsTrue(_textReader.Connected);
-        Assert.AreEqual<int>(1, _textReader.TestTraceSource.Lisener.Count, string.Join(",", _textReader.TestTraceSource.Lisener));
+        Assert.AreEqual<int>(1, _textReader.TestTraceSource.TraceListener.Count, string.Join(",", _textReader.TestTraceSource.TraceListener));
         IReadValue _value = null;
-        Assert.AreEqual<AL_ReadData_Result>(AL_ReadData_Result.ALRes_DatTransferErrr, _textReader.ReadData(new TestBlockDescription(0, int.MaxValue, 0), 0, out _value, 0));
+        Assert.AreEqual<AL_ReadData_Result>(AL_ReadData_Result.ALRes_DatTransferErrr, _textReader.ReadData(new TestBlockDescription(0, 39, 0), 0, out _value, 0));
         string[] _content = File.ReadAllLines(_fileName);
         Assert.AreEqual<int>(2422, _content.Length);
         File.WriteAllLines(_fileName, _content);
         Thread.Sleep(3000);
-        Assert.AreEqual<int>(3, _textReader.TestTraceSource.Lisener.Count);
-        Assert.AreEqual<AL_ReadData_Result>(AL_ReadData_Result.ALRes_Success, _textReader.ReadData(new TestBlockDescription(0, int.MaxValue, 0), 0, out _value, 0));
+        Assert.AreEqual<int>(3, _textReader.TestTraceSource.TraceListener.Count);
+        Assert.AreEqual<AL_ReadData_Result>(AL_ReadData_Result.ALRes_Success, _textReader.ReadData(new TestBlockDescription(0, 39, 0), 0, out _value, 0));
         Assert.IsNotNull(_value);
         Assert.AreEqual<int>(0, _value.dataType);
         Assert.IsFalse(_value.InPool);
@@ -104,11 +104,11 @@ namespace CAS.CommServer.DataProvider.TextReader.Tests
           _tagValue = (float)_value.ReadValue(i, typeof(float));
         _value.ReturnEmptyEnvelope();
         Thread.Sleep(15000);
-        Assert.AreEqual<int>(5, _textReader.TestTraceSource.Lisener.Count);
-        Assert.AreEqual<AL_ReadData_Result>(AL_ReadData_Result.ALRes_DisInd, _textReader.ReadData(new TestBlockDescription(0, int.MaxValue, 0), 0, out _value, 0));
+        Assert.AreEqual<int>(6, _textReader.TestTraceSource.TraceListener.Count);
+        Assert.AreEqual<AL_ReadData_Result>(AL_ReadData_Result.ALRes_DisInd, _textReader.ReadData(new TestBlockDescription(0, 39, 0), 0, out _value, 0));
         _textReader.DisReq();
         Assert.IsFalse(_textReader.Connected);
-        Assert.AreEqual<AL_ReadData_Result>(AL_ReadData_Result.ALRes_DisInd, _textReader.ReadData(new TestBlockDescription(0, int.MaxValue, 0), 0, out _value, 0));
+        Assert.AreEqual<AL_ReadData_Result>(AL_ReadData_Result.ALRes_DisInd, _textReader.ReadData(new TestBlockDescription(0, 39, 0), 0, out _value, 0));
       }
       _sw.Stop();
       Assert.IsTrue(_sw.ElapsedMilliseconds > 4000, $"Elapsed {_sw.ElapsedMilliseconds } mS");
@@ -246,7 +246,7 @@ namespace CAS.CommServer.DataProvider.TextReader.Tests
           throw new NotImplementedException();
         }
 
-        public void RxDataBlock(bool succ)
+        public void RxDataBlock(bool success)
         {
         }
 
@@ -259,7 +259,7 @@ namespace CAS.CommServer.DataProvider.TextReader.Tests
         {
         }
 
-        public void TxDataBlock(bool succ)
+        public void TxDataBlock(bool success)
         {
           throw new NotImplementedException();
         }
@@ -269,10 +269,10 @@ namespace CAS.CommServer.DataProvider.TextReader.Tests
     }
     private class TestTraceSource : ITraceSource
     {
-      internal List<Tuple<TraceEventType, int, string>> Lisener = new List<Tuple<TraceEventType, int, string>>();
+      internal List<Tuple<TraceEventType, int, string>> TraceListener = new List<Tuple<TraceEventType, int, string>>(); 
       public void TraceMessage(TraceEventType eventType, int id, string message)
       {
-        Lisener.Add(new Tuple<TraceEventType, int, string>(eventType, id, message));
+        TraceListener.Add(new Tuple<TraceEventType, int, string>(eventType, id, message));
       }
     }
     private class LocalComponent : IComponent

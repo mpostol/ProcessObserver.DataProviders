@@ -26,6 +26,7 @@ namespace CAS.CommServer.DataProvider.TextReader
 {
   public sealed class TextReaderDataProviderID : DataProviderID
   {
+
     #region ctor
     public TextReaderDataProviderID()
     {
@@ -92,12 +93,12 @@ namespace CAS.CommServer.DataProvider.TextReader
       public Type[] AvailiableTypes
       {
         get; set;
-      } = new Type[] { typeof(float) };
+      } = new Type[] { typeof(string), typeof(float), typeof(long), typeof(int) };
 
       public Type DefaultType
       {
         get; private set;
-      } = typeof(float);
+      } = typeof(string);
       public string Name
       {
         get

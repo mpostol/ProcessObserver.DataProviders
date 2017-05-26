@@ -39,33 +39,33 @@ namespace CAS.CommServer.DataProvider.TextReader.UnitTest
     }
     [TestMethod]
     [ExpectedException(typeof(ArgumentNullException))]
-    public void GetApplicationLayerMasterNullOarentTest()
+    public void GetApplicationLayerMasterNullParentTest()
     {
       IApplicationLayerMaster _al2 = m_TestingProviderID.GetApplicationLayerMaster(new ProtocolParent(), null);
     }
     [TestMethod]
     [ExpectedException(typeof(ArgumentNullException))]
-    public void GetApplicationLayerMasterNullStatiosticsParent()
+    public void GetApplicationLayerMasterNullStationStatisticsParent()
     {
       IApplicationLayerMaster _al = m_TestingProviderID.GetApplicationLayerMaster(null, null);
     }
     [TestMethod]
-    public void GetAvailiableAddressspacesTestMethod()
+    public void GetAvailableAddressSpaceTestMethod()
     {
-      IAddressSpaceDescriptor[] _desriptorsArray = m_TestingProviderID.GetAvailiableAddressspaces();
-      Assert.AreEqual<int>(1, _desriptorsArray.Length);
-      Assert.AreEqual<long>(255, _desriptorsArray[0].EndAddress);
-      Assert.AreEqual<short>(0, _desriptorsArray[0].Identifier);
-      Assert.AreEqual<string>("Text File", _desriptorsArray[0].Name);
-      Assert.AreEqual<long>(0, _desriptorsArray[0].StartAddress);
+      IAddressSpaceDescriptor[] _DescriptorsArray = m_TestingProviderID.GetAvailiableAddressspaces();
+      Assert.AreEqual<int>(1, _DescriptorsArray.Length);
+      Assert.AreEqual<long>(255, _DescriptorsArray[0].EndAddress);
+      Assert.AreEqual<short>(0, _DescriptorsArray[0].Identifier);
+      Assert.AreEqual<string>("Text File", _DescriptorsArray[0].Name);
+      Assert.AreEqual<long>(0, _DescriptorsArray[0].StartAddress);
     }
     [TestMethod]
     public void GetItemDefaultSettingsTestMethod()
     {
       IItemDefaultSettings _settings = m_TestingProviderID.GetItemDefaultSettings(0, 123);
       Assert.AreEqual<ItemAccessRights>(ItemAccessRights.ReadOnly, _settings.AccessRights);
-      Assert.AreEqual<int>(1, _settings.AvailiableTypes.Length);
-      Assert.AreSame(typeof(float), _settings.DefaultType);
+      Assert.AreEqual<int>(4, _settings.AvailiableTypes.Length);
+      Assert.AreSame(typeof(string), _settings.DefaultType);
       Assert.AreEqual<String>("Column[123]", _settings.Name);
     }
     [TestMethod]
@@ -142,7 +142,7 @@ namespace CAS.CommServer.DataProvider.TextReader.UnitTest
       {
         throw new NotImplementedException();
       }
-      public void RxDataBlock(bool succ)
+      public void RxDataBlock(bool success)
       {
         throw new NotImplementedException();
       }
@@ -154,7 +154,7 @@ namespace CAS.CommServer.DataProvider.TextReader.UnitTest
       {
         throw new NotImplementedException();
       }
-      public void TxDataBlock(bool succ)
+      public void TxDataBlock(bool success)
       {
         throw new NotImplementedException();
       }

@@ -32,19 +32,6 @@ namespace CAS.CommServer.DataProvider.TextReader.Data
   {
 
     #region private
-    private class DateTimeEqualityComparer : IEqualityComparer<FileSystemEventPattern>
-    {
-      #region IEqualityComparer
-      public bool Equals(FileSystemEventPattern x, FileSystemEventPattern y)
-      {
-        return (x.TimeStamp.Date == y.TimeStamp.Date) && (x.TimeStamp.Hour == y.TimeStamp.Hour) && (x.TimeStamp.Minute == y.TimeStamp.Minute) && (x.TimeStamp.Second == y.TimeStamp.Second);
-      }
-      public int GetHashCode(FileSystemEventPattern obj)
-      {
-        return obj.GetHashCode();
-      }
-      #endregion
-    }
     private class FileSystemEventPattern
     {
       public FileSystemEventPattern(EventPattern<FileSystemEventArgs> eventPattern)
@@ -59,6 +46,7 @@ namespace CAS.CommServer.DataProvider.TextReader.Data
     private FileSystemWatcher m_FileSystemWatcher;
     private string m_FileFullPath;
     private IObservable<DataEntity> m_DataEntityObservable = null;
+    private ITextReaderProtocolParameters m_Settings;
     private void LogData(DataEntity data)
     {
       DateTime _now = DateTime.Now;
@@ -114,7 +102,7 @@ namespace CAS.CommServer.DataProvider.TextReader.Data
         .Select<FileSystemEventPattern, DataEntity>(x => ParseText(x.EventPattern, x.TimeStamp))
         .Timeout<DataEntity>(TimeSpan.FromMilliseconds(settings.FileModificationNotificationTimeout))
         .Do<DataEntity>(data => LogData(data), exception => LogException(exception));
-      TraceSource.TraceMessage(TraceEventType.Verbose, 107, $"Succesfully created obserwer for the file {filename} with parameter {settings}");
+      TraceSource.TraceMessage(TraceEventType.Verbose, 107, $"Succesfully created data obserwer for the file {filename} with parameter {settings}");
     }
     /// <summary>
     /// Gets or sets the trace source <see cref="ITraceSource"/>.
@@ -128,18 +116,19 @@ namespace CAS.CommServer.DataProvider.TextReader.Data
 
     #region IDisposable Support
     private bool disposedValue = false; // To detect redundant calls
-    private ITextReaderProtocolParameters m_Settings;
     /// <summary>
     /// Releases unmanaged and - optionally - managed resources.
     /// </summary>
     /// <param name="disposing"><c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only unmanaged resources.</param>
-    /// TODO Edit XML Comment Template for Dispose
     protected virtual void Dispose(bool disposing)
     {
       if (!disposedValue)
       {
         if (disposing)
+        {
           m_FileSystemWatcher.Dispose();
+          TraceSource.TraceMessage( TraceEventType.Information, 130, "Disposing the data observer");
+        }
         disposedValue = true;
       }
     }

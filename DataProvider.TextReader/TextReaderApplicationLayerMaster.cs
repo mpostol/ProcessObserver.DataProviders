@@ -43,7 +43,6 @@ namespace CAS.CommServer.DataProvider.TextReader
     private void NotifyNewData(DataEntity x)
     {
       DataEntity oldData = Interlocked.Exchange<DataEntity>(ref m_Fifo, x);
-      oldData?.ReturnEmptyEnvelope();
       TraceSource.TraceMessage(TraceEventType.Verbose, 93, $"New data from the file {m_FileName} has arrived");
     }
     private void Eh(Exception exception)
@@ -120,7 +119,7 @@ namespace CAS.CommServer.DataProvider.TextReader
         return AL_ReadData_Result.ALRes_DatTransferErrr;
       }
       m_statistic.IncStRxFrameCounter();
-      pData = (IReadValue)_copy;
+      pData = new ReadDataEntity(_copy, pBlock);
       return AL_ReadData_Result.ALRes_Success;
     }
     public void DisReq()
