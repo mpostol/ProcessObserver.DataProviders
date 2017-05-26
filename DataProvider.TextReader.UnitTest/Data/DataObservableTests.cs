@@ -101,7 +101,7 @@ namespace CAS.CommServer.DataProvider.TextReader.Data.Tests
       }
       public override string ToString()
       {
-        return $"ColumnSeparator: \"{ColumnSeparator}\", DelayFileScann: {TimeSpan.FromMilliseconds(DelayFileScann)}, Timeou: {TimeSpan.FromMilliseconds(FileModificationNotificationTimeout)}";
+        return $"ColumnSeparator: \"{ColumnSeparator}\", DelayFileScann: {TimeSpan.FromMilliseconds(DelayFileScan)}, Timeou: {TimeSpan.FromMilliseconds(FileModificationNotificationTimeout)}";
       }
     }
   }

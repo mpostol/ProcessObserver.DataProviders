@@ -31,7 +31,7 @@ namespace CAS.CommServer.DataProvider.TextReader
     /// It is time needed by the remote application to finalize writing to file and release the file for other processes.
     /// </summary>
     /// <value>The delay file scann.</value>
-    double DelayFileScann { get; }
+    double DelayFileScan { get; }
     /// <summary>
     /// Gets or sets the file modification notification timeout.
     /// </summary>

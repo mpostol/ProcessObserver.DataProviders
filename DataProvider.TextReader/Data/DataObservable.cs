@@ -107,11 +107,10 @@ namespace CAS.CommServer.DataProvider.TextReader.Data
       m_FileSystemWatcher = new FileSystemWatcher(_Path, _fileName) { IncludeSubdirectories = false, EnableRaisingEvents = true, NotifyFilter = NotifyFilters.LastWrite };
       m_DataEntityObservable = Observable
         .FromEventPattern<FileSystemEventHandler, FileSystemEventArgs>(x => m_FileSystemWatcher.Changed += x, y => m_FileSystemWatcher.Changed -= y)
-        .Buffer<EventPattern<FileSystemEventArgs>>(TimeSpan.FromMilliseconds(settings.DelayFileScann))
+        .Buffer<EventPattern<FileSystemEventArgs>>(TimeSpan.FromMilliseconds(settings.DelayFileScan))
         .Where<IList<EventPattern<FileSystemEventArgs>>>(_list => _list.Count > 0)
         .Select<IList<EventPattern<FileSystemEventArgs>>, FileSystemEventPattern>(x => new FileSystemEventPattern(x[x.Count - 1]))
-        //.DistinctUntilChanged<FileSystemEventPattern>(new DateTimeEqualityComparer())
-        .Delay<FileSystemEventPattern>(TimeSpan.FromMilliseconds(settings.DelayFileScann))
+        .Delay<FileSystemEventPattern>(TimeSpan.FromMilliseconds(settings.DelayFileScan))
         .Select<FileSystemEventPattern, DataEntity>(x => ParseText(x.EventPattern, x.TimeStamp))
         .Timeout<DataEntity>(TimeSpan.FromMilliseconds(settings.FileModificationNotificationTimeout))
         .Do<DataEntity>(data => LogData(data), exception => LogException(exception));

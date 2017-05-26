@@ -17,7 +17,6 @@ using CAS.CommServer.DataProvider.TextReader.Data;
 using CAS.Lib.CommonBus;
 using CAS.Lib.CommonBus.ApplicationLayer;
 using CAS.Lib.RTLib.Management;
-using CAS.Lib.RTLib.Processes;
 using System;
 using System.ComponentModel;
 using System.Diagnostics;
@@ -29,21 +28,43 @@ namespace CAS.CommServer.DataProvider.TextReader
   public class TextReaderApplicationLayerMaster : IApplicationLayerMaster
   {
 
+    #region private
     private IComponent m_parentComponent;
     private IProtocolParent m_statistic;
     private DataEntity m_Fifo = null;
     private IDisposable m_Observer = null;
     private DataObservable m_Observable;
     private ITextReaderProtocolParameters m_TextReaderProtocolParameters = null;
+    private string m_FileName = string.Empty;
     private void ParentComponent_Disposed(object sender, EventArgs e)
     {
       Dispose();
     }
+    private void NotifyNewData(DataEntity x)
+    {
+      DataEntity oldData = Interlocked.Exchange<DataEntity>(ref m_Fifo, x);
+      oldData?.ReturnEmptyEnvelope();
+      TraceSource.TraceMessage(TraceEventType.Verbose, 93, $"New data from the file {m_FileName} has arrived");
+    }
+    private void Eh(Exception exception)
+    {
+      TraceSource.TraceMessage(TraceEventType.Error, 75, $"The data observable chain has thrown an exception. The connection is broken and must be established once more. Details: {exception}");
+      Connected = false;
+      m_Fifo = null;
+      m_Observable.Dispose();
+    }
+    #endregion
+
+    #region Disgnostic
     /// <summary>
-    /// Gets or sets the trace source.
+    /// Gets or sets the trace source <see cref="ITraceSource"/>.
     /// </summary>
+    /// <remarks>
+    /// By default <see cref="AssemblyTraceEvent.Tracer"/> is used.
+    /// </remarks>
     /// <value>The trace source to be used for logging important data.</value>
     public ITraceSource TraceSource { get; set; } = AssemblyTraceEvent.Tracer;
+    #endregion
 
     #region constructors
     public TextReaderApplicationLayerMaster(IProtocolParent statistic, IComponent parentComponent, ITextReaderProtocolParameters setting)
@@ -68,17 +89,11 @@ namespace CAS.CommServer.DataProvider.TextReader
         throw new ArgumentException("Wrong address format type");
       if (String.IsNullOrEmpty((string)remoteAddress.address))
         return TConnectReqRes.NoConnection;
-      m_Observable = new DataObservable((string)remoteAddress.address, m_TextReaderProtocolParameters, AssemblyTraceEvent.Tracer);
+      m_Observable = new DataObservable((string)remoteAddress.address, m_TextReaderProtocolParameters, TraceSource);
       m_Observer = m_Observable.Subscribe<DataEntity>
        (
-        x => Interlocked.Exchange<DataEntity>(ref m_Fifo,   x),
-        exception => 
-        {
-          TraceSource.TraceMessage(TraceEventType.Error, 75, $"ConnectReq - an exception has been caught: {exception}");
-          Connected = false;
-          m_Fifo = null;
-          m_Observable.Dispose();
-        },
+        x => NotifyNewData(x),
+        exception => Eh(exception),
         () => { Connected = false; m_Observable.Dispose(); }
        );
       Connected = true;

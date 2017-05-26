@@ -19,23 +19,24 @@ using System.Xml;
 namespace CAS.CommServer.DataProvider.TextReader
 {
   /// <summary>
-  /// Class TextReaderProtocolParameters - provides editable parameters of the DataProvider behaviour
+  /// Class TextReaderProtocolParameters - provides editable parameters of the DataProvider behavior
   /// </summary>
   public class TextReaderProtocolParameters : ITextReaderProtocolParameters
   {
+
     #region ITextReaderProtocolParameters
     /// <summary>
     /// Gets or sets the file modification notification timeout.
     /// </summary>
     /// <value><see cref="double" /> representing the file modification notification timeout.</value>
-    [Description("Timeout of File Modification Notification in miliseconds")]
+    [Description("Timeout of File Modification Notification in milliseconds")]
     [DisplayName("Timeout [mS]")]
     [Browsable(true)]
     public double FileModificationNotificationTimeout { get; set; } = Properties.Settings.Default.DefaultFileModificationNotificastionTimeout;
     [Description("Time to postpone the file content read operation after receiving file modification notification. It is time needed by the remote application to finalize writing to file and release the file for other processes.")]
-    [DisplayName("Delay File Scann")]
+    [DisplayName("Delay File Scan")]
     [Browsable(true)]
-    public double DelayFileScann { get; set; } = 1000;
+    public double DelayFileScan { get; set; } = 1000;
     /// <summary>
     /// Gets the column separator - string used to separate columns in the scanned text.
     /// </summary>
@@ -58,6 +59,7 @@ namespace CAS.CommServer.DataProvider.TextReader
       settings.ReadStartElement("FileModificationNotificationTimeout");
       FileModificationNotificationTimeout = settings.ReadContentAsDouble();
       settings.ReadEndElement();
+      //TODO DelayFileScan must be saved.
     }
     /// <summary>
     /// Writes the settings to <see cref="XmlWriter"/>.
