@@ -22,6 +22,7 @@ using System;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Reactive.Linq;
+using System.Threading;
 
 namespace CAS.CommServer.DataProvider.TextReader
 {
@@ -30,7 +31,7 @@ namespace CAS.CommServer.DataProvider.TextReader
 
     private IComponent m_parentComponent;
     private IProtocolParent m_statistic;
-    private EventsSynchronization m_Fifo = new EventsSynchronization();
+    private DataEntity m_Fifo = null;
     private IDisposable m_Observer = null;
     private DataObservable m_Observable;
     private ITextReaderProtocolParameters m_TextReaderProtocolParameters = null;
@@ -67,11 +68,17 @@ namespace CAS.CommServer.DataProvider.TextReader
         throw new ArgumentException("Wrong address format type");
       if (String.IsNullOrEmpty((string)remoteAddress.address))
         return TConnectReqRes.NoConnection;
-      m_Observable = new Data.DataObservable((string)remoteAddress.address, m_TextReaderProtocolParameters, AssemblyTraceEvent.Tracer);
+      m_Observable = new DataObservable((string)remoteAddress.address, m_TextReaderProtocolParameters, AssemblyTraceEvent.Tracer);
       m_Observer = m_Observable.Subscribe<DataEntity>
        (
-        x => m_Fifo.SetEvent(x),
-        exception => { TraceSource.TraceMessage(TraceEventType.Error, 75, $"ConnectReq - an exception has been caught: {exception}"); Connected = false; m_Observable.Dispose(); },
+        x => Interlocked.Exchange<DataEntity>(ref m_Fifo,   x),
+        exception => 
+        {
+          TraceSource.TraceMessage(TraceEventType.Error, 75, $"ConnectReq - an exception has been caught: {exception}");
+          Connected = false;
+          m_Fifo = null;
+          m_Observable.Dispose();
+        },
         () => { Connected = false; m_Observable.Dispose(); }
        );
       Connected = true;
@@ -87,8 +94,8 @@ namespace CAS.CommServer.DataProvider.TextReader
       if (!Connected)
         return AL_ReadData_Result.ALRes_DisInd;
       m_statistic.IncStTxFrameCounter();
-      object _retValue = null;
-      bool _retResult = m_Fifo.GetEvent(out _retValue, Convert.ToInt32(m_TextReaderProtocolParameters.FileModificationNotificationTimeout));
+      DataEntity _copy = Interlocked.Exchange<DataEntity>(ref m_Fifo, m_Fifo);
+      bool _retResult = _copy != null;
       m_statistic.RxDataBlock(_retResult);
       _responseTime.Stop();
       m_statistic.TimeMaxResponseDelayAdd(_responseTime.ElapsedMilliseconds);
@@ -98,7 +105,7 @@ namespace CAS.CommServer.DataProvider.TextReader
         return AL_ReadData_Result.ALRes_DatTransferErrr;
       }
       m_statistic.IncStRxFrameCounter();
-      pData = (IReadValue)_retValue;
+      pData = (IReadValue)_copy;
       return AL_ReadData_Result.ALRes_Success;
     }
     public void DisReq()

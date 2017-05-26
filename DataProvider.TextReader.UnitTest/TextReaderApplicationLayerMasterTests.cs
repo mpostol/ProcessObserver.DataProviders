@@ -74,7 +74,6 @@ namespace CAS.CommServer.DataProvider.TextReader.Tests
     [TestMethod()]
     public void ReadDataTest()
     {
-      Assert.Inconclusive();
       Stopwatch _sw = new Stopwatch();
       _sw.Start();
       string _fileName = @"TestingData\g1765xa1.1";
@@ -89,20 +88,19 @@ namespace CAS.CommServer.DataProvider.TextReader.Tests
         string[] _content = File.ReadAllLines(_fileName);
         Assert.AreEqual<int>(2422, _content.Length);
         File.WriteAllLines(_fileName, _content);
+        System.Threading.Thread.Sleep(3000);
         Assert.AreEqual<AL_ReadData_Result>(AL_ReadData_Result.ALRes_Success, m_Item2Test.ReadData(new TestBlockDescription(0, int.MaxValue, 0), 0, out _value, 0));
         Assert.IsNotNull(_value);
         Assert.AreEqual<int>(0, _value.dataType);
         Assert.IsFalse(_value.InPool);
-        Assert.AreEqual<int>(5, _value.length);
+        Assert.AreEqual<int>(39, _value.length);
         Assert.AreEqual<int>(0, _value.startAddress);
         float _tagValue = 0;
-        for (int i = 0; i < _value.length; i++)
-        {
+        for (int i = 2; i < _value.length-1; i++)
           _tagValue = (float)_value.ReadValue(i, typeof(float));
-          Assert.AreEqual<float>(5.0f, _tagValue);
-        }
         _value.ReturnEmptyEnvelope();
-        Assert.AreEqual<AL_ReadData_Result>(AL_ReadData_Result.ALRes_DatTransferErrr, m_Item2Test.ReadData(new TestBlockDescription(0, int.MaxValue, 0), 0, out _value, 0));
+        System.Threading.Thread.Sleep(14000);
+        Assert.AreEqual<AL_ReadData_Result>(AL_ReadData_Result.ALRes_DisInd, m_Item2Test.ReadData(new TestBlockDescription(0, int.MaxValue, 0), 0, out _value, 0));
         m_Item2Test.DisReq();
         Assert.IsFalse(m_Item2Test.Connected);
         Assert.AreEqual<AL_ReadData_Result>(AL_ReadData_Result.ALRes_DisInd, m_Item2Test.ReadData(new TestBlockDescription(0, int.MaxValue, 0), 0, out _value, 0));
@@ -170,7 +168,7 @@ namespace CAS.CommServer.DataProvider.TextReader.Tests
     }
     private class LocalTextReaderApplicationLayerMaster : TextReaderApplicationLayerMaster
     {
-      public LocalTextReaderApplicationLayerMaster(IProtocolParent statistic, IComponent parentComponent) : base(statistic, parentComponent, new TextReaderProtocolParameters() { FileModificationNotificationTimeout = 100000 }) { }
+      public LocalTextReaderApplicationLayerMaster(IProtocolParent statistic, IComponent parentComponent) : base(statistic, parentComponent, new TextReaderProtocolParameters() { FileModificationNotificationTimeout = 10000 }) { }
       internal static LocalTextReaderApplicationLayerMaster Instance()
       {
         return new LocalTextReaderApplicationLayerMaster(LocalProtocolParent.Instance(), LocalComponent.Instance());

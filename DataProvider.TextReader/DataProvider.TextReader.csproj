@@ -109,7 +109,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AssemblyInfo.tt</DependentUpon>
     </Compile>
-    <Compile Include="TextReaderCommunicationLayer.cs" />
     <Compile Include="TextReaderDataProviderID.cs" />
     <Compile Include="TextReaderProtocolParameters.cs" />
   </ItemGroup>

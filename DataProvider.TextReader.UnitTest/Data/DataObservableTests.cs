@@ -32,7 +32,7 @@ namespace CAS.CommServer.DataProvider.TextReader.Data.Tests
           string[] _content = File.ReadAllLines(_fileName);
           Assert.AreEqual<int>(2422, _content.Length);
           File.WriteAllLines(_fileName, _content);
-          Thread.Sleep(2000);
+          Thread.Sleep(4000);
           Assert.IsNull(_exception, $"{_exception}");
           Assert.AreEqual<int>(2, _trace.TraceBuffer.Count);
           Console.WriteLine(_trace.TraceBuffer[0].ToString());
@@ -43,7 +43,7 @@ namespace CAS.CommServer.DataProvider.TextReader.Data.Tests
           Assert.AreEqual<string>("09-12-16", _buffer[0].Tags[0]);
           Assert.AreEqual<string>("09:24:02", _buffer[0].Tags[1]);
           Assert.AreEqual<string>("", _buffer[0].Tags[38]);
-          Assert.IsTrue(_watch.ElapsedMilliseconds < 1500, $"Elapsed: {_watch.ElapsedMilliseconds}");
+          Assert.IsTrue(_watch.ElapsedMilliseconds < 2500, $"Elapsed: {_watch.ElapsedMilliseconds}");
           Console.WriteLine($"Time execution: {_watch.ElapsedMilliseconds}");
         }
       }
@@ -65,7 +65,7 @@ namespace CAS.CommServer.DataProvider.TextReader.Data.Tests
         {
           string[] _content = File.ReadAllLines(_fileName);
           File.WriteAllLines(_fileName, _content);
-          Thread.Sleep(12000);
+          Thread.Sleep(14000);
           Assert.IsNotNull(_exception, $"{_exception}");
           Assert.IsTrue(_exception is TimeoutException);
           Assert.AreEqual<int>(3, _trace.TraceBuffer.Count);
@@ -74,7 +74,7 @@ namespace CAS.CommServer.DataProvider.TextReader.Data.Tests
           Console.WriteLine(_trace.TraceBuffer[2].ToString());
           Assert.AreEqual<int>(1, _nextExecutedCount, $"Execution cout: {_nextExecutedCount}");
           Assert.AreEqual<int>(1, _buffer.Count);
-          Assert.IsTrue(_watch.ElapsedMilliseconds < 1500, $"Elapsed: {_watch.ElapsedMilliseconds}");
+          Assert.IsTrue(_watch.ElapsedMilliseconds < 2500, $"Elapsed: {_watch.ElapsedMilliseconds}");
           Console.WriteLine($"Time execution: {_watch.ElapsedMilliseconds}");
         }
       }

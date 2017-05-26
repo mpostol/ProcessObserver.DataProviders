@@ -69,12 +69,12 @@ namespace CAS.CommServer.DataProvider.TextReader.Data
       DateTime _now = DateTime.Now;
       TraceSource.TraceMessage(TraceEventType.Error, 71, $"Recorded exception at: {_now.ToLongTimeString()}.{_now.Millisecond} message {exception}");
     }
-    private DataEntity ParseText(EventPattern<FileSystemEventArgs> eventArgs)
+    private DataEntity ParseText(EventPattern<FileSystemEventArgs> eventPattern, DateTime timeStamp)
     {
       DataEntity _ret = null;
-      string[] _content = File.ReadAllLines(eventArgs.EventArgs.FullPath);
+      string[] _content = File.ReadAllLines(eventPattern.EventArgs.FullPath);
       int _line2Read = Int32.Parse(_content[0].Trim());
-      _ret = new DataEntity() { TimeStamp = File.GetLastWriteTime(eventArgs.EventArgs.FullPath), Tags = _content[_line2Read].Split(new string[] { m_Settings.ColumnSeparator }, StringSplitOptions.None) };
+      _ret = new DataEntity() { TimeStamp = timeStamp, Tags = _content[_line2Read].Split(new string[] { m_Settings.ColumnSeparator }, StringSplitOptions.None) };
       return _ret;
     }
     #endregion
@@ -107,19 +107,24 @@ namespace CAS.CommServer.DataProvider.TextReader.Data
       m_FileSystemWatcher = new FileSystemWatcher(_Path, _fileName) { IncludeSubdirectories = false, EnableRaisingEvents = true, NotifyFilter = NotifyFilters.LastWrite };
       m_DataEntityObservable = Observable
         .FromEventPattern<FileSystemEventHandler, FileSystemEventArgs>(x => m_FileSystemWatcher.Changed += x, y => m_FileSystemWatcher.Changed -= y)
-        .Select<EventPattern<FileSystemEventArgs>, FileSystemEventPattern>(x => new FileSystemEventPattern(x))
-        .DistinctUntilChanged<FileSystemEventPattern>(new DateTimeEqualityComparer())
+        .Buffer<EventPattern<FileSystemEventArgs>>(TimeSpan.FromMilliseconds(settings.DelayFileScann))
+        .Where<IList<EventPattern<FileSystemEventArgs>>>(_list => _list.Count > 0)
+        .Select<IList<EventPattern<FileSystemEventArgs>>, FileSystemEventPattern>(x => new FileSystemEventPattern(x[x.Count - 1]))
+        //.DistinctUntilChanged<FileSystemEventPattern>(new DateTimeEqualityComparer())
         .Delay<FileSystemEventPattern>(TimeSpan.FromMilliseconds(settings.DelayFileScann))
-        .Select<FileSystemEventPattern, DataEntity>(x => ParseText(x.EventPattern))
+        .Select<FileSystemEventPattern, DataEntity>(x => ParseText(x.EventPattern, x.TimeStamp))
         .Timeout<DataEntity>(TimeSpan.FromMilliseconds(settings.FileModificationNotificationTimeout))
         .Do<DataEntity>(data => LogData(data), exception => LogException(exception));
       TraceSource.TraceMessage(TraceEventType.Verbose, 107, $"Succesfully created obserwer for the file {filename} with parameter {settings}");
     }
     /// <summary>
-    /// Gets or sets the trace source.
+    /// Gets or sets the trace source <see cref="ITraceSource"/>.
     /// </summary>
+    /// <remarks>
+    /// By default <see cref="AssemblyTraceEvent.Tracer"/> is used.
+    /// </remarks>
     /// <value>The trace source to be used for logging important data.</value>
-    public ITraceSource TraceSource { get; set; } = AssemblyTraceEvent.Tracer;
+    internal ITraceSource TraceSource { get; set; } = AssemblyTraceEvent.Tracer;
     #endregion
 
     #region IDisposable Support
