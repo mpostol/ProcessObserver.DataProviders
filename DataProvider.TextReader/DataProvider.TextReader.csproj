@@ -94,6 +94,7 @@
     <Compile Include="AssemblyTraceEvent.cs" />
     <Compile Include="Data\DataEntity.cs" />
     <Compile Include="Data\DataObservable.cs" />
+    <Compile Include="Data\IDataEntity.cs" />
     <Compile Include="Data\ReadDataEntity.cs" />
     <Compile Include="ITextReaderProtocolParameters.cs" />
     <Compile Include="Properties\Settings.Designer.cs">

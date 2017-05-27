@@ -36,7 +36,7 @@ namespace CAS.CommServer.DataProvider.TextReader.Data
     /// </summary>
     /// <param name="dataBuffer">The data buffer holding source data.</param>
     /// <param name="block">The data block description to retrieved from the <paramref name="buffer"/>.</param>
-    public ReadDataEntity(DataEntity dataBuffer, IBlockDescription block)
+    public ReadDataEntity(IDataEntity dataBuffer, IBlockDescription block)
     {
       startAddress = block.startAddress;
       dataType = block.dataType;

@@ -28,7 +28,7 @@ namespace CAS.CommServer.DataProvider.TextReader.Data
   /// </summary>
   /// <seealso cref="System.Reactive.ObservableBase{DataEntity}" />
   /// <seealso cref="System.IDisposable" />
-  internal class DataObservable : ObservableBase<DataEntity>, IDisposable
+  internal class DataObservable : ObservableBase<IDataEntity>, IDisposable
   {
 
     #region private
@@ -41,29 +41,19 @@ namespace CAS.CommServer.DataProvider.TextReader.Data
       }
       public EventPattern<FileSystemEventArgs> EventPattern { get; private set; }
       public DateTime TimeStamp { get; private set; }
-
     }
     private FileSystemWatcher m_FileSystemWatcher;
     private string m_FileFullPath;
-    private IObservable<DataEntity> m_DataEntityObservable = null;
+    private IObservable<IDataEntity> m_DataEntityObservable = null;
     private ITextReaderProtocolParameters m_Settings;
     private void LogException(Exception exception)
     {
-      DateTime _now = DateTime.Now;
-      TraceSource.TraceMessage(TraceEventType.Error, 71, $"Recorded exception at: {_now.ToLongTimeString()}.{_now.Millisecond} message {exception}");
-    }
-    private DataEntity ParseText(EventPattern<FileSystemEventArgs> eventPattern, DateTime timeStamp)
-    {
-      DataEntity _ret = null;
-      string[] _content = File.ReadAllLines(eventPattern.EventArgs.FullPath);
-      int _line2Read = Int32.Parse(_content[0].Trim());
-      _ret = new DataEntity() { TimeStamp = timeStamp, Tags = _content[_line2Read].Split(new string[] { m_Settings.ColumnSeparator }, StringSplitOptions.None) };
-      return _ret;
+      TraceSource.TraceMessage(TraceEventType.Error, 51, $"Recorded exception thrown on the data processing observable chain {exception}");
     }
     #endregion
 
     #region ObservableBase
-    protected override IDisposable SubscribeCore(IObserver<DataEntity> observer)
+    protected override IDisposable SubscribeCore(IObserver<IDataEntity> observer)
     {
       return m_DataEntityObservable.Subscribe(observer);
     }
@@ -94,8 +84,8 @@ namespace CAS.CommServer.DataProvider.TextReader.Data
         .Where<IList<EventPattern<FileSystemEventArgs>>>(_list => _list.Count > 0)
         .Select<IList<EventPattern<FileSystemEventArgs>>, FileSystemEventPattern>(x => new FileSystemEventPattern(x[x.Count - 1]))
         .Delay<FileSystemEventPattern>(TimeSpan.FromMilliseconds(settings.DelayFileScan))
-        .Select<FileSystemEventPattern, DataEntity>(x => ParseText(x.EventPattern, x.TimeStamp))
-        .Do<DataEntity>(data => { }, exception => LogException(exception));
+        .Select<FileSystemEventPattern, IDataEntity>(x => DataEntity.ReadFile(x.EventPattern.EventArgs.FullPath, x.TimeStamp, m_Settings.ColumnSeparator))
+        .Do<IDataEntity>(data => { }, exception => LogException(exception));
       TraceSource.TraceMessage(TraceEventType.Verbose, 107, $"Succesfully created data obserwer for the file {filename} with parameter {settings}");
     }
     /// <summary>
@@ -133,8 +123,6 @@ namespace CAS.CommServer.DataProvider.TextReader.Data
     {
       // Do not change this code. Put cleanup code in Dispose(bool disposing) above.
       Dispose(true);
-      // TODO: uncomment the following line if the finalizer is overridden above.
-      // GC.SuppressFinalize(this);
     }
     #endregion
 

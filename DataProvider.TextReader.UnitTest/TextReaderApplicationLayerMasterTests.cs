@@ -17,7 +17,6 @@ namespace CAS.CommServer.DataProvider.TextReader.Tests
   public class TextReaderApplicationLayerMasterTests
   {
 
-
     #region tests
     [TestMethod()]
     public void ConnectReqTest()
@@ -115,6 +114,7 @@ namespace CAS.CommServer.DataProvider.TextReader.Tests
     }
 
     #endregion
+
     #region Not Implemented API
     [TestMethod()]
     [ExpectedException(typeof(NotImplementedException))]

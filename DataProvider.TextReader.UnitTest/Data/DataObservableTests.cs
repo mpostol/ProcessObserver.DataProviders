@@ -17,7 +17,7 @@ namespace CAS.CommServer.DataProvider.TextReader.Data.Tests
     public void DataObservableTest()
     {
       Assert.IsTrue(File.Exists(_fileName));
-      List<DataEntity> _buffer = new List<DataEntity>();
+      List<IDataEntity> _buffer = new List<IDataEntity>();
       Stopwatch _watch = Stopwatch.StartNew();
       TestTraceSource _trace = new TestTraceSource();
       using (DataObservable _dataSource = new DataObservable(_fileName, TestTextReaderProtocolParameters.InstanceData(), _trace))
@@ -26,7 +26,7 @@ namespace CAS.CommServer.DataProvider.TextReader.Data.Tests
         int _nextExecutedCount = 0;
         Assert.AreEqual<double>(1000, TestTextReaderProtocolParameters.InstanceData().DelayFileScan);
         using (IDisposable _client = _dataSource
-          .Do<DataEntity>(x => _nextExecutedCount++)
+          .Do<IDataEntity>(x => _nextExecutedCount++)
           .Subscribe(x => { _buffer.Add(x); _watch.Stop(); }, exception => _exception = exception))
         {
           Assert.AreEqual<int>(0, _buffer.Count);

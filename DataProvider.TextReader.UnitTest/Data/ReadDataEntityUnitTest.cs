@@ -12,7 +12,7 @@ namespace CAS.CommServer.DataProvider.TextReader.UnitTest.Data
     [TestMethod]
     public void ConstructorTestMethod()
     {
-      DataEntity _data = new DataEntity() { Tags = new string[8], TimeStamp = DateTime.Now };
+      TestDataEntity _data = new TestDataEntity() { Tags = new string[8], TimeStamp = DateTime.Now };
       ReadDataEntity _instance = new ReadDataEntity(_data, new Block());
       _instance.ReturnEmptyEnvelope(); //do nothing
       Assert.AreEqual(4, _instance.length);
@@ -23,7 +23,7 @@ namespace CAS.CommServer.DataProvider.TextReader.UnitTest.Data
     [TestMethod]
     public void InPoolTestMethod()
     {
-      DataEntity _data = new DataEntity() { Tags = new string[8], TimeStamp = DateTime.Now };
+      TestDataEntity _data = new TestDataEntity() { Tags = new string[8], TimeStamp = DateTime.Now };
       ReadDataEntity _instance = new ReadDataEntity(_data, new Block());
       Assert.IsFalse(_instance.InPool);
       _instance.InPool = true;
@@ -32,7 +32,7 @@ namespace CAS.CommServer.DataProvider.TextReader.UnitTest.Data
     [TestMethod]
     public void IsInBlockTestMethod()
     {
-      DataEntity _data = new DataEntity() { Tags = new string[8], TimeStamp = DateTime.Now };
+      TestDataEntity _data = new TestDataEntity() { Tags = new string[8], TimeStamp = DateTime.Now };
       ReadDataEntity _instance = new ReadDataEntity(_data, new Block());
       Assert.IsTrue(_instance.IsInBlock(0, 0, 0));
       Assert.IsFalse(_instance.IsInBlock(0, 10, 0));
@@ -43,14 +43,14 @@ namespace CAS.CommServer.DataProvider.TextReader.UnitTest.Data
     [ExpectedException(typeof(ArgumentOutOfRangeException))]
     public void ReadValueArgumentOutOfRangeTest()
     {
-      DataEntity _data = new DataEntity() { Tags = GetData(), TimeStamp = DateTime.Now };
+      TestDataEntity _data = new TestDataEntity() { Tags = GetData(), TimeStamp = DateTime.Now };
       ReadDataEntity _instance = new ReadDataEntity(_data, new Block());
       object _value = _instance.ReadValue(8, typeof(float));
     }
     [TestMethod]
     public void ReadValueStringTest()
     {
-      DataEntity _data = new DataEntity() { Tags = GetData(), TimeStamp = DateTime.Now };
+      TestDataEntity _data = new TestDataEntity() { Tags = GetData(), TimeStamp = DateTime.Now };
       ReadDataEntity _instance = new ReadDataEntity(_data, new Block());
       object _value = _instance.ReadValue(4, typeof(string));
       Assert.IsTrue(_value is string);
@@ -68,7 +68,7 @@ namespace CAS.CommServer.DataProvider.TextReader.UnitTest.Data
     [TestMethod]
     public void ReadValueFloatTest()
     {
-      DataEntity _data = new DataEntity() { Tags = GetData(), TimeStamp = DateTime.Now };
+      TestDataEntity _data = new TestDataEntity() { Tags = GetData(), TimeStamp = DateTime.Now };
       ReadDataEntity _instance = new ReadDataEntity(_data, new Block());
       object _value = _instance.ReadValue(6, typeof(float));
       Assert.IsTrue(_value is float);
@@ -80,7 +80,7 @@ namespace CAS.CommServer.DataProvider.TextReader.UnitTest.Data
     [TestMethod]
     public void ReadValueLongTest()
     {
-      DataEntity _data = new DataEntity() { Tags = GetData(), TimeStamp = DateTime.Now };
+      TestDataEntity _data = new TestDataEntity() { Tags = GetData(), TimeStamp = DateTime.Now };
       ReadDataEntity _instance = new ReadDataEntity(_data, new Block());
       object _value = _instance.ReadValue(7, typeof(long));
       Assert.IsTrue(_value is long);
@@ -90,14 +90,14 @@ namespace CAS.CommServer.DataProvider.TextReader.UnitTest.Data
     [ExpectedException(typeof(FormatException))]
     public void ReadValueLongFormatExceptionTest()
     {
-      DataEntity _data = new DataEntity() { Tags = GetData(), TimeStamp = DateTime.Now };
+      TestDataEntity _data = new TestDataEntity() { Tags = GetData(), TimeStamp = DateTime.Now };
       ReadDataEntity _instance = new ReadDataEntity(_data, new Block());
       object _value = _instance.ReadValue(6, typeof(long));
     }
     [TestMethod]
     public void ReadValueIntTest()
     {
-      DataEntity _data = new DataEntity() { Tags = GetData(), TimeStamp = DateTime.Now };
+      TestDataEntity _data = new TestDataEntity() { Tags = GetData(), TimeStamp = DateTime.Now };
       ReadDataEntity _instance = new ReadDataEntity(_data, new Block());
       object _value = _instance.ReadValue(7, typeof(int));
       Assert.IsTrue(_value is int);
@@ -107,14 +107,14 @@ namespace CAS.CommServer.DataProvider.TextReader.UnitTest.Data
     [ExpectedException(typeof(FormatException))]
     public void ReadValueIntFormatExceptionTest()
     {
-      DataEntity _data = new DataEntity() { Tags = GetData(), TimeStamp = DateTime.Now };
+      TestDataEntity _data = new TestDataEntity() { Tags = GetData(), TimeStamp = DateTime.Now };
       ReadDataEntity _instance = new ReadDataEntity(_data, new Block());
       object _value = _instance.ReadValue(4, typeof(int));
     }
     [TestMethod]
     public void ReadValueShortTest()
     {
-      DataEntity _data = new DataEntity() { Tags = GetData(), TimeStamp = DateTime.Now };
+      TestDataEntity _data = new TestDataEntity() { Tags = GetData(), TimeStamp = DateTime.Now };
       ReadDataEntity _instance = new ReadDataEntity(_data, new Block());
       object _value = _instance.ReadValue(7, typeof(short));
       Assert.IsTrue(_value is short);
@@ -124,7 +124,7 @@ namespace CAS.CommServer.DataProvider.TextReader.UnitTest.Data
     [ExpectedException(typeof(FormatException))]
     public void ReadValueShortFormatExceptionTest()
     {
-      DataEntity _data = new DataEntity() { Tags = GetData(), TimeStamp = DateTime.Now };
+      TestDataEntity _data = new TestDataEntity() { Tags = GetData(), TimeStamp = DateTime.Now };
       ReadDataEntity _instance = new ReadDataEntity(_data, new Block());
       object _value = _instance.ReadValue(6, typeof(short));
     }
@@ -132,7 +132,7 @@ namespace CAS.CommServer.DataProvider.TextReader.UnitTest.Data
     [ExpectedException(typeof(OverflowException))]
     public void ReadValueShortOverflowExceptionTest()
     {
-      DataEntity _data = new DataEntity() { Tags = GetData(), TimeStamp = DateTime.Now };
+      TestDataEntity _data = new TestDataEntity() { Tags = GetData(), TimeStamp = DateTime.Now };
       _data.Tags[7] = "33000";
       ReadDataEntity _instance = new ReadDataEntity(_data, new Block());
       object _value = _instance.ReadValue(7, typeof(short));
@@ -141,7 +141,7 @@ namespace CAS.CommServer.DataProvider.TextReader.UnitTest.Data
     [ExpectedException(typeof(FormatException))]
     public void ReadValueWrongFormatTest()
     {
-      DataEntity _data = new DataEntity() { Tags = GetData(), TimeStamp = DateTime.Now };
+      TestDataEntity _data = new TestDataEntity() { Tags = GetData(), TimeStamp = DateTime.Now };
       ReadDataEntity _instance = new ReadDataEntity(_data, new Block());
       object _value = _instance.ReadValue(4, typeof(float));
     }
@@ -163,6 +163,17 @@ namespace CAS.CommServer.DataProvider.TextReader.UnitTest.Data
       {
         get; private set;
       } = 4;
+    }
+    private class TestDataEntity : IDataEntity
+    {
+      public string[] Tags
+      {
+        get; set;
+      }
+      public DateTime TimeStamp
+      {
+        get; set;
+      }
     }
   }
 }
