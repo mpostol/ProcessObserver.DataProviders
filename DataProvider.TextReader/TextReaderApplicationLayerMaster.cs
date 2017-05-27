@@ -18,6 +18,7 @@ using CAS.Lib.CommonBus;
 using CAS.Lib.CommonBus.ApplicationLayer;
 using CAS.Lib.RTLib.Management;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Reactive.Linq;
@@ -40,16 +41,23 @@ namespace CAS.CommServer.DataProvider.TextReader
     {
       Dispose();
     }
-    private void NotifyNewData(DataEntity x)
+    private void NotifyNewData(IList<DataEntity> list)
     {
-      DataEntity oldData = Interlocked.Exchange<DataEntity>(ref m_Fifo, x);
-      TraceSource.TraceMessage(TraceEventType.Verbose, 93, $"New data from the file {m_FileName} has arrived");
+      DataEntity _newData = null;
+      if (list.Count == 0)
+        TraceSource.TraceMessage(TraceEventType.Information, 71, $"Incomming data stream has been timed out.");
+      else
+      {
+        _newData = list[list.Count - 1];
+        TraceSource.TraceMessage(TraceEventType.Verbose, 93, $"New data from the file {m_FileName} modified at {_newData.TimeStamp} has been fetched");
+      }
+      DataEntity oldData = Interlocked.Exchange<DataEntity>(ref m_Fifo, _newData);
     }
-    private void Eh(Exception exception)
+    private void ExceptionHandler(Exception exception)
     {
       TraceSource.TraceMessage(TraceEventType.Error, 75, $"The data observable chain has thrown an exception. The connection is broken and must be established once more. Details: {exception}");
       Connected = false;
-      m_Fifo = null;
+      Interlocked.Exchange<DataEntity>(ref m_Fifo, null);
       m_Observable.Dispose();
     }
     #endregion
@@ -89,10 +97,12 @@ namespace CAS.CommServer.DataProvider.TextReader
       if (String.IsNullOrEmpty((string)remoteAddress.address))
         return TConnectReqRes.NoConnection;
       m_Observable = new DataObservable((string)remoteAddress.address, m_TextReaderProtocolParameters, TraceSource);
-      m_Observer = m_Observable.Subscribe<DataEntity>
+      m_Observer = m_Observable
+        .Buffer<DataEntity>(TimeSpan.FromMilliseconds(m_TextReaderProtocolParameters.FileModificationNotificationTimeout), 1)
+        .Subscribe<IList<DataEntity>>
        (
         x => NotifyNewData(x),
-        exception => Eh(exception),
+        exception => ExceptionHandler(exception),
         () => { Connected = false; m_Observable.Dispose(); }
        );
       Connected = true;

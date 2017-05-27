@@ -92,7 +92,7 @@ namespace CAS.CommServer.DataProvider.TextReader.Tests
         Assert.AreEqual<int>(2422, _content.Length);
         File.WriteAllLines(_fileName, _content);
         Thread.Sleep(3000);
-        Assert.AreEqual<int>(3, _textReader.TestTraceSource.TraceListener.Count);
+        Assert.AreEqual<int>(2, _textReader.TestTraceSource.TraceListener.Count);
         Assert.AreEqual<AL_ReadData_Result>(AL_ReadData_Result.ALRes_Success, _textReader.ReadData(new TestBlockDescription(0, 39, 0), 0, out _value, 0));
         Assert.IsNotNull(_value);
         Assert.AreEqual<int>(0, _value.dataType);
@@ -104,8 +104,8 @@ namespace CAS.CommServer.DataProvider.TextReader.Tests
           _tagValue = (float)_value.ReadValue(i, typeof(float));
         _value.ReturnEmptyEnvelope();
         Thread.Sleep(15000);
-        Assert.AreEqual<int>(6, _textReader.TestTraceSource.TraceListener.Count);
-        Assert.AreEqual<AL_ReadData_Result>(AL_ReadData_Result.ALRes_DisInd, _textReader.ReadData(new TestBlockDescription(0, 39, 0), 0, out _value, 0));
+        Assert.AreEqual<int>(3, _textReader.TestTraceSource.TraceListener.Count);
+        Assert.AreEqual<AL_ReadData_Result>(AL_ReadData_Result.ALRes_DatTransferErrr, _textReader.ReadData(new TestBlockDescription(0, 39, 0), 0, out _value, 0));
         _textReader.DisReq();
         Assert.IsFalse(_textReader.Connected);
         Assert.AreEqual<AL_ReadData_Result>(AL_ReadData_Result.ALRes_DisInd, _textReader.ReadData(new TestBlockDescription(0, 39, 0), 0, out _value, 0));

@@ -24,6 +24,7 @@ namespace CAS.CommServer.DataProvider.TextReader.Data.Tests
       {
         Exception _exception = null;
         int _nextExecutedCount = 0;
+        Assert.AreEqual<double>(1000, TestTextReaderProtocolParameters.InstanceData().DelayFileScan);
         using (IDisposable _client = _dataSource
           .Do<DataEntity>(x => _nextExecutedCount++)
           .Subscribe(x => { _buffer.Add(x); _watch.Stop(); }, exception => _exception = exception))
@@ -32,55 +33,24 @@ namespace CAS.CommServer.DataProvider.TextReader.Data.Tests
           string[] _content = File.ReadAllLines(_fileName);
           Assert.AreEqual<int>(2422, _content.Length);
           File.WriteAllLines(_fileName, _content);
-          Thread.Sleep(4000);
+          Thread.Sleep(2200);
           Assert.IsNull(_exception, $"{_exception}");
-          Assert.AreEqual<int>(2, _trace.TraceBuffer.Count);
+          Assert.AreEqual<int>(1, _trace.TraceBuffer.Count);
           Console.WriteLine(_trace.TraceBuffer[0].ToString());
-          Console.WriteLine(_trace.TraceBuffer[1].ToString());
           Assert.AreEqual<int>(1, _nextExecutedCount, $"Execution cout: {_nextExecutedCount}");
           Assert.AreEqual<int>(1, _buffer.Count);
           Assert.AreEqual<int>(39, _buffer[0].Tags.Length);
           Assert.AreEqual<string>("09-12-16", _buffer[0].Tags[0]);
           Assert.AreEqual<string>("09:24:02", _buffer[0].Tags[1]);
           Assert.AreEqual<string>("", _buffer[0].Tags[38]);
-          Assert.IsTrue(_watch.ElapsedMilliseconds < 2500, $"Elapsed: {_watch.ElapsedMilliseconds}");
+          Assert.IsTrue(_watch.ElapsedMilliseconds > 2000, $"Elapsed: {_watch.ElapsedMilliseconds}"); //1000nS for Buffer + 1000 for Delay
           Console.WriteLine($"Time execution: {_watch.ElapsedMilliseconds}");
         }
       }
     }
-    [TestMethod]
-    public void TimeoutTestMethod()
-    {
-      Assert.IsTrue(File.Exists(_fileName));
-      List<DataEntity> _buffer = new List<DataEntity>();
-      Stopwatch _watch = Stopwatch.StartNew();
-      TestTraceSource _trace = new TestTraceSource();
-      using (DataObservable _dataSource = new DataObservable(_fileName, new TestTextReaderProtocolParameters() { FileModificationNotificationTimeout = 10000 }, _trace))
-      {
-        Exception _exception = null;
-        int _nextExecutedCount = 0;
-        using (IDisposable _client = _dataSource
-          .Do<DataEntity>(x => _nextExecutedCount++)
-          .Subscribe(x => { _buffer.Add(x); _watch.Stop(); }, exception => _exception = exception))
-        {
-          string[] _content = File.ReadAllLines(_fileName);
-          File.WriteAllLines(_fileName, _content);
-          Thread.Sleep(14000);
-          Assert.IsNotNull(_exception, $"{_exception}");
-          Assert.IsTrue(_exception is TimeoutException);
-          Assert.AreEqual<int>(3, _trace.TraceBuffer.Count);
-          Console.WriteLine(_trace.TraceBuffer[0].ToString());
-          Console.WriteLine(_trace.TraceBuffer[1].ToString());
-          Console.WriteLine(_trace.TraceBuffer[2].ToString());
-          Assert.AreEqual<int>(1, _nextExecutedCount, $"Execution cout: {_nextExecutedCount}");
-          Assert.AreEqual<int>(1, _buffer.Count);
-          Assert.IsTrue(_watch.ElapsedMilliseconds < 2500, $"Elapsed: {_watch.ElapsedMilliseconds}");
-          Console.WriteLine($"Time execution: {_watch.ElapsedMilliseconds}");
-        }
-      }
-    }
-    private const string _fileName = @"TestingData\g1765xa1.1";
 
+    #region test instrumentation
+    private const string _fileName = @"TestingData\g1765xa1.1";
     private class TestTraceSource : ITraceSource
     {
 
@@ -104,5 +74,7 @@ namespace CAS.CommServer.DataProvider.TextReader.Data.Tests
         return $"ColumnSeparator: \"{ColumnSeparator}\", DelayFileScann: {TimeSpan.FromMilliseconds(DelayFileScan)}, Timeou: {TimeSpan.FromMilliseconds(FileModificationNotificationTimeout)}";
       }
     }
+    #endregion
+
   }
 }

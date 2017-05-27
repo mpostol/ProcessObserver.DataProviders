@@ -47,11 +47,6 @@ namespace CAS.CommServer.DataProvider.TextReader.Data
     private string m_FileFullPath;
     private IObservable<DataEntity> m_DataEntityObservable = null;
     private ITextReaderProtocolParameters m_Settings;
-    private void LogData(DataEntity data)
-    {
-      DateTime _now = DateTime.Now;
-      TraceSource.TraceMessage(TraceEventType.Verbose, 66, $"Recorded data modification at: {_now.ToLongTimeString()}.{_now.Millisecond} from file {m_FileFullPath} modified at: {data.TimeStamp}");
-    }
     private void LogException(Exception exception)
     {
       DateTime _now = DateTime.Now;
@@ -100,8 +95,7 @@ namespace CAS.CommServer.DataProvider.TextReader.Data
         .Select<IList<EventPattern<FileSystemEventArgs>>, FileSystemEventPattern>(x => new FileSystemEventPattern(x[x.Count - 1]))
         .Delay<FileSystemEventPattern>(TimeSpan.FromMilliseconds(settings.DelayFileScan))
         .Select<FileSystemEventPattern, DataEntity>(x => ParseText(x.EventPattern, x.TimeStamp))
-        .Timeout<DataEntity>(TimeSpan.FromMilliseconds(settings.FileModificationNotificationTimeout))
-        .Do<DataEntity>(data => LogData(data), exception => LogException(exception));
+        .Do<DataEntity>(data => { }, exception => LogException(exception));
       TraceSource.TraceMessage(TraceEventType.Verbose, 107, $"Succesfully created data obserwer for the file {filename} with parameter {settings}");
     }
     /// <summary>
