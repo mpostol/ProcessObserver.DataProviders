@@ -53,6 +53,9 @@ namespace CAS.CommServer.DataProvider.TextReader
       Tracer.TraceEvent(eventType, id, message);
     }
   }
+  /// <summary>
+  /// Interface ITraceSource - declares basic functionality for the component behavior tracing.
+  /// </summary>
   public interface ITraceSource
   {
     /// <summary>

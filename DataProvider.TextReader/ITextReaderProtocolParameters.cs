@@ -16,7 +16,7 @@
 namespace CAS.CommServer.DataProvider.TextReader
 {
   /// <summary>
-  /// Interface ITextReaderProtocolParameters - provides parameters of the DataProvider behaviour.
+  /// Interface ITextReaderProtocolParameters - provides parameters of the DataProvider behavior.
   /// </summary>
 
   public interface ITextReaderProtocolParameters
@@ -27,10 +27,10 @@ namespace CAS.CommServer.DataProvider.TextReader
     /// <value>The column separator.</value>
     string ColumnSeparator { get; }
     /// <summary>
-    /// Gets the delay file scann - it is time to postpone the file content read operation after receiving file modification notification. 
+    /// Gets the delay file scan - it is time to postpone the file content read operation after receiving file modification notification. 
     /// It is time needed by the remote application to finalize writing to file and release the file for other processes.
     /// </summary>
-    /// <value>The delay file scann.</value>
+    /// <value>The delay file scan.</value>
     double DelayFileScan { get; }
     /// <summary>
     /// Gets or sets the file modification notification timeout.

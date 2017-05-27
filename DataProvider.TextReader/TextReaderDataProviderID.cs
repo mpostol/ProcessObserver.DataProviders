@@ -24,6 +24,11 @@ using System.Xml;
 
 namespace CAS.CommServer.DataProvider.TextReader
 {
+  /// <summary>
+  /// Class TextReaderDataProviderID. This class cannot be inherited.
+  /// It captures information that can be used for the DataProvider identification.
+  /// </summary>
+  /// <seealso cref="CAS.Lib.CommonBus.DataProviderID" />
   public sealed class TextReaderDataProviderID : DataProviderID
   {
 
@@ -60,7 +65,7 @@ namespace CAS.CommServer.DataProvider.TextReader
       return new TextReaderApplicationLayerMaster(pStatistic, pParent, ProtocolParameters);
     }
     /// <summary>
-    /// This metchod is responsible for returning the list of addressspaces in the data provider.
+    /// This method is responsible for returning the list of address spaces in the data provider.
     /// </summary>
     /// <returns>It returns assay of <see cref="IAddressSpaceDescriptor"/> representing supported address spaces.</returns>
     public override IAddressSpaceDescriptor[] GetAvailiableAddressspaces()
@@ -94,7 +99,15 @@ namespace CAS.CommServer.DataProvider.TextReader
     } = new TextReaderProtocolParameters();
     #endregion
 
-    #region private
+    #region DataProviderID
+    /// <summary>
+    /// This method creates a string representation of the DataProvider settings
+    /// </summary>
+    /// <returns>human readable information about the DataProvider settings</returns>
+    public override string GetSettingsHumanReadableFormat()
+    {
+      return $"{ProtocolParameters} {base.GetSettingsHumanReadableFormat()}";
+    }
     /// <summary>
     /// When overridden in a derived class, reads custom settings from the XML stream.
     /// </summary>
@@ -111,6 +124,9 @@ namespace CAS.CommServer.DataProvider.TextReader
     {
       ProtocolParameters.WriteSettings(pSettings);
     }
+    #endregion    
+    
+    #region private
     private class ItemDefaultSettings : IItemDefaultSettings
     {
 

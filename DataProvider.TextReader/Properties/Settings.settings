@@ -2,7 +2,7 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="CAS.CommServer.DataProvider.TextReader.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="DefaultFileModificationNotificastionTimeout" Type="System.Double" Scope="User">
+    <Setting Name="DefaultFileModificationNotificationTimeout" Type="System.Double" Scope="User">
       <Value Profile="(Default)">60000</Value>
     </Setting>
   </Settings>

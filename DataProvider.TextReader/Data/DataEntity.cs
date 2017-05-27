@@ -39,6 +39,13 @@ namespace CAS.CommServer.DataProvider.TextReader.Data
     /// <value>The tags values in the form as they exist in the source file.</value>
     public string[] Tags { get; private set; }
 
+    /// <summary>
+    /// Reads the file and the analysis result provide as an instance of <see cref="IDataEntity"/>.
+    /// </summary>
+    /// <param name="fullPath">The full path.</param>
+    /// <param name="timeStamp">The time stamp.</param>
+    /// <param name="columnSeparator">The column separator.</param>
+    /// <returns>IDataEntity.</returns>
     internal static IDataEntity ReadFile(string fullPath, DateTime timeStamp, string columnSeparator)
     {
       DataEntity _ret = null;

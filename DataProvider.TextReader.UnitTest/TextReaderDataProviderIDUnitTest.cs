@@ -16,6 +16,7 @@ namespace CAS.CommServer.DataProvider.TextReader.UnitTest
   public class TextReaderDataProviderIDUnitTest
   {
 
+    #region TestMethod
     [TestMethod]
     public void ConstructorTestMethod()
     {
@@ -72,7 +73,7 @@ namespace CAS.CommServer.DataProvider.TextReader.UnitTest
     public void GetSettingsTestMethod()
     {
       string _settings = m_TestingProviderID.GetSettings();
-      Assert.AreEqual<int>(426, _settings.Length);
+      Assert.AreEqual<int>(471, _settings.Length);
       Console.Write(_settings);
     }
     [TestMethod]
@@ -84,9 +85,18 @@ namespace CAS.CommServer.DataProvider.TextReader.UnitTest
       string _configurationText = String.Empty;
       using (System.IO.TextReader _tr = new System.IO.StreamReader(_configurationStream))
         _configurationText = _tr.ReadToEnd();
-      Assert.AreEqual<int>(369, _configurationText.Length);
+      Assert.AreEqual<int>(408, _configurationText.Length);
       m_TestingProviderID.SetSettings(_configurationText);
     }
+    [TestMethod]
+    public void GetSettingsHumanReadableFormatTestMethod()
+    {
+      string _setingsFormated4UI = m_TestingProviderID.GetSettingsHumanReadableFormat();
+      Assert.IsTrue(_setingsFormated4UI.StartsWith(TextReaderProtocolParametersUnitTest.TextReaderProtocolParametersString), _setingsFormated4UI);
+      Console.WriteLine(_setingsFormated4UI);
+    }
+
+    #endregion
 
     #region private instrumentation
     private TextReaderDataProviderID m_TestingProviderID = new TextReaderDataProviderID();

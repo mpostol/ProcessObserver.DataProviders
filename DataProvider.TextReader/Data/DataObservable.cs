@@ -53,6 +53,11 @@ namespace CAS.CommServer.DataProvider.TextReader.Data
     #endregion
 
     #region ObservableBase
+    /// <summary>
+    /// Implement this method with the core subscription logic for the observable sequence.
+    /// </summary>
+    /// <param name="observer">Observer to send notifications to.</param>
+    /// <returns>Disposable object representing an observer's subscription to the observable sequence.</returns>
     protected override IDisposable SubscribeCore(IObserver<IDataEntity> observer)
     {
       return m_DataEntityObservable.Subscribe(observer);
@@ -64,8 +69,13 @@ namespace CAS.CommServer.DataProvider.TextReader.Data
     /// Initializes a new instance of the <see cref="DataObservable" /> class.
     /// </summary>
     /// <param name="filename">The filename to be scanned.</param>
-    /// <param name="dueTime">The duetime - applies a timeout policy for file modification notification. If the next file modification notification isn't received within the specified timeout duration starting from
-    /// its predecessor, a <see cref="TimeoutException"/> is propagated to the observer.</param>
+    /// <param name="settings">The application user settings.</param>
+    /// <param name="traceSource">The trace source.</param>
+    /// <exception cref="System.ArgumentNullException">
+    /// settings
+    /// or
+    /// traceSource
+    /// </exception>
     internal DataObservable(string filename, ITextReaderProtocolParameters settings, ITraceSource traceSource)
     {
       if (settings == null)
@@ -86,7 +96,7 @@ namespace CAS.CommServer.DataProvider.TextReader.Data
         .Delay<FileSystemEventPattern>(TimeSpan.FromMilliseconds(settings.DelayFileScan))
         .Select<FileSystemEventPattern, IDataEntity>(x => DataEntity.ReadFile(x.EventPattern.EventArgs.FullPath, x.TimeStamp, m_Settings.ColumnSeparator))
         .Do<IDataEntity>(data => { }, exception => LogException(exception));
-      TraceSource.TraceMessage(TraceEventType.Verbose, 107, $"Succesfully created data obserwer for the file {filename} with parameter {settings}");
+      TraceSource.TraceMessage(TraceEventType.Verbose, 107, $"Succesfully created data obserwer for the file {filename} with parameters {settings}");
     }
     /// <summary>
     /// Gets or sets the trace source <see cref="ITraceSource"/>.

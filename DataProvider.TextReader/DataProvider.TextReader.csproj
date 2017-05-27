@@ -21,6 +21,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>IDE0001,IDE0002,IDE0003</NoWarn>
+    <DocumentationFile>bin\Debug\CAS.CommSvrPlugin_TextReader.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -103,8 +104,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="TextReaderApplicationLayerMaster.cs" />
-    <Compile Include="CommunicationLayer\TextReaderCommunicationLayerDescription.cs" />
-    <Compile Include="CommunicationLayer\TextReaderCommunicationLayerId.cs" />
     <Compile Include="LicenseManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <AutoGen>True</AutoGen>

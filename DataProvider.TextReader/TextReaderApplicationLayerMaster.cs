@@ -144,19 +144,18 @@ namespace CAS.CommServer.DataProvider.TextReader
     /// <exception cref="System.ArgumentOutOfRangeException"></exception>
     public AL_ReadData_Result ReadData(IBlockDescription pBlock, int pStation, out IReadValue pData, byte pRetries)
     {
-      System.Diagnostics.Stopwatch _responseTime = new System.Diagnostics.Stopwatch();
-      _responseTime.Start();
       pData = null;
       if (pBlock.dataType != 0)
-        throw new ArgumentOutOfRangeException($"Only data type = 0 is expected");
+      {
+        TraceSource.TraceMessage(TraceEventType.Error, 149, $"Wrong dataType: {pBlock.dataType}; only data type = 0 is expected");
+        m_statistic.IncStRxInvalid();
+      }
       if (!Connected)
         return AL_ReadData_Result.ALRes_DisInd;
       m_statistic.IncStTxFrameCounter();
       IDataEntity _copy = Interlocked.Exchange<IDataEntity>(ref m_Fifo, m_Fifo);
       bool _retResult = _copy != null;
       m_statistic.RxDataBlock(_retResult);
-      _responseTime.Stop();
-      m_statistic.TimeMaxResponseDelayAdd(_responseTime.ElapsedMilliseconds);
       if (!_retResult)
       {
         m_statistic.IncStRxNoResponseCounter();
@@ -172,6 +171,7 @@ namespace CAS.CommServer.DataProvider.TextReader
     public void DisReq()
     {
       m_Observer?.Dispose();
+      m_Observable?.Dispose();
       Connected = false;
     }
 
@@ -208,7 +208,7 @@ namespace CAS.CommServer.DataProvider.TextReader
     /// Writes process data down to the selected location and device resources.
     /// </summary>
     /// <param name="data">Data to be send. Always null after return. Data buffer must be returned to the pool.</param>
-    /// <param name="retries">Number of retries to wrtie data.</param>
+    /// <param name="retries">Number of retries to write data.</param>
     /// <returns><see cref="T:CAS.Lib.CommonBus.ApplicationLayer.AL_ReadData_Result" /> result of the operation.</returns>
     /// <exception cref="System.NotImplementedException"></exception>
     /// TODO Edit XML Comment Template for WriteData
@@ -231,9 +231,12 @@ namespace CAS.CommServer.DataProvider.TextReader
       if (m_DisposedValue)
         return;
       if (disposing)
-        DisReq();
-      // TODO: free unmanaged resources (unmanaged objects) and override a finalizer below.
-      // TODO: set large fields to null.
+      {
+        m_Observer?.Dispose();
+        m_Observable?.Dispose();
+        m_Observer = null;
+        m_Observable = null;
+      }
       m_DisposedValue = true;
     }
     /// <summary>

@@ -26,12 +26,12 @@ namespace CAS.CommServer.DataProvider.TextReader.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("60000")]
-        public double DefaultFileModificationNotificastionTimeout {
+        public double DefaultFileModificationNotificationTimeout {
             get {
-                return ((double)(this["DefaultFileModificationNotificastionTimeout"]));
+                return ((double)(this["DefaultFileModificationNotificationTimeout"]));
             }
             set {
-                this["DefaultFileModificationNotificastionTimeout"] = value;
+                this["DefaultFileModificationNotificationTimeout"] = value;
             }
         }
     }

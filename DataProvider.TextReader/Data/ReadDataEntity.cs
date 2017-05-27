@@ -35,7 +35,7 @@ namespace CAS.CommServer.DataProvider.TextReader.Data
     /// Initializes a new instance of the <see cref="ReadDataEntity"/> class and copies data from the <paramref name="dataBuffer"/> selected by the <paramref name="block"/>. 
     /// </summary>
     /// <param name="dataBuffer">The data buffer holding source data.</param>
-    /// <param name="block">The data block description to retrieved from the <paramref name="buffer"/>.</param>
+    /// <param name="block">The data block description to retrieved from the <paramref name="dataBuffer"/>.</param>
     public ReadDataEntity(IDataEntity dataBuffer, IBlockDescription block)
     {
       startAddress = block.startAddress;
