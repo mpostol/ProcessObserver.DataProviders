@@ -16,7 +16,6 @@
 
 using System;
 using System.Diagnostics;
-using System.Reflection;
 
 namespace CAS.CommServer.DataProvider.TextReader
 {
@@ -24,11 +23,12 @@ namespace CAS.CommServer.DataProvider.TextReader
   /// <summary>
   /// Singleton implementation of the <see cref="TraceSource"/>.
   /// </summary>
-  public class AssemblyTraceEvent : TraceSource, ITraceSource
+  public class AssemblyTraceEvent : ITraceSource
   {
 
-    private static Lazy<AssemblyTraceEvent> m_TraceEventInternal = new Lazy<AssemblyTraceEvent>(() => new AssemblyTraceEvent(Assembly.GetCallingAssembly().GetName().Name));
-    private AssemblyTraceEvent(string name) : base(name) { }
+    private static AssemblyTraceEvent m_singleton = new AssemblyTraceEvent();
+    private Lazy<TraceSource> m_TraceEventInternal = new Lazy<TraceSource>(() => CAS.Lib.CommonBus.AssemblyTraceEvent.Tracer);
+    private AssemblyTraceEvent() { }
 
     /// <summary>
     /// Gets the tracer.
@@ -38,20 +38,27 @@ namespace CAS.CommServer.DataProvider.TextReader
     {
       get
       {
-        return m_TraceEventInternal.Value;
+        return m_singleton;
       }
     }
+    internal string Name { get { return m_TraceEventInternal.Value.Name; } }
     /// <summary>
     /// a trace event message to the trace listeners in the System.Diagnostics.TraceSource.Listeners collection using the specified event type and event identifier.
     /// </summary>
     /// <param name="eventType">One of the enumeration values that specifies the event type of the trace data.</param>
     /// <param name="id">A numeric identifier for the event.</param>
     /// <param name="message">The trace message to write.</param>
-    /// TODO Edit XML Comment Template for TraceMessage
     public void TraceMessage(TraceEventType eventType, int id, string message)
     {
-      Tracer.TraceEvent(eventType, id, message);
+      m_TraceEventInternal.Value.TraceEvent(eventType, id, message);
     }
+    /// <summary>
+    /// Gets the wrapped instance of <see cref="TraceSource"/>, which provides a set of methods and properties that enable applications to trace the 
+    /// execution of code and associate trace messages with their source.
+    /// </summary>
+    /// <value>the wrapped instance of <see cref="TraceSource"/>.</value>
+    internal TraceSource TraceSource { get { return m_TraceEventInternal.Value; } }
+
   }
   /// <summary>
   /// Interface ITraceSource - declares basic functionality for the component behavior tracing.

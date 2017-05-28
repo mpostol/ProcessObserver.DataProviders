@@ -22,7 +22,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataProvider.SBUSRS", "Data
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Solution Items", "_Solution Items", "{48C76628-66A3-4DFD-90F3-337D2C0CB2C5}"
 	ProjectSection(SolutionItems) = preProject
-		PR39-CommonResources\cas.publickey.txt = PR39-CommonResources\cas.publickey.txt
+		..\..\CommServer.UA.ModelDesigner\CommServer.UA.ModelDesigner\ModelDesigner.DesignStudio.UnitTest\AssemblyTraceEventUnitTest.cs = ..\..\CommServer.UA.ModelDesigner\CommServer.UA.ModelDesigner\ModelDesigner.DesignStudio.UnitTest\AssemblyTraceEventUnitTest.cs
+		..\..\CommServer.UA.ModelDesigner\CommServer.UA.ModelDesigner\ModelDesigner.DesignStudio.UnitTest\Instrumentation\Extensions.cs = ..\..\CommServer.UA.ModelDesigner\CommServer.UA.ModelDesigner\ModelDesigner.DesignStudio.UnitTest\Instrumentation\Extensions.cs
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataProvider.Package", "DataProvider.Package\DataProvider.Package.csproj", "{14C190A8-D436-427A-8E74-10BD8E7C71E7}"
