@@ -25,7 +25,7 @@
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
     <OldToolsVersion>3.5</OldToolsVersion>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <TargetFrameworkProfile />
     <IsWebBootstrapper>true</IsWebBootstrapper>
     <PublishUrl>Publish\</PublishUrl>
@@ -167,6 +167,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AssemblyTraceEvent.cs" />
     <Compile Include="BLOK.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -269,6 +270,10 @@
     <ProjectReference Include="..\DataProvider.SBUS\SBUSonRS\DataProvider.SBUSRS.csproj">
       <Project>{51e91469-c15d-4ef3-8952-f027bf4e5450}</Project>
       <Name>DataProvider.SBUSRS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataProvider.TextReader\DataProvider.TextReader.csproj">
+      <Project>{6a158b80-cdbe-4bb1-b202-17c5a4101da2}</Project>
+      <Name>DataProvider.TextReader</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

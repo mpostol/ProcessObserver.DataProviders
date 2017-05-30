@@ -17,7 +17,7 @@
 using System;
 using System.Diagnostics;
 
-namespace CAS.CommServer.DataProvider.TextReader
+namespace CAS.DPDiagnostics
 {
 
   /// <summary>
@@ -27,7 +27,7 @@ namespace CAS.CommServer.DataProvider.TextReader
   {
 
     private static AssemblyTraceEvent m_singleton = new AssemblyTraceEvent();
-    private Lazy<TraceSource> m_TraceEventInternal = new Lazy<TraceSource>(() => new TraceSource(Properties.Settings.Default.TraceSourceName));
+    private Lazy<TraceSource> m_TraceEventInternal = new Lazy<TraceSource>(() => new TraceSource("DataProvider.DPDiagnostics"));
     private AssemblyTraceEvent() { }
 
     /// <summary>
@@ -65,6 +65,7 @@ namespace CAS.CommServer.DataProvider.TextReader
   /// </summary>
   public interface ITraceSource
   {
+
     /// <summary>
     /// a trace event message to the trace listeners in the System.Diagnostics.TraceSource.Listeners collection using the specified event type and event identifier.
     /// </summary>

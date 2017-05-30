@@ -97,7 +97,7 @@ namespace CAS.DPDiagnostics
       {
         get { return OperationsRunTime.ElapsedMilliseconds; }
       }
-      ushort IOperationResult.NumberOfOperationCycles
+      long IOperationResult.NumberOfOperationCycles
       {
         get { return NumberOfOperationCycles; }
       }
@@ -112,7 +112,7 @@ namespace CAS.DPDiagnostics
       #endregion
 
       internal List<string> Log = new List<string>();
-      internal ushort NumberOfOperationCycles = 0;
+      internal long NumberOfOperationCycles = 0;
       internal long RunTime = 0;
       internal Stopwatch OperationsRunTime = new Stopwatch();
       internal long NumberOfBytes = 0;

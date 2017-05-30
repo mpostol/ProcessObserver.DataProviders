@@ -13,9 +13,7 @@
 //  http://www.cas.eu
 //</summary>
 
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace CAS.DPDiagnostics
 {
@@ -48,7 +46,7 @@ namespace CAS.DPDiagnostics
     /// <value>
     /// The number of operation cycles.
     /// </value>
-    ushort NumberOfOperationCycles { get; }
+    long NumberOfOperationCycles { get; }
     /// <summary>
     /// Gets the run time of the current test cycle in ms.
     /// </summary>

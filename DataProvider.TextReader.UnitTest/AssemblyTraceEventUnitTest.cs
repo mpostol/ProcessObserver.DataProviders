@@ -18,7 +18,7 @@ namespace CAS.CommServer.DataProvider.TextReader.UnitTest
     {
       AssemblyTraceEvent _tracerWrapper = AssemblyTraceEvent.Tracer;
       Assert.IsNotNull(_tracerWrapper);
-      Assert.AreEqual<string>("CAS.CommServer.CommonBus", _tracerWrapper.Name);
+      Assert.AreEqual<string>("DataProvider.TextReader", _tracerWrapper.Name);
 
       TraceSource _tracer = _tracerWrapper.TraceSource;
       Assert.IsNotNull(_tracer);

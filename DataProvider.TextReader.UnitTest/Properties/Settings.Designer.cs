@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CAS.CommServer.DataProvider.TextReader.Properties {
+namespace CAS.CommServer.DataProvider.TextReader.UnitTest.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -20,27 +20,6 @@ namespace CAS.CommServer.DataProvider.TextReader.Properties {
         public static Settings Default {
             get {
                 return defaultInstance;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("60000")]
-        public double DefaultFileModificationNotificationTimeout {
-            get {
-                return ((double)(this["DefaultFileModificationNotificationTimeout"]));
-            }
-            set {
-                this["DefaultFileModificationNotificationTimeout"] = value;
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("DataProvider.TextReader")]
-        public string TraceSourceName {
-            get {
-                return ((string)(this["TraceSourceName"]));
             }
         }
     }

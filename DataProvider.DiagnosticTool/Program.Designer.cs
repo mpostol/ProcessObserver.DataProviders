@@ -529,11 +529,9 @@ namespace CAS.DPDiagnostics
       this._Delay.AutoSize = true;
       this._Delay.Dock = System.Windows.Forms.DockStyle.Fill;
       this._Delay.Location = new System.Drawing.Point(93, 59);
-      this._Delay.Maximum = new decimal(new int[] {
-            10000,
-            0,
-            0,
-            0});
+      this._Delay.Maximum = 99999999;
+      this._Delay.Minimum = 100;
+      this._Delay.Value = 500;
       this._Delay.Name = "_Delay";
       this._Delay.Size = new System.Drawing.Size(272, 20);
       this._Delay.TabIndex = 85;

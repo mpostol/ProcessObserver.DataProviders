@@ -16,6 +16,7 @@
 using CAS.Lib.CodeProtect;
 using System;
 using System.Deployment.Application;
+using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace CAS.DPDiagnostics
@@ -26,16 +27,32 @@ namespace CAS.DPDiagnostics
     static void Main()
     {
       string _commandLine = Environment.CommandLine;
-      if ( ( ApplicationDeployment.IsNetworkDeployed && ApplicationDeployment.CurrentDeployment.IsFirstRun ) || _commandLine.ToLower().Contains( "installic" ) )
+      if ((ApplicationDeployment.IsNetworkDeployed && ApplicationDeployment.CurrentDeployment.IsFirstRun) || _commandLine.ToLower().Contains("installic"))
         try
         {
-          LibInstaller.InstallLicense( true );
+          LibInstaller.InstallLicense(true);
         }
-        catch ( Exception ex )
+        catch (Exception ex)
         {
-          MessageBox.Show( "Unable to install license: " + ex.Message );
+          MessageBox.Show("Unable to install license: " + ex.Message);
         }
-      Application.Run( new Program() );
+      try
+      {
+        AssemblyTraceEvent.Tracer.TraceMessage(TraceEventType.Verbose, 53, $"Starting the application DataProvider.DPDiagnostics");
+        Application.Run(new Program());
+        AssemblyTraceEvent.Tracer.TraceMessage(TraceEventType.Verbose, 53, $"Finishing the application DataProvider.DPDiagnostics");
+      }
+      catch (Exception ex)
+      {
+        TraceException(ex);
+        MessageBox.Show("There is unexpected exception while executing the application" + ex.Message);
+      }
+    }
+    private static void TraceException(Exception ex)
+    {
+      if (ex.InnerException != null)
+        TraceException(ex.InnerException);
+      AssemblyTraceEvent.Tracer.TraceMessage(TraceEventType.Critical, 53, $"There is unexpected exception while excuting the applicatio{ex.Message}");
     }
   }
 }
