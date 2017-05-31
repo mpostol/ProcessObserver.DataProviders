@@ -98,6 +98,10 @@
       <Project>{51E91469-C15D-4EF3-8952-F027BF4E5450}</Project>
       <Name>DataProvider.SBUSRS</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DataProvider.TextReader\DataProvider.TextReader.csproj">
+      <Project>{6a158b80-cdbe-4bb1-b202-17c5a4101da2}</Project>
+      <Name>DataProvider.TextReader</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">

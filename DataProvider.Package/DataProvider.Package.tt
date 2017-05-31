@@ -23,13 +23,21 @@
     </releaseNotes>
     <copyright><#=AssemblyCopyright#></copyright>
     <tags>CommServer, DataBinding</tags>
-        <dependencies>
-            <dependency id="CAS.CommServer.CommonBus" version="5.01.06" />
-            <dependency id="CAS.CodeProtect" version="6.1.3" />
-            <dependency id="CAS.RealTime" version="5.0.6" />
-        </dependencies>
+    <dependencies>
+      <dependency id="CAS.CommServer.CommonBus" version="5.01.06" />
+      <dependency id="CAS.CodeProtect" version="6.1.3" />
+      <dependency id="CAS.RealTime" version="5.0.6" />
+      <dependency id="System.Reactive" version="3.1.1" />
+      <dependency id="System.Reactive.Core" version="3.1.1" />
+      <dependency id="System.Reactive.Interfaces" version="3.1.1" />
+      <dependency id="System.Reactive.Linq" version="3.1.1"  />
+      <dependency id="System.Reactive.PlatformServices" version="3.1.1" />
+      <dependency id="System.Reactive.Windows.Threading" version="3.1.1" />
+    </dependencies>
   </metadata>
   <files>
+        <file src="bin\Release\CAS.CommSvrPlugin_TextReader.xml" target="lib\net451\CAS.CommSvrPlugin_TextReader.xml" />
+        <file src="bin\Release\CAS.CommSvrPlugin_TextReader.dll" target="lib\net451\CAS.CommSvrPlugin_TextReader.dll" />
     <file src="bin\Release\CAS.CommServer.DataProvider.MODBUSCore.dll" target="lib\net451\CAS.CommServer.DataProvider.MODBUSCore.dll" />
     <file src="bin\Release\CAS.CommServer.DataProvider.MODBUSCore.xml" target="lib\net451\CAS.CommServer.DataProvider.MODBUSCore.xml" />
     <file src="bin\Release\CAS.CommSvrPlugin_DemoSimulator.dll" target="lib\net451\CAS.CommSvrPlugin_DemoSimulator.dll" />
