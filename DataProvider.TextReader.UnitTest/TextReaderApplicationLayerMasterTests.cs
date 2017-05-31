@@ -99,7 +99,7 @@ namespace CAS.CommServer.DataProvider.TextReader.Tests
         Assert.AreEqual<int>(39, _value.length);
         Assert.AreEqual<int>(0, _value.startAddress);
         float _tagValue = 0;
-        for (int i = 2; i < _value.length - 1; i++)
+        for (int i = 2; i < _value.length - 3; i++)
           _tagValue = (float)_value.ReadValue(i, typeof(float));
         _value.ReturnEmptyEnvelope();
         Thread.Sleep(15000);
@@ -269,7 +269,7 @@ namespace CAS.CommServer.DataProvider.TextReader.Tests
     }
     private class TestTraceSource : ITraceSource
     {
-      internal List<Tuple<TraceEventType, int, string>> TraceListener = new List<Tuple<TraceEventType, int, string>>(); 
+      internal List<Tuple<TraceEventType, int, string>> TraceListener = new List<Tuple<TraceEventType, int, string>>();
       public void TraceMessage(TraceEventType eventType, int id, string message)
       {
         TraceListener.Add(new Tuple<TraceEventType, int, string>(eventType, id, message));
