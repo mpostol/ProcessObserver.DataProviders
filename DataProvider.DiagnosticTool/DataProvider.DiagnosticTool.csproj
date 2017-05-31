@@ -39,13 +39,17 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>http://www.commsvr.com/COInstal/DPDiagnostic/</InstallUrl>
-    <SupportUrl>http://www.commsvr.com/OPC-Help/Index.aspx%3ftopic=html/2dea0752-d490-47e6-8444-ac73e07601fc.htm</SupportUrl>
+    <SupportUrl>http://www.commsvr.com/OPC-Help/Index.aspx%3ftopic=html/b6e6a2ae-aefe-4980-8e45-0bb5ee7e05b5.htm</SupportUrl>
+    <ErrorReportUrl>http://www.commsvr.com/tabid/85/language/en-US/Default.aspx</ErrorReportUrl>
     <ProductName>CAS DataProviderDiagnostic</ProductName>
     <PublisherName>CAS</PublisherName>
-    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>6</ApplicationRevision>
-    <ApplicationVersion>2.0.01.%2a</ApplicationVersion>
+    <SuiteName>DataProvider Diagnostic</SuiteName>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>Default.htm</WebPage>
+    <ApplicationRevision>7</ApplicationRevision>
+    <ApplicationVersion>3.90.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -277,6 +281,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
       <Visible>False</Visible>
       <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
@@ -285,7 +294,7 @@
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
       <Visible>False</Visible>
       <ProductName>.NET Framework 3.5 SP1</ProductName>
-      <Install>true</Install>
+      <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
