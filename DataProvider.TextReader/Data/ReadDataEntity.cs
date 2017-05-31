@@ -92,7 +92,8 @@ namespace CAS.CommServer.DataProvider.TextReader.Data
     /// <returns>true if address belongs to the block</returns>
     public bool IsInBlock(uint station, ushort address, short type)
     {
-      return (station == 0) && (address <= startAddress + Tags.Length - 1) && (type == dataType);
+      return (station == 0) && (type == dataType) && (address >= startAddress) && (address < (startAddress + length));
+
     }
     /// <summary>
     /// Reads the value and convert it to canonical type if possible.
@@ -104,9 +105,9 @@ namespace CAS.CommServer.DataProvider.TextReader.Data
     /// <exception cref="System.ArgumentOutOfRangeException">Is thrown if the requested address index is out of range.</exception>
     public object ReadValue(int regAddress, Type canonicalType)
     {
-      if (!IsInBlock(0, (ushort)regAddress, 0))
+      if (!IsInBlock(0, (ushort)(regAddress + startAddress), 0))
         throw new ArgumentOutOfRangeException($"The register address is out of the expected range");
-      string _value = Tags[regAddress - startAddress];
+      string _value = Tags[regAddress];
       if (canonicalType == typeof(string))
         return _value;
       if (canonicalType == typeof(float))
