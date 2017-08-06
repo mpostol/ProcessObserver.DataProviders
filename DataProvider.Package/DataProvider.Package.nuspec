@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>CAS.CommServer.DataProvider.Package</id>
-    <version>3.90.03</version>
+    <version>3.90.04</version>
     <title>CommSever DataProvider Collection Package</title>
     <authors>CAS</authors>
     <owners>commsvr.com</owners>
@@ -34,26 +34,26 @@
     </dependencies>
   </metadata>
   <files>
-        <file src="bin\Release\CAS.CommSvrPlugin_TextReader.xml" target="lib\net451\CAS.CommSvrPlugin_TextReader.xml" />
-        <file src="bin\Release\CAS.CommSvrPlugin_TextReader.dll" target="lib\net451\CAS.CommSvrPlugin_TextReader.dll" />
-    <file src="bin\Release\CAS.CommServer.DataProvider.MODBUSCore.dll" target="lib\net451\CAS.CommServer.DataProvider.MODBUSCore.dll" />
-    <file src="bin\Release\CAS.CommServer.DataProvider.MODBUSCore.xml" target="lib\net451\CAS.CommServer.DataProvider.MODBUSCore.xml" />
-    <file src="bin\Release\CAS.CommSvrPlugin_DemoSimulator.dll" target="lib\net451\CAS.CommSvrPlugin_DemoSimulator.dll" />
-    <file src="bin\Release\CAS.CommSvrPlugin_DemoSimulator.xml" target="lib\net451\CAS.CommSvrPlugin_DemoSimulator.xml" />
-    <file src="bin\Release\CAS.CommSvrPlugin_EC2-3SYM2.dll" target="lib\net451\CAS.CommSvrPlugin_EC2-3SYM2.dll" />
-    <file src="bin\Release\CAS.CommSvrPlugin_EC2-3SYM2.xml" target="lib\net451\CAS.CommSvrPlugin_EC2-3SYM2.xml" />
-    <file src="bin\Release\CAS.CommSvrPlugin_ExcelDDE.dll" target="lib\net451\CAS.CommSvrPlugin_ExcelDDE.dll" />
-    <file src="bin\Release\CAS.CommSvrPlugin_ExcelDDE.xml" target="lib\net451\CAS.CommSvrPlugin_ExcelDDE.xml" />
-    <file src="bin\Release\CAS.CommSvrPlugin_MBUS.dll" target="lib\net451\CAS.CommSvrPlugin_MBUS.dll" />
-    <file src="bin\Release\CAS.CommSvrPlugin_MBUS.xml" target="lib\net451\CAS.CommSvrPlugin_MBUS.xml" />
-    <file src="bin\Release\CAS.CommSvrPlugin_MODBUSNet.dll" target="lib\net451\CAS.CommSvrPlugin_MODBUSNet.dll" />
-    <file src="bin\Release\CAS.CommSvrPlugin_MODBUSNet.xml" target="lib\net451\CAS.CommSvrPlugin_MODBUSNet.xml" />
-    <file src="bin\Release\CAS.CommSvrPlugin_NULLbus.dll" target="lib\net451\CAS.CommSvrPlugin_NULLbus.dll" />
-    <file src="bin\Release\CAS.CommSvrPlugin_NULLbus.xml" target="lib\net451\CAS.CommSvrPlugin_NULLbus.xml" />
-    <file src="bin\Release\CAS.CommSvrPlugin_SBUSNET.dll" target="lib\net451\CAS.CommSvrPlugin_SBUSNET.dll" />
-    <file src="bin\Release\CAS.CommSvrPlugin_SBUSNET.xml" target="lib\net451\CAS.CommSvrPlugin_SBUSNET.xml" />
-    <file src="bin\Release\CAS.CommSvrPlugin_SBUSRS.dll" target="lib\net451\CAS.CommSvrPlugin_SBUSRS.dll" />
-    <file src="bin\Release\CAS.CommSvrPlugin_SBUSRS.xml" target="lib\net451\CAS.CommSvrPlugin_SBUSRS.xml" />
+    <file src="bin\Release\CAS.CommSvrPlugin_TextReader.xml" target="lib\net461\CAS.CommSvrPlugin_TextReader.xml" />
+    <file src="bin\Release\CAS.CommSvrPlugin_TextReader.dll" target="lib\net461\CAS.CommSvrPlugin_TextReader.dll" />
+    <file src="bin\Release\CAS.CommServer.DataProvider.MODBUSCore.dll" target="lib\net461\CAS.CommServer.DataProvider.MODBUSCore.dll" />
+    <file src="bin\Release\CAS.CommServer.DataProvider.MODBUSCore.xml" target="lib\net461\CAS.CommServer.DataProvider.MODBUSCore.xml" />
+    <file src="bin\Release\CAS.CommSvrPlugin_DemoSimulator.dll" target="lib\net461\CAS.CommSvrPlugin_DemoSimulator.dll" />
+    <file src="bin\Release\CAS.CommSvrPlugin_DemoSimulator.xml" target="lib\net461\CAS.CommSvrPlugin_DemoSimulator.xml" />
+    <file src="bin\Release\CAS.CommSvrPlugin_EC2-3SYM2.dll" target="lib\net461\CAS.CommSvrPlugin_EC2-3SYM2.dll" />
+    <file src="bin\Release\CAS.CommSvrPlugin_EC2-3SYM2.xml" target="lib\net461\CAS.CommSvrPlugin_EC2-3SYM2.xml" />
+    <file src="bin\Release\CAS.CommSvrPlugin_ExcelDDE.dll" target="lib\net461\CAS.CommSvrPlugin_ExcelDDE.dll" />
+    <file src="bin\Release\CAS.CommSvrPlugin_ExcelDDE.xml" target="lib\net461\CAS.CommSvrPlugin_ExcelDDE.xml" />
+    <file src="bin\Release\CAS.CommSvrPlugin_MBUS.dll" target="lib\net461\CAS.CommSvrPlugin_MBUS.dll" />
+    <file src="bin\Release\CAS.CommSvrPlugin_MBUS.xml" target="lib\net461\CAS.CommSvrPlugin_MBUS.xml" />
+    <file src="bin\Release\CAS.CommSvrPlugin_MODBUSNet.dll" target="lib\net461\CAS.CommSvrPlugin_MODBUSNet.dll" />
+    <file src="bin\Release\CAS.CommSvrPlugin_MODBUSNet.xml" target="lib\net461\CAS.CommSvrPlugin_MODBUSNet.xml" />
+    <file src="bin\Release\CAS.CommSvrPlugin_NULLbus.dll" target="lib\net461\CAS.CommSvrPlugin_NULLbus.dll" />
+    <file src="bin\Release\CAS.CommSvrPlugin_NULLbus.xml" target="lib\net461\CAS.CommSvrPlugin_NULLbus.xml" />
+    <file src="bin\Release\CAS.CommSvrPlugin_SBUSNET.dll" target="lib\net461\CAS.CommSvrPlugin_SBUSNET.dll" />
+    <file src="bin\Release\CAS.CommSvrPlugin_SBUSNET.xml" target="lib\net461\CAS.CommSvrPlugin_SBUSNET.xml" />
+    <file src="bin\Release\CAS.CommSvrPlugin_SBUSRS.dll" target="lib\net461\CAS.CommSvrPlugin_SBUSRS.dll" />
+    <file src="bin\Release\CAS.CommSvrPlugin_SBUSRS.xml" target="lib\net461\CAS.CommSvrPlugin_SBUSRS.xml" />
   </files>
 </package>
 

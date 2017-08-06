@@ -116,6 +116,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="DataProvider.Package.nuspec">
       <DependentUpon>DataProvider.Package.tt</DependentUpon>
       <AutoGen>True</AutoGen>
