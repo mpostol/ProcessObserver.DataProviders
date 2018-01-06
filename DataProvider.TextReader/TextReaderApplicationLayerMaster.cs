@@ -37,6 +37,7 @@ namespace CAS.CommServer.DataProvider.TextReader
     private IComponent m_parentComponent;
     private IProtocolParent m_statistic;
     private IDataEntity m_Fifo = null;
+    private int m_RetryCount = 0;
     private IDisposable m_Observer = null;
     private DataObservable m_Observable;
     private ITextReaderProtocolParameters m_TextReaderProtocolParameters = null;
@@ -55,7 +56,18 @@ namespace CAS.CommServer.DataProvider.TextReader
         _newData = list[list.Count - 1];
         TraceSource.TraceMessage(TraceEventType.Verbose, 93, $"New data from the file {m_FileName} modified at {_newData.TimeStamp} has been fetched");
       }
-      IDataEntity oldData = Interlocked.Exchange<IDataEntity>(ref m_Fifo, _newData);
+      if (_newData == null)
+        lock (this)
+        {
+          m_Fifo = null;
+          m_RetryCount++;
+        }
+      else
+        lock (this)
+        {
+          m_Fifo = _newData;
+          m_RetryCount = 0;
+        }
     }
     private void ExceptionHandler(Exception exception)
     {
@@ -83,7 +95,7 @@ namespace CAS.CommServer.DataProvider.TextReader
     /// </summary>
     /// <param name="statistic">The statistic data describing behavior of this DataProvider at run-time.</param>
     /// <param name="parentComponent">The parent component providing cleanup functionality.</param>
-    /// <param name="setting">The current setting for this DataProvider.</param>
+    /// <param name="setting">The current settings for this DataProvider.</param>
     public TextReaderApplicationLayerMaster(IProtocolParent statistic, IComponent parentComponent, ITextReaderProtocolParameters setting)
     {
       m_statistic = statistic;
@@ -153,16 +165,30 @@ namespace CAS.CommServer.DataProvider.TextReader
       if (!Connected)
         return AL_ReadData_Result.ALRes_DisInd;
       m_statistic.IncStTxFrameCounter();
-      IDataEntity _copy = Interlocked.Exchange<IDataEntity>(ref m_Fifo, m_Fifo);
+      IDataEntity _copy = null;
+      int _retryCount = 0;
+      lock (this)
+      {
+        _copy = Interlocked.Exchange<IDataEntity>(ref m_Fifo, m_Fifo);
+        _retryCount = m_RetryCount;
+      }
       bool _retResult = _copy != null;
       m_statistic.RxDataBlock(_retResult);
       if (!_retResult)
       {
         m_statistic.IncStRxNoResponseCounter();
+        if (pRetries > 0 && pRetries < _retryCount)
+        {
+          TraceSource.TraceMessage(TraceEventType.Information, 182, $"ReadData failed for [{pStation}/{pBlock.startAddress}] and caused disconnection because the number of reries={_retryCount} is greater than the limit {pRetries}");
+          DisReq();
+          return AL_ReadData_Result.ALRes_DisInd;
+        }
+        TraceSource.TraceMessage(TraceEventType.Information, 186, $"ReadData failed; reries/limit={_retryCount}/{pRetries}.");
         return AL_ReadData_Result.ALRes_DatTransferErrr;
       }
       m_statistic.IncStRxFrameCounter();
       pData = new ReadDataEntity(_copy, pBlock);
+      TraceSource.TraceMessage(TraceEventType.Verbose, 191, $"ReadData succeded for [{pStation}/{pBlock.startAddress}]");
       return AL_ReadData_Result.ALRes_Success;
     }
     /// <summary>

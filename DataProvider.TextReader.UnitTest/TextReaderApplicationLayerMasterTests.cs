@@ -1,14 +1,14 @@
 ﻿
-using CAS.Lib.CommonBus;
-using CAS.Lib.CommonBus.ApplicationLayer;
-using CAS.Lib.RTLib.Management;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.Threading;
+using CAS.Lib.CommonBus;
+using CAS.Lib.CommonBus.ApplicationLayer;
+using CAS.Lib.RTLib.Management;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CAS.CommServer.DataProvider.TextReader.Tests
 {
@@ -57,14 +57,14 @@ namespace CAS.CommServer.DataProvider.TextReader.Tests
       int _disposedCalled = 0;
       using (LocalComponent _component = new LocalComponent())
       {
-        m_Item2Test = LocalTextReaderApplicationLayerMaster.Instance(_component, () => _disposedCalled++);
+        m_Item2Test = LocalTextReaderApplicationLayerMaster.Instance(_component, () => _disposedCalled++, 10000);
       }
       Assert.AreEqual<int>(1, _disposedCalled);
     }
     [TestMethod()]
     public void DisReqTest()
     {
-      using (LocalTextReaderApplicationLayerMaster m_Item2Test = LocalTextReaderApplicationLayerMaster.Instance())
+      using (LocalTextReaderApplicationLayerMaster m_Item2Test = LocalTextReaderApplicationLayerMaster.Instance(10000))
       {
         Assert.AreEqual<TConnectReqRes>(TConnectReqRes.Success, m_Item2Test.ConnectReq(RemoteAddress.Instance(m_TestFileName)));
         Assert.IsTrue(m_Item2Test.Connected);
@@ -80,7 +80,7 @@ namespace CAS.CommServer.DataProvider.TextReader.Tests
       string _fileName = @"TestingData\g1765xa1.1";
       FileInfo _testFile = new FileInfo(_fileName);
       Assert.IsTrue(File.Exists(_fileName));
-      using (LocalTextReaderApplicationLayerMaster _textReader = LocalTextReaderApplicationLayerMaster.Instance())
+      using (LocalTextReaderApplicationLayerMaster _textReader = LocalTextReaderApplicationLayerMaster.Instance(10000))
       {
         Assert.AreEqual<TConnectReqRes>(TConnectReqRes.Success, _textReader.ConnectReq(RemoteAddress.Instance(_fileName)));
         Assert.IsTrue(_textReader.Connected);
@@ -91,7 +91,7 @@ namespace CAS.CommServer.DataProvider.TextReader.Tests
         Assert.AreEqual<int>(2422, _content.Length);
         File.WriteAllLines(_fileName, _content);
         Thread.Sleep(3000);
-        Assert.AreEqual<int>(2, _textReader.TestTraceSource.TraceListener.Count);
+        Assert.AreEqual<int>(3, _textReader.TestTraceSource.TraceListener.Count);
         Assert.AreEqual<AL_ReadData_Result>(AL_ReadData_Result.ALRes_Success, _textReader.ReadData(new TestBlockDescription(0, 39, 0), 0, out _value, 0));
         Assert.IsNotNull(_value);
         Assert.AreEqual<int>(0, _value.dataType);
@@ -103,7 +103,7 @@ namespace CAS.CommServer.DataProvider.TextReader.Tests
           _tagValue = (float)_value.ReadValue(i, typeof(float));
         _value.ReturnEmptyEnvelope();
         Thread.Sleep(15000);
-        Assert.AreEqual<int>(3, _textReader.TestTraceSource.TraceListener.Count);
+        Assert.AreEqual<int>(5, _textReader.TestTraceSource.TraceListener.Count);
         Assert.AreEqual<AL_ReadData_Result>(AL_ReadData_Result.ALRes_DatTransferErrr, _textReader.ReadData(new TestBlockDescription(0, 39, 0), 0, out _value, 0));
         _textReader.DisReq();
         Assert.IsFalse(_textReader.Connected);
@@ -112,7 +112,34 @@ namespace CAS.CommServer.DataProvider.TextReader.Tests
       _sw.Stop();
       Assert.IsTrue(_sw.ElapsedMilliseconds > 4000, $"Elapsed {_sw.ElapsedMilliseconds } mS");
     }
-
+    [TestMethod()]
+    public void ReadDataDisconnectedTest()
+    {
+      string _fileName = @"TestingData\g1765xa1.1";
+      FileInfo _testFile = new FileInfo(_fileName);
+      Assert.IsTrue(File.Exists(_fileName));
+      using (LocalTextReaderApplicationLayerMaster _textReader = LocalTextReaderApplicationLayerMaster.Instance(5000))
+      {
+        for (int i = 0; i < 2; i++)
+        {
+          Assert.AreEqual<TConnectReqRes>(TConnectReqRes.Success, _textReader.ConnectReq(RemoteAddress.Instance(_fileName)));
+          Assert.IsTrue(_textReader.Connected);
+          IReadValue _value = null;
+          Assert.AreEqual<AL_ReadData_Result>(AL_ReadData_Result.ALRes_DatTransferErrr, _textReader.ReadData(new TestBlockDescription(0, 39, 0), 0, out _value, 0));
+          string[] _content = File.ReadAllLines(_fileName);
+          File.WriteAllLines(_fileName, _content);
+          Thread.Sleep(3000);
+          Assert.AreEqual<AL_ReadData_Result>(AL_ReadData_Result.ALRes_Success, _textReader.ReadData(new TestBlockDescription(0, 39, 0), 0, out _value, 0));
+          Assert.IsNotNull(_value);
+          _value.ReturnEmptyEnvelope();
+          Thread.Sleep(30000);
+          Assert.AreEqual<AL_ReadData_Result>(AL_ReadData_Result.ALRes_DisInd, _textReader.ReadData(new TestBlockDescription(0, 39, 0), 0, out _value, 3));
+          Assert.IsFalse(_textReader.Connected);
+          Assert.AreEqual<AL_ReadData_Result>(AL_ReadData_Result.ALRes_DisInd, _textReader.ReadData(new TestBlockDescription(0, 39, 0), 0, out _value, 100));
+        }
+        Assert.AreEqual<int>(24, _textReader.TestTraceSource.TraceListener.Count);
+      }
+    }
     #endregion
 
     #region Not Implemented API
@@ -141,7 +168,7 @@ namespace CAS.CommServer.DataProvider.TextReader.Tests
     [TestInitialize]
     public void TestInitializeMethod()
     {
-      m_Item2Test = LocalTextReaderApplicationLayerMaster.Instance();
+      m_Item2Test = LocalTextReaderApplicationLayerMaster.Instance(10000);
     }
     [TestCleanup]
     public void TestCleanupMethod()
@@ -174,17 +201,18 @@ namespace CAS.CommServer.DataProvider.TextReader.Tests
     private class LocalTextReaderApplicationLayerMaster : TextReaderApplicationLayerMaster
     {
       public TestTraceSource TestTraceSource { get; private set; } = new TestTraceSource();
-      public LocalTextReaderApplicationLayerMaster(IProtocolParent statistic, IComponent parentComponent) : base(statistic, parentComponent, new TextReaderProtocolParameters() { FileModificationNotificationTimeout = 10000 })
+      public LocalTextReaderApplicationLayerMaster(IProtocolParent statistic, IComponent parentComponent, int _fileModificationNotificationTimeout) :
+        base(statistic, parentComponent, new TextReaderProtocolParameters() { FileModificationNotificationTimeout = _fileModificationNotificationTimeout })
       {
         TraceSource = TestTraceSource;
       }
-      internal static LocalTextReaderApplicationLayerMaster Instance()
+      internal static LocalTextReaderApplicationLayerMaster Instance(int fileModificationNotificationTimeout)
       {
-        return new LocalTextReaderApplicationLayerMaster(LocalProtocolParent.Instance(), LocalComponent.Instance());
+        return new LocalTextReaderApplicationLayerMaster(LocalProtocolParent.Instance(), LocalComponent.Instance(), fileModificationNotificationTimeout);
       }
-      internal static LocalTextReaderApplicationLayerMaster Instance(LocalComponent _component, Action disposedFunction)
+      internal static LocalTextReaderApplicationLayerMaster Instance(LocalComponent _component, Action disposedFunction, int fileModificationNotificationTimeout)
       {
-        return new LocalTextReaderApplicationLayerMaster(LocalProtocolParent.Instance(), _component) { m_DisposedCalled = disposedFunction };
+        return new LocalTextReaderApplicationLayerMaster(LocalProtocolParent.Instance(), _component, fileModificationNotificationTimeout) { m_DisposedCalled = disposedFunction };
       }
       protected override void Dispose(bool disposing)
       {
@@ -202,70 +230,49 @@ namespace CAS.CommServer.DataProvider.TextReader.Tests
         {
           throw new NotImplementedException();
         }
-
         public void IncStRxFragmentedCounter()
         {
           throw new NotImplementedException();
         }
-
         public void IncStRxFrameCounter() { }
         public void IncStRxInvalid()
         {
           throw new NotImplementedException();
         }
-
         public void IncStRxNAKCounter()
         {
           throw new NotImplementedException();
         }
-
-        public void IncStRxNoResponseCounter()
-        {
-        }
-
+        public void IncStRxNoResponseCounter() { }
         public void IncStRxSynchError()
         {
           throw new NotImplementedException();
         }
-
         public void IncStTxACKCounter()
         {
           throw new NotImplementedException();
         }
-
         public void IncStTxDATACounter()
         {
           throw new NotImplementedException();
         }
-
-        public void IncStTxFrameCounter()
-        {
-        }
+        public void IncStTxFrameCounter() { }
         public void IncStTxNAKCounter()
         {
           throw new NotImplementedException();
         }
-
-        public void RxDataBlock(bool success)
-        {
-        }
-
+        public void RxDataBlock(bool success) { }
         public void TimeCharGapAdd(long val)
         {
           throw new NotImplementedException();
         }
-
-        public void TimeMaxResponseDelayAdd(long val)
-        {
-        }
-
+        public void TimeMaxResponseDelayAdd(long val) { }
         public void TxDataBlock(bool success)
         {
           throw new NotImplementedException();
         }
       }
       private Action m_DisposedCalled = () => { };
-
     }
     private class TestTraceSource : ITraceSource
     {

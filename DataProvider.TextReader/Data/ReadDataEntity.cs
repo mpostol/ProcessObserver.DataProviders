@@ -118,7 +118,7 @@ namespace CAS.CommServer.DataProvider.TextReader.Data
         return int.Parse(_value, System.Globalization.CultureInfo.InvariantCulture);
       if (canonicalType == typeof(short))
         return short.Parse(_value, System.Globalization.CultureInfo.InvariantCulture);
-      throw new NotImplementedException($"The canical type {canonicalType.ToString()} is not implemented - only {typeof(float).ToString()} is supported");
+      throw new NotImplementedException($"The canical type {canonicalType.ToString()} is not supported");
     }
     /// <summary>
     /// Used by a user to return an empty envelope to the common pool. It also resets the message content.
