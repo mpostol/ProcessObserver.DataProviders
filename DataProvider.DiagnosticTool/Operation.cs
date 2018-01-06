@@ -62,10 +62,10 @@ namespace CAS.DPDiagnostics
     }
     internal void ConnectReq()
     {
-      TConnectReqRes _connectReqResult = ApplicationLayerMaster.ConnectReq(m_Commlayeraddress);
+      TConnectReqRes _connectReqResult = ApplicationLayerMaster.ConnectReq(m_CommLayerAddress);
       if (_connectReqResult != TConnectReqRes.Success)
       {
-        string _msg = String.Format("Connect request to remote {0} failed the with error: {1}.", m_Commlayeraddress, _connectReqResult);
+        string _msg = String.Format("Connect request to remote {0} failed the with error: {1}.", m_CommLayerAddress, _connectReqResult);
         throw new ConnectReqResException(_connectReqResult, _msg);
       }
     }
@@ -133,7 +133,7 @@ namespace CAS.DPDiagnostics
     internal long m_NumberOfBytes = 0;
     private OperationResult m_OperationResult = new OperationResult();
     private ReadWriteAction m_DoOperation;
-    private BLOK m_Blok = new BLOK();
+    private BLOK m_Block = new BLOK();
     private short m_ResourceSelected = 0;
     private int m_StationAddress = 0;
     private Type m_DataTypeOfConversion = null;
@@ -141,7 +141,7 @@ namespace CAS.DPDiagnostics
     private int m_RegistersCount = 0;
     private const byte c_Retries = 5;
     private object m_ValueToBeWritten = null;
-    protected IAddress m_Commlayeraddress = null;
+    protected IAddress m_CommLayerAddress = null;
     private int m_RegisterAddress = 0;
     private Stopwatch m_TestTimeStopWatch = new Stopwatch();
     #endregion
@@ -157,7 +157,7 @@ namespace CAS.DPDiagnostics
         m_RegistersCount = 1;
       else
         m_RegistersCount = Length;
-      m_Commlayeraddress = Commlayeraddress;
+      m_CommLayerAddress = Commlayeraddress;
       ApplicationLayerMaster = dataProviderID.GetApplicationLayerMaster(protocolParent, commonBusControl);
       if (readOperation)
         m_DoOperation = ReadOperation;
@@ -169,22 +169,22 @@ namespace CAS.DPDiagnostics
     }
     private void ReadOperation(ref long bytesCounter)
     {
-      m_Blok.Change(m_RegisterAddress, m_Length, m_ResourceSelected);
+      m_Block.Change(m_RegisterAddress, m_Length, m_ResourceSelected);
       IReadValue _data;
-      m_OperationResult.Log.Add(String.Format(Properties.Resources.OperationLogHeaderFormat, m_Blok.dataType, m_Blok.length, m_Blok.startAddress, StationAddress, "Read"));
-      switch (ApplicationLayerMaster.ReadData(m_Blok, StationAddress, out _data, c_Retries))
+      m_OperationResult.Log.Add(String.Format(Properties.Resources.OperationLogHeaderFormat, m_Block.dataType, m_Block.length, m_Block.startAddress, StationAddress, "Read"));
+      switch (ApplicationLayerMaster.ReadData(m_Block, StationAddress, out _data, c_Retries))
       {
         case AL_ReadData_Result.ALRes_DatTransferErrr:
-          m_OperationResult.Log.Add("-- Reading is copleted, but communication errors occured.");
+          m_OperationResult.Log.Add("-- Reading is completed, but communication errors occurred.");
           break;
         case AL_ReadData_Result.ALRes_DisInd:
-          m_OperationResult.Log.Add("-- Reading is copleted, but disconnect indication received.");
+          m_OperationResult.Log.Add("-- Reading is completed, but disconnect indication received.");
           break;
         case AL_ReadData_Result.ALRes_Success:
           Debug.Assert(_data != null);
           if (_data is ProtocolALMessage)
             bytesCounter += ((ProtocolALMessage)_data).userDataLength;
-          m_OperationResult.Log.Add("-- Reading is copleted, data:");
+          m_OperationResult.Log.Add("-- Reading is completed, data:");
           if (m_DataTypeOfConversion == null)
             m_DataTypeOfConversion = typeof(object);
           try
@@ -192,7 +192,7 @@ namespace CAS.DPDiagnostics
             if (m_DataTypeOfConversion == typeof(String))
               m_OperationResult.Log.Add(string.Format("---- data[{0}]={1}", 0, _data.ReadValue(0, m_DataTypeOfConversion)));
             else
-              for (int idx = 0; idx < m_Blok.length; idx++)
+              for (int idx = 0; idx < m_Block.length; idx++)
                 m_OperationResult.Log.Add(string.Format("---- data[{0}]={1}", idx, _data.ReadValue(idx, m_DataTypeOfConversion)));
           }
           catch (Exception ex)
@@ -209,9 +209,9 @@ namespace CAS.DPDiagnostics
     }
     private void WriteOperation(ref long bytesCounter)
     {
-      m_Blok.Change(m_RegisterAddress, m_Length, m_ResourceSelected);
-      m_OperationResult.Log.Add(String.Format(Properties.Resources.OperationLogHeaderFormat, m_Blok.dataType, m_Blok.length, m_Blok.startAddress, StationAddress, "Write"));
-      IWriteValue _value = ApplicationLayerMaster.GetEmptyWriteDataBuffor(m_Blok, m_StationAddress);
+      m_Block.Change(m_RegisterAddress, m_Length, m_ResourceSelected);
+      m_OperationResult.Log.Add(String.Format(Properties.Resources.OperationLogHeaderFormat, m_Block.dataType, m_Block.length, m_Block.startAddress, StationAddress, "Write"));
+      IWriteValue _value = ApplicationLayerMaster.GetEmptyWriteDataBuffor(m_Block, m_StationAddress);
       for (int _vix = 0; _vix < m_RegistersCount; _vix++)
         _value.WriteValue(m_ValueToBeWritten, _vix);
       bytesCounter += ((ProtocolALMessage)_value).userDataLength;

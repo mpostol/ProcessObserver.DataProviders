@@ -219,7 +219,9 @@
   <ItemGroup>
     <None Include="cas.snk" />
     <None Include="DPDiagnostic_Full.ico" />
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\AssemblyInfo.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>AssemblyInfo.cs</LastGenOutput>

@@ -75,7 +75,7 @@ namespace CAS.DPDiagnostics
         Delay = System.Convert.ToInt32( parent.@_Delay.Text );
         InitializeOperation( dataProviderID, commonBusControl, protocolParent, readOperation );
       }
-      internal string CommLayerAddress { get { return m_Commlayeraddress.ToString(); } }
+      internal string CommLayerAddress { get { return m_CommLayerAddress.ToString(); } }
       internal int Delay { get; private set; }
       #endregion
 

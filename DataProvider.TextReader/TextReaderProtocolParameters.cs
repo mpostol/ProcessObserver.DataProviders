@@ -52,6 +52,12 @@ namespace CAS.CommServer.DataProvider.TextReader
     [DisplayName("Column Separator")]
     [Browsable(true)]
     public string ColumnSeparator { get; set; } = ",";
+    /// <summary>
+    /// Gets and sets maximum number of retries this station will try. 
+    /// </summary>
+    [DescriptionAttribute("Maximum number of retries this station will try before issuing disconect request.")]
+    [DisplayName("Max Number Of Retries")]
+    public int MaxNumberOfRetries { get; set; } = 1;
     #endregion
 
     #region Objject
@@ -81,6 +87,9 @@ namespace CAS.CommServer.DataProvider.TextReader
       settings.ReadStartElement("DelayFileScan");
       DelayFileScan = settings.ReadContentAsDouble();
       settings.ReadEndElement();
+      settings.ReadStartElement("MaxNumberOfRetries");
+      MaxNumberOfRetries = Convert.ToInt32(settings.ReadContentAsDouble());
+      settings.ReadEndElement();
     }
     /// <summary>
     /// Writes the settings to <see cref="XmlWriter"/>.
@@ -96,6 +105,9 @@ namespace CAS.CommServer.DataProvider.TextReader
       settings.WriteEndElement();
       settings.WriteStartElement("DelayFileScan");
       settings.WriteValue(DelayFileScan);
+      settings.WriteEndElement();
+      settings.WriteStartElement("MaxNumberOfRetries");
+      settings.WriteValue(MaxNumberOfRetries);
       settings.WriteEndElement();
     }
     #endregion

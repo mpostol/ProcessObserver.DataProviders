@@ -33,9 +33,14 @@ namespace CAS.CommServer.DataProvider.TextReader
     /// <value>The delay file scan.</value>
     double DelayFileScan { get; }
     /// <summary>
-    /// Gets or sets the file modification notification timeout.
+    /// Gets the file modification notification timeout.
     /// </summary>
     /// <value><see cref="double"/> representing the file modification notification timeout.</value>
     double FileModificationNotificationTimeout { get; }
+    /// <summary>
+    /// Gets maximum number of retries this station will try.
+    /// </summary>
+    /// <value>The maximum number of retries.</value>
+    int MaxNumberOfRetries { get; }
   }
 }

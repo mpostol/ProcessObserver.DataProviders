@@ -133,11 +133,10 @@ namespace CAS.CommServer.DataProvider.TextReader.Tests
           Assert.IsNotNull(_value);
           _value.ReturnEmptyEnvelope();
           Thread.Sleep(30000);
-          Assert.AreEqual<AL_ReadData_Result>(AL_ReadData_Result.ALRes_DisInd, _textReader.ReadData(new TestBlockDescription(0, 39, 0), 0, out _value, 3));
+          Assert.AreEqual<AL_ReadData_Result>(AL_ReadData_Result.ALRes_DisInd, _textReader.ReadData(new TestBlockDescription(0, 39, 0), 0, out _value, 0));
           Assert.IsFalse(_textReader.Connected);
-          Assert.AreEqual<AL_ReadData_Result>(AL_ReadData_Result.ALRes_DisInd, _textReader.ReadData(new TestBlockDescription(0, 39, 0), 0, out _value, 100));
         }
-        Assert.AreEqual<int>(24, _textReader.TestTraceSource.TraceListener.Count);
+        Assert.AreEqual<int>(18, _textReader.TestTraceSource.TraceListener.Count);
       }
     }
     #endregion
@@ -202,7 +201,7 @@ namespace CAS.CommServer.DataProvider.TextReader.Tests
     {
       public TestTraceSource TestTraceSource { get; private set; } = new TestTraceSource();
       public LocalTextReaderApplicationLayerMaster(IProtocolParent statistic, IComponent parentComponent, int _fileModificationNotificationTimeout) :
-        base(statistic, parentComponent, new TextReaderProtocolParameters() { FileModificationNotificationTimeout = _fileModificationNotificationTimeout })
+        base(statistic, parentComponent, new TextReaderProtocolParameters() { FileModificationNotificationTimeout = _fileModificationNotificationTimeout, MaxNumberOfRetries = 1 })
       {
         TraceSource = TestTraceSource;
       }

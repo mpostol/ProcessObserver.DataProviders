@@ -28,6 +28,6 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]
 [assembly: Guid("4CAD424A-0D6A-42fd-BD38-C99B28C2E55F")]
-[assembly: AssemblyVersion("3.100.00.*")]
-[assembly: AssemblyFileVersion("3.100.00")]
+[assembly: AssemblyVersion("3.100.01.*")]
+[assembly: AssemblyFileVersion("3.100.01")]
 

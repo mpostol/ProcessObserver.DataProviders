@@ -50,24 +50,23 @@ namespace CAS.CommServer.DataProvider.TextReader
     {
       IDataEntity _newData = null;
       if (list.Count == 0)
-        TraceSource.TraceMessage(TraceEventType.Information, 71, $"Incomming data stream has been timed out.");
+      {
+        m_RetryCount++;
+        TraceSource.TraceMessage(TraceEventType.Information, 71, $"Incomming data stream has been timed out RetryCount={m_RetryCount}.");
+        if (m_TextReaderProtocolParameters.MaxNumberOfRetries > 0 && m_TextReaderProtocolParameters.MaxNumberOfRetries < m_RetryCount)
+        {
+          TraceSource.TraceMessage(TraceEventType.Information, 182, $"ReadData failed and caused disconnection because the number of reries={m_RetryCount} is greater than the limit {m_TextReaderProtocolParameters.MaxNumberOfRetries}");
+          DisReq();
+          m_RetryCount = 0;
+        }
+      }
       else
       {
         _newData = list[list.Count - 1];
+        m_RetryCount = 0;
         TraceSource.TraceMessage(TraceEventType.Verbose, 93, $"New data from the file {m_FileName} modified at {_newData.TimeStamp} has been fetched");
       }
-      if (_newData == null)
-        lock (this)
-        {
-          m_Fifo = null;
-          m_RetryCount++;
-        }
-      else
-        lock (this)
-        {
-          m_Fifo = _newData;
-          m_RetryCount = 0;
-        }
+      IDataEntity oldData = Interlocked.Exchange<IDataEntity>(ref m_Fifo, _newData);
     }
     private void ExceptionHandler(Exception exception)
     {
@@ -163,27 +162,18 @@ namespace CAS.CommServer.DataProvider.TextReader
         m_statistic.IncStRxInvalid();
       }
       if (!Connected)
-        return AL_ReadData_Result.ALRes_DisInd;
-      m_statistic.IncStTxFrameCounter();
-      IDataEntity _copy = null;
-      int _retryCount = 0;
-      lock (this)
       {
-        _copy = Interlocked.Exchange<IDataEntity>(ref m_Fifo, m_Fifo);
-        _retryCount = m_RetryCount;
+        TraceSource.TraceMessage(TraceEventType.Verbose, 165, $"ReadData failed because it is not connectedt; reries/limit={m_RetryCount}/{this.m_TextReaderProtocolParameters.MaxNumberOfRetries}.");
+        return AL_ReadData_Result.ALRes_DisInd;
       }
+      m_statistic.IncStTxFrameCounter();
+      IDataEntity _copy = Interlocked.Exchange<IDataEntity>(ref m_Fifo, m_Fifo);
       bool _retResult = _copy != null;
       m_statistic.RxDataBlock(_retResult);
       if (!_retResult)
       {
         m_statistic.IncStRxNoResponseCounter();
-        if (pRetries > 0 && pRetries < _retryCount)
-        {
-          TraceSource.TraceMessage(TraceEventType.Information, 182, $"ReadData failed for [{pStation}/{pBlock.startAddress}] and caused disconnection because the number of reries={_retryCount} is greater than the limit {pRetries}");
-          DisReq();
-          return AL_ReadData_Result.ALRes_DisInd;
-        }
-        TraceSource.TraceMessage(TraceEventType.Information, 186, $"ReadData failed; reries/limit={_retryCount}/{pRetries}.");
+        TraceSource.TraceMessage(TraceEventType.Information, 186, $"ReadData failed; reries/limit={m_RetryCount}/{this.m_TextReaderProtocolParameters.MaxNumberOfRetries}.");
         return AL_ReadData_Result.ALRes_DatTransferErrr;
       }
       m_statistic.IncStRxFrameCounter();
