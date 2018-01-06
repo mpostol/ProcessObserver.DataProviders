@@ -28,8 +28,8 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]
 [assembly: Guid("6a158b80-cdbe-4bb1-b202-17c5a4101da2")]
-[assembly: AssemblyVersion("3.90.05.*")]
-[assembly: AssemblyFileVersion("3.90.05")]
+[assembly: AssemblyVersion("3.100.00.*")]
+[assembly: AssemblyFileVersion("3.100.00")]
 [assembly: CAS.Lib.CodeProtect.AssemblyKey( "7EC9FC9E-3396-4CDA-B886-5C17EEC6EC2F" )]
 [assembly: CAS.Lib.CodeProtect.AssemblyHelper
   (
