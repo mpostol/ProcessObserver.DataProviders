@@ -7,9 +7,9 @@
 //  $URL:  $
 //  $Id:  $
 //
-//  Copyright (c) 2017 CAS LODZ POLAND
-//  +48 (42) 686 25 47
-//  techsupp@cas.eu
+//  Copyright (C) 2019, Mariusz Postol LODZ POLAND.
+//  +48 (608) 619 899
+//  mpostol@cas.eu
 //  www.cas.eu
 //_______________________________________________________________
 
@@ -19,9 +19,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("CAS.CommServer.DataProvider.Scripts")]
 [assembly: AssemblyDescription("Scripts Prototyping Workspace for CAS.CommServer.DataProvider.Scripts")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("CAS")]
+[assembly: AssemblyCompany("Mariusz Postol")]
 [assembly: AssemblyProduct("CAS CommServer Family")]
-[assembly: AssemblyCopyright("Copyright (c) 2017 CAS LODZ POLAND")]
+[assembly: AssemblyCopyright("Copyright (C) 2019, Mariusz Postol LODZ POLAND.")]
 [assembly: AssemblyTrademark("CommServer")]
 [assembly: AssemblyCulture("")]
 [assembly: Guid("F03FAECE-6874-418B-93FA-FC8CA11CBF59")]

@@ -4,8 +4,8 @@
     <id>CAS.CommServer.DataProvider.Package</id>
     <version>3.100.01</version>
     <title>CommSever DataProvider Collection Package</title>
-    <authors>CAS</authors>
-    <owners>commsvr.com</owners>
+    <authors>Mariusz Postol</authors>
+    <owners>Mariusz Postol</owners>
     <projectUrl>svn://svnserver.hq.cas.com.pl/VS/trunk/CommServer.DataProvider</projectUrl>
     <licenseUrl>http://www.commsvr.com/DownloadCenter/ProductSoftware/LicenseAgreement.aspx</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -19,7 +19,7 @@
     <releaseNotes>
       Released for Maintenace 2016
     </releaseNotes>
-    <copyright>Copyright (c) 2017 CAS LODZ POLAND</copyright>
+    <copyright>Copyright (C) 2019, Mariusz Postol LODZ POLAND.</copyright>
     <tags>CommServer, DataBinding</tags>
     <dependencies>
       <dependency id="CAS.CommServer.CommonBus" version="5.01.06" />

@@ -1,4 +1,4 @@
-# DataProvider Plug-ins Library
+# ProcessObserver DataProvider Plug-ins Library
 
 Data providers are responsible for managing communication network and accessing plant-floor devices. In a real environment, monitoring and management of the recourses making up the information processing and communication infrastructure are often of the same importance as access to real time data. To commence factory tests of any system, we need to build a testing environment. Using the data provider concept it is possible to provide all of the mentioned kinds of information using the ProcessObserver concept implementation. 
 

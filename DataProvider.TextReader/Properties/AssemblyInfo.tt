@@ -44,4 +44,4 @@ using System.Runtime.InteropServices;
 ]
 [assembly: InternalsVisibleToAttribute("CAS.CommServer.DataProvider.TextReader.UnitTest")]
 
-<#@ include file = "..\..\PR39-CommonResources\T4Definitions\CAS.OPC.t4" #>
+<#@ include file = "..\..\SolutionMetadataTemplate.t4" #>
