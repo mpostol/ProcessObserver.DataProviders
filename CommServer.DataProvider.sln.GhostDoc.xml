@@ -13,17 +13,17 @@
   </SpellChecker>
 <HelpConfigurations selected="HelpFile">
   <HelpConfiguration name="HelpFile">
-    <OutputPath>.\Help</OutputPath>
+    <OutputPath>.\docs\help</OutputPath>
     <CleanupOutputPath>true</CleanupOutputPath>
     <HelpFileName>CommServer.DataProvider</HelpFileName>
     <HelpFileNamingMethod>MemberName</HelpFileNamingMethod>
     <ImageFolderPath />
-    <Theme />
+    <Theme>FlatGray</Theme>
     <HtmlFormats>
-      <HtmlHelp>true</HtmlHelp>
+      <HtmlHelp>false</HtmlHelp>
       <MSHelpViewer>false</MSHelpViewer>
       <MSHelp2>false</MSHelp2>
-      <Website>false</Website>
+      <Website>true</Website>
       <VSIntelliSenseFile>false</VSIntelliSenseFile>
     </HtmlFormats>
     <IncludeScopes>
@@ -44,13 +44,24 @@
       <CPlusPlus>true</CPlusPlus>
     </SyntaxLanguages>
     <ResolveCrefLinks>true</ResolveCrefLinks>
-    <HeaderText />
-    <FooterText />
+    <HeaderText>ProcessObserver.DataProviders</HeaderText>
+    <FooterText>Rel 3.100.02</FooterText>
     <ConceptualContent>
       <ContentLayout />
       <MediaContent />
     </ConceptualContent>
-    <SelectedProjects />
+    <SelectedProjects>
+      <SelectedProject>DataProvider.DDE</SelectedProject>
+      <SelectedProject>DataProvider.MBUS</SelectedProject>
+      <SelectedProject>DataProvider.MemoryCache</SelectedProject>
+      <SelectedProject>DataProvider.MODBUSCore</SelectedProject>
+      <SelectedProject>DataProvider.MODBUSNET</SelectedProject>
+      <SelectedProject>DataProvider.MODBUSRS</SelectedProject>
+      <SelectedProject>DataProvider.NULLbus</SelectedProject>
+      <SelectedProject>DataProvider.SBUSNET</SelectedProject>
+      <SelectedProject>DataProvider.SBUSRS</SelectedProject>
+      <SelectedProject>DataProvider.TextReader</SelectedProject>
+    </SelectedProjects>
   </HelpConfiguration>
 </HelpConfigurations>
 <GeneralProperties>
