@@ -1,0 +1,959 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpKI>
+  <HelpKINode Title="address property" Url="html/P-CAS.CommServer.DataProvider.MODBUSCore.IModBusMessage.address.htm" />
+  <HelpKINode Title="ApplicationLayerPluginHelper class">
+    <HelpKINode Title="ApplicationLayerPluginHelper Class" Url="html/T-CAS.Lib.CommonBus.ApplicationLayer.DemoSimulator.ApplicationLayerPluginHelper.htm" />
+    <HelpKINode Title="ApplicationLayerPluginHelper Members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.DemoSimulator.ApplicationLayerPluginHelper.htm" />
+    <HelpKINode Title="about ApplicationLayerPluginHelper class" Url="html/T-CAS.Lib.CommonBus.ApplicationLayer.DemoSimulator.ApplicationLayerPluginHelper.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.DemoSimulator.ApplicationLayerPluginHelper.htm" />
+    <HelpKINode Title="constructor" Url="html/Overload-CAS.Lib.CommonBus.ApplicationLayer.DemoSimulator.ApplicationLayerPluginHelper.-ctor.htm" />
+    <HelpKINode Title="events" Url="html/Events.T-CAS.Lib.CommonBus.ApplicationLayer.DemoSimulator.ApplicationLayerPluginHelper.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-CAS.Lib.CommonBus.ApplicationLayer.DemoSimulator.ApplicationLayerPluginHelper.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-CAS.Lib.CommonBus.ApplicationLayer.DemoSimulator.ApplicationLayerPluginHelper.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ApplicationLayerPluginHelper.ApplicationLayerPluginHelper constructor" Url="html/Overload-CAS.Lib.CommonBus.ApplicationLayer.DemoSimulator.ApplicationLayerPluginHelper.-ctor.htm" />
+  <HelpKINode Title="ApplicationLayerPluginHelper.CreateApplicationLayerMaster method" Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.DemoSimulator.ApplicationLayerPluginHelper.CreateApplicationLayerMaster.htm" />
+  <HelpKINode Title="AssemblyTraceEvent class">
+    <HelpKINode Title="AssemblyTraceEvent Class" Url="html/T-CAS.CommServer.DataProvider.TextReader.AssemblyTraceEvent.htm" />
+    <HelpKINode Title="AssemblyTraceEvent Members" Url="html/AllMembers.T-CAS.CommServer.DataProvider.TextReader.AssemblyTraceEvent.htm" />
+    <HelpKINode Title="about AssemblyTraceEvent class" Url="html/T-CAS.CommServer.DataProvider.TextReader.AssemblyTraceEvent.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-CAS.CommServer.DataProvider.TextReader.AssemblyTraceEvent.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-CAS.CommServer.DataProvider.TextReader.AssemblyTraceEvent.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-CAS.CommServer.DataProvider.TextReader.AssemblyTraceEvent.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AssemblyTraceEvent.TraceMessage method" Url="html/M-CAS.CommServer.DataProvider.TextReader.AssemblyTraceEvent.TraceMessage.htm" />
+  <HelpKINode Title="AssemblyTraceEvent.Tracer property" Url="html/P-CAS.CommServer.DataProvider.TextReader.AssemblyTraceEvent.Tracer.htm" />
+  <HelpKINode Title="CAS.CommServer.DataProvider.MODBUSCore namespace" Url="html/N-CAS.CommServer.DataProvider.MODBUSCore.htm" />
+  <HelpKINode Title="CAS.CommServer.DataProvider.MODBUSCore.IModBusMessage interface">
+    <HelpKINode Title="IModBusMessage Interface" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.IModBusMessage.htm" />
+    <HelpKINode Title="IModBusMessage Members" Url="html/AllMembers.T-CAS.CommServer.DataProvider.MODBUSCore.IModBusMessage.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CAS.CommServer.DataProvider.MODBUSCore.ItemDefaultSettings class">
+    <HelpKINode Title="ItemDefaultSettings Class" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.ItemDefaultSettings.htm" />
+    <HelpKINode Title="ItemDefaultSettings Members" Url="html/AllMembers.T-CAS.CommServer.DataProvider.MODBUSCore.ItemDefaultSettings.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CAS.CommServer.DataProvider.MODBUSCore.Medium_T enumeration" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.Medium_T.htm" />
+  <HelpKINode Title="CAS.CommServer.DataProvider.MODBUSCore.ModBusPDUMessageBase(Of ModBusMessage) class">
+    <HelpKINode Title="ModBusPDUMessageBase(ModBusMessage) Class" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.ModBusPDUMessageBase-1.htm" />
+    <HelpKINode Title="ModBusPDUMessageBase(ModBusMessage) Members" Url="html/AllMembers.T-CAS.CommServer.DataProvider.MODBUSCore.ModBusPDUMessageBase-1.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CAS.CommServer.DataProvider.MODBUSCore.ModBusPDUMessageBase&lt;ModBusMessage&gt; class">
+    <HelpKINode Title="ModBusPDUMessageBase(ModBusMessage) Class" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.ModBusPDUMessageBase-1.htm" />
+    <HelpKINode Title="ModBusPDUMessageBase(ModBusMessage) Members" Url="html/AllMembers.T-CAS.CommServer.DataProvider.MODBUSCore.ModBusPDUMessageBase-1.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CAS.CommServer.DataProvider.MODBUSCore.ModbusProtocol(Of ModBusMessage) class">
+    <HelpKINode Title="ModbusProtocol(ModBusMessage) Class" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.ModbusProtocol-1.htm" />
+    <HelpKINode Title="ModbusProtocol(ModBusMessage) Members" Url="html/AllMembers.T-CAS.CommServer.DataProvider.MODBUSCore.ModbusProtocol-1.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CAS.CommServer.DataProvider.MODBUSCore.ModbusProtocol&lt;ModBusMessage&gt; class">
+    <HelpKINode Title="ModbusProtocol(ModBusMessage) Class" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.ModbusProtocol-1.htm" />
+    <HelpKINode Title="ModbusProtocol(ModBusMessage) Members" Url="html/AllMembers.T-CAS.CommServer.DataProvider.MODBUSCore.ModbusProtocol-1.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CAS.CommServer.DataProvider.MODBUSCore.ModBus_ApplicationLayerMaster(Of TModBusMessage) class">
+    <HelpKINode Title="ModBus_ApplicationLayerMaster(TModBusMessage) Class" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.ModBus_ApplicationLayerMaster-1.htm" />
+    <HelpKINode Title="ModBus_ApplicationLayerMaster(TModBusMessage) Members" Url="html/AllMembers.T-CAS.CommServer.DataProvider.MODBUSCore.ModBus_ApplicationLayerMaster-1.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CAS.CommServer.DataProvider.MODBUSCore.ModBus_ApplicationLayerMaster&lt;TModBusMessage&gt; class">
+    <HelpKINode Title="ModBus_ApplicationLayerMaster(TModBusMessage) Class" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.ModBus_ApplicationLayerMaster-1.htm" />
+    <HelpKINode Title="ModBus_ApplicationLayerMaster(TModBusMessage) Members" Url="html/AllMembers.T-CAS.CommServer.DataProvider.MODBUSCore.ModBus_ApplicationLayerMaster-1.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CAS.CommServer.DataProvider.MODBUSCore.ModBus_ApplicationLayerPluginHelperBase(Of TModbusMessage, TProtocolParameters, TModbusProtocol) class">
+    <HelpKINode Title="ModBus_ApplicationLayerPluginHelperBase(TModbusMessage, TProtocolParameters, TModbusProtocol) Class" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.ModBus_ApplicationLayerPluginHelperBase-3.htm" />
+    <HelpKINode Title="ModBus_ApplicationLayerPluginHelperBase(TModbusMessage, TProtocolParameters, TModbusProtocol) Members" Url="html/AllMembers.T-CAS.CommServer.DataProvider.MODBUSCore.ModBus_ApplicationLayerPluginHelperBase-3.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CAS.CommServer.DataProvider.MODBUSCore.ModBus_ApplicationLayerPluginHelperBase&lt;TModbusMessage, TProtocolParameters, TModbusProtocol&gt; class">
+    <HelpKINode Title="ModBus_ApplicationLayerPluginHelperBase(TModbusMessage, TProtocolParameters, TModbusProtocol) Class" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.ModBus_ApplicationLayerPluginHelperBase-3.htm" />
+    <HelpKINode Title="ModBus_ApplicationLayerPluginHelperBase(TModbusMessage, TProtocolParameters, TModbusProtocol) Members" Url="html/AllMembers.T-CAS.CommServer.DataProvider.MODBUSCore.ModBus_ApplicationLayerPluginHelperBase-3.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CAS.CommServer.DataProvider.MODBUSCore.ModBus_CommonProtocolParameters class">
+    <HelpKINode Title="ModBus_CommonProtocolParameters Class" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.ModBus_CommonProtocolParameters.htm" />
+    <HelpKINode Title="ModBus_CommonProtocolParameters Members" Url="html/AllMembers.T-CAS.CommServer.DataProvider.MODBUSCore.ModBus_CommonProtocolParameters.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CAS.CommServer.DataProvider.MODBUSCore.ModBus_CommonProtocolParameters.FloatingPointType enumeration" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.ModBus_CommonProtocolParameters.FloatingPointType.htm" />
+  <HelpKINode Title="CAS.CommServer.DataProvider.MODBUSCore.ModBus_CommonProtocolParameters.RegisterOrderEnum enumeration" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.ModBus_CommonProtocolParameters.RegisterOrderEnum.htm" />
+  <HelpKINode Title="CAS.CommServer.DataProvider.MODBUSCore.Modbus_Functions enumeration" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.Modbus_Functions.htm" />
+  <HelpKINode Title="CAS.CommServer.DataProvider.TextReader namespace" Url="html/N-CAS.CommServer.DataProvider.TextReader.htm" />
+  <HelpKINode Title="CAS.CommServer.DataProvider.TextReader.AssemblyTraceEvent class">
+    <HelpKINode Title="AssemblyTraceEvent Class" Url="html/T-CAS.CommServer.DataProvider.TextReader.AssemblyTraceEvent.htm" />
+    <HelpKINode Title="AssemblyTraceEvent Members" Url="html/AllMembers.T-CAS.CommServer.DataProvider.TextReader.AssemblyTraceEvent.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CAS.CommServer.DataProvider.TextReader.ITextReaderProtocolParameters interface">
+    <HelpKINode Title="ITextReaderProtocolParameters Interface" Url="html/T-CAS.CommServer.DataProvider.TextReader.ITextReaderProtocolParameters.htm" />
+    <HelpKINode Title="ITextReaderProtocolParameters Members" Url="html/AllMembers.T-CAS.CommServer.DataProvider.TextReader.ITextReaderProtocolParameters.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CAS.CommServer.DataProvider.TextReader.ITraceSource interface">
+    <HelpKINode Title="ITraceSource Interface" Url="html/T-CAS.CommServer.DataProvider.TextReader.ITraceSource.htm" />
+    <HelpKINode Title="ITraceSource Members" Url="html/AllMembers.T-CAS.CommServer.DataProvider.TextReader.ITraceSource.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CAS.CommServer.DataProvider.TextReader.TextReaderApplicationLayerMaster class">
+    <HelpKINode Title="TextReaderApplicationLayerMaster Class" Url="html/T-CAS.CommServer.DataProvider.TextReader.TextReaderApplicationLayerMaster.htm" />
+    <HelpKINode Title="TextReaderApplicationLayerMaster Members" Url="html/AllMembers.T-CAS.CommServer.DataProvider.TextReader.TextReaderApplicationLayerMaster.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CAS.CommServer.DataProvider.TextReader.TextReaderDataProviderID class">
+    <HelpKINode Title="TextReaderDataProviderID Class" Url="html/T-CAS.CommServer.DataProvider.TextReader.TextReaderDataProviderID.htm" />
+    <HelpKINode Title="TextReaderDataProviderID Members" Url="html/AllMembers.T-CAS.CommServer.DataProvider.TextReader.TextReaderDataProviderID.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CAS.CommServer.DataProvider.TextReader.TextReaderProtocolParameters class">
+    <HelpKINode Title="TextReaderProtocolParameters Class" Url="html/T-CAS.CommServer.DataProvider.TextReader.TextReaderProtocolParameters.htm" />
+    <HelpKINode Title="TextReaderProtocolParameters Members" Url="html/AllMembers.T-CAS.CommServer.DataProvider.TextReader.TextReaderProtocolParameters.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CAS.Lib.CommonBus.ApplicationLayer namespace" Url="html/N-CAS.Lib.CommonBus.ApplicationLayer.htm" />
+  <HelpKINode Title="CAS.Lib.CommonBus.ApplicationLayer.DDE namespace" Url="html/N-CAS.Lib.CommonBus.ApplicationLayer.DDE.htm" />
+  <HelpKINode Title="CAS.Lib.CommonBus.ApplicationLayer.DDE.DS_DataProviderID class">
+    <HelpKINode Title="DS_DataProviderID Class" Url="html/T-CAS.Lib.CommonBus.ApplicationLayer.DDE.DS_DataProviderID.htm" />
+    <HelpKINode Title="DS_DataProviderID Members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.DDE.DS_DataProviderID.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CAS.Lib.CommonBus.ApplicationLayer.DDE.DS_DataProviderID.ExcelLanguageEnum enumeration" Url="html/T-CAS.Lib.CommonBus.ApplicationLayer.DDE.DS_DataProviderID.ExcelLanguageEnum.htm" />
+  <HelpKINode Title="CAS.Lib.CommonBus.ApplicationLayer.DDE.PluginHelper class">
+    <HelpKINode Title="PluginHelper Class" Url="html/T-CAS.Lib.CommonBus.ApplicationLayer.DDE.PluginHelper.htm" />
+    <HelpKINode Title="PluginHelper Members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.DDE.PluginHelper.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CAS.Lib.CommonBus.ApplicationLayer.DDEProtocolParameters class">
+    <HelpKINode Title="DDEProtocolParameters Class" Url="html/T-CAS.Lib.CommonBus.ApplicationLayer.DDEProtocolParameters.htm" />
+    <HelpKINode Title="DDEProtocolParameters Members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.DDEProtocolParameters.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CAS.Lib.CommonBus.ApplicationLayer.DemoSimulator namespace" Url="html/N-CAS.Lib.CommonBus.ApplicationLayer.DemoSimulator.htm" />
+  <HelpKINode Title="CAS.Lib.CommonBus.ApplicationLayer.DemoSimulator.ApplicationLayerPluginHelper class">
+    <HelpKINode Title="ApplicationLayerPluginHelper Class" Url="html/T-CAS.Lib.CommonBus.ApplicationLayer.DemoSimulator.ApplicationLayerPluginHelper.htm" />
+    <HelpKINode Title="ApplicationLayerPluginHelper Members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.DemoSimulator.ApplicationLayerPluginHelper.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CAS.Lib.CommonBus.ApplicationLayer.DemoSimulator.DS_DataProviderID class">
+    <HelpKINode Title="DS_DataProviderID Class" Url="html/T-CAS.Lib.CommonBus.ApplicationLayer.DemoSimulator.DS_DataProviderID.htm" />
+    <HelpKINode Title="DS_DataProviderID Members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.DemoSimulator.DS_DataProviderID.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CAS.Lib.CommonBus.ApplicationLayer.MBUS namespace" Url="html/N-CAS.Lib.CommonBus.ApplicationLayer.MBUS.htm" />
+  <HelpKINode Title="CAS.Lib.CommonBus.ApplicationLayer.MBUS.MBUS_ApplicationLayerPluginHelper class">
+    <HelpKINode Title="MBUS_ApplicationLayerPluginHelper Class" Url="html/T-CAS.Lib.CommonBus.ApplicationLayer.MBUS.MBUS_ApplicationLayerPluginHelper.htm" />
+    <HelpKINode Title="MBUS_ApplicationLayerPluginHelper Members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.MBUS.MBUS_ApplicationLayerPluginHelper.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CAS.Lib.CommonBus.ApplicationLayer.MBUS.MBUS_DataProviderID class">
+    <HelpKINode Title="MBUS_DataProviderID Class" Url="html/T-CAS.Lib.CommonBus.ApplicationLayer.MBUS.MBUS_DataProviderID.htm" />
+    <HelpKINode Title="MBUS_DataProviderID Members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.MBUS.MBUS_DataProviderID.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CAS.Lib.CommonBus.ApplicationLayer.MBUS_ProtocolParameters class">
+    <HelpKINode Title="MBUS_ProtocolParameters Class" Url="html/T-CAS.Lib.CommonBus.ApplicationLayer.MBUS_ProtocolParameters.htm" />
+    <HelpKINode Title="MBUS_ProtocolParameters Members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.MBUS_ProtocolParameters.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CAS.Lib.CommonBus.ApplicationLayer.Modbus namespace" Url="html/N-CAS.Lib.CommonBus.ApplicationLayer.ModBus.htm" />
+  <HelpKINode Title="CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBusProtocol class">
+    <HelpKINode Title="ModBusProtocol Class" Url="html/T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBusProtocol.htm" />
+    <HelpKINode Title="ModBusProtocol Members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBusProtocol.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_ApplicationLayerPluginHelper class">
+    <HelpKINode Title="ModBus_ApplicationLayerPluginHelper Class" Url="html/T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_ApplicationLayerPluginHelper.htm" />
+    <HelpKINode Title="ModBus_ApplicationLayerPluginHelper Members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_ApplicationLayerPluginHelper.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_DataProviderID class">
+    <HelpKINode Title="ModBus_DataProviderID Class" Url="html/T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_DataProviderID.htm" />
+    <HelpKINode Title="ModBus_DataProviderID Members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_DataProviderID.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters class">
+    <HelpKINode Title="ModBus_ProtocolParameters Class" Url="html/T-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.htm" />
+    <HelpKINode Title="ModBus_ProtocolParameters Members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CAS.Lib.CommonBus.ApplicationLayer.ModBus.PRIVATE namespace" Url="html/N-CAS.Lib.CommonBus.ApplicationLayer.ModBus.PRIVATE.htm" />
+  <HelpKINode Title="CAS.Lib.CommonBus.ApplicationLayer.ModBus.PRIVATE.ModBusMessage class">
+    <HelpKINode Title="ModBusMessage Class" Url="html/T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.PRIVATE.ModBusMessage.htm" />
+    <HelpKINode Title="ModBusMessage Members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.PRIVATE.ModBusMessage.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CAS.Lib.CommonBus.ApplicationLayer.NULL namespace" Url="html/N-CAS.Lib.CommonBus.ApplicationLayer.NULL.htm" />
+  <HelpKINode Title="CAS.Lib.CommonBus.ApplicationLayer.NULL.NULL_ApplicationLayerPluginHelper class">
+    <HelpKINode Title="NULL_ApplicationLayerPluginHelper Class" Url="html/T-CAS.Lib.CommonBus.ApplicationLayer.NULL.NULL_ApplicationLayerPluginHelper.htm" />
+    <HelpKINode Title="NULL_ApplicationLayerPluginHelper Members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.NULL.NULL_ApplicationLayerPluginHelper.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CAS.Lib.CommonBus.ApplicationLayer.NULL.NULL_DataProviderID class">
+    <HelpKINode Title="NULL_DataProviderID Class" Url="html/T-CAS.Lib.CommonBus.ApplicationLayer.NULL.NULL_DataProviderID.htm" />
+    <HelpKINode Title="NULL_DataProviderID Members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.NULL.NULL_DataProviderID.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CAS.Lib.CommonBus.ApplicationLayer.SBUS namespace" Url="html/N-CAS.Lib.CommonBus.ApplicationLayer.SBUS.htm" />
+  <HelpKINode Title="CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_ApplicationLayerPluginHelper class">
+    <HelpKINode Title="SBUS_ApplicationLayerPluginHelper Class" Url="html/T-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_ApplicationLayerPluginHelper.htm" />
+    <HelpKINode Title="SBUS_ApplicationLayerPluginHelper Members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_ApplicationLayerPluginHelper.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID class">
+    <HelpKINode Title="SBUS_DataProviderID Class" Url="html/T-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID.htm" />
+    <HelpKINode Title="SBUS_DataProviderID Members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters class">
+    <HelpKINode Title="SBUS_ProtocolParameters Class" Url="html/T-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.htm" />
+    <HelpKINode Title="SBUS_ProtocolParameters Members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CAS.Lib.CommonBus.CommunicationLayer.DDE namespace" Url="html/N-CAS.Lib.CommonBus.CommunicationLayer.DDE.htm" />
+  <HelpKINode Title="CAS.Lib.CommonBus.CommunicationLayer.DDE.DDECommunicationLayerDescription class">
+    <HelpKINode Title="DDECommunicationLayerDescription Class" Url="html/T-CAS.Lib.CommonBus.CommunicationLayer.DDE.DDECommunicationLayerDescription.htm" />
+    <HelpKINode Title="DDECommunicationLayerDescription Members" Url="html/AllMembers.T-CAS.Lib.CommonBus.CommunicationLayer.DDE.DDECommunicationLayerDescription.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CAS.Lib.CommonBus.CommunicationLayer.DDE.DDECommunicationLayerID class">
+    <HelpKINode Title="DDECommunicationLayerID Class" Url="html/T-CAS.Lib.CommonBus.CommunicationLayer.DDE.DDECommunicationLayerID.htm" />
+    <HelpKINode Title="DDECommunicationLayerID Members" Url="html/AllMembers.T-CAS.Lib.CommonBus.CommunicationLayer.DDE.DDECommunicationLayerID.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CharacterTimeout property" Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.MBUS_ProtocolParameters.CharacterTimeout.htm" />
+  <HelpKINode Title="CharacterTimeoutSpan property" Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.MBUS_ProtocolParameters.CharacterTimeoutSpan.htm" />
+  <HelpKINode Title="CheckResponseFrame method">
+    <HelpKINode Title="CheckResponseFrame Method " Url="html/M-CAS.CommServer.DataProvider.MODBUSCore.ModBusPDUMessageBase-1.CheckResponseFrame.htm" />
+    <HelpKINode Title="CheckResponseFrame Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.ModBus.PRIVATE.ModBusMessage.CheckResponseFrame.htm" />
+    <HelpKINode Title="CheckResponseFrame Method " Url="html/Overload-CAS.Lib.CommonBus.ApplicationLayer.ModBus.PRIVATE.ModBusMessage.CheckResponseFrame.htm" />
+    <HelpKINode Title="CheckResponseFrame Method " Url="html/Overload-CAS.CommServer.DataProvider.MODBUSCore.ModBusPDUMessageBase-1.CheckResponseFrame.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Coil enumeration member" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.Medium_T.htm" />
+  <HelpKINode Title="Coil field" Url="html/F-CAS.CommServer.DataProvider.MODBUSCore.Medium_T.Coil.htm" />
+  <HelpKINode Title="ColumnSeparator property">
+    <HelpKINode Title="ColumnSeparator Property " Url="html/P-CAS.CommServer.DataProvider.TextReader.ITextReaderProtocolParameters.ColumnSeparator.htm" />
+    <HelpKINode Title="ColumnSeparator Property " Url="html/P-CAS.CommServer.DataProvider.TextReader.TextReaderProtocolParameters.ColumnSeparator.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Connected property" Url="html/P-CAS.CommServer.DataProvider.TextReader.TextReaderApplicationLayerMaster.Connected.htm" />
+  <HelpKINode Title="ConnectInd method" Url="html/M-CAS.CommServer.DataProvider.TextReader.TextReaderApplicationLayerMaster.ConnectInd.htm" />
+  <HelpKINode Title="ConnectReq method" Url="html/M-CAS.CommServer.DataProvider.TextReader.TextReaderApplicationLayerMaster.ConnectReq.htm" />
+  <HelpKINode Title="CreateApplicationLayerMaster method">
+    <HelpKINode Title="CreateApplicationLayerMaster Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.DDE.PluginHelper.CreateApplicationLayerMaster.htm" />
+    <HelpKINode Title="CreateApplicationLayerMaster Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.MBUS.MBUS_ApplicationLayerPluginHelper.CreateApplicationLayerMaster.htm" />
+    <HelpKINode Title="CreateApplicationLayerMaster Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.NULL.NULL_ApplicationLayerPluginHelper.CreateApplicationLayerMaster.htm" />
+    <HelpKINode Title="CreateApplicationLayerMaster Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_ApplicationLayerPluginHelper.CreateApplicationLayerMaster.htm" />
+    <HelpKINode Title="CreateApplicationLayerMaster Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.DemoSimulator.ApplicationLayerPluginHelper.CreateApplicationLayerMaster.htm" />
+    <HelpKINode Title="CreateApplicationLayerMaster Method " Url="html/M-CAS.CommServer.DataProvider.MODBUSCore.ModBus_ApplicationLayerPluginHelperBase-3.CreateApplicationLayerMaster.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CreateApplicationLayerSlave method">
+    <HelpKINode Title="CreateApplicationLayerSlave Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_ApplicationLayerPluginHelper.CreateApplicationLayerSlave.htm" />
+    <HelpKINode Title="CreateApplicationLayerSlave Method " Url="html/M-CAS.CommServer.DataProvider.MODBUSCore.ModBus_ApplicationLayerPluginHelperBase-3.CreateApplicationLayerSlave.htm" />
+    <HelpKINode Title="CreateApplicationLayerSlave Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.MBUS.MBUS_ApplicationLayerPluginHelper.CreateApplicationLayerSlave.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CreateApplicationLayerSniffer method" Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_ApplicationLayerPluginHelper.CreateApplicationLayerSniffer.htm" />
+  <HelpKINode Title="CreateCommunicationLayer method" Url="html/Overload-CAS.Lib.CommonBus.CommunicationLayer.DDE.DDECommunicationLayerID.CreateCommunicationLayer.htm" />
+  <HelpKINode Title="dataType property">
+    <HelpKINode Title="dataType Property " Url="html/P-CAS.CommServer.DataProvider.MODBUSCore.IModBusMessage.dataType.htm" />
+    <HelpKINode Title="dataType Property " Url="html/P-CAS.CommServer.DataProvider.MODBUSCore.ModBusPDUMessageBase-1.dataType.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DDECommunicationLayerDescription class">
+    <HelpKINode Title="DDECommunicationLayerDescription Class" Url="html/T-CAS.Lib.CommonBus.CommunicationLayer.DDE.DDECommunicationLayerDescription.htm" />
+    <HelpKINode Title="DDECommunicationLayerDescription Members" Url="html/AllMembers.T-CAS.Lib.CommonBus.CommunicationLayer.DDE.DDECommunicationLayerDescription.htm" />
+    <HelpKINode Title="about DDECommunicationLayerDescription class" Url="html/T-CAS.Lib.CommonBus.CommunicationLayer.DDE.DDECommunicationLayerDescription.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-CAS.Lib.CommonBus.CommunicationLayer.DDE.DDECommunicationLayerDescription.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-CAS.Lib.CommonBus.CommunicationLayer.DDE.DDECommunicationLayerDescription.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-CAS.Lib.CommonBus.CommunicationLayer.DDE.DDECommunicationLayerDescription.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DDECommunicationLayerDescription.Description property" Url="html/P-CAS.Lib.CommonBus.CommunicationLayer.DDE.DDECommunicationLayerDescription.Description.htm" />
+  <HelpKINode Title="DDECommunicationLayerDescription.HumanReadableSettings property" Url="html/P-CAS.Lib.CommonBus.CommunicationLayer.DDE.DDECommunicationLayerDescription.HumanReadableSettings.htm" />
+  <HelpKINode Title="DDECommunicationLayerDescription.Title property" Url="html/P-CAS.Lib.CommonBus.CommunicationLayer.DDE.DDECommunicationLayerDescription.Title.htm" />
+  <HelpKINode Title="DDECommunicationLayerID class">
+    <HelpKINode Title="DDECommunicationLayerID Class" Url="html/T-CAS.Lib.CommonBus.CommunicationLayer.DDE.DDECommunicationLayerID.htm" />
+    <HelpKINode Title="DDECommunicationLayerID Members" Url="html/AllMembers.T-CAS.Lib.CommonBus.CommunicationLayer.DDE.DDECommunicationLayerID.htm" />
+    <HelpKINode Title="about DDECommunicationLayerID class" Url="html/T-CAS.Lib.CommonBus.CommunicationLayer.DDE.DDECommunicationLayerID.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-CAS.Lib.CommonBus.CommunicationLayer.DDE.DDECommunicationLayerID.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-CAS.Lib.CommonBus.CommunicationLayer.DDE.DDECommunicationLayerID.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-CAS.Lib.CommonBus.CommunicationLayer.DDE.DDECommunicationLayerID.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DDECommunicationLayerID.CreateCommunicationLayer method" Url="html/Overload-CAS.Lib.CommonBus.CommunicationLayer.DDE.DDECommunicationLayerID.CreateCommunicationLayer.htm" />
+  <HelpKINode Title="DDECommunicationLayerID.GetCommunicationLayerDescription property" Url="html/P-CAS.Lib.CommonBus.CommunicationLayer.DDE.DDECommunicationLayerID.GetCommunicationLayerDescription.htm" />
+  <HelpKINode Title="DDECommunicationLayerID.PokeTimeout property" Url="html/P-CAS.Lib.CommonBus.CommunicationLayer.DDE.DDECommunicationLayerID.PokeTimeout.htm" />
+  <HelpKINode Title="DDECommunicationLayerID.RequestTimeout property" Url="html/P-CAS.Lib.CommonBus.CommunicationLayer.DDE.DDECommunicationLayerID.RequestTimeout.htm" />
+  <HelpKINode Title="DDECommunicationLayerID.ServerDDE property" Url="html/P-CAS.Lib.CommonBus.CommunicationLayer.DDE.DDECommunicationLayerID.ServerDDE.htm" />
+  <HelpKINode Title="DDECommunicationLayerID.Title property" Url="html/P-CAS.Lib.CommonBus.CommunicationLayer.DDE.DDECommunicationLayerID.Title.htm" />
+  <HelpKINode Title="DDEProtocolParameters class">
+    <HelpKINode Title="DDEProtocolParameters Class" Url="html/T-CAS.Lib.CommonBus.ApplicationLayer.DDEProtocolParameters.htm" />
+    <HelpKINode Title="DDEProtocolParameters Members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.DDEProtocolParameters.htm" />
+    <HelpKINode Title="about DDEProtocolParameters class" Url="html/T-CAS.Lib.CommonBus.ApplicationLayer.DDEProtocolParameters.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.DDEProtocolParameters.htm" />
+    <HelpKINode Title="constructor" Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.DDEProtocolParameters.-ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-CAS.Lib.CommonBus.ApplicationLayer.DDEProtocolParameters.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-CAS.Lib.CommonBus.ApplicationLayer.DDEProtocolParameters.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DDEProtocolParameters.DDEProtocolParameters constructor" Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.DDEProtocolParameters.-ctor.htm" />
+  <HelpKINode Title="DDEProtocolParameters.LineSpeed property" Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.DDEProtocolParameters.LineSpeed.htm" />
+  <HelpKINode Title="DDEProtocolParameters.ReadSettings method" Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.DDEProtocolParameters.ReadSettings.htm" />
+  <HelpKINode Title="DDEProtocolParameters.ToString method" Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.DDEProtocolParameters.ToString.htm" />
+  <HelpKINode Title="DDEProtocolParameters.WriteSettings method" Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.DDEProtocolParameters.WriteSettings.htm" />
+  <HelpKINode Title="DelayFileScan property">
+    <HelpKINode Title="DelayFileScan Property " Url="html/P-CAS.CommServer.DataProvider.TextReader.TextReaderProtocolParameters.DelayFileScan.htm" />
+    <HelpKINode Title="DelayFileScan Property " Url="html/P-CAS.CommServer.DataProvider.TextReader.ITextReaderProtocolParameters.DelayFileScan.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Description property" Url="html/P-CAS.Lib.CommonBus.CommunicationLayer.DDE.DDECommunicationLayerDescription.Description.htm" />
+  <HelpKINode Title="DIAGNOSTIC enumeration member" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.Modbus_Functions.htm" />
+  <HelpKINode Title="DIAGNOSTIC field" Url="html/F-CAS.CommServer.DataProvider.MODBUSCore.Modbus_Functions.DIAGNOSTIC.htm" />
+  <HelpKINode Title="Discrete_input enumeration member" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.Medium_T.htm" />
+  <HelpKINode Title="Discrete_input field" Url="html/F-CAS.CommServer.DataProvider.MODBUSCore.Medium_T.Discrete_input.htm" />
+  <HelpKINode Title="DisReq method" Url="html/M-CAS.CommServer.DataProvider.TextReader.TextReaderApplicationLayerMaster.DisReq.htm" />
+  <HelpKINode Title="DS_DataProviderID class">
+    <HelpKINode Title="DS_DataProviderID Class" Url="html/T-CAS.Lib.CommonBus.ApplicationLayer.DDE.DS_DataProviderID.htm" />
+    <HelpKINode Title="DS_DataProviderID Class" Url="html/T-CAS.Lib.CommonBus.ApplicationLayer.DemoSimulator.DS_DataProviderID.htm" />
+    <HelpKINode Title="DS_DataProviderID Members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.DemoSimulator.DS_DataProviderID.htm" />
+    <HelpKINode Title="DS_DataProviderID Members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.DDE.DS_DataProviderID.htm" />
+    <HelpKINode Title="about DS_DataProviderID class" Url="html/T-CAS.Lib.CommonBus.ApplicationLayer.DemoSimulator.DS_DataProviderID.htm" />
+    <HelpKINode Title="about DS_DataProviderID class" Url="html/T-CAS.Lib.CommonBus.ApplicationLayer.DDE.DS_DataProviderID.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.DDE.DS_DataProviderID.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.DemoSimulator.DS_DataProviderID.htm" />
+    <HelpKINode Title="constructor" Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.DemoSimulator.DS_DataProviderID.-ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-CAS.Lib.CommonBus.ApplicationLayer.DDE.DS_DataProviderID.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-CAS.Lib.CommonBus.ApplicationLayer.DemoSimulator.DS_DataProviderID.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-CAS.Lib.CommonBus.ApplicationLayer.DDE.DS_DataProviderID.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-CAS.Lib.CommonBus.ApplicationLayer.DemoSimulator.DS_DataProviderID.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DS_DataProviderID.DS_DataProviderID constructor" Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.DemoSimulator.DS_DataProviderID.-ctor.htm" />
+  <HelpKINode Title="DS_DataProviderID.ErrorFrequency property" Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.DemoSimulator.DS_DataProviderID.ErrorFrequency.htm" />
+  <HelpKINode Title="DS_DataProviderID.ExcelLanguage property" Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.DDE.DS_DataProviderID.ExcelLanguage.htm" />
+  <HelpKINode Title="DS_DataProviderID.ExcelLanguageEnum enumeration" Url="html/T-CAS.Lib.CommonBus.ApplicationLayer.DDE.DS_DataProviderID.ExcelLanguageEnum.htm" />
+  <HelpKINode Title="DS_DataProviderID.GetApplicationLayerMaster method">
+    <HelpKINode Title="GetApplicationLayerMaster Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.DDE.DS_DataProviderID.GetApplicationLayerMaster.htm" />
+    <HelpKINode Title="GetApplicationLayerMaster Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.DemoSimulator.DS_DataProviderID.GetApplicationLayerMaster.htm" />
+    <HelpKINode Title="GetApplicationLayerMaster Method " Url="html/Overload-CAS.Lib.CommonBus.ApplicationLayer.DemoSimulator.DS_DataProviderID.GetApplicationLayerMaster.htm" />
+    <HelpKINode Title="GetApplicationLayerMaster Method " Url="html/Overload-CAS.Lib.CommonBus.ApplicationLayer.DDE.DS_DataProviderID.GetApplicationLayerMaster.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DS_DataProviderID.GetAvailiableAddressspaces method">
+    <HelpKINode Title="GetAvailiableAddressspaces Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.DemoSimulator.DS_DataProviderID.GetAvailiableAddressspaces.htm" />
+    <HelpKINode Title="GetAvailiableAddressspaces Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.DDE.DS_DataProviderID.GetAvailiableAddressspaces.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DS_DataProviderID.GetItemDefaultSettings method">
+    <HelpKINode Title="GetItemDefaultSettings Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.DDE.DS_DataProviderID.GetItemDefaultSettings.htm" />
+    <HelpKINode Title="GetItemDefaultSettings Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.DemoSimulator.DS_DataProviderID.GetItemDefaultSettings.htm" />
+  </HelpKINode>
+  <HelpKINode Title="English enumeration member" Url="html/T-CAS.Lib.CommonBus.ApplicationLayer.DDE.DS_DataProviderID.ExcelLanguageEnum.htm" />
+  <HelpKINode Title="English field" Url="html/F-CAS.Lib.CommonBus.ApplicationLayer.DDE.DS_DataProviderID.ExcelLanguageEnum.English.htm" />
+  <HelpKINode Title="ERORR enumeration member" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.Modbus_Functions.htm" />
+  <HelpKINode Title="ERORR field" Url="html/F-CAS.CommServer.DataProvider.MODBUSCore.Modbus_Functions.ERORR.htm" />
+  <HelpKINode Title="ErrorFrequency property">
+    <HelpKINode Title="ErrorFrequency Property " Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.NULL.NULL_DataProviderID.ErrorFrequency.htm" />
+    <HelpKINode Title="ErrorFrequency Property " Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.DemoSimulator.DS_DataProviderID.ErrorFrequency.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ExcelLanguage property" Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.DDE.DS_DataProviderID.ExcelLanguage.htm" />
+  <HelpKINode Title="ExcelLanguageEnum.English field" Url="html/F-CAS.Lib.CommonBus.ApplicationLayer.DDE.DS_DataProviderID.ExcelLanguageEnum.English.htm" />
+  <HelpKINode Title="ExcelLanguageEnum.Polish field" Url="html/F-CAS.Lib.CommonBus.ApplicationLayer.DDE.DS_DataProviderID.ExcelLanguageEnum.Polish.htm" />
+  <HelpKINode Title="FileModificationNotificationTimeout property">
+    <HelpKINode Title="FileModificationNotificationTimeout Property " Url="html/P-CAS.CommServer.DataProvider.TextReader.ITextReaderProtocolParameters.FileModificationNotificationTimeout.htm" />
+    <HelpKINode Title="FileModificationNotificationTimeout Property " Url="html/P-CAS.CommServer.DataProvider.TextReader.TextReaderProtocolParameters.FileModificationNotificationTimeout.htm" />
+  </HelpKINode>
+  <HelpKINode Title="FloatingPoint property" Url="html/P-CAS.CommServer.DataProvider.MODBUSCore.ModBus_CommonProtocolParameters.FloatingPoint.htm" />
+  <HelpKINode Title="FloatingPointType.Inverted_IEE field" Url="html/F-CAS.CommServer.DataProvider.MODBUSCore.ModBus_CommonProtocolParameters.FloatingPointType.Inverted_IEE.htm" />
+  <HelpKINode Title="FloatingPointType.Standard_Modicon field" Url="html/F-CAS.CommServer.DataProvider.MODBUSCore.ModBus_CommonProtocolParameters.FloatingPointType.Standard_Modicon.htm" />
+  <HelpKINode Title="GetApplicationLayerMaster method">
+    <HelpKINode Title="GetApplicationLayerMaster Method " Url="html/Overload-CAS.Lib.CommonBus.ApplicationLayer.DemoSimulator.DS_DataProviderID.GetApplicationLayerMaster.htm" />
+    <HelpKINode Title="GetApplicationLayerMaster Method " Url="html/Overload-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID.GetApplicationLayerMaster.htm" />
+    <HelpKINode Title="GetApplicationLayerMaster Method " Url="html/Overload-CAS.Lib.CommonBus.ApplicationLayer.DDE.DS_DataProviderID.GetApplicationLayerMaster.htm" />
+    <HelpKINode Title="GetApplicationLayerMaster Method " Url="html/Overload-CAS.Lib.CommonBus.ApplicationLayer.MBUS.MBUS_DataProviderID.GetApplicationLayerMaster.htm" />
+    <HelpKINode Title="GetApplicationLayerMaster Method " Url="html/Overload-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_DataProviderID.GetApplicationLayerMaster.htm" />
+    <HelpKINode Title="GetApplicationLayerMaster Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID.GetApplicationLayerMaster.htm" />
+    <HelpKINode Title="GetApplicationLayerMaster Method " Url="html/Overload-CAS.CommServer.DataProvider.TextReader.TextReaderDataProviderID.GetApplicationLayerMaster.htm" />
+    <HelpKINode Title="GetApplicationLayerMaster Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.DemoSimulator.DS_DataProviderID.GetApplicationLayerMaster.htm" />
+    <HelpKINode Title="GetApplicationLayerMaster Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.MBUS.MBUS_DataProviderID.GetApplicationLayerMaster.htm" />
+    <HelpKINode Title="GetApplicationLayerMaster Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_DataProviderID.GetApplicationLayerMaster.htm" />
+    <HelpKINode Title="GetApplicationLayerMaster Method " Url="html/Overload-CAS.Lib.CommonBus.ApplicationLayer.NULL.NULL_DataProviderID.GetApplicationLayerMaster.htm" />
+    <HelpKINode Title="GetApplicationLayerMaster Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.NULL.NULL_DataProviderID.GetApplicationLayerMaster.htm" />
+    <HelpKINode Title="GetApplicationLayerMaster Method " Url="html/M-CAS.CommServer.DataProvider.TextReader.TextReaderDataProviderID.GetApplicationLayerMaster.htm" />
+    <HelpKINode Title="GetApplicationLayerMaster Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.DDE.DS_DataProviderID.GetApplicationLayerMaster.htm" />
+  </HelpKINode>
+  <HelpKINode Title="GetAvailiableAddressspaces method">
+    <HelpKINode Title="GetAvailiableAddressspaces Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.MBUS.MBUS_DataProviderID.GetAvailiableAddressspaces.htm" />
+    <HelpKINode Title="GetAvailiableAddressspaces Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.DemoSimulator.DS_DataProviderID.GetAvailiableAddressspaces.htm" />
+    <HelpKINode Title="GetAvailiableAddressspaces Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.DDE.DS_DataProviderID.GetAvailiableAddressspaces.htm" />
+    <HelpKINode Title="GetAvailiableAddressspaces Method " Url="html/M-CAS.CommServer.DataProvider.TextReader.TextReaderDataProviderID.GetAvailiableAddressspaces.htm" />
+    <HelpKINode Title="GetAvailiableAddressspaces Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_DataProviderID.GetAvailiableAddressspaces.htm" />
+    <HelpKINode Title="GetAvailiableAddressspaces Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.NULL.NULL_DataProviderID.GetAvailiableAddressspaces.htm" />
+    <HelpKINode Title="GetAvailiableAddressspaces Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID.GetAvailiableAddressspaces.htm" />
+  </HelpKINode>
+  <HelpKINode Title="GetCommand property" Url="html/P-CAS.CommServer.DataProvider.MODBUSCore.ModBusPDUMessageBase-1.GetCommand.htm" />
+  <HelpKINode Title="GetCommunicationLayerDescription property" Url="html/P-CAS.Lib.CommonBus.CommunicationLayer.DDE.DDECommunicationLayerID.GetCommunicationLayerDescription.htm" />
+  <HelpKINode Title="GetEmptyWriteDataBuffor method" Url="html/M-CAS.CommServer.DataProvider.TextReader.TextReaderApplicationLayerMaster.GetEmptyWriteDataBuffor.htm" />
+  <HelpKINode Title="GetItemDefaultSettings method">
+    <HelpKINode Title="GetItemDefaultSettings Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.NULL.NULL_DataProviderID.GetItemDefaultSettings.htm" />
+    <HelpKINode Title="GetItemDefaultSettings Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.DemoSimulator.DS_DataProviderID.GetItemDefaultSettings.htm" />
+    <HelpKINode Title="GetItemDefaultSettings Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.MBUS.MBUS_DataProviderID.GetItemDefaultSettings.htm" />
+    <HelpKINode Title="GetItemDefaultSettings Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_DataProviderID.GetItemDefaultSettings.htm" />
+    <HelpKINode Title="GetItemDefaultSettings Method " Url="html/M-CAS.CommServer.DataProvider.TextReader.TextReaderDataProviderID.GetItemDefaultSettings.htm" />
+    <HelpKINode Title="GetItemDefaultSettings Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID.GetItemDefaultSettings.htm" />
+    <HelpKINode Title="GetItemDefaultSettings Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.DDE.DS_DataProviderID.GetItemDefaultSettings.htm" />
+  </HelpKINode>
+  <HelpKINode Title="GetSettingsHumanReadableFormat method" Url="html/M-CAS.CommServer.DataProvider.TextReader.TextReaderDataProviderID.GetSettingsHumanReadableFormat.htm" />
+  <HelpKINode Title="GET_COM_EVENT_COUNTER enumeration member" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.Modbus_Functions.htm" />
+  <HelpKINode Title="GET_COM_EVENT_COUNTER field" Url="html/F-CAS.CommServer.DataProvider.MODBUSCore.Modbus_Functions.GET_COM_EVENT_COUNTER.htm" />
+  <HelpKINode Title="GET_COM_EVENT_LOG enumeration member" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.Modbus_Functions.htm" />
+  <HelpKINode Title="GET_COM_EVENT_LOG field" Url="html/F-CAS.CommServer.DataProvider.MODBUSCore.Modbus_Functions.GET_COM_EVENT_LOG.htm" />
+  <HelpKINode Title="Holding_32bit_register enumeration member" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.Medium_T.htm" />
+  <HelpKINode Title="Holding_32bit_register field" Url="html/F-CAS.CommServer.DataProvider.MODBUSCore.Medium_T.Holding_32bit_register.htm" />
+  <HelpKINode Title="Holding_8bit_register_CONTROL enumeration member" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.Medium_T.htm" />
+  <HelpKINode Title="Holding_8bit_register_CONTROL field" Url="html/F-CAS.CommServer.DataProvider.MODBUSCore.Medium_T.Holding_8bit_register_CONTROL.htm" />
+  <HelpKINode Title="Holding_register enumeration member" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.Medium_T.htm" />
+  <HelpKINode Title="Holding_register field" Url="html/F-CAS.CommServer.DataProvider.MODBUSCore.Medium_T.Holding_register.htm" />
+  <HelpKINode Title="HumanReadableSettings property" Url="html/P-CAS.Lib.CommonBus.CommunicationLayer.DDE.DDECommunicationLayerDescription.HumanReadableSettings.htm" />
+  <HelpKINode Title="IModBusMessage interface">
+    <HelpKINode Title="IModBusMessage Interface" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.IModBusMessage.htm" />
+    <HelpKINode Title="IModBusMessage Members" Url="html/AllMembers.T-CAS.CommServer.DataProvider.MODBUSCore.IModBusMessage.htm" />
+    <HelpKINode Title="about IModBusMessage interface" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.IModBusMessage.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-CAS.CommServer.DataProvider.MODBUSCore.IModBusMessage.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-CAS.CommServer.DataProvider.MODBUSCore.IModBusMessage.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-CAS.CommServer.DataProvider.MODBUSCore.IModBusMessage.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IModBusMessage.address property" Url="html/P-CAS.CommServer.DataProvider.MODBUSCore.IModBusMessage.address.htm" />
+  <HelpKINode Title="IModBusMessage.dataType property" Url="html/P-CAS.CommServer.DataProvider.MODBUSCore.IModBusMessage.dataType.htm" />
+  <HelpKINode Title="IModBusMessage.Registers32AreUsed property" Url="html/P-CAS.CommServer.DataProvider.MODBUSCore.IModBusMessage.Registers32AreUsed.htm" />
+  <HelpKINode Title="IModBusMessage.reqQuantity property" Url="html/P-CAS.CommServer.DataProvider.MODBUSCore.IModBusMessage.reqQuantity.htm" />
+  <HelpKINode Title="IModBusMessage.station property" Url="html/P-CAS.CommServer.DataProvider.MODBUSCore.IModBusMessage.station.htm" />
+  <HelpKINode Title="Input_register enumeration member" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.Medium_T.htm" />
+  <HelpKINode Title="Input_register field" Url="html/F-CAS.CommServer.DataProvider.MODBUSCore.Medium_T.Input_register.htm" />
+  <HelpKINode Title="Inverted_IEE enumeration member" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.ModBus_CommonProtocolParameters.FloatingPointType.htm" />
+  <HelpKINode Title="Inverted_IEE field" Url="html/F-CAS.CommServer.DataProvider.MODBUSCore.ModBus_CommonProtocolParameters.FloatingPointType.Inverted_IEE.htm" />
+  <HelpKINode Title="Inverted_SecondRegisterIsMoreSignificant enumeration member" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.ModBus_CommonProtocolParameters.RegisterOrderEnum.htm" />
+  <HelpKINode Title="Inverted_SecondRegisterIsMoreSignificant field" Url="html/F-CAS.CommServer.DataProvider.MODBUSCore.ModBus_CommonProtocolParameters.RegisterOrderEnum.Inverted_SecondRegisterIsMoreSignificant.htm" />
+  <HelpKINode Title="ItemDefaultSettings class">
+    <HelpKINode Title="ItemDefaultSettings Class" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.ItemDefaultSettings.htm" />
+    <HelpKINode Title="ItemDefaultSettings Members" Url="html/AllMembers.T-CAS.CommServer.DataProvider.MODBUSCore.ItemDefaultSettings.htm" />
+    <HelpKINode Title="about ItemDefaultSettings class" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.ItemDefaultSettings.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-CAS.CommServer.DataProvider.MODBUSCore.ItemDefaultSettings.htm" />
+    <HelpKINode Title="constructor" Url="html/M-CAS.CommServer.DataProvider.MODBUSCore.ItemDefaultSettings.-ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-CAS.CommServer.DataProvider.MODBUSCore.ItemDefaultSettings.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ItemDefaultSettings.ItemDefaultSettings constructor" Url="html/M-CAS.CommServer.DataProvider.MODBUSCore.ItemDefaultSettings.-ctor.htm" />
+  <HelpKINode Title="ITextReaderProtocolParameters interface">
+    <HelpKINode Title="ITextReaderProtocolParameters Interface" Url="html/T-CAS.CommServer.DataProvider.TextReader.ITextReaderProtocolParameters.htm" />
+    <HelpKINode Title="ITextReaderProtocolParameters Members" Url="html/AllMembers.T-CAS.CommServer.DataProvider.TextReader.ITextReaderProtocolParameters.htm" />
+    <HelpKINode Title="about ITextReaderProtocolParameters interface" Url="html/T-CAS.CommServer.DataProvider.TextReader.ITextReaderProtocolParameters.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-CAS.CommServer.DataProvider.TextReader.ITextReaderProtocolParameters.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-CAS.CommServer.DataProvider.TextReader.ITextReaderProtocolParameters.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-CAS.CommServer.DataProvider.TextReader.ITextReaderProtocolParameters.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ITextReaderProtocolParameters.ColumnSeparator property" Url="html/P-CAS.CommServer.DataProvider.TextReader.ITextReaderProtocolParameters.ColumnSeparator.htm" />
+  <HelpKINode Title="ITextReaderProtocolParameters.DelayFileScan property" Url="html/P-CAS.CommServer.DataProvider.TextReader.ITextReaderProtocolParameters.DelayFileScan.htm" />
+  <HelpKINode Title="ITextReaderProtocolParameters.FileModificationNotificationTimeout property" Url="html/P-CAS.CommServer.DataProvider.TextReader.ITextReaderProtocolParameters.FileModificationNotificationTimeout.htm" />
+  <HelpKINode Title="ITextReaderProtocolParameters.MaxNumberOfRetries property" Url="html/P-CAS.CommServer.DataProvider.TextReader.ITextReaderProtocolParameters.MaxNumberOfRetries.htm" />
+  <HelpKINode Title="ITraceSource interface">
+    <HelpKINode Title="ITraceSource Interface" Url="html/T-CAS.CommServer.DataProvider.TextReader.ITraceSource.htm" />
+    <HelpKINode Title="ITraceSource Members" Url="html/AllMembers.T-CAS.CommServer.DataProvider.TextReader.ITraceSource.htm" />
+    <HelpKINode Title="about ITraceSource interface" Url="html/T-CAS.CommServer.DataProvider.TextReader.ITraceSource.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-CAS.CommServer.DataProvider.TextReader.ITraceSource.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-CAS.CommServer.DataProvider.TextReader.ITraceSource.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ITraceSource.TraceMessage method" Url="html/M-CAS.CommServer.DataProvider.TextReader.ITraceSource.TraceMessage.htm" />
+  <HelpKINode Title="LineSpeed property">
+    <HelpKINode Title="LineSpeed Property " Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.DDEProtocolParameters.LineSpeed.htm" />
+    <HelpKINode Title="LineSpeed Property " Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.LineSpeed.htm" />
+    <HelpKINode Title="LineSpeed Property " Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.MBUS_ProtocolParameters.LineSpeed.htm" />
+    <HelpKINode Title="LineSpeed Property " Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.LineSpeed.htm" />
+  </HelpKINode>
+  <HelpKINode Title="MASK_WRITE_REGISTER enumeration member" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.Modbus_Functions.htm" />
+  <HelpKINode Title="MASK_WRITE_REGISTER field" Url="html/F-CAS.CommServer.DataProvider.MODBUSCore.Modbus_Functions.MASK_WRITE_REGISTER.htm" />
+  <HelpKINode Title="MaxNumberOfRetries property">
+    <HelpKINode Title="MaxNumberOfRetries Property " Url="html/P-CAS.CommServer.DataProvider.TextReader.TextReaderProtocolParameters.MaxNumberOfRetries.htm" />
+    <HelpKINode Title="MaxNumberOfRetries Property " Url="html/P-CAS.CommServer.DataProvider.TextReader.ITextReaderProtocolParameters.MaxNumberOfRetries.htm" />
+  </HelpKINode>
+  <HelpKINode Title="MBUSProtocolParameters property" Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.MBUS.MBUS_DataProviderID.MBUSProtocolParameters.htm" />
+  <HelpKINode Title="MBUS_ApplicationLayerPluginHelper class">
+    <HelpKINode Title="MBUS_ApplicationLayerPluginHelper Class" Url="html/T-CAS.Lib.CommonBus.ApplicationLayer.MBUS.MBUS_ApplicationLayerPluginHelper.htm" />
+    <HelpKINode Title="MBUS_ApplicationLayerPluginHelper Members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.MBUS.MBUS_ApplicationLayerPluginHelper.htm" />
+    <HelpKINode Title="about MBUS_ApplicationLayerPluginHelper class" Url="html/T-CAS.Lib.CommonBus.ApplicationLayer.MBUS.MBUS_ApplicationLayerPluginHelper.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.MBUS.MBUS_ApplicationLayerPluginHelper.htm" />
+    <HelpKINode Title="constructor" Url="html/Overload-CAS.Lib.CommonBus.ApplicationLayer.MBUS.MBUS_ApplicationLayerPluginHelper.-ctor.htm" />
+    <HelpKINode Title="events" Url="html/Events.T-CAS.Lib.CommonBus.ApplicationLayer.MBUS.MBUS_ApplicationLayerPluginHelper.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-CAS.Lib.CommonBus.ApplicationLayer.MBUS.MBUS_ApplicationLayerPluginHelper.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-CAS.Lib.CommonBus.ApplicationLayer.MBUS.MBUS_ApplicationLayerPluginHelper.htm" />
+  </HelpKINode>
+  <HelpKINode Title="MBUS_ApplicationLayerPluginHelper.CreateApplicationLayerMaster method" Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.MBUS.MBUS_ApplicationLayerPluginHelper.CreateApplicationLayerMaster.htm" />
+  <HelpKINode Title="MBUS_ApplicationLayerPluginHelper.CreateApplicationLayerSlave method" Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.MBUS.MBUS_ApplicationLayerPluginHelper.CreateApplicationLayerSlave.htm" />
+  <HelpKINode Title="MBUS_ApplicationLayerPluginHelper.MBUS_ApplicationLayerPluginHelper constructor" Url="html/Overload-CAS.Lib.CommonBus.ApplicationLayer.MBUS.MBUS_ApplicationLayerPluginHelper.-ctor.htm" />
+  <HelpKINode Title="MBUS_DataProviderID class">
+    <HelpKINode Title="MBUS_DataProviderID Class" Url="html/T-CAS.Lib.CommonBus.ApplicationLayer.MBUS.MBUS_DataProviderID.htm" />
+    <HelpKINode Title="MBUS_DataProviderID Members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.MBUS.MBUS_DataProviderID.htm" />
+    <HelpKINode Title="about MBUS_DataProviderID class" Url="html/T-CAS.Lib.CommonBus.ApplicationLayer.MBUS.MBUS_DataProviderID.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.MBUS.MBUS_DataProviderID.htm" />
+    <HelpKINode Title="constructor" Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.MBUS.MBUS_DataProviderID.-ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-CAS.Lib.CommonBus.ApplicationLayer.MBUS.MBUS_DataProviderID.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-CAS.Lib.CommonBus.ApplicationLayer.MBUS.MBUS_DataProviderID.htm" />
+  </HelpKINode>
+  <HelpKINode Title="MBUS_DataProviderID.GetApplicationLayerMaster method">
+    <HelpKINode Title="GetApplicationLayerMaster Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.MBUS.MBUS_DataProviderID.GetApplicationLayerMaster.htm" />
+    <HelpKINode Title="GetApplicationLayerMaster Method " Url="html/Overload-CAS.Lib.CommonBus.ApplicationLayer.MBUS.MBUS_DataProviderID.GetApplicationLayerMaster.htm" />
+  </HelpKINode>
+  <HelpKINode Title="MBUS_DataProviderID.GetAvailiableAddressspaces method" Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.MBUS.MBUS_DataProviderID.GetAvailiableAddressspaces.htm" />
+  <HelpKINode Title="MBUS_DataProviderID.GetItemDefaultSettings method" Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.MBUS.MBUS_DataProviderID.GetItemDefaultSettings.htm" />
+  <HelpKINode Title="MBUS_DataProviderID.MBUSProtocolParameters property" Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.MBUS.MBUS_DataProviderID.MBUSProtocolParameters.htm" />
+  <HelpKINode Title="MBUS_DataProviderID.MBUS_DataProviderID constructor" Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.MBUS.MBUS_DataProviderID.-ctor.htm" />
+  <HelpKINode Title="MBUS_ProtocolParameters class">
+    <HelpKINode Title="MBUS_ProtocolParameters Class" Url="html/T-CAS.Lib.CommonBus.ApplicationLayer.MBUS_ProtocolParameters.htm" />
+    <HelpKINode Title="MBUS_ProtocolParameters Members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.MBUS_ProtocolParameters.htm" />
+    <HelpKINode Title="about MBUS_ProtocolParameters class" Url="html/T-CAS.Lib.CommonBus.ApplicationLayer.MBUS_ProtocolParameters.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.MBUS_ProtocolParameters.htm" />
+    <HelpKINode Title="constructor" Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.MBUS_ProtocolParameters.-ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-CAS.Lib.CommonBus.ApplicationLayer.MBUS_ProtocolParameters.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-CAS.Lib.CommonBus.ApplicationLayer.MBUS_ProtocolParameters.htm" />
+  </HelpKINode>
+  <HelpKINode Title="MBUS_ProtocolParameters.CharacterTimeout property" Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.MBUS_ProtocolParameters.CharacterTimeout.htm" />
+  <HelpKINode Title="MBUS_ProtocolParameters.CharacterTimeoutSpan property" Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.MBUS_ProtocolParameters.CharacterTimeoutSpan.htm" />
+  <HelpKINode Title="MBUS_ProtocolParameters.LineSpeed property" Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.MBUS_ProtocolParameters.LineSpeed.htm" />
+  <HelpKINode Title="MBUS_ProtocolParameters.MBUS_ProtocolParameters constructor" Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.MBUS_ProtocolParameters.-ctor.htm" />
+  <HelpKINode Title="MBUS_ProtocolParameters.ReadSettings method" Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.MBUS_ProtocolParameters.ReadSettings.htm" />
+  <HelpKINode Title="MBUS_ProtocolParameters.ToString method" Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.MBUS_ProtocolParameters.ToString.htm" />
+  <HelpKINode Title="MBUS_ProtocolParameters.WriteSettings method" Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.MBUS_ProtocolParameters.WriteSettings.htm" />
+  <HelpKINode Title="Medium_T enumeration" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.Medium_T.htm" />
+  <HelpKINode Title="Medium_T.Coil field" Url="html/F-CAS.CommServer.DataProvider.MODBUSCore.Medium_T.Coil.htm" />
+  <HelpKINode Title="Medium_T.Discrete_input field" Url="html/F-CAS.CommServer.DataProvider.MODBUSCore.Medium_T.Discrete_input.htm" />
+  <HelpKINode Title="Medium_T.Holding_32bit_register field" Url="html/F-CAS.CommServer.DataProvider.MODBUSCore.Medium_T.Holding_32bit_register.htm" />
+  <HelpKINode Title="Medium_T.Holding_8bit_register_CONTROL field" Url="html/F-CAS.CommServer.DataProvider.MODBUSCore.Medium_T.Holding_8bit_register_CONTROL.htm" />
+  <HelpKINode Title="Medium_T.Holding_register field" Url="html/F-CAS.CommServer.DataProvider.MODBUSCore.Medium_T.Holding_register.htm" />
+  <HelpKINode Title="Medium_T.Input_register field" Url="html/F-CAS.CommServer.DataProvider.MODBUSCore.Medium_T.Input_register.htm" />
+  <HelpKINode Title="Medium_T.Register_MemoryBank_CONTROL field" Url="html/F-CAS.CommServer.DataProvider.MODBUSCore.Medium_T.Register_MemoryBank_CONTROL.htm" />
+  <HelpKINode Title="ModBusMessage class">
+    <HelpKINode Title="ModBusMessage Class" Url="html/T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.PRIVATE.ModBusMessage.htm" />
+    <HelpKINode Title="ModBusMessage Members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.PRIVATE.ModBusMessage.htm" />
+    <HelpKINode Title="about ModBusMessage class" Url="html/T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.PRIVATE.ModBusMessage.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.PRIVATE.ModBusMessage.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.PRIVATE.ModBusMessage.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.PRIVATE.ModBusMessage.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ModBusMessage.CheckResponseFrame method">
+    <HelpKINode Title="CheckResponseFrame Method " Url="html/Overload-CAS.Lib.CommonBus.ApplicationLayer.ModBus.PRIVATE.ModBusMessage.CheckResponseFrame.htm" />
+    <HelpKINode Title="CheckResponseFrame Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.ModBus.PRIVATE.ModBusMessage.CheckResponseFrame.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ModBusMessage.WriteValue method" Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.ModBus.PRIVATE.ModBusMessage.WriteValue.htm" />
+  <HelpKINode Title="ModBusPDUMessageBase(Of ModBusMessage) class">
+    <HelpKINode Title="ModBusPDUMessageBase(ModBusMessage) Class" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.ModBusPDUMessageBase-1.htm" />
+    <HelpKINode Title="ModBusPDUMessageBase(ModBusMessage) Members" Url="html/AllMembers.T-CAS.CommServer.DataProvider.MODBUSCore.ModBusPDUMessageBase-1.htm" />
+    <HelpKINode Title="about ModBusPDUMessageBase(Of ModBusMessage) class" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.ModBusPDUMessageBase-1.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-CAS.CommServer.DataProvider.MODBUSCore.ModBusPDUMessageBase-1.htm" />
+    <HelpKINode Title="constructor" Url="html/M-CAS.CommServer.DataProvider.MODBUSCore.ModBusPDUMessageBase-1.-ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-CAS.CommServer.DataProvider.MODBUSCore.ModBusPDUMessageBase-1.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-CAS.CommServer.DataProvider.MODBUSCore.ModBusPDUMessageBase-1.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ModBusPDUMessageBase(Of ModBusMessage).CheckResponseFrame method">
+    <HelpKINode Title="CheckResponseFrame Method " Url="html/M-CAS.CommServer.DataProvider.MODBUSCore.ModBusPDUMessageBase-1.CheckResponseFrame.htm" />
+    <HelpKINode Title="CheckResponseFrame Method " Url="html/Overload-CAS.CommServer.DataProvider.MODBUSCore.ModBusPDUMessageBase-1.CheckResponseFrame.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ModBusPDUMessageBase(Of ModBusMessage).dataType property" Url="html/P-CAS.CommServer.DataProvider.MODBUSCore.ModBusPDUMessageBase-1.dataType.htm" />
+  <HelpKINode Title="ModBusPDUMessageBase(Of ModBusMessage).GetCommand property" Url="html/P-CAS.CommServer.DataProvider.MODBUSCore.ModBusPDUMessageBase-1.GetCommand.htm" />
+  <HelpKINode Title="ModBusPDUMessageBase(Of ModBusMessage).ModBusPDUMessageBase constructor" Url="html/M-CAS.CommServer.DataProvider.MODBUSCore.ModBusPDUMessageBase-1.-ctor.htm" />
+  <HelpKINode Title="ModBusPDUMessageBase(Of ModBusMessage).ReadValue method">
+    <HelpKINode Title="ReadValue Method " Url="html/M-CAS.CommServer.DataProvider.MODBUSCore.ModBusPDUMessageBase-1.ReadValue.htm" />
+    <HelpKINode Title="ReadValue Method " Url="html/Overload-CAS.CommServer.DataProvider.MODBUSCore.ModBusPDUMessageBase-1.ReadValue.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ModBusPDUMessageBase(Of ModBusMessage).ToString method" Url="html/M-CAS.CommServer.DataProvider.MODBUSCore.ModBusPDUMessageBase-1.ToString.htm" />
+  <HelpKINode Title="ModBusPDUMessageBase(Of ModBusMessage).WriteValue method" Url="html/M-CAS.CommServer.DataProvider.MODBUSCore.ModBusPDUMessageBase-1.WriteValue.htm" />
+  <HelpKINode Title="ModBusPDUMessageBase&lt;ModBusMessage&gt; class">
+    <HelpKINode Title="ModBusPDUMessageBase(ModBusMessage) Class" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.ModBusPDUMessageBase-1.htm" />
+    <HelpKINode Title="ModBusPDUMessageBase(ModBusMessage) Members" Url="html/AllMembers.T-CAS.CommServer.DataProvider.MODBUSCore.ModBusPDUMessageBase-1.htm" />
+    <HelpKINode Title="about ModBusPDUMessageBase&lt;ModBusMessage&gt; class" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.ModBusPDUMessageBase-1.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-CAS.CommServer.DataProvider.MODBUSCore.ModBusPDUMessageBase-1.htm" />
+    <HelpKINode Title="constructor" Url="html/M-CAS.CommServer.DataProvider.MODBUSCore.ModBusPDUMessageBase-1.-ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-CAS.CommServer.DataProvider.MODBUSCore.ModBusPDUMessageBase-1.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-CAS.CommServer.DataProvider.MODBUSCore.ModBusPDUMessageBase-1.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ModBusPDUMessageBase&lt;ModBusMessage&gt;.CheckResponseFrame method">
+    <HelpKINode Title="CheckResponseFrame Method " Url="html/Overload-CAS.CommServer.DataProvider.MODBUSCore.ModBusPDUMessageBase-1.CheckResponseFrame.htm" />
+    <HelpKINode Title="CheckResponseFrame Method " Url="html/M-CAS.CommServer.DataProvider.MODBUSCore.ModBusPDUMessageBase-1.CheckResponseFrame.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ModBusPDUMessageBase&lt;ModBusMessage&gt;.dataType property" Url="html/P-CAS.CommServer.DataProvider.MODBUSCore.ModBusPDUMessageBase-1.dataType.htm" />
+  <HelpKINode Title="ModBusPDUMessageBase&lt;ModBusMessage&gt;.GetCommand property" Url="html/P-CAS.CommServer.DataProvider.MODBUSCore.ModBusPDUMessageBase-1.GetCommand.htm" />
+  <HelpKINode Title="ModBusPDUMessageBase&lt;ModBusMessage&gt;.ModBusPDUMessageBase constructor" Url="html/M-CAS.CommServer.DataProvider.MODBUSCore.ModBusPDUMessageBase-1.-ctor.htm" />
+  <HelpKINode Title="ModBusPDUMessageBase&lt;ModBusMessage&gt;.ReadValue method">
+    <HelpKINode Title="ReadValue Method " Url="html/Overload-CAS.CommServer.DataProvider.MODBUSCore.ModBusPDUMessageBase-1.ReadValue.htm" />
+    <HelpKINode Title="ReadValue Method " Url="html/M-CAS.CommServer.DataProvider.MODBUSCore.ModBusPDUMessageBase-1.ReadValue.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ModBusPDUMessageBase&lt;ModBusMessage&gt;.ToString method" Url="html/M-CAS.CommServer.DataProvider.MODBUSCore.ModBusPDUMessageBase-1.ToString.htm" />
+  <HelpKINode Title="ModBusPDUMessageBase&lt;ModBusMessage&gt;.WriteValue method" Url="html/M-CAS.CommServer.DataProvider.MODBUSCore.ModBusPDUMessageBase-1.WriteValue.htm" />
+  <HelpKINode Title="ModBusProtocol class">
+    <HelpKINode Title="ModBusProtocol Class" Url="html/T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBusProtocol.htm" />
+    <HelpKINode Title="ModBusProtocol Members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBusProtocol.htm" />
+    <HelpKINode Title="about ModBusProtocol class" Url="html/T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBusProtocol.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBusProtocol.htm" />
+    <HelpKINode Title="constructor" Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBusProtocol.-ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBusProtocol.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBusProtocol.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ModbusProtocol(Of ModBusMessage) class">
+    <HelpKINode Title="ModbusProtocol(ModBusMessage) Class" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.ModbusProtocol-1.htm" />
+    <HelpKINode Title="ModbusProtocol(ModBusMessage) Members" Url="html/AllMembers.T-CAS.CommServer.DataProvider.MODBUSCore.ModbusProtocol-1.htm" />
+    <HelpKINode Title="about ModbusProtocol(Of ModBusMessage) class" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.ModbusProtocol-1.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-CAS.CommServer.DataProvider.MODBUSCore.ModbusProtocol-1.htm" />
+    <HelpKINode Title="constructor" Url="html/M-CAS.CommServer.DataProvider.MODBUSCore.ModbusProtocol-1.-ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-CAS.CommServer.DataProvider.MODBUSCore.ModbusProtocol-1.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-CAS.CommServer.DataProvider.MODBUSCore.ModbusProtocol-1.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ModbusProtocol(Of ModBusMessage).ModbusProtocol constructor" Url="html/M-CAS.CommServer.DataProvider.MODBUSCore.ModbusProtocol-1.-ctor.htm" />
+  <HelpKINode Title="ModBusProtocol.ModBusProtocol constructor" Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBusProtocol.-ctor.htm" />
+  <HelpKINode Title="ModbusProtocol&lt;ModBusMessage&gt; class">
+    <HelpKINode Title="ModbusProtocol(ModBusMessage) Class" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.ModbusProtocol-1.htm" />
+    <HelpKINode Title="ModbusProtocol(ModBusMessage) Members" Url="html/AllMembers.T-CAS.CommServer.DataProvider.MODBUSCore.ModbusProtocol-1.htm" />
+    <HelpKINode Title="about ModbusProtocol&lt;ModBusMessage&gt; class" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.ModbusProtocol-1.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-CAS.CommServer.DataProvider.MODBUSCore.ModbusProtocol-1.htm" />
+    <HelpKINode Title="constructor" Url="html/M-CAS.CommServer.DataProvider.MODBUSCore.ModbusProtocol-1.-ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-CAS.CommServer.DataProvider.MODBUSCore.ModbusProtocol-1.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-CAS.CommServer.DataProvider.MODBUSCore.ModbusProtocol-1.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ModbusProtocol&lt;ModBusMessage&gt;.ModbusProtocol constructor" Url="html/M-CAS.CommServer.DataProvider.MODBUSCore.ModbusProtocol-1.-ctor.htm" />
+  <HelpKINode Title="MODBusProtocolParameters property" Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_DataProviderID.MODBusProtocolParameters.htm" />
+  <HelpKINode Title="ModBus_ApplicationLayerMaster(Of TModBusMessage) class">
+    <HelpKINode Title="ModBus_ApplicationLayerMaster(TModBusMessage) Class" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.ModBus_ApplicationLayerMaster-1.htm" />
+    <HelpKINode Title="ModBus_ApplicationLayerMaster(TModBusMessage) Members" Url="html/AllMembers.T-CAS.CommServer.DataProvider.MODBUSCore.ModBus_ApplicationLayerMaster-1.htm" />
+    <HelpKINode Title="about ModBus_ApplicationLayerMaster(Of TModBusMessage) class" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.ModBus_ApplicationLayerMaster-1.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-CAS.CommServer.DataProvider.MODBUSCore.ModBus_ApplicationLayerMaster-1.htm" />
+    <HelpKINode Title="constructor" Url="html/M-CAS.CommServer.DataProvider.MODBUSCore.ModBus_ApplicationLayerMaster-1.-ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-CAS.CommServer.DataProvider.MODBUSCore.ModBus_ApplicationLayerMaster-1.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ModBus_ApplicationLayerMaster(Of TModBusMessage).ModBus_ApplicationLayerMaster constructor" Url="html/M-CAS.CommServer.DataProvider.MODBUSCore.ModBus_ApplicationLayerMaster-1.-ctor.htm" />
+  <HelpKINode Title="ModBus_ApplicationLayerMaster&lt;TModBusMessage&gt; class">
+    <HelpKINode Title="ModBus_ApplicationLayerMaster(TModBusMessage) Class" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.ModBus_ApplicationLayerMaster-1.htm" />
+    <HelpKINode Title="ModBus_ApplicationLayerMaster(TModBusMessage) Members" Url="html/AllMembers.T-CAS.CommServer.DataProvider.MODBUSCore.ModBus_ApplicationLayerMaster-1.htm" />
+    <HelpKINode Title="about ModBus_ApplicationLayerMaster&lt;TModBusMessage&gt; class" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.ModBus_ApplicationLayerMaster-1.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-CAS.CommServer.DataProvider.MODBUSCore.ModBus_ApplicationLayerMaster-1.htm" />
+    <HelpKINode Title="constructor" Url="html/M-CAS.CommServer.DataProvider.MODBUSCore.ModBus_ApplicationLayerMaster-1.-ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-CAS.CommServer.DataProvider.MODBUSCore.ModBus_ApplicationLayerMaster-1.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ModBus_ApplicationLayerMaster&lt;TModBusMessage&gt;.ModBus_ApplicationLayerMaster constructor" Url="html/M-CAS.CommServer.DataProvider.MODBUSCore.ModBus_ApplicationLayerMaster-1.-ctor.htm" />
+  <HelpKINode Title="ModBus_ApplicationLayerPluginHelper class">
+    <HelpKINode Title="ModBus_ApplicationLayerPluginHelper Class" Url="html/T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_ApplicationLayerPluginHelper.htm" />
+    <HelpKINode Title="ModBus_ApplicationLayerPluginHelper Members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_ApplicationLayerPluginHelper.htm" />
+    <HelpKINode Title="about ModBus_ApplicationLayerPluginHelper class" Url="html/T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_ApplicationLayerPluginHelper.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_ApplicationLayerPluginHelper.htm" />
+    <HelpKINode Title="events" Url="html/Events.T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_ApplicationLayerPluginHelper.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_ApplicationLayerPluginHelper.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_ApplicationLayerPluginHelper.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ModBus_ApplicationLayerPluginHelperBase(Of TModbusMessage, TProtocolParameters, TModbusProtocol) class">
+    <HelpKINode Title="ModBus_ApplicationLayerPluginHelperBase(TModbusMessage, TProtocolParameters, TModbusProtocol) Class" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.ModBus_ApplicationLayerPluginHelperBase-3.htm" />
+    <HelpKINode Title="ModBus_ApplicationLayerPluginHelperBase(TModbusMessage, TProtocolParameters, TModbusProtocol) Members" Url="html/AllMembers.T-CAS.CommServer.DataProvider.MODBUSCore.ModBus_ApplicationLayerPluginHelperBase-3.htm" />
+    <HelpKINode Title="about ModBus_ApplicationLayerPluginHelperBase(Of TModbusMessage, TProtocolParameters, TModbusProtocol) class" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.ModBus_ApplicationLayerPluginHelperBase-3.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-CAS.CommServer.DataProvider.MODBUSCore.ModBus_ApplicationLayerPluginHelperBase-3.htm" />
+    <HelpKINode Title="constructor" Url="html/Overload-CAS.CommServer.DataProvider.MODBUSCore.ModBus_ApplicationLayerPluginHelperBase-3.-ctor.htm" />
+    <HelpKINode Title="events" Url="html/Events.T-CAS.CommServer.DataProvider.MODBUSCore.ModBus_ApplicationLayerPluginHelperBase-3.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-CAS.CommServer.DataProvider.MODBUSCore.ModBus_ApplicationLayerPluginHelperBase-3.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-CAS.CommServer.DataProvider.MODBUSCore.ModBus_ApplicationLayerPluginHelperBase-3.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ModBus_ApplicationLayerPluginHelperBase(Of TModbusMessage, TProtocolParameters, TModbusProtocol).CreateApplicationLayerMaster method" Url="html/M-CAS.CommServer.DataProvider.MODBUSCore.ModBus_ApplicationLayerPluginHelperBase-3.CreateApplicationLayerMaster.htm" />
+  <HelpKINode Title="ModBus_ApplicationLayerPluginHelperBase(Of TModbusMessage, TProtocolParameters, TModbusProtocol).CreateApplicationLayerSlave method" Url="html/M-CAS.CommServer.DataProvider.MODBUSCore.ModBus_ApplicationLayerPluginHelperBase-3.CreateApplicationLayerSlave.htm" />
+  <HelpKINode Title="ModBus_ApplicationLayerPluginHelperBase(Of TModbusMessage, TProtocolParameters, TModbusProtocol).ModBus_ApplicationLayerPluginHelperBase constructor" Url="html/Overload-CAS.CommServer.DataProvider.MODBUSCore.ModBus_ApplicationLayerPluginHelperBase-3.-ctor.htm" />
+  <HelpKINode Title="ModBus_ApplicationLayerPluginHelperBase&lt;TModbusMessage, TProtocolParameters, TModbusProtocol&gt; class">
+    <HelpKINode Title="ModBus_ApplicationLayerPluginHelperBase(TModbusMessage, TProtocolParameters, TModbusProtocol) Class" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.ModBus_ApplicationLayerPluginHelperBase-3.htm" />
+    <HelpKINode Title="ModBus_ApplicationLayerPluginHelperBase(TModbusMessage, TProtocolParameters, TModbusProtocol) Members" Url="html/AllMembers.T-CAS.CommServer.DataProvider.MODBUSCore.ModBus_ApplicationLayerPluginHelperBase-3.htm" />
+    <HelpKINode Title="about ModBus_ApplicationLayerPluginHelperBase&lt;TModbusMessage, TProtocolParameters, TModbusProtocol&gt; class" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.ModBus_ApplicationLayerPluginHelperBase-3.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-CAS.CommServer.DataProvider.MODBUSCore.ModBus_ApplicationLayerPluginHelperBase-3.htm" />
+    <HelpKINode Title="constructor" Url="html/Overload-CAS.CommServer.DataProvider.MODBUSCore.ModBus_ApplicationLayerPluginHelperBase-3.-ctor.htm" />
+    <HelpKINode Title="events" Url="html/Events.T-CAS.CommServer.DataProvider.MODBUSCore.ModBus_ApplicationLayerPluginHelperBase-3.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-CAS.CommServer.DataProvider.MODBUSCore.ModBus_ApplicationLayerPluginHelperBase-3.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-CAS.CommServer.DataProvider.MODBUSCore.ModBus_ApplicationLayerPluginHelperBase-3.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ModBus_ApplicationLayerPluginHelperBase&lt;TModbusMessage, TProtocolParameters, TModbusProtocol&gt;.CreateApplicationLayerMaster method" Url="html/M-CAS.CommServer.DataProvider.MODBUSCore.ModBus_ApplicationLayerPluginHelperBase-3.CreateApplicationLayerMaster.htm" />
+  <HelpKINode Title="ModBus_ApplicationLayerPluginHelperBase&lt;TModbusMessage, TProtocolParameters, TModbusProtocol&gt;.CreateApplicationLayerSlave method" Url="html/M-CAS.CommServer.DataProvider.MODBUSCore.ModBus_ApplicationLayerPluginHelperBase-3.CreateApplicationLayerSlave.htm" />
+  <HelpKINode Title="ModBus_ApplicationLayerPluginHelperBase&lt;TModbusMessage, TProtocolParameters, TModbusProtocol&gt;.ModBus_ApplicationLayerPluginHelperBase constructor" Url="html/Overload-CAS.CommServer.DataProvider.MODBUSCore.ModBus_ApplicationLayerPluginHelperBase-3.-ctor.htm" />
+  <HelpKINode Title="ModBus_CommonProtocolParameters class">
+    <HelpKINode Title="ModBus_CommonProtocolParameters Class" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.ModBus_CommonProtocolParameters.htm" />
+    <HelpKINode Title="ModBus_CommonProtocolParameters Members" Url="html/AllMembers.T-CAS.CommServer.DataProvider.MODBUSCore.ModBus_CommonProtocolParameters.htm" />
+    <HelpKINode Title="about ModBus_CommonProtocolParameters class" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.ModBus_CommonProtocolParameters.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-CAS.CommServer.DataProvider.MODBUSCore.ModBus_CommonProtocolParameters.htm" />
+    <HelpKINode Title="constructor" Url="html/M-CAS.CommServer.DataProvider.MODBUSCore.ModBus_CommonProtocolParameters.-ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-CAS.CommServer.DataProvider.MODBUSCore.ModBus_CommonProtocolParameters.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-CAS.CommServer.DataProvider.MODBUSCore.ModBus_CommonProtocolParameters.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ModBus_CommonProtocolParameters.FloatingPoint property" Url="html/P-CAS.CommServer.DataProvider.MODBUSCore.ModBus_CommonProtocolParameters.FloatingPoint.htm" />
+  <HelpKINode Title="ModBus_CommonProtocolParameters.FloatingPointType enumeration" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.ModBus_CommonProtocolParameters.FloatingPointType.htm" />
+  <HelpKINode Title="ModBus_CommonProtocolParameters.ModBus_CommonProtocolParameters constructor" Url="html/M-CAS.CommServer.DataProvider.MODBUSCore.ModBus_CommonProtocolParameters.-ctor.htm" />
+  <HelpKINode Title="ModBus_CommonProtocolParameters.RegisterOrderEnum enumeration" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.ModBus_CommonProtocolParameters.RegisterOrderEnum.htm" />
+  <HelpKINode Title="ModBus_CommonProtocolParameters.RegisterOrderIn32mode property" Url="html/P-CAS.CommServer.DataProvider.MODBUSCore.ModBus_CommonProtocolParameters.RegisterOrderIn32mode.htm" />
+  <HelpKINode Title="ModBus_DataProviderID class">
+    <HelpKINode Title="ModBus_DataProviderID Class" Url="html/T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_DataProviderID.htm" />
+    <HelpKINode Title="ModBus_DataProviderID Members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_DataProviderID.htm" />
+    <HelpKINode Title="about ModBus_DataProviderID class" Url="html/T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_DataProviderID.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_DataProviderID.htm" />
+    <HelpKINode Title="constructor" Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_DataProviderID.-ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_DataProviderID.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_DataProviderID.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ModBus_DataProviderID.GetApplicationLayerMaster method">
+    <HelpKINode Title="GetApplicationLayerMaster Method " Url="html/Overload-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_DataProviderID.GetApplicationLayerMaster.htm" />
+    <HelpKINode Title="GetApplicationLayerMaster Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_DataProviderID.GetApplicationLayerMaster.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ModBus_DataProviderID.GetAvailiableAddressspaces method" Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_DataProviderID.GetAvailiableAddressspaces.htm" />
+  <HelpKINode Title="ModBus_DataProviderID.GetItemDefaultSettings method" Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_DataProviderID.GetItemDefaultSettings.htm" />
+  <HelpKINode Title="ModBus_DataProviderID.MODBusProtocolParameters property" Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_DataProviderID.MODBusProtocolParameters.htm" />
+  <HelpKINode Title="ModBus_DataProviderID.ModBus_DataProviderID constructor" Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_DataProviderID.-ctor.htm" />
+  <HelpKINode Title="Modbus_Functions enumeration" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.Modbus_Functions.htm" />
+  <HelpKINode Title="Modbus_Functions.DIAGNOSTIC field" Url="html/F-CAS.CommServer.DataProvider.MODBUSCore.Modbus_Functions.DIAGNOSTIC.htm" />
+  <HelpKINode Title="Modbus_Functions.ERORR field" Url="html/F-CAS.CommServer.DataProvider.MODBUSCore.Modbus_Functions.ERORR.htm" />
+  <HelpKINode Title="Modbus_Functions.GET_COM_EVENT_COUNTER field" Url="html/F-CAS.CommServer.DataProvider.MODBUSCore.Modbus_Functions.GET_COM_EVENT_COUNTER.htm" />
+  <HelpKINode Title="Modbus_Functions.GET_COM_EVENT_LOG field" Url="html/F-CAS.CommServer.DataProvider.MODBUSCore.Modbus_Functions.GET_COM_EVENT_LOG.htm" />
+  <HelpKINode Title="Modbus_Functions.MASK_WRITE_REGISTER field" Url="html/F-CAS.CommServer.DataProvider.MODBUSCore.Modbus_Functions.MASK_WRITE_REGISTER.htm" />
+  <HelpKINode Title="Modbus_Functions.READ_COILS field" Url="html/F-CAS.CommServer.DataProvider.MODBUSCore.Modbus_Functions.READ_COILS.htm" />
+  <HelpKINode Title="Modbus_Functions.READ_DATABLOCK_CONTROL field" Url="html/F-CAS.CommServer.DataProvider.MODBUSCore.Modbus_Functions.READ_DATABLOCK_CONTROL.htm" />
+  <HelpKINode Title="Modbus_Functions.READ_DEVICE_IDENTIFICATION field" Url="html/F-CAS.CommServer.DataProvider.MODBUSCore.Modbus_Functions.READ_DEVICE_IDENTIFICATION.htm" />
+  <HelpKINode Title="Modbus_Functions.READ_DISCRETE_INPUT field" Url="html/F-CAS.CommServer.DataProvider.MODBUSCore.Modbus_Functions.READ_DISCRETE_INPUT.htm" />
+  <HelpKINode Title="Modbus_Functions.READ_EXCEPTION_STATUS field" Url="html/F-CAS.CommServer.DataProvider.MODBUSCore.Modbus_Functions.READ_EXCEPTION_STATUS.htm" />
+  <HelpKINode Title="Modbus_Functions.READ_FIFO_QUEUE field" Url="html/F-CAS.CommServer.DataProvider.MODBUSCore.Modbus_Functions.READ_FIFO_QUEUE.htm" />
+  <HelpKINode Title="Modbus_Functions.READ_FILE_RECORD field" Url="html/F-CAS.CommServer.DataProvider.MODBUSCore.Modbus_Functions.READ_FILE_RECORD.htm" />
+  <HelpKINode Title="Modbus_Functions.READ_HOLDING_REGISTERS field" Url="html/F-CAS.CommServer.DataProvider.MODBUSCore.Modbus_Functions.READ_HOLDING_REGISTERS.htm" />
+  <HelpKINode Title="Modbus_Functions.READ_HOLDING_REGISTERS_8BIT_CONTROL field" Url="html/F-CAS.CommServer.DataProvider.MODBUSCore.Modbus_Functions.READ_HOLDING_REGISTERS_8BIT_CONTROL.htm" />
+  <HelpKINode Title="Modbus_Functions.READ_INPUT_REGISTER field" Url="html/F-CAS.CommServer.DataProvider.MODBUSCore.Modbus_Functions.READ_INPUT_REGISTER.htm" />
+  <HelpKINode Title="Modbus_Functions.READ_MEMORYBANK_CONTROL field" Url="html/F-CAS.CommServer.DataProvider.MODBUSCore.Modbus_Functions.READ_MEMORYBANK_CONTROL.htm" />
+  <HelpKINode Title="Modbus_Functions.READ_WRITE_MULTIPLE_REGISTERS field" Url="html/F-CAS.CommServer.DataProvider.MODBUSCore.Modbus_Functions.READ_WRITE_MULTIPLE_REGISTERS.htm" />
+  <HelpKINode Title="Modbus_Functions.REPORT_SLAVEID field" Url="html/F-CAS.CommServer.DataProvider.MODBUSCore.Modbus_Functions.REPORT_SLAVEID.htm" />
+  <HelpKINode Title="Modbus_Functions.WRITE_FILE_RECORD_AND_WRITE_DATABLOCK_CONTROL field" Url="html/F-CAS.CommServer.DataProvider.MODBUSCore.Modbus_Functions.WRITE_FILE_RECORD_AND_WRITE_DATABLOCK_CONTROL.htm" />
+  <HelpKINode Title="Modbus_Functions.WRITE_MEMORYBANK_CONTROL field" Url="html/F-CAS.CommServer.DataProvider.MODBUSCore.Modbus_Functions.WRITE_MEMORYBANK_CONTROL.htm" />
+  <HelpKINode Title="Modbus_Functions.WRITE_MULTIBPLE_HOLDING_REGISTERS_8BIT_CONTROL field" Url="html/F-CAS.CommServer.DataProvider.MODBUSCore.Modbus_Functions.WRITE_MULTIBPLE_HOLDING_REGISTERS_8BIT_CONTROL.htm" />
+  <HelpKINode Title="Modbus_Functions.WRITE_MULTIPLE_COILS field" Url="html/F-CAS.CommServer.DataProvider.MODBUSCore.Modbus_Functions.WRITE_MULTIPLE_COILS.htm" />
+  <HelpKINode Title="Modbus_Functions.WRITE_MULTIPLE_REGISTERS field" Url="html/F-CAS.CommServer.DataProvider.MODBUSCore.Modbus_Functions.WRITE_MULTIPLE_REGISTERS.htm" />
+  <HelpKINode Title="Modbus_Functions.WRITE_SINGLE_COIL field" Url="html/F-CAS.CommServer.DataProvider.MODBUSCore.Modbus_Functions.WRITE_SINGLE_COIL.htm" />
+  <HelpKINode Title="Modbus_Functions.WRITE_SINGLE_HOLDING_REGISTERS_8BIT_CONTROL field" Url="html/F-CAS.CommServer.DataProvider.MODBUSCore.Modbus_Functions.WRITE_SINGLE_HOLDING_REGISTERS_8BIT_CONTROL.htm" />
+  <HelpKINode Title="Modbus_Functions.WRITE_SINGLE_REGISTER field" Url="html/F-CAS.CommServer.DataProvider.MODBUSCore.Modbus_Functions.WRITE_SINGLE_REGISTER.htm" />
+  <HelpKINode Title="ModBus_ProtocolParameters class">
+    <HelpKINode Title="ModBus_ProtocolParameters Class" Url="html/T-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.htm" />
+    <HelpKINode Title="ModBus_ProtocolParameters Members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.htm" />
+    <HelpKINode Title="about ModBus_ProtocolParameters class" Url="html/T-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.htm" />
+    <HelpKINode Title="constructor" Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.-ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ModBus_ProtocolParameters.LineSpeed property" Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.LineSpeed.htm" />
+  <HelpKINode Title="ModBus_ProtocolParameters.ModBus_ProtocolParameters constructor" Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.-ctor.htm" />
+  <HelpKINode Title="ModBus_ProtocolParameters.ReadSettings method">
+    <HelpKINode Title="ReadSettings Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.ReadSettings.htm" />
+    <HelpKINode Title="ReadSettings Method " Url="html/Overload-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.ReadSettings.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ModBus_ProtocolParameters.Timeout15 property" Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.Timeout15.htm" />
+  <HelpKINode Title="ModBus_ProtocolParameters.Timeout15Span property" Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.Timeout15Span.htm" />
+  <HelpKINode Title="ModBus_ProtocolParameters.Timeout35 property" Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.Timeout35.htm" />
+  <HelpKINode Title="ModBus_ProtocolParameters.Timeout35Span property" Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.Timeout35Span.htm" />
+  <HelpKINode Title="ModBus_ProtocolParameters.TimeoutCharacter property" Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.TimeoutCharacter.htm" />
+  <HelpKINode Title="ModBus_ProtocolParameters.TimeoutCharacterSpan property" Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.TimeoutCharacterSpan.htm" />
+  <HelpKINode Title="ModBus_ProtocolParameters.ToString method" Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.ToString.htm" />
+  <HelpKINode Title="ModBus_ProtocolParameters.WriteSettings method" Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.WriteSettings.htm" />
+  <HelpKINode Title="NULL_ApplicationLayerPluginHelper class">
+    <HelpKINode Title="NULL_ApplicationLayerPluginHelper Class" Url="html/T-CAS.Lib.CommonBus.ApplicationLayer.NULL.NULL_ApplicationLayerPluginHelper.htm" />
+    <HelpKINode Title="NULL_ApplicationLayerPluginHelper Members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.NULL.NULL_ApplicationLayerPluginHelper.htm" />
+    <HelpKINode Title="about NULL_ApplicationLayerPluginHelper class" Url="html/T-CAS.Lib.CommonBus.ApplicationLayer.NULL.NULL_ApplicationLayerPluginHelper.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.NULL.NULL_ApplicationLayerPluginHelper.htm" />
+    <HelpKINode Title="constructor" Url="html/Overload-CAS.Lib.CommonBus.ApplicationLayer.NULL.NULL_ApplicationLayerPluginHelper.-ctor.htm" />
+    <HelpKINode Title="events" Url="html/Events.T-CAS.Lib.CommonBus.ApplicationLayer.NULL.NULL_ApplicationLayerPluginHelper.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-CAS.Lib.CommonBus.ApplicationLayer.NULL.NULL_ApplicationLayerPluginHelper.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-CAS.Lib.CommonBus.ApplicationLayer.NULL.NULL_ApplicationLayerPluginHelper.htm" />
+  </HelpKINode>
+  <HelpKINode Title="NULL_ApplicationLayerPluginHelper.CreateApplicationLayerMaster method" Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.NULL.NULL_ApplicationLayerPluginHelper.CreateApplicationLayerMaster.htm" />
+  <HelpKINode Title="NULL_ApplicationLayerPluginHelper.NULL_ApplicationLayerPluginHelper constructor" Url="html/Overload-CAS.Lib.CommonBus.ApplicationLayer.NULL.NULL_ApplicationLayerPluginHelper.-ctor.htm" />
+  <HelpKINode Title="NULL_DataProviderID class">
+    <HelpKINode Title="NULL_DataProviderID Class" Url="html/T-CAS.Lib.CommonBus.ApplicationLayer.NULL.NULL_DataProviderID.htm" />
+    <HelpKINode Title="NULL_DataProviderID Members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.NULL.NULL_DataProviderID.htm" />
+    <HelpKINode Title="about NULL_DataProviderID class" Url="html/T-CAS.Lib.CommonBus.ApplicationLayer.NULL.NULL_DataProviderID.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.NULL.NULL_DataProviderID.htm" />
+    <HelpKINode Title="constructor" Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.NULL.NULL_DataProviderID.-ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-CAS.Lib.CommonBus.ApplicationLayer.NULL.NULL_DataProviderID.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-CAS.Lib.CommonBus.ApplicationLayer.NULL.NULL_DataProviderID.htm" />
+  </HelpKINode>
+  <HelpKINode Title="NULL_DataProviderID.ErrorFrequency property" Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.NULL.NULL_DataProviderID.ErrorFrequency.htm" />
+  <HelpKINode Title="NULL_DataProviderID.GetApplicationLayerMaster method">
+    <HelpKINode Title="GetApplicationLayerMaster Method " Url="html/Overload-CAS.Lib.CommonBus.ApplicationLayer.NULL.NULL_DataProviderID.GetApplicationLayerMaster.htm" />
+    <HelpKINode Title="GetApplicationLayerMaster Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.NULL.NULL_DataProviderID.GetApplicationLayerMaster.htm" />
+  </HelpKINode>
+  <HelpKINode Title="NULL_DataProviderID.GetAvailiableAddressspaces method" Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.NULL.NULL_DataProviderID.GetAvailiableAddressspaces.htm" />
+  <HelpKINode Title="NULL_DataProviderID.GetItemDefaultSettings method" Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.NULL.NULL_DataProviderID.GetItemDefaultSettings.htm" />
+  <HelpKINode Title="NULL_DataProviderID.NULL_DataProviderID constructor" Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.NULL.NULL_DataProviderID.-ctor.htm" />
+  <HelpKINode Title="PluginHelper class">
+    <HelpKINode Title="PluginHelper Class" Url="html/T-CAS.Lib.CommonBus.ApplicationLayer.DDE.PluginHelper.htm" />
+    <HelpKINode Title="PluginHelper Members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.DDE.PluginHelper.htm" />
+    <HelpKINode Title="about PluginHelper class" Url="html/T-CAS.Lib.CommonBus.ApplicationLayer.DDE.PluginHelper.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.DDE.PluginHelper.htm" />
+    <HelpKINode Title="constructor" Url="html/Overload-CAS.Lib.CommonBus.ApplicationLayer.DDE.PluginHelper.-ctor.htm" />
+    <HelpKINode Title="events" Url="html/Events.T-CAS.Lib.CommonBus.ApplicationLayer.DDE.PluginHelper.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-CAS.Lib.CommonBus.ApplicationLayer.DDE.PluginHelper.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-CAS.Lib.CommonBus.ApplicationLayer.DDE.PluginHelper.htm" />
+  </HelpKINode>
+  <HelpKINode Title="PluginHelper.CreateApplicationLayerMaster method" Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.DDE.PluginHelper.CreateApplicationLayerMaster.htm" />
+  <HelpKINode Title="PluginHelper.PluginHelper constructor" Url="html/Overload-CAS.Lib.CommonBus.ApplicationLayer.DDE.PluginHelper.-ctor.htm" />
+  <HelpKINode Title="PokeTimeout property" Url="html/P-CAS.Lib.CommonBus.CommunicationLayer.DDE.DDECommunicationLayerID.PokeTimeout.htm" />
+  <HelpKINode Title="Polish enumeration member" Url="html/T-CAS.Lib.CommonBus.ApplicationLayer.DDE.DS_DataProviderID.ExcelLanguageEnum.htm" />
+  <HelpKINode Title="Polish field" Url="html/F-CAS.Lib.CommonBus.ApplicationLayer.DDE.DS_DataProviderID.ExcelLanguageEnum.Polish.htm" />
+  <HelpKINode Title="ProtocolParameters property" Url="html/P-CAS.CommServer.DataProvider.TextReader.TextReaderDataProviderID.ProtocolParameters.htm" />
+  <HelpKINode Title="ReadData method" Url="html/M-CAS.CommServer.DataProvider.TextReader.TextReaderApplicationLayerMaster.ReadData.htm" />
+  <HelpKINode Title="ReadSettings method">
+    <HelpKINode Title="ReadSettings Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.DDEProtocolParameters.ReadSettings.htm" />
+    <HelpKINode Title="ReadSettings Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.ReadSettings.htm" />
+    <HelpKINode Title="ReadSettings Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.MBUS_ProtocolParameters.ReadSettings.htm" />
+    <HelpKINode Title="ReadSettings Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.ReadSettings.htm" />
+    <HelpKINode Title="ReadSettings Method " Url="html/Overload-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.ReadSettings.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ReadValue method">
+    <HelpKINode Title="ReadValue Method " Url="html/Overload-CAS.CommServer.DataProvider.MODBUSCore.ModBusPDUMessageBase-1.ReadValue.htm" />
+    <HelpKINode Title="ReadValue Method " Url="html/M-CAS.CommServer.DataProvider.MODBUSCore.ModBusPDUMessageBase-1.ReadValue.htm" />
+  </HelpKINode>
+  <HelpKINode Title="READ_COILS enumeration member" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.Modbus_Functions.htm" />
+  <HelpKINode Title="READ_COILS field" Url="html/F-CAS.CommServer.DataProvider.MODBUSCore.Modbus_Functions.READ_COILS.htm" />
+  <HelpKINode Title="READ_DATABLOCK_CONTROL enumeration member" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.Modbus_Functions.htm" />
+  <HelpKINode Title="READ_DATABLOCK_CONTROL field" Url="html/F-CAS.CommServer.DataProvider.MODBUSCore.Modbus_Functions.READ_DATABLOCK_CONTROL.htm" />
+  <HelpKINode Title="READ_DEVICE_IDENTIFICATION enumeration member" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.Modbus_Functions.htm" />
+  <HelpKINode Title="READ_DEVICE_IDENTIFICATION field" Url="html/F-CAS.CommServer.DataProvider.MODBUSCore.Modbus_Functions.READ_DEVICE_IDENTIFICATION.htm" />
+  <HelpKINode Title="READ_DISCRETE_INPUT enumeration member" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.Modbus_Functions.htm" />
+  <HelpKINode Title="READ_DISCRETE_INPUT field" Url="html/F-CAS.CommServer.DataProvider.MODBUSCore.Modbus_Functions.READ_DISCRETE_INPUT.htm" />
+  <HelpKINode Title="READ_EXCEPTION_STATUS enumeration member" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.Modbus_Functions.htm" />
+  <HelpKINode Title="READ_EXCEPTION_STATUS field" Url="html/F-CAS.CommServer.DataProvider.MODBUSCore.Modbus_Functions.READ_EXCEPTION_STATUS.htm" />
+  <HelpKINode Title="READ_FIFO_QUEUE enumeration member" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.Modbus_Functions.htm" />
+  <HelpKINode Title="READ_FIFO_QUEUE field" Url="html/F-CAS.CommServer.DataProvider.MODBUSCore.Modbus_Functions.READ_FIFO_QUEUE.htm" />
+  <HelpKINode Title="READ_FILE_RECORD enumeration member" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.Modbus_Functions.htm" />
+  <HelpKINode Title="READ_FILE_RECORD field" Url="html/F-CAS.CommServer.DataProvider.MODBUSCore.Modbus_Functions.READ_FILE_RECORD.htm" />
+  <HelpKINode Title="READ_HOLDING_REGISTERS enumeration member" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.Modbus_Functions.htm" />
+  <HelpKINode Title="READ_HOLDING_REGISTERS field" Url="html/F-CAS.CommServer.DataProvider.MODBUSCore.Modbus_Functions.READ_HOLDING_REGISTERS.htm" />
+  <HelpKINode Title="READ_HOLDING_REGISTERS_8BIT_CONTROL enumeration member" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.Modbus_Functions.htm" />
+  <HelpKINode Title="READ_HOLDING_REGISTERS_8BIT_CONTROL field" Url="html/F-CAS.CommServer.DataProvider.MODBUSCore.Modbus_Functions.READ_HOLDING_REGISTERS_8BIT_CONTROL.htm" />
+  <HelpKINode Title="READ_INPUT_REGISTER enumeration member" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.Modbus_Functions.htm" />
+  <HelpKINode Title="READ_INPUT_REGISTER field" Url="html/F-CAS.CommServer.DataProvider.MODBUSCore.Modbus_Functions.READ_INPUT_REGISTER.htm" />
+  <HelpKINode Title="READ_MEMORYBANK_CONTROL enumeration member" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.Modbus_Functions.htm" />
+  <HelpKINode Title="READ_MEMORYBANK_CONTROL field" Url="html/F-CAS.CommServer.DataProvider.MODBUSCore.Modbus_Functions.READ_MEMORYBANK_CONTROL.htm" />
+  <HelpKINode Title="READ_WRITE_MULTIPLE_REGISTERS enumeration member" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.Modbus_Functions.htm" />
+  <HelpKINode Title="READ_WRITE_MULTIPLE_REGISTERS field" Url="html/F-CAS.CommServer.DataProvider.MODBUSCore.Modbus_Functions.READ_WRITE_MULTIPLE_REGISTERS.htm" />
+  <HelpKINode Title="RegisterOrderEnum.Inverted_SecondRegisterIsMoreSignificant field" Url="html/F-CAS.CommServer.DataProvider.MODBUSCore.ModBus_CommonProtocolParameters.RegisterOrderEnum.Inverted_SecondRegisterIsMoreSignificant.htm" />
+  <HelpKINode Title="RegisterOrderEnum.Standard_FirstRegisterIsMoreSignificant field" Url="html/F-CAS.CommServer.DataProvider.MODBUSCore.ModBus_CommonProtocolParameters.RegisterOrderEnum.Standard_FirstRegisterIsMoreSignificant.htm" />
+  <HelpKINode Title="RegisterOrderIn32mode property" Url="html/P-CAS.CommServer.DataProvider.MODBUSCore.ModBus_CommonProtocolParameters.RegisterOrderIn32mode.htm" />
+  <HelpKINode Title="Registers32AreUsed property" Url="html/P-CAS.CommServer.DataProvider.MODBUSCore.IModBusMessage.Registers32AreUsed.htm" />
+  <HelpKINode Title="Register_MemoryBank_CONTROL enumeration member" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.Medium_T.htm" />
+  <HelpKINode Title="Register_MemoryBank_CONTROL field" Url="html/F-CAS.CommServer.DataProvider.MODBUSCore.Medium_T.Register_MemoryBank_CONTROL.htm" />
+  <HelpKINode Title="REPORT_SLAVEID enumeration member" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.Modbus_Functions.htm" />
+  <HelpKINode Title="REPORT_SLAVEID field" Url="html/F-CAS.CommServer.DataProvider.MODBUSCore.Modbus_Functions.REPORT_SLAVEID.htm" />
+  <HelpKINode Title="reqQuantity property" Url="html/P-CAS.CommServer.DataProvider.MODBUSCore.IModBusMessage.reqQuantity.htm" />
+  <HelpKINode Title="RequestTimeout property" Url="html/P-CAS.Lib.CommonBus.CommunicationLayer.DDE.DDECommunicationLayerID.RequestTimeout.htm" />
+  <HelpKINode Title="SBusProtocolParameters property" Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID.SBusProtocolParameters.htm" />
+  <HelpKINode Title="SBUS_ApplicationLayerPluginHelper class">
+    <HelpKINode Title="SBUS_ApplicationLayerPluginHelper Class" Url="html/T-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_ApplicationLayerPluginHelper.htm" />
+    <HelpKINode Title="SBUS_ApplicationLayerPluginHelper Members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_ApplicationLayerPluginHelper.htm" />
+    <HelpKINode Title="about SBUS_ApplicationLayerPluginHelper class" Url="html/T-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_ApplicationLayerPluginHelper.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_ApplicationLayerPluginHelper.htm" />
+    <HelpKINode Title="constructor" Url="html/Overload-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_ApplicationLayerPluginHelper.-ctor.htm" />
+    <HelpKINode Title="events" Url="html/Events.T-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_ApplicationLayerPluginHelper.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_ApplicationLayerPluginHelper.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_ApplicationLayerPluginHelper.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SBUS_ApplicationLayerPluginHelper.CreateApplicationLayerMaster method" Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_ApplicationLayerPluginHelper.CreateApplicationLayerMaster.htm" />
+  <HelpKINode Title="SBUS_ApplicationLayerPluginHelper.CreateApplicationLayerSlave method" Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_ApplicationLayerPluginHelper.CreateApplicationLayerSlave.htm" />
+  <HelpKINode Title="SBUS_ApplicationLayerPluginHelper.CreateApplicationLayerSniffer method" Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_ApplicationLayerPluginHelper.CreateApplicationLayerSniffer.htm" />
+  <HelpKINode Title="SBUS_ApplicationLayerPluginHelper.SBUS_ApplicationLayerPluginHelper constructor" Url="html/Overload-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_ApplicationLayerPluginHelper.-ctor.htm" />
+  <HelpKINode Title="SBUS_DataProviderID class">
+    <HelpKINode Title="SBUS_DataProviderID Class" Url="html/T-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID.htm" />
+    <HelpKINode Title="SBUS_DataProviderID Members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID.htm" />
+    <HelpKINode Title="about SBUS_DataProviderID class" Url="html/T-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID.htm" />
+    <HelpKINode Title="constructor" Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID.-ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SBUS_DataProviderID.GetApplicationLayerMaster method">
+    <HelpKINode Title="GetApplicationLayerMaster Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID.GetApplicationLayerMaster.htm" />
+    <HelpKINode Title="GetApplicationLayerMaster Method " Url="html/Overload-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID.GetApplicationLayerMaster.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SBUS_DataProviderID.GetAvailiableAddressspaces method" Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID.GetAvailiableAddressspaces.htm" />
+  <HelpKINode Title="SBUS_DataProviderID.GetItemDefaultSettings method" Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID.GetItemDefaultSettings.htm" />
+  <HelpKINode Title="SBUS_DataProviderID.SBusProtocolParameters property" Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID.SBusProtocolParameters.htm" />
+  <HelpKINode Title="SBUS_DataProviderID.SBUS_DataProviderID constructor" Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID.-ctor.htm" />
+  <HelpKINode Title="SBUS_ProtocolParameters class">
+    <HelpKINode Title="SBUS_ProtocolParameters Class" Url="html/T-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.htm" />
+    <HelpKINode Title="SBUS_ProtocolParameters Members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.htm" />
+    <HelpKINode Title="about SBUS_ProtocolParameters class" Url="html/T-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.htm" />
+    <HelpKINode Title="constructor" Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.-ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SBUS_ProtocolParameters.LineSpeed property" Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.LineSpeed.htm" />
+  <HelpKINode Title="SBUS_ProtocolParameters.ReadSettings method" Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.ReadSettings.htm" />
+  <HelpKINode Title="SBUS_ProtocolParameters.SBUS_ProtocolParameters constructor" Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.-ctor.htm" />
+  <HelpKINode Title="SBUS_ProtocolParameters.TimeoutAfterFrame property" Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.TimeoutAfterFrame.htm" />
+  <HelpKINode Title="SBUS_ProtocolParameters.TimeoutSpanAfterFrame property" Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.TimeoutSpanAfterFrame.htm" />
+  <HelpKINode Title="SBUS_ProtocolParameters.ToString method" Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.ToString.htm" />
+  <HelpKINode Title="SBUS_ProtocolParameters.WriteSettings method" Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.WriteSettings.htm" />
+  <HelpKINode Title="ServerDDE property" Url="html/P-CAS.Lib.CommonBus.CommunicationLayer.DDE.DDECommunicationLayerID.ServerDDE.htm" />
+  <HelpKINode Title="Standard_FirstRegisterIsMoreSignificant enumeration member" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.ModBus_CommonProtocolParameters.RegisterOrderEnum.htm" />
+  <HelpKINode Title="Standard_FirstRegisterIsMoreSignificant field" Url="html/F-CAS.CommServer.DataProvider.MODBUSCore.ModBus_CommonProtocolParameters.RegisterOrderEnum.Standard_FirstRegisterIsMoreSignificant.htm" />
+  <HelpKINode Title="Standard_Modicon enumeration member" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.ModBus_CommonProtocolParameters.FloatingPointType.htm" />
+  <HelpKINode Title="Standard_Modicon field" Url="html/F-CAS.CommServer.DataProvider.MODBUSCore.ModBus_CommonProtocolParameters.FloatingPointType.Standard_Modicon.htm" />
+  <HelpKINode Title="station property" Url="html/P-CAS.CommServer.DataProvider.MODBUSCore.IModBusMessage.station.htm" />
+  <HelpKINode Title="TextReaderApplicationLayerMaster class">
+    <HelpKINode Title="TextReaderApplicationLayerMaster Class" Url="html/T-CAS.CommServer.DataProvider.TextReader.TextReaderApplicationLayerMaster.htm" />
+    <HelpKINode Title="TextReaderApplicationLayerMaster Members" Url="html/AllMembers.T-CAS.CommServer.DataProvider.TextReader.TextReaderApplicationLayerMaster.htm" />
+    <HelpKINode Title="about TextReaderApplicationLayerMaster class" Url="html/T-CAS.CommServer.DataProvider.TextReader.TextReaderApplicationLayerMaster.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-CAS.CommServer.DataProvider.TextReader.TextReaderApplicationLayerMaster.htm" />
+    <HelpKINode Title="constructor" Url="html/M-CAS.CommServer.DataProvider.TextReader.TextReaderApplicationLayerMaster.-ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-CAS.CommServer.DataProvider.TextReader.TextReaderApplicationLayerMaster.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-CAS.CommServer.DataProvider.TextReader.TextReaderApplicationLayerMaster.htm" />
+  </HelpKINode>
+  <HelpKINode Title="TextReaderApplicationLayerMaster.Connected property" Url="html/P-CAS.CommServer.DataProvider.TextReader.TextReaderApplicationLayerMaster.Connected.htm" />
+  <HelpKINode Title="TextReaderApplicationLayerMaster.ConnectInd method" Url="html/M-CAS.CommServer.DataProvider.TextReader.TextReaderApplicationLayerMaster.ConnectInd.htm" />
+  <HelpKINode Title="TextReaderApplicationLayerMaster.ConnectReq method" Url="html/M-CAS.CommServer.DataProvider.TextReader.TextReaderApplicationLayerMaster.ConnectReq.htm" />
+  <HelpKINode Title="TextReaderApplicationLayerMaster.DisReq method" Url="html/M-CAS.CommServer.DataProvider.TextReader.TextReaderApplicationLayerMaster.DisReq.htm" />
+  <HelpKINode Title="TextReaderApplicationLayerMaster.GetEmptyWriteDataBuffor method" Url="html/M-CAS.CommServer.DataProvider.TextReader.TextReaderApplicationLayerMaster.GetEmptyWriteDataBuffor.htm" />
+  <HelpKINode Title="TextReaderApplicationLayerMaster.ReadData method" Url="html/M-CAS.CommServer.DataProvider.TextReader.TextReaderApplicationLayerMaster.ReadData.htm" />
+  <HelpKINode Title="TextReaderApplicationLayerMaster.TextReaderApplicationLayerMaster constructor" Url="html/M-CAS.CommServer.DataProvider.TextReader.TextReaderApplicationLayerMaster.-ctor.htm" />
+  <HelpKINode Title="TextReaderApplicationLayerMaster.TraceSource property" Url="html/P-CAS.CommServer.DataProvider.TextReader.TextReaderApplicationLayerMaster.TraceSource.htm" />
+  <HelpKINode Title="TextReaderApplicationLayerMaster.WriteData method" Url="html/M-CAS.CommServer.DataProvider.TextReader.TextReaderApplicationLayerMaster.WriteData.htm" />
+  <HelpKINode Title="TextReaderDataProviderID class">
+    <HelpKINode Title="TextReaderDataProviderID Class" Url="html/T-CAS.CommServer.DataProvider.TextReader.TextReaderDataProviderID.htm" />
+    <HelpKINode Title="TextReaderDataProviderID Members" Url="html/AllMembers.T-CAS.CommServer.DataProvider.TextReader.TextReaderDataProviderID.htm" />
+    <HelpKINode Title="about TextReaderDataProviderID class" Url="html/T-CAS.CommServer.DataProvider.TextReader.TextReaderDataProviderID.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-CAS.CommServer.DataProvider.TextReader.TextReaderDataProviderID.htm" />
+    <HelpKINode Title="constructor" Url="html/M-CAS.CommServer.DataProvider.TextReader.TextReaderDataProviderID.-ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-CAS.CommServer.DataProvider.TextReader.TextReaderDataProviderID.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-CAS.CommServer.DataProvider.TextReader.TextReaderDataProviderID.htm" />
+  </HelpKINode>
+  <HelpKINode Title="TextReaderDataProviderID.GetApplicationLayerMaster method">
+    <HelpKINode Title="GetApplicationLayerMaster Method " Url="html/Overload-CAS.CommServer.DataProvider.TextReader.TextReaderDataProviderID.GetApplicationLayerMaster.htm" />
+    <HelpKINode Title="GetApplicationLayerMaster Method " Url="html/M-CAS.CommServer.DataProvider.TextReader.TextReaderDataProviderID.GetApplicationLayerMaster.htm" />
+  </HelpKINode>
+  <HelpKINode Title="TextReaderDataProviderID.GetAvailiableAddressspaces method" Url="html/M-CAS.CommServer.DataProvider.TextReader.TextReaderDataProviderID.GetAvailiableAddressspaces.htm" />
+  <HelpKINode Title="TextReaderDataProviderID.GetItemDefaultSettings method" Url="html/M-CAS.CommServer.DataProvider.TextReader.TextReaderDataProviderID.GetItemDefaultSettings.htm" />
+  <HelpKINode Title="TextReaderDataProviderID.GetSettingsHumanReadableFormat method" Url="html/M-CAS.CommServer.DataProvider.TextReader.TextReaderDataProviderID.GetSettingsHumanReadableFormat.htm" />
+  <HelpKINode Title="TextReaderDataProviderID.ProtocolParameters property" Url="html/P-CAS.CommServer.DataProvider.TextReader.TextReaderDataProviderID.ProtocolParameters.htm" />
+  <HelpKINode Title="TextReaderDataProviderID.TextReaderDataProviderID constructor" Url="html/M-CAS.CommServer.DataProvider.TextReader.TextReaderDataProviderID.-ctor.htm" />
+  <HelpKINode Title="TextReaderProtocolParameters class">
+    <HelpKINode Title="TextReaderProtocolParameters Class" Url="html/T-CAS.CommServer.DataProvider.TextReader.TextReaderProtocolParameters.htm" />
+    <HelpKINode Title="TextReaderProtocolParameters Members" Url="html/AllMembers.T-CAS.CommServer.DataProvider.TextReader.TextReaderProtocolParameters.htm" />
+    <HelpKINode Title="about TextReaderProtocolParameters class" Url="html/T-CAS.CommServer.DataProvider.TextReader.TextReaderProtocolParameters.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-CAS.CommServer.DataProvider.TextReader.TextReaderProtocolParameters.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-CAS.CommServer.DataProvider.TextReader.TextReaderProtocolParameters.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-CAS.CommServer.DataProvider.TextReader.TextReaderProtocolParameters.htm" />
+  </HelpKINode>
+  <HelpKINode Title="TextReaderProtocolParameters.ColumnSeparator property" Url="html/P-CAS.CommServer.DataProvider.TextReader.TextReaderProtocolParameters.ColumnSeparator.htm" />
+  <HelpKINode Title="TextReaderProtocolParameters.DelayFileScan property" Url="html/P-CAS.CommServer.DataProvider.TextReader.TextReaderProtocolParameters.DelayFileScan.htm" />
+  <HelpKINode Title="TextReaderProtocolParameters.FileModificationNotificationTimeout property" Url="html/P-CAS.CommServer.DataProvider.TextReader.TextReaderProtocolParameters.FileModificationNotificationTimeout.htm" />
+  <HelpKINode Title="TextReaderProtocolParameters.MaxNumberOfRetries property" Url="html/P-CAS.CommServer.DataProvider.TextReader.TextReaderProtocolParameters.MaxNumberOfRetries.htm" />
+  <HelpKINode Title="TextReaderProtocolParameters.ToString method" Url="html/M-CAS.CommServer.DataProvider.TextReader.TextReaderProtocolParameters.ToString.htm" />
+  <HelpKINode Title="Timeout15 property" Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.Timeout15.htm" />
+  <HelpKINode Title="Timeout15Span property" Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.Timeout15Span.htm" />
+  <HelpKINode Title="Timeout35 property" Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.Timeout35.htm" />
+  <HelpKINode Title="Timeout35Span property" Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.Timeout35Span.htm" />
+  <HelpKINode Title="TimeoutAfterFrame property" Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.TimeoutAfterFrame.htm" />
+  <HelpKINode Title="TimeoutCharacter property" Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.TimeoutCharacter.htm" />
+  <HelpKINode Title="TimeoutCharacterSpan property" Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.TimeoutCharacterSpan.htm" />
+  <HelpKINode Title="TimeoutSpanAfterFrame property" Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.TimeoutSpanAfterFrame.htm" />
+  <HelpKINode Title="Title property">
+    <HelpKINode Title="Title Property " Url="html/P-CAS.Lib.CommonBus.CommunicationLayer.DDE.DDECommunicationLayerID.Title.htm" />
+    <HelpKINode Title="Title Property " Url="html/P-CAS.Lib.CommonBus.CommunicationLayer.DDE.DDECommunicationLayerDescription.Title.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ToString method">
+    <HelpKINode Title="ToString Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.ToString.htm" />
+    <HelpKINode Title="ToString Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.MBUS_ProtocolParameters.ToString.htm" />
+    <HelpKINode Title="ToString Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.DDEProtocolParameters.ToString.htm" />
+    <HelpKINode Title="ToString Method " Url="html/M-CAS.CommServer.DataProvider.MODBUSCore.ModBusPDUMessageBase-1.ToString.htm" />
+    <HelpKINode Title="ToString Method " Url="html/M-CAS.CommServer.DataProvider.TextReader.TextReaderProtocolParameters.ToString.htm" />
+    <HelpKINode Title="ToString Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.ToString.htm" />
+  </HelpKINode>
+  <HelpKINode Title="TraceMessage method">
+    <HelpKINode Title="TraceMessage Method " Url="html/M-CAS.CommServer.DataProvider.TextReader.AssemblyTraceEvent.TraceMessage.htm" />
+    <HelpKINode Title="TraceMessage Method " Url="html/M-CAS.CommServer.DataProvider.TextReader.ITraceSource.TraceMessage.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Tracer property" Url="html/P-CAS.CommServer.DataProvider.TextReader.AssemblyTraceEvent.Tracer.htm" />
+  <HelpKINode Title="TraceSource property" Url="html/P-CAS.CommServer.DataProvider.TextReader.TextReaderApplicationLayerMaster.TraceSource.htm" />
+  <HelpKINode Title="WriteData method" Url="html/M-CAS.CommServer.DataProvider.TextReader.TextReaderApplicationLayerMaster.WriteData.htm" />
+  <HelpKINode Title="WriteSettings method">
+    <HelpKINode Title="WriteSettings Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.WriteSettings.htm" />
+    <HelpKINode Title="WriteSettings Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.WriteSettings.htm" />
+    <HelpKINode Title="WriteSettings Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.DDEProtocolParameters.WriteSettings.htm" />
+    <HelpKINode Title="WriteSettings Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.MBUS_ProtocolParameters.WriteSettings.htm" />
+  </HelpKINode>
+  <HelpKINode Title="WriteValue method">
+    <HelpKINode Title="WriteValue Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.ModBus.PRIVATE.ModBusMessage.WriteValue.htm" />
+    <HelpKINode Title="WriteValue Method " Url="html/M-CAS.CommServer.DataProvider.MODBUSCore.ModBusPDUMessageBase-1.WriteValue.htm" />
+  </HelpKINode>
+  <HelpKINode Title="WRITE_FILE_RECORD_AND_WRITE_DATABLOCK_CONTROL enumeration member" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.Modbus_Functions.htm" />
+  <HelpKINode Title="WRITE_FILE_RECORD_AND_WRITE_DATABLOCK_CONTROL field" Url="html/F-CAS.CommServer.DataProvider.MODBUSCore.Modbus_Functions.WRITE_FILE_RECORD_AND_WRITE_DATABLOCK_CONTROL.htm" />
+  <HelpKINode Title="WRITE_MEMORYBANK_CONTROL enumeration member" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.Modbus_Functions.htm" />
+  <HelpKINode Title="WRITE_MEMORYBANK_CONTROL field" Url="html/F-CAS.CommServer.DataProvider.MODBUSCore.Modbus_Functions.WRITE_MEMORYBANK_CONTROL.htm" />
+  <HelpKINode Title="WRITE_MULTIBPLE_HOLDING_REGISTERS_8BIT_CONTROL enumeration member" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.Modbus_Functions.htm" />
+  <HelpKINode Title="WRITE_MULTIBPLE_HOLDING_REGISTERS_8BIT_CONTROL field" Url="html/F-CAS.CommServer.DataProvider.MODBUSCore.Modbus_Functions.WRITE_MULTIBPLE_HOLDING_REGISTERS_8BIT_CONTROL.htm" />
+  <HelpKINode Title="WRITE_MULTIPLE_COILS enumeration member" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.Modbus_Functions.htm" />
+  <HelpKINode Title="WRITE_MULTIPLE_COILS field" Url="html/F-CAS.CommServer.DataProvider.MODBUSCore.Modbus_Functions.WRITE_MULTIPLE_COILS.htm" />
+  <HelpKINode Title="WRITE_MULTIPLE_REGISTERS enumeration member" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.Modbus_Functions.htm" />
+  <HelpKINode Title="WRITE_MULTIPLE_REGISTERS field" Url="html/F-CAS.CommServer.DataProvider.MODBUSCore.Modbus_Functions.WRITE_MULTIPLE_REGISTERS.htm" />
+  <HelpKINode Title="WRITE_SINGLE_COIL enumeration member" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.Modbus_Functions.htm" />
+  <HelpKINode Title="WRITE_SINGLE_COIL field" Url="html/F-CAS.CommServer.DataProvider.MODBUSCore.Modbus_Functions.WRITE_SINGLE_COIL.htm" />
+  <HelpKINode Title="WRITE_SINGLE_HOLDING_REGISTERS_8BIT_CONTROL enumeration member" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.Modbus_Functions.htm" />
+  <HelpKINode Title="WRITE_SINGLE_HOLDING_REGISTERS_8BIT_CONTROL field" Url="html/F-CAS.CommServer.DataProvider.MODBUSCore.Modbus_Functions.WRITE_SINGLE_HOLDING_REGISTERS_8BIT_CONTROL.htm" />
+  <HelpKINode Title="WRITE_SINGLE_REGISTER enumeration member" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.Modbus_Functions.htm" />
+  <HelpKINode Title="WRITE_SINGLE_REGISTER field" Url="html/F-CAS.CommServer.DataProvider.MODBUSCore.Modbus_Functions.WRITE_SINGLE_REGISTER.htm" />
+</HelpKI>

@@ -1,0 +1,785 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpTOC>
+
+  <HelpTOCNode Id="a0da46ec-cdb3-4c0b-832f-dcc80043a98e" Title="CAS.CommServer.DataProvider.MODBUSCore Namespace" Url="html/N-CAS.CommServer.DataProvider.MODBUSCore.htm">
+    <HelpTOCNode Id="a5be9f25-2094-49e7-b9e9-44c1fb7ba8a4" Title="IModBusMessage Interface" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.IModBusMessage.htm">
+      <HelpTOCNode Title="IModBusMessage Members" Url="html/AllMembers.T-CAS.CommServer.DataProvider.MODBUSCore.IModBusMessage.htm" />
+      <HelpTOCNode Title="IModBusMessage Methods" Url="html/Methods.T-CAS.CommServer.DataProvider.MODBUSCore.IModBusMessage.htm" />
+      <HelpTOCNode Id="da04d52c-602c-44a6-97a0-d823def55ad0" Title="IModBusMessage Properties" Url="html/Properties.T-CAS.CommServer.DataProvider.MODBUSCore.IModBusMessage.htm">
+        <HelpTOCNode Title="address Property " Url="html/P-CAS.CommServer.DataProvider.MODBUSCore.IModBusMessage.address.htm" />
+        <HelpTOCNode Title="dataType Property " Url="html/P-CAS.CommServer.DataProvider.MODBUSCore.IModBusMessage.dataType.htm" />
+        <HelpTOCNode Title="Registers32AreUsed Property " Url="html/P-CAS.CommServer.DataProvider.MODBUSCore.IModBusMessage.Registers32AreUsed.htm" />
+        <HelpTOCNode Title="reqQuantity Property " Url="html/P-CAS.CommServer.DataProvider.MODBUSCore.IModBusMessage.reqQuantity.htm" />
+        <HelpTOCNode Title="station Property " Url="html/P-CAS.CommServer.DataProvider.MODBUSCore.IModBusMessage.station.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="5c86582a-b91d-46c1-8b6d-03922e29782d" Title="ItemDefaultSettings Class" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.ItemDefaultSettings.htm">
+      <HelpTOCNode Title="ItemDefaultSettings Members" Url="html/AllMembers.T-CAS.CommServer.DataProvider.MODBUSCore.ItemDefaultSettings.htm" />
+      <HelpTOCNode Title="ItemDefaultSettings Constructor " Url="html/M-CAS.CommServer.DataProvider.MODBUSCore.ItemDefaultSettings.-ctor.htm" />
+      <HelpTOCNode Title="ItemDefaultSettings Methods" Url="html/Methods.T-CAS.CommServer.DataProvider.MODBUSCore.ItemDefaultSettings.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Title="Medium_T Enumeration" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.Medium_T.htm" />
+    <HelpTOCNode Id="f265e90f-2e47-4e6d-83e3-f408fe0f2f62" Title="ModBus_ApplicationLayerMaster(TModBusMessage) Class" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.ModBus_ApplicationLayerMaster-1.htm">
+      <HelpTOCNode Title="ModBus_ApplicationLayerMaster(TModBusMessage) Members" Url="html/AllMembers.T-CAS.CommServer.DataProvider.MODBUSCore.ModBus_ApplicationLayerMaster-1.htm" />
+      <HelpTOCNode Title="ModBus_ApplicationLayerMaster(TModBusMessage) Constructor " Url="html/M-CAS.CommServer.DataProvider.MODBUSCore.ModBus_ApplicationLayerMaster-1.-ctor.htm" />
+      <HelpTOCNode Title="ModBus_ApplicationLayerMaster(TModBusMessage) Methods" Url="html/Methods.T-CAS.CommServer.DataProvider.MODBUSCore.ModBus_ApplicationLayerMaster-1.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="4ca1b106-3f13-4b32-bd8a-111b209ddb24" Title="ModBus_ApplicationLayerPluginHelperBase(TModbusMessage, TProtocolParameters, TModbusProtocol) Class" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.ModBus_ApplicationLayerPluginHelperBase-3.htm">
+      <HelpTOCNode Title="ModBus_ApplicationLayerPluginHelperBase(TModbusMessage, TProtocolParameters, TModbusProtocol) Members" Url="html/AllMembers.T-CAS.CommServer.DataProvider.MODBUSCore.ModBus_ApplicationLayerPluginHelperBase-3.htm" />
+      <HelpTOCNode Id="385cfc65-ab75-43c2-a9c3-30cc7fdb305b" Title="ModBus_ApplicationLayerPluginHelperBase(TModbusMessage, TProtocolParameters, TModbusProtocol) Constructor " Url="html/Overload-CAS.CommServer.DataProvider.MODBUSCore.ModBus_ApplicationLayerPluginHelperBase-3.-ctor.htm">
+        <HelpTOCNode Title="ModBus_ApplicationLayerPluginHelperBase(TModbusMessage, TProtocolParameters, TModbusProtocol) Constructor " Url="html/M-CAS.CommServer.DataProvider.MODBUSCore.ModBus_ApplicationLayerPluginHelperBase-3.-ctor.htm" />
+        <HelpTOCNode Title="ModBus_ApplicationLayerPluginHelperBase(TModbusMessage, TProtocolParameters, TModbusProtocol) Constructor (IContainer)" Url="html/M-CAS.CommServer.DataProvider.MODBUSCore.ModBus_ApplicationLayerPluginHelperBase-3.-ctor_1.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="20744e0c-2228-4608-8042-f039ca8309a6" Title="ModBus_ApplicationLayerPluginHelperBase(TModbusMessage, TProtocolParameters, TModbusProtocol) Methods" Url="html/Methods.T-CAS.CommServer.DataProvider.MODBUSCore.ModBus_ApplicationLayerPluginHelperBase-3.htm">
+        <HelpTOCNode Title="CreateApplicationLayerMaster Method " Url="html/M-CAS.CommServer.DataProvider.MODBUSCore.ModBus_ApplicationLayerPluginHelperBase-3.CreateApplicationLayerMaster.htm" />
+        <HelpTOCNode Title="CreateApplicationLayerSlave Method " Url="html/M-CAS.CommServer.DataProvider.MODBUSCore.ModBus_ApplicationLayerPluginHelperBase-3.CreateApplicationLayerSlave.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="ModBus_ApplicationLayerPluginHelperBase(TModbusMessage, TProtocolParameters, TModbusProtocol) Properties" Url="html/Properties.T-CAS.CommServer.DataProvider.MODBUSCore.ModBus_ApplicationLayerPluginHelperBase-3.htm" />
+      <HelpTOCNode Title="ModBus_ApplicationLayerPluginHelperBase(TModbusMessage, TProtocolParameters, TModbusProtocol) Events" Url="html/Events.T-CAS.CommServer.DataProvider.MODBUSCore.ModBus_ApplicationLayerPluginHelperBase-3.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="e9da063a-7a6b-4c39-a2fb-ba1f650274e0" Title="ModBus_CommonProtocolParameters Class" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.ModBus_CommonProtocolParameters.htm">
+      <HelpTOCNode Title="ModBus_CommonProtocolParameters Members" Url="html/AllMembers.T-CAS.CommServer.DataProvider.MODBUSCore.ModBus_CommonProtocolParameters.htm" />
+      <HelpTOCNode Title="ModBus_CommonProtocolParameters Constructor " Url="html/M-CAS.CommServer.DataProvider.MODBUSCore.ModBus_CommonProtocolParameters.-ctor.htm" />
+      <HelpTOCNode Title="ModBus_CommonProtocolParameters Methods" Url="html/Methods.T-CAS.CommServer.DataProvider.MODBUSCore.ModBus_CommonProtocolParameters.htm" />
+      <HelpTOCNode Id="3ec9bb5a-46e7-4c1a-9c87-b0f714543e27" Title="ModBus_CommonProtocolParameters Properties" Url="html/Properties.T-CAS.CommServer.DataProvider.MODBUSCore.ModBus_CommonProtocolParameters.htm">
+        <HelpTOCNode Title="FloatingPoint Property " Url="html/P-CAS.CommServer.DataProvider.MODBUSCore.ModBus_CommonProtocolParameters.FloatingPoint.htm" />
+        <HelpTOCNode Title="RegisterOrderIn32mode Property " Url="html/P-CAS.CommServer.DataProvider.MODBUSCore.ModBus_CommonProtocolParameters.RegisterOrderIn32mode.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Title="ModBus_CommonProtocolParameters.FloatingPointType Enumeration" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.ModBus_CommonProtocolParameters.FloatingPointType.htm" />
+    <HelpTOCNode Title="ModBus_CommonProtocolParameters.RegisterOrderEnum Enumeration" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.ModBus_CommonProtocolParameters.RegisterOrderEnum.htm" />
+    <HelpTOCNode Title="Modbus_Functions Enumeration" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.Modbus_Functions.htm" />
+    <HelpTOCNode Id="6cfedb64-01a5-4692-8094-6b51c2cc8d54" Title="ModBusPDUMessageBase(ModBusMessage) Class" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.ModBusPDUMessageBase-1.htm">
+      <HelpTOCNode Title="ModBusPDUMessageBase(ModBusMessage) Members" Url="html/AllMembers.T-CAS.CommServer.DataProvider.MODBUSCore.ModBusPDUMessageBase-1.htm" />
+      <HelpTOCNode Title="ModBusPDUMessageBase(ModBusMessage) Constructor " Url="html/M-CAS.CommServer.DataProvider.MODBUSCore.ModBusPDUMessageBase-1.-ctor.htm" />
+      <HelpTOCNode Id="d278ff79-6bef-4705-88e5-7fef01a3dbe8" Title="ModBusPDUMessageBase(ModBusMessage) Methods" Url="html/Methods.T-CAS.CommServer.DataProvider.MODBUSCore.ModBusPDUMessageBase-1.htm">
+        <HelpTOCNode Id="31e2c26a-bcd2-4751-a082-b598404a9eab" Title="CheckResponseFrame Method " Url="html/Overload-CAS.CommServer.DataProvider.MODBUSCore.ModBusPDUMessageBase-1.CheckResponseFrame.htm">
+          <HelpTOCNode Title="CheckResponseFrame Method " Url="html/M-CAS.CommServer.DataProvider.MODBUSCore.ModBusPDUMessageBase-1.CheckResponseFrame.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="2a7452de-039e-4a2f-a65c-695245b27b3b" Title="ReadValue Method " Url="html/Overload-CAS.CommServer.DataProvider.MODBUSCore.ModBusPDUMessageBase-1.ReadValue.htm">
+          <HelpTOCNode Title="ReadValue Method " Url="html/M-CAS.CommServer.DataProvider.MODBUSCore.ModBusPDUMessageBase-1.ReadValue.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="ToString Method " Url="html/M-CAS.CommServer.DataProvider.MODBUSCore.ModBusPDUMessageBase-1.ToString.htm" />
+        <HelpTOCNode Title="WriteValue Method " Url="html/M-CAS.CommServer.DataProvider.MODBUSCore.ModBusPDUMessageBase-1.WriteValue.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="8e2893dd-50b3-4b90-a294-53c09d32ad3a" Title="ModBusPDUMessageBase(ModBusMessage) Properties" Url="html/Properties.T-CAS.CommServer.DataProvider.MODBUSCore.ModBusPDUMessageBase-1.htm">
+        <HelpTOCNode Title="dataType Property " Url="html/P-CAS.CommServer.DataProvider.MODBUSCore.ModBusPDUMessageBase-1.dataType.htm" />
+        <HelpTOCNode Title="GetCommand Property " Url="html/P-CAS.CommServer.DataProvider.MODBUSCore.ModBusPDUMessageBase-1.GetCommand.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="1016a596-02a4-4c7c-bb12-17e4f9cf698e" Title="ModbusProtocol(ModBusMessage) Class" Url="html/T-CAS.CommServer.DataProvider.MODBUSCore.ModbusProtocol-1.htm">
+      <HelpTOCNode Title="ModbusProtocol(ModBusMessage) Members" Url="html/AllMembers.T-CAS.CommServer.DataProvider.MODBUSCore.ModbusProtocol-1.htm" />
+      <HelpTOCNode Title="ModbusProtocol(ModBusMessage) Constructor " Url="html/M-CAS.CommServer.DataProvider.MODBUSCore.ModbusProtocol-1.-ctor.htm" />
+      <HelpTOCNode Title="ModbusProtocol(ModBusMessage) Methods" Url="html/Methods.T-CAS.CommServer.DataProvider.MODBUSCore.ModbusProtocol-1.htm" />
+      <HelpTOCNode Title="ModbusProtocol(ModBusMessage) Properties" Url="html/Properties.T-CAS.CommServer.DataProvider.MODBUSCore.ModbusProtocol-1.htm" />
+    </HelpTOCNode>
+  </HelpTOCNode>
+  <HelpTOCNode Id="99e81a62-fd82-4b8b-93b9-548724c27a9d" Title="CAS.CommServer.DataProvider.TextReader Namespace" Url="html/N-CAS.CommServer.DataProvider.TextReader.htm">
+    <HelpTOCNode Id="5b543d4d-3016-4224-9ba1-9b5a7f8d139b" Title="AssemblyTraceEvent Class" Url="html/T-CAS.CommServer.DataProvider.TextReader.AssemblyTraceEvent.htm">
+      <HelpTOCNode Title="AssemblyTraceEvent Members" Url="html/AllMembers.T-CAS.CommServer.DataProvider.TextReader.AssemblyTraceEvent.htm" />
+      <HelpTOCNode Id="0e154db9-09e0-4c8d-9823-cc85d0f5434a" Title="AssemblyTraceEvent Methods" Url="html/Methods.T-CAS.CommServer.DataProvider.TextReader.AssemblyTraceEvent.htm">
+        <HelpTOCNode Title="TraceMessage Method " Url="html/M-CAS.CommServer.DataProvider.TextReader.AssemblyTraceEvent.TraceMessage.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="a221bb46-4505-4c24-8cd8-61d3f6fd8ae3" Title="AssemblyTraceEvent Properties" Url="html/Properties.T-CAS.CommServer.DataProvider.TextReader.AssemblyTraceEvent.htm">
+        <HelpTOCNode Title="Tracer Property " Url="html/P-CAS.CommServer.DataProvider.TextReader.AssemblyTraceEvent.Tracer.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="61ca03ca-43f2-487d-a989-18983ca973c9" Title="ITextReaderProtocolParameters Interface" Url="html/T-CAS.CommServer.DataProvider.TextReader.ITextReaderProtocolParameters.htm">
+      <HelpTOCNode Title="ITextReaderProtocolParameters Members" Url="html/AllMembers.T-CAS.CommServer.DataProvider.TextReader.ITextReaderProtocolParameters.htm" />
+      <HelpTOCNode Title="ITextReaderProtocolParameters Methods" Url="html/Methods.T-CAS.CommServer.DataProvider.TextReader.ITextReaderProtocolParameters.htm" />
+      <HelpTOCNode Id="07932d3e-0534-43e6-81ca-5527e2034682" Title="ITextReaderProtocolParameters Properties" Url="html/Properties.T-CAS.CommServer.DataProvider.TextReader.ITextReaderProtocolParameters.htm">
+        <HelpTOCNode Title="ColumnSeparator Property " Url="html/P-CAS.CommServer.DataProvider.TextReader.ITextReaderProtocolParameters.ColumnSeparator.htm" />
+        <HelpTOCNode Title="DelayFileScan Property " Url="html/P-CAS.CommServer.DataProvider.TextReader.ITextReaderProtocolParameters.DelayFileScan.htm" />
+        <HelpTOCNode Title="FileModificationNotificationTimeout Property " Url="html/P-CAS.CommServer.DataProvider.TextReader.ITextReaderProtocolParameters.FileModificationNotificationTimeout.htm" />
+        <HelpTOCNode Title="MaxNumberOfRetries Property " Url="html/P-CAS.CommServer.DataProvider.TextReader.ITextReaderProtocolParameters.MaxNumberOfRetries.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="80254562-5737-4a95-9e71-014643d60361" Title="ITraceSource Interface" Url="html/T-CAS.CommServer.DataProvider.TextReader.ITraceSource.htm">
+      <HelpTOCNode Title="ITraceSource Members" Url="html/AllMembers.T-CAS.CommServer.DataProvider.TextReader.ITraceSource.htm" />
+      <HelpTOCNode Id="c33fa302-6534-494c-ba04-d4687f45e800" Title="ITraceSource Methods" Url="html/Methods.T-CAS.CommServer.DataProvider.TextReader.ITraceSource.htm">
+        <HelpTOCNode Title="TraceMessage Method " Url="html/M-CAS.CommServer.DataProvider.TextReader.ITraceSource.TraceMessage.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="d1b96119-ee08-4014-b160-a4f6fe23e641" Title="TextReaderApplicationLayerMaster Class" Url="html/T-CAS.CommServer.DataProvider.TextReader.TextReaderApplicationLayerMaster.htm">
+      <HelpTOCNode Title="TextReaderApplicationLayerMaster Members" Url="html/AllMembers.T-CAS.CommServer.DataProvider.TextReader.TextReaderApplicationLayerMaster.htm" />
+      <HelpTOCNode Title="TextReaderApplicationLayerMaster Constructor " Url="html/M-CAS.CommServer.DataProvider.TextReader.TextReaderApplicationLayerMaster.-ctor.htm" />
+      <HelpTOCNode Id="c3c2bc2b-cc8b-40c1-a2fa-48609a4662ef" Title="TextReaderApplicationLayerMaster Methods" Url="html/Methods.T-CAS.CommServer.DataProvider.TextReader.TextReaderApplicationLayerMaster.htm">
+        <HelpTOCNode Title="ConnectInd Method " Url="html/M-CAS.CommServer.DataProvider.TextReader.TextReaderApplicationLayerMaster.ConnectInd.htm" />
+        <HelpTOCNode Title="ConnectReq Method " Url="html/M-CAS.CommServer.DataProvider.TextReader.TextReaderApplicationLayerMaster.ConnectReq.htm" />
+        <HelpTOCNode Title="Dispose Method " Url="html/M-CAS.CommServer.DataProvider.TextReader.TextReaderApplicationLayerMaster.Dispose.htm" />
+        <HelpTOCNode Title="DisReq Method " Url="html/M-CAS.CommServer.DataProvider.TextReader.TextReaderApplicationLayerMaster.DisReq.htm" />
+        <HelpTOCNode Title="GetEmptyWriteDataBuffor Method " Url="html/M-CAS.CommServer.DataProvider.TextReader.TextReaderApplicationLayerMaster.GetEmptyWriteDataBuffor.htm" />
+        <HelpTOCNode Title="ReadData Method " Url="html/M-CAS.CommServer.DataProvider.TextReader.TextReaderApplicationLayerMaster.ReadData.htm" />
+        <HelpTOCNode Title="WriteData Method " Url="html/M-CAS.CommServer.DataProvider.TextReader.TextReaderApplicationLayerMaster.WriteData.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="28b2a01c-3961-4c10-9bef-36d19660c3ce" Title="TextReaderApplicationLayerMaster Properties" Url="html/Properties.T-CAS.CommServer.DataProvider.TextReader.TextReaderApplicationLayerMaster.htm">
+        <HelpTOCNode Title="Connected Property " Url="html/P-CAS.CommServer.DataProvider.TextReader.TextReaderApplicationLayerMaster.Connected.htm" />
+        <HelpTOCNode Title="TraceSource Property " Url="html/P-CAS.CommServer.DataProvider.TextReader.TextReaderApplicationLayerMaster.TraceSource.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="5003946e-2d79-4b80-b96c-47f086a726f4" Title="TextReaderDataProviderID Class" Url="html/T-CAS.CommServer.DataProvider.TextReader.TextReaderDataProviderID.htm">
+      <HelpTOCNode Title="TextReaderDataProviderID Members" Url="html/AllMembers.T-CAS.CommServer.DataProvider.TextReader.TextReaderDataProviderID.htm" />
+      <HelpTOCNode Title="TextReaderDataProviderID Constructor " Url="html/M-CAS.CommServer.DataProvider.TextReader.TextReaderDataProviderID.-ctor.htm" />
+      <HelpTOCNode Id="a6462981-8a52-48e7-8c74-59e6994361e5" Title="TextReaderDataProviderID Methods" Url="html/Methods.T-CAS.CommServer.DataProvider.TextReader.TextReaderDataProviderID.htm">
+        <HelpTOCNode Id="45399901-0206-47ce-8899-51732a921f95" Title="GetApplicationLayerMaster Method " Url="html/Overload-CAS.CommServer.DataProvider.TextReader.TextReaderDataProviderID.GetApplicationLayerMaster.htm">
+          <HelpTOCNode Title="GetApplicationLayerMaster Method " Url="html/M-CAS.CommServer.DataProvider.TextReader.TextReaderDataProviderID.GetApplicationLayerMaster.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="GetAvailiableAddressspaces Method " Url="html/M-CAS.CommServer.DataProvider.TextReader.TextReaderDataProviderID.GetAvailiableAddressspaces.htm" />
+        <HelpTOCNode Title="GetItemDefaultSettings Method " Url="html/M-CAS.CommServer.DataProvider.TextReader.TextReaderDataProviderID.GetItemDefaultSettings.htm" />
+        <HelpTOCNode Title="GetSettingsHumanReadableFormat Method " Url="html/M-CAS.CommServer.DataProvider.TextReader.TextReaderDataProviderID.GetSettingsHumanReadableFormat.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="88f042e6-05ac-426d-b1c1-14893ceadfe8" Title="TextReaderDataProviderID Properties" Url="html/Properties.T-CAS.CommServer.DataProvider.TextReader.TextReaderDataProviderID.htm">
+        <HelpTOCNode Title="ProtocolParameters Property " Url="html/P-CAS.CommServer.DataProvider.TextReader.TextReaderDataProviderID.ProtocolParameters.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="f0998a0e-a235-45e6-a2ac-28916418d230" Title="TextReaderProtocolParameters Class" Url="html/T-CAS.CommServer.DataProvider.TextReader.TextReaderProtocolParameters.htm">
+      <HelpTOCNode Title="TextReaderProtocolParameters Members" Url="html/AllMembers.T-CAS.CommServer.DataProvider.TextReader.TextReaderProtocolParameters.htm" />
+      <HelpTOCNode Id="bcc200d8-6b3d-4efb-b9d3-571344142122" Title="TextReaderProtocolParameters Methods" Url="html/Methods.T-CAS.CommServer.DataProvider.TextReader.TextReaderProtocolParameters.htm">
+        <HelpTOCNode Title="ToString Method " Url="html/M-CAS.CommServer.DataProvider.TextReader.TextReaderProtocolParameters.ToString.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="6620c867-e688-45bd-aeca-219c77675276" Title="TextReaderProtocolParameters Properties" Url="html/Properties.T-CAS.CommServer.DataProvider.TextReader.TextReaderProtocolParameters.htm">
+        <HelpTOCNode Title="ColumnSeparator Property " Url="html/P-CAS.CommServer.DataProvider.TextReader.TextReaderProtocolParameters.ColumnSeparator.htm" />
+        <HelpTOCNode Title="DelayFileScan Property " Url="html/P-CAS.CommServer.DataProvider.TextReader.TextReaderProtocolParameters.DelayFileScan.htm" />
+        <HelpTOCNode Title="FileModificationNotificationTimeout Property " Url="html/P-CAS.CommServer.DataProvider.TextReader.TextReaderProtocolParameters.FileModificationNotificationTimeout.htm" />
+        <HelpTOCNode Title="MaxNumberOfRetries Property " Url="html/P-CAS.CommServer.DataProvider.TextReader.TextReaderProtocolParameters.MaxNumberOfRetries.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+  <HelpTOCNode Id="a1fade7e-ed37-48b4-a904-4cb1f17ec431" Title="CAS.Lib.CommonBus.ApplicationLayer Namespace" Url="html/N-CAS.Lib.CommonBus.ApplicationLayer.htm">
+    <HelpTOCNode Id="87dfe0bd-3147-4572-af8d-45e63f7a77a0" Title="DDEProtocolParameters Class" Url="html/T-CAS.Lib.CommonBus.ApplicationLayer.DDEProtocolParameters.htm">
+      <HelpTOCNode Title="DDEProtocolParameters Members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.DDEProtocolParameters.htm" />
+      <HelpTOCNode Title="DDEProtocolParameters Constructor " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.DDEProtocolParameters.-ctor.htm" />
+      <HelpTOCNode Id="69d61224-288e-45c2-b1e3-318816e6b3ea" Title="DDEProtocolParameters Methods" Url="html/Methods.T-CAS.Lib.CommonBus.ApplicationLayer.DDEProtocolParameters.htm">
+        <HelpTOCNode Title="ReadSettings Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.DDEProtocolParameters.ReadSettings.htm" />
+        <HelpTOCNode Title="ToString Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.DDEProtocolParameters.ToString.htm" />
+        <HelpTOCNode Title="WriteSettings Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.DDEProtocolParameters.WriteSettings.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="1e649402-3e6c-440a-96e4-a136a29ade96" Title="DDEProtocolParameters Properties" Url="html/Properties.T-CAS.Lib.CommonBus.ApplicationLayer.DDEProtocolParameters.htm">
+        <HelpTOCNode Title="LineSpeed Property " Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.DDEProtocolParameters.LineSpeed.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="538350cb-1361-4be0-9f78-d6f8440533f5" Title="MBUS_ProtocolParameters Class" Url="html/T-CAS.Lib.CommonBus.ApplicationLayer.MBUS_ProtocolParameters.htm">
+      <HelpTOCNode Title="MBUS_ProtocolParameters Members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.MBUS_ProtocolParameters.htm" />
+      <HelpTOCNode Title="MBUS_ProtocolParameters Constructor " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.MBUS_ProtocolParameters.-ctor.htm" />
+      <HelpTOCNode Id="6fdd3fb0-4200-4aa5-b062-e9f500e74550" Title="MBUS_ProtocolParameters Methods" Url="html/Methods.T-CAS.Lib.CommonBus.ApplicationLayer.MBUS_ProtocolParameters.htm">
+        <HelpTOCNode Title="ReadSettings Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.MBUS_ProtocolParameters.ReadSettings.htm" />
+        <HelpTOCNode Title="ToString Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.MBUS_ProtocolParameters.ToString.htm" />
+        <HelpTOCNode Title="WriteSettings Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.MBUS_ProtocolParameters.WriteSettings.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="439d6f99-5c8f-429e-9da7-037188bfe1d0" Title="MBUS_ProtocolParameters Properties" Url="html/Properties.T-CAS.Lib.CommonBus.ApplicationLayer.MBUS_ProtocolParameters.htm">
+        <HelpTOCNode Title="CharacterTimeout Property " Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.MBUS_ProtocolParameters.CharacterTimeout.htm" />
+        <HelpTOCNode Title="CharacterTimeoutSpan Property " Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.MBUS_ProtocolParameters.CharacterTimeoutSpan.htm" />
+        <HelpTOCNode Title="LineSpeed Property " Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.MBUS_ProtocolParameters.LineSpeed.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="839c6ced-fa35-465f-a6d8-1038d24b5a5a" Title="SBUS_ProtocolParameters Class" Url="html/T-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.htm">
+      <HelpTOCNode Title="SBUS_ProtocolParameters Members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.htm" />
+      <HelpTOCNode Title="SBUS_ProtocolParameters Members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.htm" />
+      <HelpTOCNode Title="SBUS_ProtocolParameters Constructor " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.-ctor.htm" />
+      <HelpTOCNode Title="SBUS_ProtocolParameters Constructor " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.-ctor.htm" />
+      <HelpTOCNode Id="215a60db-6fdb-4dbc-821e-40d250bd6894" Title="SBUS_ProtocolParameters Methods" Url="html/Methods.T-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.htm">
+        <HelpTOCNode Title="ReadSettings Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.ReadSettings.htm" />
+        <HelpTOCNode Title="ReadSettings Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.ReadSettings.htm" />
+        <HelpTOCNode Title="ToString Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.ToString.htm" />
+        <HelpTOCNode Title="ToString Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.ToString.htm" />
+        <HelpTOCNode Title="WriteSettings Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.WriteSettings.htm" />
+        <HelpTOCNode Title="WriteSettings Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.WriteSettings.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="7ba37c7e-a1b4-43e6-8abc-63fece5d1741" Title="SBUS_ProtocolParameters Methods" Url="html/Methods.T-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.htm">
+        <HelpTOCNode Title="ReadSettings Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.ReadSettings.htm" />
+        <HelpTOCNode Title="ReadSettings Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.ReadSettings.htm" />
+        <HelpTOCNode Title="ToString Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.ToString.htm" />
+        <HelpTOCNode Title="ToString Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.ToString.htm" />
+        <HelpTOCNode Title="WriteSettings Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.WriteSettings.htm" />
+        <HelpTOCNode Title="WriteSettings Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.WriteSettings.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="6d3b5e86-ab02-4bf0-be8d-ac4f56469de3" Title="SBUS_ProtocolParameters Properties" Url="html/Properties.T-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.htm">
+        <HelpTOCNode Title="LineSpeed Property " Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.LineSpeed.htm" />
+        <HelpTOCNode Title="LineSpeed Property " Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.LineSpeed.htm" />
+        <HelpTOCNode Title="TimeoutAfterFrame Property " Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.TimeoutAfterFrame.htm" />
+        <HelpTOCNode Title="TimeoutAfterFrame Property " Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.TimeoutAfterFrame.htm" />
+        <HelpTOCNode Title="TimeoutSpanAfterFrame Property " Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.TimeoutSpanAfterFrame.htm" />
+        <HelpTOCNode Title="TimeoutSpanAfterFrame Property " Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.TimeoutSpanAfterFrame.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="98a2b395-4d23-43fe-a0a1-925c93176fb8" Title="SBUS_ProtocolParameters Properties" Url="html/Properties.T-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.htm">
+        <HelpTOCNode Title="LineSpeed Property " Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.LineSpeed.htm" />
+        <HelpTOCNode Title="LineSpeed Property " Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.LineSpeed.htm" />
+        <HelpTOCNode Title="TimeoutAfterFrame Property " Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.TimeoutAfterFrame.htm" />
+        <HelpTOCNode Title="TimeoutAfterFrame Property " Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.TimeoutAfterFrame.htm" />
+        <HelpTOCNode Title="TimeoutSpanAfterFrame Property " Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.TimeoutSpanAfterFrame.htm" />
+        <HelpTOCNode Title="TimeoutSpanAfterFrame Property " Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.TimeoutSpanAfterFrame.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="364b2431-4cd9-4c60-aee6-37a4391add0f" Title="SBUS_ProtocolParameters Class" Url="html/T-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.htm">
+      <HelpTOCNode Title="SBUS_ProtocolParameters Members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.htm" />
+      <HelpTOCNode Title="SBUS_ProtocolParameters Members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.htm" />
+      <HelpTOCNode Title="SBUS_ProtocolParameters Constructor " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.-ctor.htm" />
+      <HelpTOCNode Title="SBUS_ProtocolParameters Constructor " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.-ctor.htm" />
+      <HelpTOCNode Id="1bbf3b45-3d20-418a-85fe-70395874bb4c" Title="SBUS_ProtocolParameters Methods" Url="html/Methods.T-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.htm">
+        <HelpTOCNode Title="ReadSettings Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.ReadSettings.htm" />
+        <HelpTOCNode Title="ReadSettings Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.ReadSettings.htm" />
+        <HelpTOCNode Title="ToString Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.ToString.htm" />
+        <HelpTOCNode Title="ToString Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.ToString.htm" />
+        <HelpTOCNode Title="WriteSettings Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.WriteSettings.htm" />
+        <HelpTOCNode Title="WriteSettings Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.WriteSettings.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="81c7020d-e1d3-4bb9-88f9-7df127a6f7f1" Title="SBUS_ProtocolParameters Methods" Url="html/Methods.T-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.htm">
+        <HelpTOCNode Title="ReadSettings Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.ReadSettings.htm" />
+        <HelpTOCNode Title="ReadSettings Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.ReadSettings.htm" />
+        <HelpTOCNode Title="ToString Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.ToString.htm" />
+        <HelpTOCNode Title="ToString Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.ToString.htm" />
+        <HelpTOCNode Title="WriteSettings Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.WriteSettings.htm" />
+        <HelpTOCNode Title="WriteSettings Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.WriteSettings.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="0c449a49-8406-44d0-a9af-2d51c5236c4a" Title="SBUS_ProtocolParameters Properties" Url="html/Properties.T-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.htm">
+        <HelpTOCNode Title="LineSpeed Property " Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.LineSpeed.htm" />
+        <HelpTOCNode Title="LineSpeed Property " Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.LineSpeed.htm" />
+        <HelpTOCNode Title="TimeoutAfterFrame Property " Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.TimeoutAfterFrame.htm" />
+        <HelpTOCNode Title="TimeoutAfterFrame Property " Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.TimeoutAfterFrame.htm" />
+        <HelpTOCNode Title="TimeoutSpanAfterFrame Property " Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.TimeoutSpanAfterFrame.htm" />
+        <HelpTOCNode Title="TimeoutSpanAfterFrame Property " Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.TimeoutSpanAfterFrame.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="2175c54c-f9ac-4cc1-9de1-19c080b67c9e" Title="SBUS_ProtocolParameters Properties" Url="html/Properties.T-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.htm">
+        <HelpTOCNode Title="LineSpeed Property " Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.LineSpeed.htm" />
+        <HelpTOCNode Title="LineSpeed Property " Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.LineSpeed.htm" />
+        <HelpTOCNode Title="TimeoutAfterFrame Property " Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.TimeoutAfterFrame.htm" />
+        <HelpTOCNode Title="TimeoutAfterFrame Property " Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.TimeoutAfterFrame.htm" />
+        <HelpTOCNode Title="TimeoutSpanAfterFrame Property " Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.TimeoutSpanAfterFrame.htm" />
+        <HelpTOCNode Title="TimeoutSpanAfterFrame Property " Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.SBUS_ProtocolParameters.TimeoutSpanAfterFrame.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+  <HelpTOCNode Id="7922de96-3d9d-4696-ac05-0d02c5d526a8" Title="CAS.Lib.CommonBus.ApplicationLayer.DDE Namespace" Url="html/N-CAS.Lib.CommonBus.ApplicationLayer.DDE.htm">
+    <HelpTOCNode Id="ab874a96-3022-449f-aad5-194da01ce87b" Title="DS_DataProviderID Class" Url="html/T-CAS.Lib.CommonBus.ApplicationLayer.DDE.DS_DataProviderID.htm">
+      <HelpTOCNode Title="DS_DataProviderID Members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.DDE.DS_DataProviderID.htm" />
+      <HelpTOCNode Title="DS_DataProviderID Constructor " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.DDE.DS_DataProviderID.-ctor.htm" />
+      <HelpTOCNode Id="14e787ca-2341-436a-ad93-2a96a94d8cd9" Title="DS_DataProviderID Methods" Url="html/Methods.T-CAS.Lib.CommonBus.ApplicationLayer.DDE.DS_DataProviderID.htm">
+        <HelpTOCNode Id="1515e963-7c09-4750-aae1-fec6bd3ee81b" Title="GetApplicationLayerMaster Method " Url="html/Overload-CAS.Lib.CommonBus.ApplicationLayer.DDE.DS_DataProviderID.GetApplicationLayerMaster.htm">
+          <HelpTOCNode Title="GetApplicationLayerMaster Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.DDE.DS_DataProviderID.GetApplicationLayerMaster.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="GetAvailiableAddressspaces Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.DDE.DS_DataProviderID.GetAvailiableAddressspaces.htm" />
+        <HelpTOCNode Title="GetItemDefaultSettings Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.DDE.DS_DataProviderID.GetItemDefaultSettings.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="7a9cc0bd-8e08-4792-8ba4-48a52263d5c8" Title="DS_DataProviderID Properties" Url="html/Properties.T-CAS.Lib.CommonBus.ApplicationLayer.DDE.DS_DataProviderID.htm">
+        <HelpTOCNode Title="ExcelLanguage Property " Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.DDE.DS_DataProviderID.ExcelLanguage.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Title="DS_DataProviderID.ExcelLanguageEnum Enumeration" Url="html/T-CAS.Lib.CommonBus.ApplicationLayer.DDE.DS_DataProviderID.ExcelLanguageEnum.htm" />
+    <HelpTOCNode Id="3f4fcd48-b271-431d-a192-7ea9ea96e34a" Title="PluginHelper Class" Url="html/T-CAS.Lib.CommonBus.ApplicationLayer.DDE.PluginHelper.htm">
+      <HelpTOCNode Title="PluginHelper Members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.DDE.PluginHelper.htm" />
+      <HelpTOCNode Id="a0e24131-098f-4cc1-a219-76459c444e67" Title="PluginHelper Constructor " Url="html/Overload-CAS.Lib.CommonBus.ApplicationLayer.DDE.PluginHelper.-ctor.htm">
+        <HelpTOCNode Title="PluginHelper Constructor " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.DDE.PluginHelper.-ctor.htm" />
+        <HelpTOCNode Title="PluginHelper Constructor (IContainer)" Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.DDE.PluginHelper.-ctor_1.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="9d271413-c756-46b6-af6b-a6717e76398c" Title="PluginHelper Methods" Url="html/Methods.T-CAS.Lib.CommonBus.ApplicationLayer.DDE.PluginHelper.htm">
+        <HelpTOCNode Title="CreateApplicationLayerMaster Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.DDE.PluginHelper.CreateApplicationLayerMaster.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="PluginHelper Properties" Url="html/Properties.T-CAS.Lib.CommonBus.ApplicationLayer.DDE.PluginHelper.htm" />
+      <HelpTOCNode Title="PluginHelper Events" Url="html/Events.T-CAS.Lib.CommonBus.ApplicationLayer.DDE.PluginHelper.htm" />
+    </HelpTOCNode>
+  </HelpTOCNode>
+  <HelpTOCNode Id="a7add6c4-eaba-4d67-8ab5-dfd421ae96b6" Title="CAS.Lib.CommonBus.ApplicationLayer.DemoSimulator Namespace" Url="html/N-CAS.Lib.CommonBus.ApplicationLayer.DemoSimulator.htm">
+    <HelpTOCNode Id="e8bd2b28-5d59-4a96-acbd-fcee32450fb8" Title="ApplicationLayerPluginHelper Class" Url="html/T-CAS.Lib.CommonBus.ApplicationLayer.DemoSimulator.ApplicationLayerPluginHelper.htm">
+      <HelpTOCNode Title="ApplicationLayerPluginHelper Members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.DemoSimulator.ApplicationLayerPluginHelper.htm" />
+      <HelpTOCNode Id="095c92dd-6055-4920-88da-ce21f7f2d560" Title="ApplicationLayerPluginHelper Constructor " Url="html/Overload-CAS.Lib.CommonBus.ApplicationLayer.DemoSimulator.ApplicationLayerPluginHelper.-ctor.htm">
+        <HelpTOCNode Title="ApplicationLayerPluginHelper Constructor " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.DemoSimulator.ApplicationLayerPluginHelper.-ctor.htm" />
+        <HelpTOCNode Title="ApplicationLayerPluginHelper Constructor (IContainer)" Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.DemoSimulator.ApplicationLayerPluginHelper.-ctor_1.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="2c2126ac-bbaa-4ac6-8e83-c349620a2686" Title="ApplicationLayerPluginHelper Methods" Url="html/Methods.T-CAS.Lib.CommonBus.ApplicationLayer.DemoSimulator.ApplicationLayerPluginHelper.htm">
+        <HelpTOCNode Title="CreateApplicationLayerMaster Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.DemoSimulator.ApplicationLayerPluginHelper.CreateApplicationLayerMaster.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="ApplicationLayerPluginHelper Properties" Url="html/Properties.T-CAS.Lib.CommonBus.ApplicationLayer.DemoSimulator.ApplicationLayerPluginHelper.htm" />
+      <HelpTOCNode Title="ApplicationLayerPluginHelper Events" Url="html/Events.T-CAS.Lib.CommonBus.ApplicationLayer.DemoSimulator.ApplicationLayerPluginHelper.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="5ec57c19-673e-4b28-9e0e-8c789d3ebb0f" Title="DS_DataProviderID Class" Url="html/T-CAS.Lib.CommonBus.ApplicationLayer.DemoSimulator.DS_DataProviderID.htm">
+      <HelpTOCNode Title="DS_DataProviderID Members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.DemoSimulator.DS_DataProviderID.htm" />
+      <HelpTOCNode Title="DS_DataProviderID Constructor " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.DemoSimulator.DS_DataProviderID.-ctor.htm" />
+      <HelpTOCNode Id="83858ece-259a-4128-a079-20fc7d8c3c79" Title="DS_DataProviderID Methods" Url="html/Methods.T-CAS.Lib.CommonBus.ApplicationLayer.DemoSimulator.DS_DataProviderID.htm">
+        <HelpTOCNode Id="d77f981a-c3c0-4da5-97dd-849ae265bf49" Title="GetApplicationLayerMaster Method " Url="html/Overload-CAS.Lib.CommonBus.ApplicationLayer.DemoSimulator.DS_DataProviderID.GetApplicationLayerMaster.htm">
+          <HelpTOCNode Title="GetApplicationLayerMaster Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.DemoSimulator.DS_DataProviderID.GetApplicationLayerMaster.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="GetAvailiableAddressspaces Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.DemoSimulator.DS_DataProviderID.GetAvailiableAddressspaces.htm" />
+        <HelpTOCNode Title="GetItemDefaultSettings Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.DemoSimulator.DS_DataProviderID.GetItemDefaultSettings.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="e098f055-c963-4ba8-aa17-eeb02fddceda" Title="DS_DataProviderID Properties" Url="html/Properties.T-CAS.Lib.CommonBus.ApplicationLayer.DemoSimulator.DS_DataProviderID.htm">
+        <HelpTOCNode Title="ErrorFrequency Property " Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.DemoSimulator.DS_DataProviderID.ErrorFrequency.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+  <HelpTOCNode Id="f1246821-4914-4c8b-a4b7-e11ab8dc44b0" Title="CAS.Lib.CommonBus.ApplicationLayer.MBUS Namespace" Url="html/N-CAS.Lib.CommonBus.ApplicationLayer.MBUS.htm">
+    <HelpTOCNode Id="dd45c477-47e0-4459-9383-9a2c34d6ef62" Title="MBUS_ApplicationLayerPluginHelper Class" Url="html/T-CAS.Lib.CommonBus.ApplicationLayer.MBUS.MBUS_ApplicationLayerPluginHelper.htm">
+      <HelpTOCNode Title="MBUS_ApplicationLayerPluginHelper Members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.MBUS.MBUS_ApplicationLayerPluginHelper.htm" />
+      <HelpTOCNode Id="55fe63f2-b9b0-4949-bb40-065b9c367bfd" Title="MBUS_ApplicationLayerPluginHelper Constructor " Url="html/Overload-CAS.Lib.CommonBus.ApplicationLayer.MBUS.MBUS_ApplicationLayerPluginHelper.-ctor.htm">
+        <HelpTOCNode Title="MBUS_ApplicationLayerPluginHelper Constructor " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.MBUS.MBUS_ApplicationLayerPluginHelper.-ctor.htm" />
+        <HelpTOCNode Title="MBUS_ApplicationLayerPluginHelper Constructor (IContainer)" Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.MBUS.MBUS_ApplicationLayerPluginHelper.-ctor_1.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="7ad00868-0281-4aa9-8f56-7a66c2b7f91d" Title="MBUS_ApplicationLayerPluginHelper Methods" Url="html/Methods.T-CAS.Lib.CommonBus.ApplicationLayer.MBUS.MBUS_ApplicationLayerPluginHelper.htm">
+        <HelpTOCNode Title="CreateApplicationLayerMaster Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.MBUS.MBUS_ApplicationLayerPluginHelper.CreateApplicationLayerMaster.htm" />
+        <HelpTOCNode Title="CreateApplicationLayerSlave Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.MBUS.MBUS_ApplicationLayerPluginHelper.CreateApplicationLayerSlave.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="MBUS_ApplicationLayerPluginHelper Properties" Url="html/Properties.T-CAS.Lib.CommonBus.ApplicationLayer.MBUS.MBUS_ApplicationLayerPluginHelper.htm" />
+      <HelpTOCNode Title="MBUS_ApplicationLayerPluginHelper Events" Url="html/Events.T-CAS.Lib.CommonBus.ApplicationLayer.MBUS.MBUS_ApplicationLayerPluginHelper.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="f1c73991-e290-438b-8638-6d32f6774eea" Title="MBUS_DataProviderID Class" Url="html/T-CAS.Lib.CommonBus.ApplicationLayer.MBUS.MBUS_DataProviderID.htm">
+      <HelpTOCNode Title="MBUS_DataProviderID Members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.MBUS.MBUS_DataProviderID.htm" />
+      <HelpTOCNode Title="MBUS_DataProviderID Constructor " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.MBUS.MBUS_DataProviderID.-ctor.htm" />
+      <HelpTOCNode Id="fc8ed186-78d2-47f5-9808-5827c2f03a8e" Title="MBUS_DataProviderID Methods" Url="html/Methods.T-CAS.Lib.CommonBus.ApplicationLayer.MBUS.MBUS_DataProviderID.htm">
+        <HelpTOCNode Id="3fcc6c30-c411-4690-a14b-6cc7efa3db20" Title="GetApplicationLayerMaster Method " Url="html/Overload-CAS.Lib.CommonBus.ApplicationLayer.MBUS.MBUS_DataProviderID.GetApplicationLayerMaster.htm">
+          <HelpTOCNode Title="GetApplicationLayerMaster Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.MBUS.MBUS_DataProviderID.GetApplicationLayerMaster.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="GetAvailiableAddressspaces Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.MBUS.MBUS_DataProviderID.GetAvailiableAddressspaces.htm" />
+        <HelpTOCNode Title="GetItemDefaultSettings Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.MBUS.MBUS_DataProviderID.GetItemDefaultSettings.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="8de73e4c-e330-4bac-a0d6-4924acf204f4" Title="MBUS_DataProviderID Properties" Url="html/Properties.T-CAS.Lib.CommonBus.ApplicationLayer.MBUS.MBUS_DataProviderID.htm">
+        <HelpTOCNode Title="MBUSProtocolParameters Property " Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.MBUS.MBUS_DataProviderID.MBUSProtocolParameters.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+  <HelpTOCNode Id="d4cdcbef-d67a-4973-bf2d-2436fffc0723" Title="N:CAS.Lib.CommonBus.ApplicationLayer.Modbus">
+    <HelpTOCNode Id="551ea7e3-8294-4743-83ab-76fcbcf18d43" Title="ModBus_ProtocolParameters Class" Url="html/T-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.htm">
+      <HelpTOCNode Title="ModBus_ProtocolParameters Members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.htm" />
+      <HelpTOCNode Title="ModBus_ProtocolParameters Members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.htm" />
+      <HelpTOCNode Title="ModBus_ProtocolParameters Constructor " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.-ctor.htm" />
+      <HelpTOCNode Title="ModBus_ProtocolParameters Constructor " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.-ctor.htm" />
+      <HelpTOCNode Id="12a1939e-f87c-4461-a73d-d092da90ebc3" Title="ModBus_ProtocolParameters Methods" Url="html/Methods.T-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.htm">
+        <HelpTOCNode Id="1dd1b4ae-7f1f-4b87-992e-0cb7f8fdb59a" Title="ReadSettings Method " Url="html/Overload-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.ReadSettings.htm">
+          <HelpTOCNode Title="ReadSettings Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.ReadSettings.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="ToString Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.ToString.htm" />
+        <HelpTOCNode Title="ToString Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.ToString.htm" />
+        <HelpTOCNode Title="WriteSettings Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.WriteSettings.htm" />
+        <HelpTOCNode Title="WriteSettings Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.WriteSettings.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="515cde25-9a9c-45a1-bf65-3ee99900fe57" Title="ModBus_ProtocolParameters Methods" Url="html/Methods.T-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.htm">
+        <HelpTOCNode Title="ReadSettings Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.ReadSettings.htm" />
+        <HelpTOCNode Title="ToString Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.ToString.htm" />
+        <HelpTOCNode Title="ToString Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.ToString.htm" />
+        <HelpTOCNode Title="WriteSettings Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.WriteSettings.htm" />
+        <HelpTOCNode Title="WriteSettings Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.WriteSettings.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="4977690b-3c77-4223-9558-45c5396a02c9" Title="ModBus_ProtocolParameters Properties" Url="html/Properties.T-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.htm">
+        <HelpTOCNode Title="LineSpeed Property " Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.LineSpeed.htm" />
+        <HelpTOCNode Title="LineSpeed Property " Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.LineSpeed.htm" />
+        <HelpTOCNode Title="TimeoutCharacter Property " Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.TimeoutCharacter.htm" />
+        <HelpTOCNode Title="TimeoutCharacterSpan Property " Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.TimeoutCharacterSpan.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="06ef645b-45f7-478f-90f1-9e00f473e717" Title="ModBus_ProtocolParameters Properties" Url="html/Properties.T-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.htm">
+        <HelpTOCNode Title="LineSpeed Property " Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.LineSpeed.htm" />
+        <HelpTOCNode Title="LineSpeed Property " Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.LineSpeed.htm" />
+        <HelpTOCNode Title="Timeout15 Property " Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.Timeout15.htm" />
+        <HelpTOCNode Title="Timeout15Span Property " Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.Timeout15Span.htm" />
+        <HelpTOCNode Title="Timeout35 Property " Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.Timeout35.htm" />
+        <HelpTOCNode Title="Timeout35Span Property " Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.Timeout35Span.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="331ecc8d-eec6-4f31-8f5f-663810b1e868" Title="ModBus_ProtocolParameters Class" Url="html/T-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.htm">
+      <HelpTOCNode Title="ModBus_ProtocolParameters Members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.htm" />
+      <HelpTOCNode Title="ModBus_ProtocolParameters Members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.htm" />
+      <HelpTOCNode Title="ModBus_ProtocolParameters Constructor " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.-ctor.htm" />
+      <HelpTOCNode Title="ModBus_ProtocolParameters Constructor " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.-ctor.htm" />
+      <HelpTOCNode Id="23d6af0a-2ec0-44d1-ae02-be7c1b053eed" Title="ModBus_ProtocolParameters Methods" Url="html/Methods.T-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.htm">
+        <HelpTOCNode Id="c1fff9b0-6dd3-446a-857c-b58b9102232f" Title="ReadSettings Method " Url="html/Overload-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.ReadSettings.htm">
+          <HelpTOCNode Title="ReadSettings Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.ReadSettings.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="ToString Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.ToString.htm" />
+        <HelpTOCNode Title="ToString Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.ToString.htm" />
+        <HelpTOCNode Title="WriteSettings Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.WriteSettings.htm" />
+        <HelpTOCNode Title="WriteSettings Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.WriteSettings.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="82d49879-d13f-4050-9d97-400e370519a9" Title="ModBus_ProtocolParameters Methods" Url="html/Methods.T-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.htm">
+        <HelpTOCNode Title="ReadSettings Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.ReadSettings.htm" />
+        <HelpTOCNode Title="ToString Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.ToString.htm" />
+        <HelpTOCNode Title="ToString Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.ToString.htm" />
+        <HelpTOCNode Title="WriteSettings Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.WriteSettings.htm" />
+        <HelpTOCNode Title="WriteSettings Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.WriteSettings.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="9fad395a-bd96-4d55-998e-d30e6b8f0fc4" Title="ModBus_ProtocolParameters Properties" Url="html/Properties.T-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.htm">
+        <HelpTOCNode Title="LineSpeed Property " Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.LineSpeed.htm" />
+        <HelpTOCNode Title="LineSpeed Property " Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.LineSpeed.htm" />
+        <HelpTOCNode Title="TimeoutCharacter Property " Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.TimeoutCharacter.htm" />
+        <HelpTOCNode Title="TimeoutCharacterSpan Property " Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.TimeoutCharacterSpan.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="66224286-e598-4fec-92ee-54d506ce9f60" Title="ModBus_ProtocolParameters Properties" Url="html/Properties.T-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.htm">
+        <HelpTOCNode Title="LineSpeed Property " Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.LineSpeed.htm" />
+        <HelpTOCNode Title="LineSpeed Property " Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.LineSpeed.htm" />
+        <HelpTOCNode Title="Timeout15 Property " Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.Timeout15.htm" />
+        <HelpTOCNode Title="Timeout15Span Property " Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.Timeout15Span.htm" />
+        <HelpTOCNode Title="Timeout35 Property " Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.Timeout35.htm" />
+        <HelpTOCNode Title="Timeout35Span Property " Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.Modbus.ModBus_ProtocolParameters.Timeout35Span.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+  <HelpTOCNode Id="cbcb3b7d-3ffc-4f4d-8f8e-ebc52bb540b2" Title="CAS.Lib.CommonBus.ApplicationLayer.Modbus Namespace" Url="html/N-CAS.Lib.CommonBus.ApplicationLayer.ModBus.htm">
+    <HelpTOCNode Id="f2eaa34c-8392-40a5-ada0-86151bbae475" Title="ModBus_ApplicationLayerPluginHelper Class" Url="html/T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_ApplicationLayerPluginHelper.htm">
+      <HelpTOCNode Title="ModBus_ApplicationLayerPluginHelper Members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_ApplicationLayerPluginHelper.htm" />
+      <HelpTOCNode Title="ModBus_ApplicationLayerPluginHelper Members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_ApplicationLayerPluginHelper.htm" />
+      <HelpTOCNode Title="ModBus_ApplicationLayerPluginHelper Methods" Url="html/Methods.T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_ApplicationLayerPluginHelper.htm" />
+      <HelpTOCNode Title="ModBus_ApplicationLayerPluginHelper Methods" Url="html/Methods.T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_ApplicationLayerPluginHelper.htm" />
+      <HelpTOCNode Title="ModBus_ApplicationLayerPluginHelper Properties" Url="html/Properties.T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_ApplicationLayerPluginHelper.htm" />
+      <HelpTOCNode Title="ModBus_ApplicationLayerPluginHelper Properties" Url="html/Properties.T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_ApplicationLayerPluginHelper.htm" />
+      <HelpTOCNode Title="ModBus_ApplicationLayerPluginHelper Events" Url="html/Events.T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_ApplicationLayerPluginHelper.htm" />
+      <HelpTOCNode Title="ModBus_ApplicationLayerPluginHelper Events" Url="html/Events.T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_ApplicationLayerPluginHelper.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="9665f624-3f98-418d-ac5f-fd25ab8fdd85" Title="ModBus_ApplicationLayerPluginHelper Class" Url="html/T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_ApplicationLayerPluginHelper.htm">
+      <HelpTOCNode Title="ModBus_ApplicationLayerPluginHelper Members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_ApplicationLayerPluginHelper.htm" />
+      <HelpTOCNode Title="ModBus_ApplicationLayerPluginHelper Members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_ApplicationLayerPluginHelper.htm" />
+      <HelpTOCNode Title="ModBus_ApplicationLayerPluginHelper Methods" Url="html/Methods.T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_ApplicationLayerPluginHelper.htm" />
+      <HelpTOCNode Title="ModBus_ApplicationLayerPluginHelper Methods" Url="html/Methods.T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_ApplicationLayerPluginHelper.htm" />
+      <HelpTOCNode Title="ModBus_ApplicationLayerPluginHelper Properties" Url="html/Properties.T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_ApplicationLayerPluginHelper.htm" />
+      <HelpTOCNode Title="ModBus_ApplicationLayerPluginHelper Properties" Url="html/Properties.T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_ApplicationLayerPluginHelper.htm" />
+      <HelpTOCNode Title="ModBus_ApplicationLayerPluginHelper Events" Url="html/Events.T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_ApplicationLayerPluginHelper.htm" />
+      <HelpTOCNode Title="ModBus_ApplicationLayerPluginHelper Events" Url="html/Events.T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_ApplicationLayerPluginHelper.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="2c786958-022c-4ef9-a376-68c0d7cfe6d8" Title="ModBus_DataProviderID Class" Url="html/T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_DataProviderID.htm">
+      <HelpTOCNode Title="ModBus_DataProviderID Members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_DataProviderID.htm" />
+      <HelpTOCNode Title="ModBus_DataProviderID Members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_DataProviderID.htm" />
+      <HelpTOCNode Title="ModBus_DataProviderID Constructor " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_DataProviderID.-ctor.htm" />
+      <HelpTOCNode Title="ModBus_DataProviderID Constructor " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_DataProviderID.-ctor.htm" />
+      <HelpTOCNode Id="3c1a13ea-cdf3-4dc7-9762-9782a2fe58ea" Title="ModBus_DataProviderID Methods" Url="html/Methods.T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_DataProviderID.htm">
+        <HelpTOCNode Id="005c1026-e268-4533-9dcd-41941dc5cdb9" Title="GetApplicationLayerMaster Method " Url="html/Overload-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_DataProviderID.GetApplicationLayerMaster.htm">
+          <HelpTOCNode Title="GetApplicationLayerMaster Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_DataProviderID.GetApplicationLayerMaster.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="e04a658d-3791-4b84-815a-c8f554340cf3" Title="GetApplicationLayerMaster Method " Url="html/Overload-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_DataProviderID.GetApplicationLayerMaster.htm">
+          <HelpTOCNode Title="GetApplicationLayerMaster Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_DataProviderID.GetApplicationLayerMaster.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="GetAvailiableAddressspaces Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_DataProviderID.GetAvailiableAddressspaces.htm" />
+        <HelpTOCNode Title="GetAvailiableAddressspaces Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_DataProviderID.GetAvailiableAddressspaces.htm" />
+        <HelpTOCNode Title="GetItemDefaultSettings Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_DataProviderID.GetItemDefaultSettings.htm" />
+        <HelpTOCNode Title="GetItemDefaultSettings Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_DataProviderID.GetItemDefaultSettings.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="c0aa7197-5fd8-4dd4-bc00-9c769bb3c846" Title="ModBus_DataProviderID Methods" Url="html/Methods.T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_DataProviderID.htm">
+        <HelpTOCNode Id="1760a75c-12d8-4731-9713-ef8350920a0a" Title="GetApplicationLayerMaster Method " Url="html/Overload-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_DataProviderID.GetApplicationLayerMaster.htm">
+          <HelpTOCNode Title="GetApplicationLayerMaster Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_DataProviderID.GetApplicationLayerMaster.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="26dcf035-e890-46d0-9399-f9f11befc10a" Title="GetApplicationLayerMaster Method " Url="html/Overload-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_DataProviderID.GetApplicationLayerMaster.htm">
+          <HelpTOCNode Title="GetApplicationLayerMaster Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_DataProviderID.GetApplicationLayerMaster.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="GetAvailiableAddressspaces Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_DataProviderID.GetAvailiableAddressspaces.htm" />
+        <HelpTOCNode Title="GetAvailiableAddressspaces Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_DataProviderID.GetAvailiableAddressspaces.htm" />
+        <HelpTOCNode Title="GetItemDefaultSettings Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_DataProviderID.GetItemDefaultSettings.htm" />
+        <HelpTOCNode Title="GetItemDefaultSettings Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_DataProviderID.GetItemDefaultSettings.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="7681a548-928c-4d10-a644-7272204b4f80" Title="ModBus_DataProviderID Properties" Url="html/Properties.T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_DataProviderID.htm">
+        <HelpTOCNode Title="MODBusProtocolParameters Property " Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_DataProviderID.MODBusProtocolParameters.htm" />
+        <HelpTOCNode Title="MODBusProtocolParameters Property " Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_DataProviderID.MODBusProtocolParameters.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="b7aea5c6-2552-4b37-9d7b-789ca4f25313" Title="ModBus_DataProviderID Properties" Url="html/Properties.T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_DataProviderID.htm">
+        <HelpTOCNode Title="MODBusProtocolParameters Property " Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_DataProviderID.MODBusProtocolParameters.htm" />
+        <HelpTOCNode Title="MODBusProtocolParameters Property " Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_DataProviderID.MODBusProtocolParameters.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="02693a5a-f626-40ca-987a-6e7075732a8e" Title="ModBus_DataProviderID Class" Url="html/T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_DataProviderID.htm">
+      <HelpTOCNode Title="ModBus_DataProviderID Members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_DataProviderID.htm" />
+      <HelpTOCNode Title="ModBus_DataProviderID Members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_DataProviderID.htm" />
+      <HelpTOCNode Title="ModBus_DataProviderID Constructor " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_DataProviderID.-ctor.htm" />
+      <HelpTOCNode Title="ModBus_DataProviderID Constructor " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_DataProviderID.-ctor.htm" />
+      <HelpTOCNode Id="2478a7b1-e264-49d5-8abd-804505b09199" Title="ModBus_DataProviderID Methods" Url="html/Methods.T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_DataProviderID.htm">
+        <HelpTOCNode Id="774be0ad-60ea-4a0e-a530-64d84b4c3548" Title="GetApplicationLayerMaster Method " Url="html/Overload-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_DataProviderID.GetApplicationLayerMaster.htm">
+          <HelpTOCNode Title="GetApplicationLayerMaster Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_DataProviderID.GetApplicationLayerMaster.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="9f610de6-7924-497a-a0a0-440d6f79aae6" Title="GetApplicationLayerMaster Method " Url="html/Overload-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_DataProviderID.GetApplicationLayerMaster.htm">
+          <HelpTOCNode Title="GetApplicationLayerMaster Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_DataProviderID.GetApplicationLayerMaster.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="GetAvailiableAddressspaces Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_DataProviderID.GetAvailiableAddressspaces.htm" />
+        <HelpTOCNode Title="GetAvailiableAddressspaces Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_DataProviderID.GetAvailiableAddressspaces.htm" />
+        <HelpTOCNode Title="GetItemDefaultSettings Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_DataProviderID.GetItemDefaultSettings.htm" />
+        <HelpTOCNode Title="GetItemDefaultSettings Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_DataProviderID.GetItemDefaultSettings.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="c47b18b4-376a-4849-8bf3-ffbf36d3cebd" Title="ModBus_DataProviderID Methods" Url="html/Methods.T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_DataProviderID.htm">
+        <HelpTOCNode Id="e9948f24-a277-4410-81b0-b36fb569b642" Title="GetApplicationLayerMaster Method " Url="html/Overload-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_DataProviderID.GetApplicationLayerMaster.htm">
+          <HelpTOCNode Title="GetApplicationLayerMaster Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_DataProviderID.GetApplicationLayerMaster.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="00c7f70c-5c77-4bef-aac0-d3334a816fa5" Title="GetApplicationLayerMaster Method " Url="html/Overload-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_DataProviderID.GetApplicationLayerMaster.htm">
+          <HelpTOCNode Title="GetApplicationLayerMaster Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_DataProviderID.GetApplicationLayerMaster.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="GetAvailiableAddressspaces Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_DataProviderID.GetAvailiableAddressspaces.htm" />
+        <HelpTOCNode Title="GetAvailiableAddressspaces Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_DataProviderID.GetAvailiableAddressspaces.htm" />
+        <HelpTOCNode Title="GetItemDefaultSettings Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_DataProviderID.GetItemDefaultSettings.htm" />
+        <HelpTOCNode Title="GetItemDefaultSettings Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_DataProviderID.GetItemDefaultSettings.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="ac205c07-223a-4de8-ae69-3191f227bb64" Title="ModBus_DataProviderID Properties" Url="html/Properties.T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_DataProviderID.htm">
+        <HelpTOCNode Title="MODBusProtocolParameters Property " Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_DataProviderID.MODBusProtocolParameters.htm" />
+        <HelpTOCNode Title="MODBusProtocolParameters Property " Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_DataProviderID.MODBusProtocolParameters.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="b1164c8c-c99d-4dec-b6c2-30b5d00e5cd9" Title="ModBus_DataProviderID Properties" Url="html/Properties.T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_DataProviderID.htm">
+        <HelpTOCNode Title="MODBusProtocolParameters Property " Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_DataProviderID.MODBusProtocolParameters.htm" />
+        <HelpTOCNode Title="MODBusProtocolParameters Property " Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBus_DataProviderID.MODBusProtocolParameters.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="73ae5ecc-9983-40d7-89e8-2b77042c3ab9" Title="ModBusProtocol Class" Url="html/T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBusProtocol.htm">
+      <HelpTOCNode Title="ModBusProtocol Members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBusProtocol.htm" />
+      <HelpTOCNode Title="ModBusProtocol Members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBusProtocol.htm" />
+      <HelpTOCNode Title="ModBusProtocol Constructor " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBusProtocol.-ctor.htm" />
+      <HelpTOCNode Title="ModBusProtocol Constructor " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBusProtocol.-ctor.htm" />
+      <HelpTOCNode Title="ModBusProtocol Methods" Url="html/Methods.T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBusProtocol.htm" />
+      <HelpTOCNode Title="ModBusProtocol Methods" Url="html/Methods.T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBusProtocol.htm" />
+      <HelpTOCNode Title="ModBusProtocol Properties" Url="html/Properties.T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBusProtocol.htm" />
+      <HelpTOCNode Title="ModBusProtocol Properties" Url="html/Properties.T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBusProtocol.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="6ea2faac-d0c1-42d7-be4e-4f587a356611" Title="ModBusProtocol Class" Url="html/T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBusProtocol.htm">
+      <HelpTOCNode Title="ModBusProtocol Members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBusProtocol.htm" />
+      <HelpTOCNode Title="ModBusProtocol Members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBusProtocol.htm" />
+      <HelpTOCNode Title="ModBusProtocol Constructor " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBusProtocol.-ctor.htm" />
+      <HelpTOCNode Title="ModBusProtocol Constructor " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBusProtocol.-ctor.htm" />
+      <HelpTOCNode Title="ModBusProtocol Methods" Url="html/Methods.T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBusProtocol.htm" />
+      <HelpTOCNode Title="ModBusProtocol Methods" Url="html/Methods.T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBusProtocol.htm" />
+      <HelpTOCNode Title="ModBusProtocol Properties" Url="html/Properties.T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBusProtocol.htm" />
+      <HelpTOCNode Title="ModBusProtocol Properties" Url="html/Properties.T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.ModBusProtocol.htm" />
+    </HelpTOCNode>
+  </HelpTOCNode>
+  <HelpTOCNode Id="48da0b25-e6d4-4475-9ee9-8838bb4db763" Title="CAS.Lib.CommonBus.ApplicationLayer.ModBus.PRIVATE Namespace" Url="html/N-CAS.Lib.CommonBus.ApplicationLayer.ModBus.PRIVATE.htm">
+    <HelpTOCNode Id="5b094c8c-91e2-4a0b-902e-0e94557f05fb" Title="ModBusMessage Class" Url="html/T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.PRIVATE.ModBusMessage.htm">
+      <HelpTOCNode Title="ModBusMessage Members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.PRIVATE.ModBusMessage.htm" />
+      <HelpTOCNode Title="ModBusMessage Members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.PRIVATE.ModBusMessage.htm" />
+      <HelpTOCNode Id="a1cf515a-71fd-4f86-ae03-0149fbf395a5" Title="ModBusMessage Methods" Url="html/Methods.T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.PRIVATE.ModBusMessage.htm">
+        <HelpTOCNode Id="e2fd4e58-c039-4dda-9ec4-ca3f3e4f453e" Title="CheckResponseFrame Method " Url="html/Overload-CAS.Lib.CommonBus.ApplicationLayer.ModBus.PRIVATE.ModBusMessage.CheckResponseFrame.htm">
+          <HelpTOCNode Title="CheckResponseFrame Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.ModBus.PRIVATE.ModBusMessage.CheckResponseFrame.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="WriteValue Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.ModBus.PRIVATE.ModBusMessage.WriteValue.htm" />
+        <HelpTOCNode Title="WriteValue Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.ModBus.PRIVATE.ModBusMessage.WriteValue.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="765a7c7e-c52c-4368-8ea6-ed1f457ef94d" Title="ModBusMessage Methods" Url="html/Methods.T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.PRIVATE.ModBusMessage.htm">
+        <HelpTOCNode Id="58703aa5-b94d-4bcb-9862-42dd1f0023ad" Title="CheckResponseFrame Method " Url="html/Overload-CAS.Lib.CommonBus.ApplicationLayer.ModBus.PRIVATE.ModBusMessage.CheckResponseFrame.htm">
+          <HelpTOCNode Title="CheckResponseFrame Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.ModBus.PRIVATE.ModBusMessage.CheckResponseFrame.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="WriteValue Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.ModBus.PRIVATE.ModBusMessage.WriteValue.htm" />
+        <HelpTOCNode Title="WriteValue Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.ModBus.PRIVATE.ModBusMessage.WriteValue.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="ModBusMessage Properties" Url="html/Properties.T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.PRIVATE.ModBusMessage.htm" />
+      <HelpTOCNode Title="ModBusMessage Properties" Url="html/Properties.T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.PRIVATE.ModBusMessage.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="95b6fe20-8918-41df-b97d-fdccddaba043" Title="ModBusMessage Class" Url="html/T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.PRIVATE.ModBusMessage.htm">
+      <HelpTOCNode Title="ModBusMessage Members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.PRIVATE.ModBusMessage.htm" />
+      <HelpTOCNode Title="ModBusMessage Members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.PRIVATE.ModBusMessage.htm" />
+      <HelpTOCNode Id="91539795-db46-48ca-bf94-90b6be7b6fbd" Title="ModBusMessage Methods" Url="html/Methods.T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.PRIVATE.ModBusMessage.htm">
+        <HelpTOCNode Id="2eb0a20c-c281-4cc5-a10e-bfd03e902e53" Title="CheckResponseFrame Method " Url="html/Overload-CAS.Lib.CommonBus.ApplicationLayer.ModBus.PRIVATE.ModBusMessage.CheckResponseFrame.htm">
+          <HelpTOCNode Title="CheckResponseFrame Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.ModBus.PRIVATE.ModBusMessage.CheckResponseFrame.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="WriteValue Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.ModBus.PRIVATE.ModBusMessage.WriteValue.htm" />
+        <HelpTOCNode Title="WriteValue Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.ModBus.PRIVATE.ModBusMessage.WriteValue.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="3cf84503-b5b3-4704-8122-e3ac3d9a2e1e" Title="ModBusMessage Methods" Url="html/Methods.T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.PRIVATE.ModBusMessage.htm">
+        <HelpTOCNode Id="932e1115-2e28-4cc8-85e1-8b8e1ef6c91e" Title="CheckResponseFrame Method " Url="html/Overload-CAS.Lib.CommonBus.ApplicationLayer.ModBus.PRIVATE.ModBusMessage.CheckResponseFrame.htm">
+          <HelpTOCNode Title="CheckResponseFrame Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.ModBus.PRIVATE.ModBusMessage.CheckResponseFrame.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="WriteValue Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.ModBus.PRIVATE.ModBusMessage.WriteValue.htm" />
+        <HelpTOCNode Title="WriteValue Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.ModBus.PRIVATE.ModBusMessage.WriteValue.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="ModBusMessage Properties" Url="html/Properties.T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.PRIVATE.ModBusMessage.htm" />
+      <HelpTOCNode Title="ModBusMessage Properties" Url="html/Properties.T-CAS.Lib.CommonBus.ApplicationLayer.ModBus.PRIVATE.ModBusMessage.htm" />
+    </HelpTOCNode>
+  </HelpTOCNode>
+  <HelpTOCNode Id="6e933c35-8eb3-4de9-bddc-bc38dd295fa1" Title="CAS.Lib.CommonBus.ApplicationLayer.NULL Namespace" Url="html/N-CAS.Lib.CommonBus.ApplicationLayer.NULL.htm">
+    <HelpTOCNode Id="4b2e5993-54ff-49ca-be30-fc1f307c0a26" Title="NULL_ApplicationLayerPluginHelper Class" Url="html/T-CAS.Lib.CommonBus.ApplicationLayer.NULL.NULL_ApplicationLayerPluginHelper.htm">
+      <HelpTOCNode Title="NULL_ApplicationLayerPluginHelper Members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.NULL.NULL_ApplicationLayerPluginHelper.htm" />
+      <HelpTOCNode Id="c9d007ec-c1c2-47f2-84b9-a3c47bb95265" Title="NULL_ApplicationLayerPluginHelper Constructor " Url="html/Overload-CAS.Lib.CommonBus.ApplicationLayer.NULL.NULL_ApplicationLayerPluginHelper.-ctor.htm">
+        <HelpTOCNode Title="NULL_ApplicationLayerPluginHelper Constructor " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.NULL.NULL_ApplicationLayerPluginHelper.-ctor.htm" />
+        <HelpTOCNode Title="NULL_ApplicationLayerPluginHelper Constructor (IContainer)" Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.NULL.NULL_ApplicationLayerPluginHelper.-ctor_1.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="4078e397-30c1-409d-afab-59bce9e6ed42" Title="NULL_ApplicationLayerPluginHelper Methods" Url="html/Methods.T-CAS.Lib.CommonBus.ApplicationLayer.NULL.NULL_ApplicationLayerPluginHelper.htm">
+        <HelpTOCNode Title="CreateApplicationLayerMaster Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.NULL.NULL_ApplicationLayerPluginHelper.CreateApplicationLayerMaster.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="NULL_ApplicationLayerPluginHelper Properties" Url="html/Properties.T-CAS.Lib.CommonBus.ApplicationLayer.NULL.NULL_ApplicationLayerPluginHelper.htm" />
+      <HelpTOCNode Title="NULL_ApplicationLayerPluginHelper Events" Url="html/Events.T-CAS.Lib.CommonBus.ApplicationLayer.NULL.NULL_ApplicationLayerPluginHelper.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="afee9169-6181-49da-bf76-792ba17298af" Title="NULL_DataProviderID Class" Url="html/T-CAS.Lib.CommonBus.ApplicationLayer.NULL.NULL_DataProviderID.htm">
+      <HelpTOCNode Title="NULL_DataProviderID Members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.NULL.NULL_DataProviderID.htm" />
+      <HelpTOCNode Title="NULL_DataProviderID Constructor " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.NULL.NULL_DataProviderID.-ctor.htm" />
+      <HelpTOCNode Id="513afabe-98f6-45d9-8ce7-b72873e8bdd8" Title="NULL_DataProviderID Methods" Url="html/Methods.T-CAS.Lib.CommonBus.ApplicationLayer.NULL.NULL_DataProviderID.htm">
+        <HelpTOCNode Id="627b63d8-e75a-4a5d-be96-4792685a0f93" Title="GetApplicationLayerMaster Method " Url="html/Overload-CAS.Lib.CommonBus.ApplicationLayer.NULL.NULL_DataProviderID.GetApplicationLayerMaster.htm">
+          <HelpTOCNode Title="GetApplicationLayerMaster Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.NULL.NULL_DataProviderID.GetApplicationLayerMaster.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="GetAvailiableAddressspaces Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.NULL.NULL_DataProviderID.GetAvailiableAddressspaces.htm" />
+        <HelpTOCNode Title="GetItemDefaultSettings Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.NULL.NULL_DataProviderID.GetItemDefaultSettings.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="3673cd87-cee2-4c2a-b8e6-33a9974b67c7" Title="NULL_DataProviderID Properties" Url="html/Properties.T-CAS.Lib.CommonBus.ApplicationLayer.NULL.NULL_DataProviderID.htm">
+        <HelpTOCNode Title="ErrorFrequency Property " Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.NULL.NULL_DataProviderID.ErrorFrequency.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+  <HelpTOCNode Id="254ed359-baee-40cf-8a03-bb894fe4e3c6" Title="CAS.Lib.CommonBus.ApplicationLayer.SBUS Namespace" Url="html/N-CAS.Lib.CommonBus.ApplicationLayer.SBUS.htm">
+    <HelpTOCNode Id="72c9563e-0a27-4a57-a1ea-cb903c79522b" Title="SBUS_ApplicationLayerPluginHelper Class" Url="html/T-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_ApplicationLayerPluginHelper.htm">
+      <HelpTOCNode Title="SBUS_ApplicationLayerPluginHelper Members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_ApplicationLayerPluginHelper.htm" />
+      <HelpTOCNode Title="SBUS_ApplicationLayerPluginHelper Members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_ApplicationLayerPluginHelper.htm" />
+      <HelpTOCNode Id="2e654ef5-87e0-479d-9d3d-bbea542653d5" Title="SBUS_ApplicationLayerPluginHelper Constructor " Url="html/Overload-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_ApplicationLayerPluginHelper.-ctor.htm">
+        <HelpTOCNode Title="SBUS_ApplicationLayerPluginHelper Constructor " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_ApplicationLayerPluginHelper.-ctor.htm" />
+        <HelpTOCNode Title="SBUS_ApplicationLayerPluginHelper Constructor " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_ApplicationLayerPluginHelper.-ctor.htm" />
+        <HelpTOCNode Title="SBUS_ApplicationLayerPluginHelper Constructor (IContainer)" Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_ApplicationLayerPluginHelper.-ctor_1.htm" />
+        <HelpTOCNode Title="SBUS_ApplicationLayerPluginHelper Constructor (IContainer)" Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_ApplicationLayerPluginHelper.-ctor_1.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="9eb7d40b-dfa3-4378-94bf-d8498f124e17" Title="SBUS_ApplicationLayerPluginHelper Constructor " Url="html/Overload-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_ApplicationLayerPluginHelper.-ctor.htm">
+        <HelpTOCNode Title="SBUS_ApplicationLayerPluginHelper Constructor " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_ApplicationLayerPluginHelper.-ctor.htm" />
+        <HelpTOCNode Title="SBUS_ApplicationLayerPluginHelper Constructor " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_ApplicationLayerPluginHelper.-ctor.htm" />
+        <HelpTOCNode Title="SBUS_ApplicationLayerPluginHelper Constructor (IContainer)" Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_ApplicationLayerPluginHelper.-ctor_1.htm" />
+        <HelpTOCNode Title="SBUS_ApplicationLayerPluginHelper Constructor (IContainer)" Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_ApplicationLayerPluginHelper.-ctor_1.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="027d7b20-9e5b-4384-a48e-19c914479a10" Title="SBUS_ApplicationLayerPluginHelper Methods" Url="html/Methods.T-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_ApplicationLayerPluginHelper.htm">
+        <HelpTOCNode Title="CreateApplicationLayerMaster Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_ApplicationLayerPluginHelper.CreateApplicationLayerMaster.htm" />
+        <HelpTOCNode Title="CreateApplicationLayerMaster Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_ApplicationLayerPluginHelper.CreateApplicationLayerMaster.htm" />
+        <HelpTOCNode Title="CreateApplicationLayerSlave Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_ApplicationLayerPluginHelper.CreateApplicationLayerSlave.htm" />
+        <HelpTOCNode Title="CreateApplicationLayerSlave Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_ApplicationLayerPluginHelper.CreateApplicationLayerSlave.htm" />
+        <HelpTOCNode Title="CreateApplicationLayerSniffer Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_ApplicationLayerPluginHelper.CreateApplicationLayerSniffer.htm" />
+        <HelpTOCNode Title="CreateApplicationLayerSniffer Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_ApplicationLayerPluginHelper.CreateApplicationLayerSniffer.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="06f95ec2-c270-4924-a11c-1710d0e5f365" Title="SBUS_ApplicationLayerPluginHelper Methods" Url="html/Methods.T-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_ApplicationLayerPluginHelper.htm">
+        <HelpTOCNode Title="CreateApplicationLayerMaster Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_ApplicationLayerPluginHelper.CreateApplicationLayerMaster.htm" />
+        <HelpTOCNode Title="CreateApplicationLayerMaster Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_ApplicationLayerPluginHelper.CreateApplicationLayerMaster.htm" />
+        <HelpTOCNode Title="CreateApplicationLayerSlave Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_ApplicationLayerPluginHelper.CreateApplicationLayerSlave.htm" />
+        <HelpTOCNode Title="CreateApplicationLayerSlave Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_ApplicationLayerPluginHelper.CreateApplicationLayerSlave.htm" />
+        <HelpTOCNode Title="CreateApplicationLayerSniffer Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_ApplicationLayerPluginHelper.CreateApplicationLayerSniffer.htm" />
+        <HelpTOCNode Title="CreateApplicationLayerSniffer Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_ApplicationLayerPluginHelper.CreateApplicationLayerSniffer.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="SBUS_ApplicationLayerPluginHelper Properties" Url="html/Properties.T-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_ApplicationLayerPluginHelper.htm" />
+      <HelpTOCNode Title="SBUS_ApplicationLayerPluginHelper Properties" Url="html/Properties.T-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_ApplicationLayerPluginHelper.htm" />
+      <HelpTOCNode Title="SBUS_ApplicationLayerPluginHelper Events" Url="html/Events.T-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_ApplicationLayerPluginHelper.htm" />
+      <HelpTOCNode Title="SBUS_ApplicationLayerPluginHelper Events" Url="html/Events.T-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_ApplicationLayerPluginHelper.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="5309430c-dcd1-409a-b6e1-998b4fc0f561" Title="SBUS_ApplicationLayerPluginHelper Class" Url="html/T-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_ApplicationLayerPluginHelper.htm">
+      <HelpTOCNode Title="SBUS_ApplicationLayerPluginHelper Members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_ApplicationLayerPluginHelper.htm" />
+      <HelpTOCNode Title="SBUS_ApplicationLayerPluginHelper Members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_ApplicationLayerPluginHelper.htm" />
+      <HelpTOCNode Id="7c0c2460-7d1c-4aa6-8480-78b3434b7632" Title="SBUS_ApplicationLayerPluginHelper Constructor " Url="html/Overload-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_ApplicationLayerPluginHelper.-ctor.htm">
+        <HelpTOCNode Title="SBUS_ApplicationLayerPluginHelper Constructor " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_ApplicationLayerPluginHelper.-ctor.htm" />
+        <HelpTOCNode Title="SBUS_ApplicationLayerPluginHelper Constructor " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_ApplicationLayerPluginHelper.-ctor.htm" />
+        <HelpTOCNode Title="SBUS_ApplicationLayerPluginHelper Constructor (IContainer)" Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_ApplicationLayerPluginHelper.-ctor_1.htm" />
+        <HelpTOCNode Title="SBUS_ApplicationLayerPluginHelper Constructor (IContainer)" Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_ApplicationLayerPluginHelper.-ctor_1.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="938b814c-ac6d-4548-9749-9ff6f958d446" Title="SBUS_ApplicationLayerPluginHelper Constructor " Url="html/Overload-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_ApplicationLayerPluginHelper.-ctor.htm">
+        <HelpTOCNode Title="SBUS_ApplicationLayerPluginHelper Constructor " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_ApplicationLayerPluginHelper.-ctor.htm" />
+        <HelpTOCNode Title="SBUS_ApplicationLayerPluginHelper Constructor " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_ApplicationLayerPluginHelper.-ctor.htm" />
+        <HelpTOCNode Title="SBUS_ApplicationLayerPluginHelper Constructor (IContainer)" Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_ApplicationLayerPluginHelper.-ctor_1.htm" />
+        <HelpTOCNode Title="SBUS_ApplicationLayerPluginHelper Constructor (IContainer)" Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_ApplicationLayerPluginHelper.-ctor_1.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="f972ae5d-e505-441d-97f7-e55cb6600537" Title="SBUS_ApplicationLayerPluginHelper Methods" Url="html/Methods.T-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_ApplicationLayerPluginHelper.htm">
+        <HelpTOCNode Title="CreateApplicationLayerMaster Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_ApplicationLayerPluginHelper.CreateApplicationLayerMaster.htm" />
+        <HelpTOCNode Title="CreateApplicationLayerMaster Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_ApplicationLayerPluginHelper.CreateApplicationLayerMaster.htm" />
+        <HelpTOCNode Title="CreateApplicationLayerSlave Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_ApplicationLayerPluginHelper.CreateApplicationLayerSlave.htm" />
+        <HelpTOCNode Title="CreateApplicationLayerSlave Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_ApplicationLayerPluginHelper.CreateApplicationLayerSlave.htm" />
+        <HelpTOCNode Title="CreateApplicationLayerSniffer Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_ApplicationLayerPluginHelper.CreateApplicationLayerSniffer.htm" />
+        <HelpTOCNode Title="CreateApplicationLayerSniffer Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_ApplicationLayerPluginHelper.CreateApplicationLayerSniffer.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="3d4d8438-1592-4739-8358-6d79b12a39be" Title="SBUS_ApplicationLayerPluginHelper Methods" Url="html/Methods.T-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_ApplicationLayerPluginHelper.htm">
+        <HelpTOCNode Title="CreateApplicationLayerMaster Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_ApplicationLayerPluginHelper.CreateApplicationLayerMaster.htm" />
+        <HelpTOCNode Title="CreateApplicationLayerMaster Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_ApplicationLayerPluginHelper.CreateApplicationLayerMaster.htm" />
+        <HelpTOCNode Title="CreateApplicationLayerSlave Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_ApplicationLayerPluginHelper.CreateApplicationLayerSlave.htm" />
+        <HelpTOCNode Title="CreateApplicationLayerSlave Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_ApplicationLayerPluginHelper.CreateApplicationLayerSlave.htm" />
+        <HelpTOCNode Title="CreateApplicationLayerSniffer Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_ApplicationLayerPluginHelper.CreateApplicationLayerSniffer.htm" />
+        <HelpTOCNode Title="CreateApplicationLayerSniffer Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_ApplicationLayerPluginHelper.CreateApplicationLayerSniffer.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="SBUS_ApplicationLayerPluginHelper Properties" Url="html/Properties.T-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_ApplicationLayerPluginHelper.htm" />
+      <HelpTOCNode Title="SBUS_ApplicationLayerPluginHelper Properties" Url="html/Properties.T-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_ApplicationLayerPluginHelper.htm" />
+      <HelpTOCNode Title="SBUS_ApplicationLayerPluginHelper Events" Url="html/Events.T-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_ApplicationLayerPluginHelper.htm" />
+      <HelpTOCNode Title="SBUS_ApplicationLayerPluginHelper Events" Url="html/Events.T-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_ApplicationLayerPluginHelper.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="51b7b36c-f265-4359-aad9-ee7a14cb15ac" Title="SBUS_DataProviderID Class" Url="html/T-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID.htm">
+      <HelpTOCNode Title="SBUS_DataProviderID Members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID.htm" />
+      <HelpTOCNode Title="SBUS_DataProviderID Members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID.htm" />
+      <HelpTOCNode Title="SBUS_DataProviderID Constructor " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID.-ctor.htm" />
+      <HelpTOCNode Title="SBUS_DataProviderID Constructor " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID.-ctor.htm" />
+      <HelpTOCNode Id="e3b53820-a554-4539-a4d9-7559b78de4ef" Title="SBUS_DataProviderID Methods" Url="html/Methods.T-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID.htm">
+        <HelpTOCNode Id="7286998f-6df6-4794-af48-a1a390bf59a3" Title="GetApplicationLayerMaster Method " Url="html/Overload-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID.GetApplicationLayerMaster.htm">
+          <HelpTOCNode Title="GetApplicationLayerMaster Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID.GetApplicationLayerMaster.htm" />
+          <HelpTOCNode Title="GetApplicationLayerMaster Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID.GetApplicationLayerMaster.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="5578aa0a-a08f-49c1-8fec-3ce82974954e" Title="GetApplicationLayerMaster Method " Url="html/Overload-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID.GetApplicationLayerMaster.htm">
+          <HelpTOCNode Title="GetApplicationLayerMaster Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID.GetApplicationLayerMaster.htm" />
+          <HelpTOCNode Title="GetApplicationLayerMaster Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID.GetApplicationLayerMaster.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="GetAvailiableAddressspaces Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID.GetAvailiableAddressspaces.htm" />
+        <HelpTOCNode Title="GetAvailiableAddressspaces Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID.GetAvailiableAddressspaces.htm" />
+        <HelpTOCNode Title="GetItemDefaultSettings Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID.GetItemDefaultSettings.htm" />
+        <HelpTOCNode Title="GetItemDefaultSettings Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID.GetItemDefaultSettings.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="ba9d1db1-9ba5-49c2-ade7-5cb6f4043ba0" Title="SBUS_DataProviderID Methods" Url="html/Methods.T-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID.htm">
+        <HelpTOCNode Id="ebea1a82-61e2-4b3a-ae57-60cdec558205" Title="GetApplicationLayerMaster Method " Url="html/Overload-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID.GetApplicationLayerMaster.htm">
+          <HelpTOCNode Title="GetApplicationLayerMaster Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID.GetApplicationLayerMaster.htm" />
+          <HelpTOCNode Title="GetApplicationLayerMaster Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID.GetApplicationLayerMaster.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="561cac02-d9eb-48f2-8508-ea8a7bc8ac70" Title="GetApplicationLayerMaster Method " Url="html/Overload-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID.GetApplicationLayerMaster.htm">
+          <HelpTOCNode Title="GetApplicationLayerMaster Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID.GetApplicationLayerMaster.htm" />
+          <HelpTOCNode Title="GetApplicationLayerMaster Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID.GetApplicationLayerMaster.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="GetAvailiableAddressspaces Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID.GetAvailiableAddressspaces.htm" />
+        <HelpTOCNode Title="GetAvailiableAddressspaces Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID.GetAvailiableAddressspaces.htm" />
+        <HelpTOCNode Title="GetItemDefaultSettings Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID.GetItemDefaultSettings.htm" />
+        <HelpTOCNode Title="GetItemDefaultSettings Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID.GetItemDefaultSettings.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="f1f0eaeb-317e-4918-b41e-72b38749997c" Title="SBUS_DataProviderID Properties" Url="html/Properties.T-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID.htm">
+        <HelpTOCNode Title="SBusProtocolParameters Property " Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID.SBusProtocolParameters.htm" />
+        <HelpTOCNode Title="SBusProtocolParameters Property " Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID.SBusProtocolParameters.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="5ed9894c-2726-4def-9487-ebda888c0b03" Title="SBUS_DataProviderID Properties" Url="html/Properties.T-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID.htm">
+        <HelpTOCNode Title="SBusProtocolParameters Property " Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID.SBusProtocolParameters.htm" />
+        <HelpTOCNode Title="SBusProtocolParameters Property " Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID.SBusProtocolParameters.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="017b6304-853e-478b-8598-d7f9a7a07f91" Title="SBUS_DataProviderID Class" Url="html/T-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID.htm">
+      <HelpTOCNode Title="SBUS_DataProviderID Members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID.htm" />
+      <HelpTOCNode Title="SBUS_DataProviderID Members" Url="html/AllMembers.T-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID.htm" />
+      <HelpTOCNode Title="SBUS_DataProviderID Constructor " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID.-ctor.htm" />
+      <HelpTOCNode Title="SBUS_DataProviderID Constructor " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID.-ctor.htm" />
+      <HelpTOCNode Id="ee5e1790-8f91-49f9-8d88-e4cc30c481c0" Title="SBUS_DataProviderID Methods" Url="html/Methods.T-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID.htm">
+        <HelpTOCNode Id="8bc20cec-0838-4004-a5b7-32a6732522a8" Title="GetApplicationLayerMaster Method " Url="html/Overload-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID.GetApplicationLayerMaster.htm">
+          <HelpTOCNode Title="GetApplicationLayerMaster Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID.GetApplicationLayerMaster.htm" />
+          <HelpTOCNode Title="GetApplicationLayerMaster Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID.GetApplicationLayerMaster.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="b16b1e9e-f6b6-46a7-a38b-f8f94a6562c8" Title="GetApplicationLayerMaster Method " Url="html/Overload-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID.GetApplicationLayerMaster.htm">
+          <HelpTOCNode Title="GetApplicationLayerMaster Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID.GetApplicationLayerMaster.htm" />
+          <HelpTOCNode Title="GetApplicationLayerMaster Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID.GetApplicationLayerMaster.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="GetAvailiableAddressspaces Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID.GetAvailiableAddressspaces.htm" />
+        <HelpTOCNode Title="GetAvailiableAddressspaces Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID.GetAvailiableAddressspaces.htm" />
+        <HelpTOCNode Title="GetItemDefaultSettings Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID.GetItemDefaultSettings.htm" />
+        <HelpTOCNode Title="GetItemDefaultSettings Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID.GetItemDefaultSettings.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="586d8209-ec52-4ea3-bd70-213e7f66dda4" Title="SBUS_DataProviderID Methods" Url="html/Methods.T-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID.htm">
+        <HelpTOCNode Id="e409ca98-78df-4fc9-9fb6-67a821dae292" Title="GetApplicationLayerMaster Method " Url="html/Overload-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID.GetApplicationLayerMaster.htm">
+          <HelpTOCNode Title="GetApplicationLayerMaster Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID.GetApplicationLayerMaster.htm" />
+          <HelpTOCNode Title="GetApplicationLayerMaster Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID.GetApplicationLayerMaster.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="f2f179f9-6ea2-4abf-8aec-b11543e52547" Title="GetApplicationLayerMaster Method " Url="html/Overload-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID.GetApplicationLayerMaster.htm">
+          <HelpTOCNode Title="GetApplicationLayerMaster Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID.GetApplicationLayerMaster.htm" />
+          <HelpTOCNode Title="GetApplicationLayerMaster Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID.GetApplicationLayerMaster.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="GetAvailiableAddressspaces Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID.GetAvailiableAddressspaces.htm" />
+        <HelpTOCNode Title="GetAvailiableAddressspaces Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID.GetAvailiableAddressspaces.htm" />
+        <HelpTOCNode Title="GetItemDefaultSettings Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID.GetItemDefaultSettings.htm" />
+        <HelpTOCNode Title="GetItemDefaultSettings Method " Url="html/M-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID.GetItemDefaultSettings.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="a381f002-5a93-420e-b91c-dede6021ebef" Title="SBUS_DataProviderID Properties" Url="html/Properties.T-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID.htm">
+        <HelpTOCNode Title="SBusProtocolParameters Property " Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID.SBusProtocolParameters.htm" />
+        <HelpTOCNode Title="SBusProtocolParameters Property " Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID.SBusProtocolParameters.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="01f1ed13-5c8a-4861-a21c-60713a661853" Title="SBUS_DataProviderID Properties" Url="html/Properties.T-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID.htm">
+        <HelpTOCNode Title="SBusProtocolParameters Property " Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID.SBusProtocolParameters.htm" />
+        <HelpTOCNode Title="SBusProtocolParameters Property " Url="html/P-CAS.Lib.CommonBus.ApplicationLayer.SBUS.SBUS_DataProviderID.SBusProtocolParameters.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+  <HelpTOCNode Id="71573243-dd21-487e-b32a-81834e006f21" Title="CAS.Lib.CommonBus.CommunicationLayer.DDE Namespace" Url="html/N-CAS.Lib.CommonBus.CommunicationLayer.DDE.htm">
+    <HelpTOCNode Id="c546e0d8-efb6-461b-b9b3-bfb66f37942c" Title="DDECommunicationLayerDescription Class" Url="html/T-CAS.Lib.CommonBus.CommunicationLayer.DDE.DDECommunicationLayerDescription.htm">
+      <HelpTOCNode Title="DDECommunicationLayerDescription Members" Url="html/AllMembers.T-CAS.Lib.CommonBus.CommunicationLayer.DDE.DDECommunicationLayerDescription.htm" />
+      <HelpTOCNode Title="DDECommunicationLayerDescription Methods" Url="html/Methods.T-CAS.Lib.CommonBus.CommunicationLayer.DDE.DDECommunicationLayerDescription.htm" />
+      <HelpTOCNode Id="af19f238-4ef7-4451-a179-ee2d357a16c8" Title="DDECommunicationLayerDescription Properties" Url="html/Properties.T-CAS.Lib.CommonBus.CommunicationLayer.DDE.DDECommunicationLayerDescription.htm">
+        <HelpTOCNode Title="Description Property " Url="html/P-CAS.Lib.CommonBus.CommunicationLayer.DDE.DDECommunicationLayerDescription.Description.htm" />
+        <HelpTOCNode Title="HumanReadableSettings Property " Url="html/P-CAS.Lib.CommonBus.CommunicationLayer.DDE.DDECommunicationLayerDescription.HumanReadableSettings.htm" />
+        <HelpTOCNode Title="Title Property " Url="html/P-CAS.Lib.CommonBus.CommunicationLayer.DDE.DDECommunicationLayerDescription.Title.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="3b2807a9-db9c-4636-b284-71861e56643e" Title="DDECommunicationLayerID Class" Url="html/T-CAS.Lib.CommonBus.CommunicationLayer.DDE.DDECommunicationLayerID.htm">
+      <HelpTOCNode Title="DDECommunicationLayerID Members" Url="html/AllMembers.T-CAS.Lib.CommonBus.CommunicationLayer.DDE.DDECommunicationLayerID.htm" />
+      <HelpTOCNode Id="671dcc32-0479-4c8c-9640-4e5e61d37d5f" Title="DDECommunicationLayerID Methods" Url="html/Methods.T-CAS.Lib.CommonBus.CommunicationLayer.DDE.DDECommunicationLayerID.htm">
+        <HelpTOCNode Id="95a8e2ea-f864-459b-b4cf-0ed1c588a549" Title="CreateCommunicationLayer Method " Url="html/Overload-CAS.Lib.CommonBus.CommunicationLayer.DDE.DDECommunicationLayerID.CreateCommunicationLayer.htm">
+          <HelpTOCNode Title="CreateCommunicationLayer Method (CommonBusControl)" Url="html/M-CAS.Lib.CommonBus.CommunicationLayer.DDE.DDECommunicationLayerID.CreateCommunicationLayer.htm" />
+          <HelpTOCNode Title="CreateCommunicationLayer Method (Object[])" Url="html/M-CAS.Lib.CommonBus.CommunicationLayer.DDE.DDECommunicationLayerID.CreateCommunicationLayer_1.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="8009cbf4-99a7-4bce-b733-e453064f501f" Title="DDECommunicationLayerID Properties" Url="html/Properties.T-CAS.Lib.CommonBus.CommunicationLayer.DDE.DDECommunicationLayerID.htm">
+        <HelpTOCNode Title="GetCommunicationLayerDescription Property " Url="html/P-CAS.Lib.CommonBus.CommunicationLayer.DDE.DDECommunicationLayerID.GetCommunicationLayerDescription.htm" />
+        <HelpTOCNode Title="PokeTimeout Property " Url="html/P-CAS.Lib.CommonBus.CommunicationLayer.DDE.DDECommunicationLayerID.PokeTimeout.htm" />
+        <HelpTOCNode Title="RequestTimeout Property " Url="html/P-CAS.Lib.CommonBus.CommunicationLayer.DDE.DDECommunicationLayerID.RequestTimeout.htm" />
+        <HelpTOCNode Title="ServerDDE Property " Url="html/P-CAS.Lib.CommonBus.CommunicationLayer.DDE.DDECommunicationLayerID.ServerDDE.htm" />
+        <HelpTOCNode Title="Title Property " Url="html/P-CAS.Lib.CommonBus.CommunicationLayer.DDE.DDECommunicationLayerID.Title.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+</HelpTOC>
