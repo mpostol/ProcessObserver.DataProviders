@@ -1,17 +1,10 @@
-﻿//_______________________________________________________________
-//  Title   : ITextReaderProtocolParameters
-//  System  : Microsoft VisualStudio 2015 / C#
-//  $LastChangedDate$
-//  $Rev$
-//  $LastChangedBy$
-//  $URL$
-//  $Id$
+﻿//___________________________________________________________________________________
 //
-//  Copyright (C) 2017, CAS LODZ POLAND.
-//  TEL: +48 608 61 98 99 
-//  mailto://techsupp@cas.eu
-//  http://www.cas.eu
-//_______________________________________________________________
+//  Copyright (C) 2020, Mariusz Postol LODZ POLAND.
+//
+//  To be in touch join the community at GITTER: https://gitter.im/mpostol/OPC-UA-OOI
+//___________________________________________________________________________________
+
 
 namespace CAS.CommServer.DataProvider.TextReader
 {
@@ -26,17 +19,20 @@ namespace CAS.CommServer.DataProvider.TextReader
     /// </summary>
     /// <value>The column separator.</value>
     string ColumnSeparator { get; }
+
     /// <summary>
-    /// Gets the delay file scan - it is time to postpone the file content read operation after receiving file modification notification. 
+    /// Gets the delay file scan - it is time to postpone the file content read operation after receiving file modification notification.
     /// It is time needed by the remote application to finalize writing to file and release the file for other processes.
     /// </summary>
     /// <value>The delay file scan.</value>
     double DelayFileScan { get; }
+
     /// <summary>
     /// Gets the file modification notification timeout.
     /// </summary>
     /// <value><see cref="double"/> representing the file modification notification timeout.</value>
     double FileModificationNotificationTimeout { get; }
+
     /// <summary>
     /// Gets maximum number of retries this station will try.
     /// </summary>

@@ -1,4 +1,10 @@
-﻿
+﻿//___________________________________________________________________________________
+//
+//  Copyright (C) 2020, Mariusz Postol LODZ POLAND.
+//
+//  To be in touch join the community at GITTER: https://gitter.im/mpostol/OPC-UA-OOI
+//___________________________________________________________________________________
+
 using CAS.CommServer.DataProvider.TextReader.Data;
 using CAS.Lib.CommonBus.ApplicationLayer;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -20,6 +26,7 @@ namespace CAS.CommServer.DataProvider.TextReader.UnitTest.Data
       Assert.IsFalse(_instance.InPool);
       Assert.AreEqual(4, _instance.startAddress);
     }
+
     [TestMethod]
     public void InPoolTestMethod()
     {
@@ -29,6 +36,7 @@ namespace CAS.CommServer.DataProvider.TextReader.UnitTest.Data
       _instance.InPool = true;
       Assert.IsFalse(_instance.InPool);
     }
+
     [TestMethod]
     public void IsInBlockTestMethod()
     {
@@ -43,6 +51,7 @@ namespace CAS.CommServer.DataProvider.TextReader.UnitTest.Data
       Assert.IsFalse(_instance.IsInBlock(0, 0, 1));
       Assert.IsFalse(_instance.IsInBlock(1, 0, 0));
     }
+
     [TestMethod]
     [ExpectedException(typeof(ArgumentOutOfRangeException))]
     public void ReadValueArgumentOutOfRangeTest()
@@ -51,6 +60,7 @@ namespace CAS.CommServer.DataProvider.TextReader.UnitTest.Data
       ReadDataEntity _instance = new ReadDataEntity(_data, new Block());
       object _value = _instance.ReadValue(8, typeof(float));
     }
+
     [TestMethod]
     public void ReadValueStringTest()
     {
@@ -69,6 +79,7 @@ namespace CAS.CommServer.DataProvider.TextReader.UnitTest.Data
       Assert.IsTrue(_value is string);
       Assert.AreEqual<string>("1368", (string)_value);
     }
+
     [TestMethod]
     public void ReadValueFloatTest()
     {
@@ -81,6 +92,7 @@ namespace CAS.CommServer.DataProvider.TextReader.UnitTest.Data
       Assert.IsTrue(_value is float);
       Assert.AreEqual<float>(1368f, (float)_value);
     }
+
     [TestMethod]
     public void ReadValueLongTest()
     {
@@ -90,6 +102,7 @@ namespace CAS.CommServer.DataProvider.TextReader.UnitTest.Data
       Assert.IsTrue(_value is long);
       Assert.AreEqual<long>(1368, (long)_value);
     }
+
     [TestMethod]
     [ExpectedException(typeof(FormatException))]
     public void ReadValueLongFormatExceptionTest()
@@ -98,6 +111,7 @@ namespace CAS.CommServer.DataProvider.TextReader.UnitTest.Data
       ReadDataEntity _instance = new ReadDataEntity(_data, new Block());
       object _value = _instance.ReadValue(2, typeof(long));
     }
+
     [TestMethod]
     public void ReadValueIntTest()
     {
@@ -107,6 +121,7 @@ namespace CAS.CommServer.DataProvider.TextReader.UnitTest.Data
       Assert.IsTrue(_value is int);
       Assert.AreEqual<long>(1368, (int)_value);
     }
+
     [TestMethod]
     [ExpectedException(typeof(FormatException))]
     public void ReadValueIntFormatExceptionTest()
@@ -115,6 +130,7 @@ namespace CAS.CommServer.DataProvider.TextReader.UnitTest.Data
       ReadDataEntity _instance = new ReadDataEntity(_data, new Block());
       object _value = _instance.ReadValue(0, typeof(int));
     }
+
     [TestMethod]
     public void ReadValueShortTest()
     {
@@ -124,6 +140,7 @@ namespace CAS.CommServer.DataProvider.TextReader.UnitTest.Data
       Assert.IsTrue(_value is short);
       Assert.AreEqual<long>(1368, (short)_value);
     }
+
     [TestMethod]
     [ExpectedException(typeof(FormatException))]
     public void ReadValueShortFormatExceptionTest()
@@ -132,6 +149,7 @@ namespace CAS.CommServer.DataProvider.TextReader.UnitTest.Data
       ReadDataEntity _instance = new ReadDataEntity(_data, new Block());
       object _value = _instance.ReadValue(2, typeof(short));
     }
+
     [TestMethod]
     [ExpectedException(typeof(OverflowException))]
     public void ReadValueShortOverflowExceptionTest()
@@ -141,6 +159,7 @@ namespace CAS.CommServer.DataProvider.TextReader.UnitTest.Data
       ReadDataEntity _instance = new ReadDataEntity(_data, new Block());
       object _value = _instance.ReadValue(3, typeof(short));
     }
+
     [TestMethod]
     [ExpectedException(typeof(FormatException))]
     public void ReadValueWrongFormatTest()
@@ -149,35 +168,45 @@ namespace CAS.CommServer.DataProvider.TextReader.UnitTest.Data
       ReadDataEntity _instance = new ReadDataEntity(_data, new Block());
       object _value = _instance.ReadValue(0, typeof(float));
     }
+
+    #region instrumentation
+
     private static string[] GetData()
     {
       return new string[] { "09-12-16", "09:24:02", "26.9", "1368", "09-12-16", "09:24:02", "26.9", "1368" };
     }
+
     private class Block : IBlockDescription
     {
       public short dataType
       {
         get; private set;
       } = 0;
+
       public int length
       {
         get; private set;
       } = 4;
+
       public int startAddress
       {
         get; private set;
       } = 4;
     }
+
     private class TestDataEntity : IDataEntity
     {
       public string[] Tags
       {
         get; set;
       }
+
       public DateTime TimeStamp
       {
         get; set;
       }
     }
+
+    #endregion instrumentation
   }
 }

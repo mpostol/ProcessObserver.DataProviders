@@ -1,17 +1,9 @@
-﻿//_______________________________________________________________
-//  Title   : TextReaderProtocolParameters
-//  System  : Microsoft VisualStudio 2015 / C#
-//  $LastChangedDate$
-//  $Rev$
-//  $LastChangedBy$
-//  $URL$
-//  $Id$
+﻿//___________________________________________________________________________________
 //
-//  Copyright (C) 2017, CAS LODZ POLAND.
-//  TEL: +48 608 61 98 99 
-//  mailto://techsupp@cas.eu
-//  http://www.cas.eu
-//_______________________________________________________________
+//  Copyright (C) 2020, Mariusz Postol LODZ POLAND.
+//
+//  To be in touch join the community at GITTER: https://gitter.im/mpostol/OPC-UA-OOI
+//___________________________________________________________________________________
 
 using CAS.CommServer.DataProvider.TextReader.Properties;
 using System;
@@ -25,8 +17,8 @@ namespace CAS.CommServer.DataProvider.TextReader
   /// </summary>
   public class TextReaderProtocolParameters : ITextReaderProtocolParameters
   {
-
     #region ITextReaderProtocolParameters
+
     /// <summary>
     /// Gets or sets the file modification notification timeout.
     /// </summary>
@@ -35,6 +27,7 @@ namespace CAS.CommServer.DataProvider.TextReader
     [DisplayName("Timeout [mS]")]
     [Browsable(true)]
     public double FileModificationNotificationTimeout { get; set; } = Settings.Default.DefaultFileModificationNotificationTimeout;
+
     /// <summary>
     /// Gets the delay file scan - it is time to postpone the file content read operation after receiving file modification notification.
     /// It is time needed by the remote application to finalize writing to file and release the file for other processes.
@@ -44,6 +37,7 @@ namespace CAS.CommServer.DataProvider.TextReader
     [DisplayName("Delay File Scan")]
     [Browsable(true)]
     public double DelayFileScan { get; set; } = 1000;
+
     /// <summary>
     /// Gets the column separator - string used to separate columns in the scanned text.
     /// </summary>
@@ -52,26 +46,31 @@ namespace CAS.CommServer.DataProvider.TextReader
     [DisplayName("Column Separator")]
     [Browsable(true)]
     public string ColumnSeparator { get; set; } = ",";
+
     /// <summary>
-    /// Gets and sets maximum number of retries this station will try. 
+    /// Gets and sets maximum number of retries this station will try.
     /// </summary>
-    [DescriptionAttribute("Maximum number of retries this station will try before issuing disconect request.")]
+    [DescriptionAttribute("Maximum number of retries this station will try before issuing disconnect request.")]
     [DisplayName("Max Number Of Retries")]
     public int MaxNumberOfRetries { get; set; } = 1;
-    #endregion
 
-    #region Objject
+    #endregion ITextReaderProtocolParameters
+
+    #region Object
+
     /// <summary>
     /// Returns a <see cref="System.String" /> that represents this instance.
     /// </summary>
     /// <returns>A <see cref="System.String" /> that represents this instance.</returns>
     public override string ToString()
     {
-      return $"ColumnSeparator: \"{ColumnSeparator}\", DelayFileScann: {TimeSpan.FromMilliseconds(DelayFileScan)}, Timeou: {TimeSpan.FromMilliseconds(FileModificationNotificationTimeout)}";
+      return $"ColumnSeparator: \"{ColumnSeparator}\", DelayFileScann: {TimeSpan.FromMilliseconds(DelayFileScan)}, Timeout: {TimeSpan.FromMilliseconds(FileModificationNotificationTimeout)}";
     }
-    #endregion
+
+    #endregion Object
 
     #region API
+
     /// <summary>
     /// Reads the settings form <see cref="XmlReader"/>.
     /// </summary>
@@ -91,6 +90,7 @@ namespace CAS.CommServer.DataProvider.TextReader
       MaxNumberOfRetries = Convert.ToInt32(settings.ReadContentAsDouble());
       settings.ReadEndElement();
     }
+
     /// <summary>
     /// Writes the settings to <see cref="XmlWriter"/>.
     /// </summary>
@@ -110,9 +110,7 @@ namespace CAS.CommServer.DataProvider.TextReader
       settings.WriteValue(MaxNumberOfRetries);
       settings.WriteEndElement();
     }
-    #endregion
 
-
+    #endregion API
   }
-
 }

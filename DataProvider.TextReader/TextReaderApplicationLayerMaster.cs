@@ -1,17 +1,9 @@
-﻿//_______________________________________________________________
-//  Title   : TextReaderApplicationLayerMaster
-//  System  : Microsoft VisualStudio 2015 / C#
-//  $LastChangedDate$
-//  $Rev$
-//  $LastChangedBy$
-//  $URL$
-//  $Id$
+﻿//___________________________________________________________________________________
 //
-//  Copyright (C) 2017, CAS LODZ POLAND.
-//  TEL: +48 608 61 98 99 
-//  mailto://techsupp@cas.eu
-//  http://www.cas.eu
-//_______________________________________________________________
+//  Copyright (C) 2020, Mariusz Postol LODZ POLAND.
+//
+//  To be in touch join the community at GITTER: https://gitter.im/mpostol/OPC-UA-OOI
+//___________________________________________________________________________________
 
 using CAS.CommServer.DataProvider.TextReader.Data;
 using CAS.Lib.CommonBus;
@@ -29,11 +21,11 @@ namespace CAS.CommServer.DataProvider.TextReader
   /// <summary>
   /// Class TextReaderApplicationLayerMaster - captures all functionality requires for gathering data from a file.
   /// </summary>
-  /// <seealso cref="CAS.Lib.CommonBus.ApplicationLayer.IApplicationLayerMaster" />
+  /// <seealso cref="IApplicationLayerMaster" />
   public class TextReaderApplicationLayerMaster : IApplicationLayerMaster
   {
-
     #region private
+
     private IComponent m_parentComponent;
     private IProtocolParent m_statistic;
     private IDataEntity m_Fifo = null;
@@ -41,21 +33,24 @@ namespace CAS.CommServer.DataProvider.TextReader
     private IDisposable m_Observer = null;
     private DataObservable m_Observable;
     private ITextReaderProtocolParameters m_TextReaderProtocolParameters = null;
-    private string m_FileName = string.Empty;
+    private readonly string m_FileName = string.Empty;
+
     private void ParentComponent_Disposed(object sender, EventArgs e)
     {
       Dispose();
     }
+
     private void NotifyNewData(IList<IDataEntity> list)
     {
       IDataEntity _newData = null;
       if (list.Count == 0)
       {
         m_RetryCount++;
-        TraceSource.TraceMessage(TraceEventType.Information, 71, $"Incomming data stream has been timed out RetryCount={m_RetryCount}.");
+        TraceSource.TraceMessage(TraceEventType.Information, 71, $"Incoming data stream has been timed out RetryCount={m_RetryCount}.");
         if (m_TextReaderProtocolParameters.MaxNumberOfRetries > 0 && m_TextReaderProtocolParameters.MaxNumberOfRetries < m_RetryCount)
         {
-          TraceSource.TraceMessage(TraceEventType.Information, 182, $"ReadData failed and caused disconnection because the number of reries={m_RetryCount} is greater than the limit {m_TextReaderProtocolParameters.MaxNumberOfRetries}");
+          string _messgae = $"ReadData failed and caused disconnection because the number of retries={m_RetryCount} is greater than the limit {m_TextReaderProtocolParameters.MaxNumberOfRetries}";
+          TraceSource.TraceMessage(TraceEventType.Information, 182, _messgae);
           DisReq();
           m_RetryCount = 0;
         }
@@ -66,8 +61,9 @@ namespace CAS.CommServer.DataProvider.TextReader
         m_RetryCount = 0;
         TraceSource.TraceMessage(TraceEventType.Verbose, 93, $"New data from the file {m_FileName} modified at {_newData.TimeStamp} has been fetched");
       }
-      IDataEntity oldData = Interlocked.Exchange<IDataEntity>(ref m_Fifo, _newData);
+      IDataEntity _oldData = Interlocked.Exchange<IDataEntity>(ref m_Fifo, _newData);
     }
+
     private void ExceptionHandler(Exception exception)
     {
       TraceSource.TraceMessage(TraceEventType.Error, 75, $"The data observable chain has thrown an exception. The connection is broken and must be established once more. Details: {exception}");
@@ -75,9 +71,11 @@ namespace CAS.CommServer.DataProvider.TextReader
       Interlocked.Exchange<IDataEntity>(ref m_Fifo, null);
       m_Observable.Dispose();
     }
-    #endregion
 
-    #region Disgnostic
+    #endregion private
+
+    #region Diagnostic
+
     /// <summary>
     /// Gets or sets the trace source <see cref="ITraceSource"/>.
     /// </summary>
@@ -86,9 +84,11 @@ namespace CAS.CommServer.DataProvider.TextReader
     /// </remarks>
     /// <value>The trace source to be used for logging important data.</value>
     public ITraceSource TraceSource { get; set; } = AssemblyTraceEvent.Tracer;
-    #endregion
+
+    #endregion Diagnostic
 
     #region constructors
+
     /// <summary>
     /// Initializes a new instance of the <see cref="TextReaderApplicationLayerMaster"/> class.
     /// </summary>
@@ -102,9 +102,11 @@ namespace CAS.CommServer.DataProvider.TextReader
       m_TextReaderProtocolParameters = setting;
       m_parentComponent.Disposed += ParentComponent_Disposed;
     }
-    #endregion
+
+    #endregion constructors
 
     #region IApplicationLayerMaster
+
     /// <summary>
     /// true if the layer is connected for connection oriented communication or ready for communication
     /// for connectionless communication.
@@ -114,6 +116,7 @@ namespace CAS.CommServer.DataProvider.TextReader
     {
       get; private set;
     } = false;
+
     /// <summary>
     /// Connect Request, this function is used for establishing the connection
     /// </summary>
@@ -127,10 +130,10 @@ namespace CAS.CommServer.DataProvider.TextReader
     public TConnectReqRes ConnectReq(IAddress remoteAddress)
     {
       if (Connected)
-        throw new InvalidOperationException($"Operation {nameof(Connected)} is not allowed because the connection has been instantiated alredy");
+        throw new InvalidOperationException($"Operation {nameof(Connected)} is not allowed because the connection has been instantiated already");
       if (!(remoteAddress.address is string))
         throw new ArgumentException("Wrong address format type");
-      if (String.IsNullOrEmpty((string)remoteAddress.address))
+      if (string.IsNullOrEmpty((string)remoteAddress.address))
         return TConnectReqRes.NoConnection;
       m_Observable = new DataObservable((string)remoteAddress.address, m_TextReaderProtocolParameters, TraceSource);
       m_Observer = m_Observable
@@ -144,6 +147,7 @@ namespace CAS.CommServer.DataProvider.TextReader
       Connected = true;
       return TConnectReqRes.Success;
     }
+
     /// <summary>
     /// Reads process data from the selected location and device resources.
     /// </summary>
@@ -163,7 +167,7 @@ namespace CAS.CommServer.DataProvider.TextReader
       }
       if (!Connected)
       {
-        TraceSource.TraceMessage(TraceEventType.Verbose, 165, $"ReadData failed because it is not connectedt; reries/limit={m_RetryCount}/{this.m_TextReaderProtocolParameters.MaxNumberOfRetries}.");
+        TraceSource.TraceMessage(TraceEventType.Verbose, 165, $"ReadData failed because it is not connected; retries/limit={m_RetryCount}/{this.m_TextReaderProtocolParameters.MaxNumberOfRetries}.");
         return AL_ReadData_Result.ALRes_DisInd;
       }
       m_statistic.IncStTxFrameCounter();
@@ -173,14 +177,15 @@ namespace CAS.CommServer.DataProvider.TextReader
       if (!_retResult)
       {
         m_statistic.IncStRxNoResponseCounter();
-        TraceSource.TraceMessage(TraceEventType.Information, 186, $"ReadData failed; reries/limit={m_RetryCount}/{this.m_TextReaderProtocolParameters.MaxNumberOfRetries}.");
+        TraceSource.TraceMessage(TraceEventType.Information, 186, $"ReadData failed; retries/limit={m_RetryCount}/{this.m_TextReaderProtocolParameters.MaxNumberOfRetries}.");
         return AL_ReadData_Result.ALRes_DatTransferErrr;
       }
       m_statistic.IncStRxFrameCounter();
       pData = new ReadDataEntity(_copy, pBlock);
-      TraceSource.TraceMessage(TraceEventType.Verbose, 191, $"ReadData succeded for [{pStation}/{pBlock.startAddress}]");
+      TraceSource.TraceMessage(TraceEventType.Verbose, 191, $"ReadData succeeded for [{pStation}/{pBlock.startAddress}]");
       return AL_ReadData_Result.ALRes_Success;
     }
+
     /// <summary>
     /// Disconnect Request - Unconditionally disconnect the connection if any.
     /// </summary>
@@ -192,6 +197,7 @@ namespace CAS.CommServer.DataProvider.TextReader
     }
 
     #region Intentionally NotImplemented
+
     /// <summary>
     /// Connect indication – Check if there is a connection accepted to the remote address.
     /// </summary>
@@ -207,6 +213,7 @@ namespace CAS.CommServer.DataProvider.TextReader
     {
       throw new NotImplementedException();
     }
+
     /// <summary>
     /// Gets a buffer from a pool and initiates. After filling it up with the data can be send to the data provider remote
     /// unit by the <see cref="M:CAS.Lib.CommonBus.ApplicationLayer.IApplicationLayerMaster.WriteData(CAS.Lib.CommonBus.ApplicationLayer.IWriteValue@,System.Byte)" />.
@@ -220,6 +227,7 @@ namespace CAS.CommServer.DataProvider.TextReader
     {
       throw new NotImplementedException();
     }
+
     /// <summary>
     /// Writes process data down to the selected location and device resources.
     /// </summary>
@@ -232,12 +240,15 @@ namespace CAS.CommServer.DataProvider.TextReader
     {
       throw new NotImplementedException();
     }
-    #endregion
 
-    #endregion
+    #endregion Intentionally NotImplemented
+
+    #endregion IApplicationLayerMaster
 
     #region IDisposable Support
+
     private bool m_DisposedValue = false; // To detect redundant calls
+
     /// <summary>
     /// Releases unmanaged and - optionally - managed resources.
     /// </summary>
@@ -255,6 +266,7 @@ namespace CAS.CommServer.DataProvider.TextReader
       }
       m_DisposedValue = true;
     }
+
     /// <summary>
     /// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
     /// </summary>
@@ -263,8 +275,7 @@ namespace CAS.CommServer.DataProvider.TextReader
       // Do not change this code. Put cleanup code in Dispose(bool disposing) above.
       Dispose(true);
     }
-    #endregion
 
+    #endregion IDisposable Support
   }
-
 }

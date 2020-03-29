@@ -1,6 +1,12 @@
-﻿
-using System;
+﻿//___________________________________________________________________________________
+//
+//  Copyright (C) 2020, Mariusz Postol LODZ POLAND.
+//
+//  To be in touch join the community at GITTER: https://gitter.im/mpostol/OPC-UA-OOI
+//___________________________________________________________________________________
+
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 
 namespace CAS.CommServer.DataProvider.TextReader.UnitTest
 {
@@ -15,6 +21,7 @@ namespace CAS.CommServer.DataProvider.TextReader.UnitTest
       Assert.AreEqual<TimeSpan>(TimeSpan.FromMinutes(1), TimeSpan.FromMilliseconds(_instance.FileModificationNotificationTimeout));
       Assert.AreEqual<string>(",", _instance.ColumnSeparator);
     }
+
     [TestMethod]
     public void ToStringTestMethod()
     {
@@ -22,7 +29,6 @@ namespace CAS.CommServer.DataProvider.TextReader.UnitTest
       Assert.AreEqual<string>(TextReaderProtocolParametersString, _instance.ToString());
     }
 
-    internal const string TextReaderProtocolParametersString = "ColumnSeparator: \",\", DelayFileScann: 00:00:01, Timeou: 00:01:00";
-
+    internal const string TextReaderProtocolParametersString = "ColumnSeparator: \",\", DelayFileScann: 00:00:01, Timeout: 00:01:00";
   }
 }
