@@ -7,3 +7,7 @@ DataProvider plug-ins are used to:
 - get access to process data using many vendor specific plant floor devices,
 - build testing and simulation environment at the desk,
 - monitor the host and commutation resources and publish diagnostic data in the same way as process data.
+
+## Read also
+
+- [API Browser](https://mpostol.github.io/ProcessObserver.DataProviders/help)

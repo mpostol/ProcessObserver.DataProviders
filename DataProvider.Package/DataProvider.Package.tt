@@ -8,7 +8,7 @@
     <title>CommSever DataProvider Collection Package</title>
     <authors><#=AssemblyCompany#></authors>
     <owners><#=Owner#></owners>
-    <projectUrl>svn://svnserver.hq.cas.com.pl/VS/trunk/CommServer.DataProvider</projectUrl>
+    <projectUrl>https://mpostol.github.io/ProcessObserver.DataProviders/</projectUrl>
     <licenseUrl>http://www.commsvr.com/DownloadCenter/ProductSoftware/LicenseAgreement.aspx</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <developmentDependency>true</developmentDependency>
