@@ -1,17 +1,9 @@
-﻿//_______________________________________________________________
-//  Title   : ReadDataEntity
-//  System  : Microsoft VisualStudio 2015 / C#
-//  $LastChangedDate$
-//  $Rev$
-//  $LastChangedBy$
-//  $URL$
-//  $Id$
+﻿//___________________________________________________________________________________
 //
-//  Copyright (C) 2017, CAS LODZ POLAND.
-//  TEL: +48 608 61 98 99 
-//  mailto://techsupp@cas.eu
-//  http://www.cas.eu
-//_______________________________________________________________
+//  Copyright (C) 2020, Mariusz Postol LODZ POLAND.
+//
+//  To be in touch join the community at GITTER: https://gitter.im/mpostol/OPC-UA-OOI
+//___________________________________________________________________________________
 
 using CAS.Lib.CommonBus.ApplicationLayer;
 using System;
@@ -25,14 +17,16 @@ namespace CAS.CommServer.DataProvider.TextReader.Data
   /// TODO Edit XML Comment Template for ReadDataEntity
   internal class ReadDataEntity : IReadValue
   {
-
     #region private
+
     private string[] Tags;
-    #endregion
+
+    #endregion private
 
     #region constructor
+
     /// <summary>
-    /// Initializes a new instance of the <see cref="ReadDataEntity"/> class and copies data from the <paramref name="dataBuffer"/> selected by the <paramref name="block"/>. 
+    /// Initializes a new instance of the <see cref="ReadDataEntity"/> class and copies data from the <paramref name="dataBuffer"/> selected by the <paramref name="block"/>.
     /// </summary>
     /// <param name="dataBuffer">The data buffer holding source data.</param>
     /// <param name="block">The data block description to retrieved from the <paramref name="dataBuffer"/>.</param>
@@ -45,9 +39,11 @@ namespace CAS.CommServer.DataProvider.TextReader.Data
       for (int i = 0; i < Tags.Length; i++)
         Tags[i] = dataBuffer.Tags[i + block.startAddress];
     }
-    #endregion
+
+    #endregion constructor
 
     #region IReadValue
+
     /// <summary>
     /// Gets the data block starting address.
     /// </summary>
@@ -56,6 +52,7 @@ namespace CAS.CommServer.DataProvider.TextReader.Data
     {
       get; private set;
     }
+
     /// <summary>
     /// Gets the length of the data in bytes.
     /// </summary>
@@ -64,6 +61,7 @@ namespace CAS.CommServer.DataProvider.TextReader.Data
     {
       get; private set;
     }
+
     /// <summary>
     /// Determines the remote unit address space (resource) the data block belongs to. It could also be used to define
     /// data type if it is determined by address space.
@@ -73,6 +71,7 @@ namespace CAS.CommServer.DataProvider.TextReader.Data
     {
       get; private set;
     }
+
     /// <summary>
     /// Checks if the buffer is in the pool or otherwise is alone and used by a user.
     /// Used to the state by the governing pool.
@@ -80,9 +79,10 @@ namespace CAS.CommServer.DataProvider.TextReader.Data
     /// <value><c>true</c> if the entity is in pool; otherwise, <c>false</c>.</value>
     public bool InPool
     {
-      get { return false; }
+      get => false;
       set { }
     }
+
     /// <summary>
     /// Check if address belongs to the block
     /// </summary>
@@ -93,8 +93,8 @@ namespace CAS.CommServer.DataProvider.TextReader.Data
     public bool IsInBlock(uint station, ushort address, short type)
     {
       return (station == 0) && (type == dataType) && (address >= startAddress) && (address < (startAddress + length));
-
     }
+
     /// <summary>
     /// Reads the value and convert it to canonical type if possible.
     /// </summary>
@@ -118,13 +118,14 @@ namespace CAS.CommServer.DataProvider.TextReader.Data
         return int.Parse(_value, System.Globalization.CultureInfo.InvariantCulture);
       if (canonicalType == typeof(short))
         return short.Parse(_value, System.Globalization.CultureInfo.InvariantCulture);
-      throw new NotImplementedException($"The canical type {canonicalType.ToString()} is not supported");
+      throw new NotImplementedException($"The canonical type {canonicalType.ToString()} is not supported");
     }
+
     /// <summary>
     /// Used by a user to return an empty envelope to the common pool. It also resets the message content.
     /// </summary>
     public void ReturnEmptyEnvelope() { }
-    #endregion
 
+    #endregion IReadValue
   }
 }

@@ -1,10 +1,16 @@
-﻿
+﻿//___________________________________________________________________________________
+//
+//  Copyright (C) 2020, Mariusz Postol LODZ POLAND.
+//
+//  To be in touch join the community at GITTER: https://gitter.im/mpostol/OPC-UA-OOI
+//___________________________________________________________________________________
+
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Reactive.Linq;
-using System.Diagnostics;
 using System.Threading;
 
 namespace CAS.CommServer.DataProvider.TextReader.Data.Tests
@@ -50,31 +56,36 @@ namespace CAS.CommServer.DataProvider.TextReader.Data.Tests
     }
 
     #region test instrumentation
+
     private const string _fileName = @"TestingData\g1765xa1.1";
+
     private class TestTraceSource : ITraceSource
     {
-
       public List<Tuple<TraceEventType, int, string>> TraceBuffer { get; private set; } = new List<Tuple<TraceEventType, int, string>>();
+
       public void TraceMessage(TraceEventType eventType, int id, string message)
       {
         TraceBuffer.Add(new Tuple<TraceEventType, int, string>(eventType, id, message));
       }
     }
+
     private class TestTextReaderProtocolParameters : TextReaderProtocolParameters
     {
       private static TestTextReaderProtocolParameters m_Signleton;
+
       public static TestTextReaderProtocolParameters InstanceData()
       {
         if (m_Signleton == null)
           m_Signleton = new TestTextReaderProtocolParameters();
         return m_Signleton;
       }
+
       public override string ToString()
       {
         return $"ColumnSeparator: \"{ColumnSeparator}\", DelayFileScann: {TimeSpan.FromMilliseconds(DelayFileScan)}, Timeou: {TimeSpan.FromMilliseconds(FileModificationNotificationTimeout)}";
       }
     }
-    #endregion
 
+    #endregion test instrumentation
   }
 }

@@ -1,17 +1,9 @@
-﻿//_______________________________________________________________
-//  Title   : TextReaderDataProviderID
-//  System  : Microsoft VisualStudio 2015 / C#
-//  $LastChangedDate$
-//  $Rev$
-//  $LastChangedBy$
-//  $URL$
-//  $Id$
+﻿//___________________________________________________________________________________
 //
-//  Copyright (C) 2017, CAS LODZ POLAND.
-//  TEL: +48 608 61 98 99 
-//  mailto://techsupp@cas.eu
-//  http://www.cas.eu
-//_______________________________________________________________
+//  Copyright (C) 2020, Mariusz Postol LODZ POLAND.
+//
+//  To be in touch join the community at GITTER: https://gitter.im/mpostol/OPC-UA-OOI
+//___________________________________________________________________________________
 
 using CAS.Lib.CommonBus;
 using CAS.Lib.CommonBus.ApplicationLayer;
@@ -31,8 +23,8 @@ namespace CAS.CommServer.DataProvider.TextReader
   /// <seealso cref="CAS.Lib.CommonBus.DataProviderID" />
   public sealed class TextReaderDataProviderID : DataProviderID
   {
-
     #region constructor
+
     /// <summary>
     /// Initializes a new instance of the <see cref="TextReaderDataProviderID"/> class.
     /// </summary>
@@ -42,9 +34,11 @@ namespace CAS.CommServer.DataProvider.TextReader
     {
       Add(new NullCommunicationLayerID());
     }
-    #endregion
+
+    #endregion constructor
 
     #region DataProviderID
+
     /// <summary>
     /// When overridden in a derived class, instantiates object providing  <see cref="T:CAS.Lib.CommonBus.ApplicationLayer.IApplicationLayerMaster" /> - an object
     /// implementing master side (playing the role on the field network of the master station,) interface defined for the
@@ -64,6 +58,7 @@ namespace CAS.CommServer.DataProvider.TextReader
         throw new ArgumentNullException($"{pParent} cannot be null");
       return new TextReaderApplicationLayerMaster(pStatistic, pParent, ProtocolParameters);
     }
+
     /// <summary>
     /// This method is responsible for returning the list of address spaces in the data provider.
     /// </summary>
@@ -72,6 +67,7 @@ namespace CAS.CommServer.DataProvider.TextReader
     {
       return new IAddressSpaceDescriptor[] { new TextReaderAddressSpaceDescriptor() };
     }
+
     /// <summary>
     /// Gets the item default settings.
     /// </summary>
@@ -82,9 +78,11 @@ namespace CAS.CommServer.DataProvider.TextReader
     {
       return new ItemDefaultSettings(AddressSpaceIdentifier, AddressInTheAddressSpace);
     }
-    #endregion
+
+    #endregion DataProviderID
 
     #region Settings
+
     /// <summary>
     /// Gets or sets the protocol parameters.
     /// </summary>
@@ -97,9 +95,11 @@ namespace CAS.CommServer.DataProvider.TextReader
     {
       get; private set;
     } = new TextReaderProtocolParameters();
-    #endregion
+
+    #endregion Settings
 
     #region DataProviderID
+
     /// <summary>
     /// This method creates a string representation of the DataProvider settings
     /// </summary>
@@ -108,6 +108,7 @@ namespace CAS.CommServer.DataProvider.TextReader
     {
       return $"{ProtocolParameters} {base.GetSettingsHumanReadableFormat()}";
     }
+
     /// <summary>
     /// When overridden in a derived class, reads custom settings from the XML stream.
     /// </summary>
@@ -116,6 +117,7 @@ namespace CAS.CommServer.DataProvider.TextReader
     {
       ProtocolParameters.ReadSettings(pSettings);
     }
+
     /// <summary>
     /// When overridden in a derived class, writes custom settings to the XML stream.
     /// </summary>
@@ -124,15 +126,17 @@ namespace CAS.CommServer.DataProvider.TextReader
     {
       ProtocolParameters.WriteSettings(pSettings);
     }
-    #endregion    
-    
+
+    #endregion DataProviderID
+
     #region private
+
     private class ItemDefaultSettings : IItemDefaultSettings
     {
-
       //private
-      private ulong m_AddressInTheAddressSpace;
-      private short m_AddressSpaceIdentifier;
+      private readonly ulong m_AddressInTheAddressSpace;
+
+      private readonly short m_AddressSpaceIdentifier;
 
       //public
       public ItemDefaultSettings(short addressSpaceIdentifier, ulong addressInTheAddressSpace)
@@ -140,10 +144,12 @@ namespace CAS.CommServer.DataProvider.TextReader
         this.m_AddressSpaceIdentifier = addressSpaceIdentifier;
         this.m_AddressInTheAddressSpace = addressInTheAddressSpace;
       }
+
       public ItemAccessRights AccessRights
       {
         get; private set;
       } = ItemAccessRights.ReadOnly;
+
       public Type[] AvailiableTypes
       {
         get; set;
@@ -153,14 +159,10 @@ namespace CAS.CommServer.DataProvider.TextReader
       {
         get; private set;
       } = typeof(string);
-      public string Name
-      {
-        get
-        {
-          return $"Column[{m_AddressInTheAddressSpace}]";
-        }
-      }
+
+      public string Name => $"Column[{m_AddressInTheAddressSpace}]";
     }
+
     private class TextReaderAddressSpaceDescriptor : IAddressSpaceDescriptor
     {
       public long EndAddress { get; private set; } = byte.MaxValue;
@@ -168,8 +170,7 @@ namespace CAS.CommServer.DataProvider.TextReader
       public string Name { get; private set; } = "Text File";
       public long StartAddress { get; private set; } = 0;
     }
-    #endregion
 
+    #endregion private
   }
-
 }

@@ -1,17 +1,9 @@
-﻿//_______________________________________________________________
-//  Title   : DataObservable
-//  System  : Microsoft VisualStudio 2015 / C#
-//  $LastChangedDate$
-//  $Rev$
-//  $LastChangedBy$
-//  $URL$
-//  $Id$
+﻿//___________________________________________________________________________________
 //
-//  Copyright (C) 2017, CAS LODZ POLAND.
-//  TEL: +48 608 61 98 99 
-//  mailto://techsupp@cas.eu
-//  http://www.cas.eu
-//_______________________________________________________________
+//  Copyright (C) 2020, Mariusz Postol LODZ POLAND.
+//
+//  To be in touch join the community at GITTER: https://gitter.im/mpostol/OPC-UA-OOI
+//___________________________________________________________________________________
 
 using System;
 using System.Collections.Generic;
@@ -22,7 +14,6 @@ using System.Reactive.Linq;
 
 namespace CAS.CommServer.DataProvider.TextReader.Data
 {
-
   /// <summary>
   /// Class DataObservable - captures file watching functionality and provides services as <see cref="IObservable{T}"/>
   /// </summary>
@@ -30,8 +21,8 @@ namespace CAS.CommServer.DataProvider.TextReader.Data
   /// <seealso cref="System.IDisposable" />
   internal class DataObservable : ObservableBase<IDataEntity>, IDisposable
   {
-
     #region private
+
     private class FileSystemEventPattern
     {
       public FileSystemEventPattern(EventPattern<FileSystemEventArgs> eventPattern)
@@ -39,20 +30,25 @@ namespace CAS.CommServer.DataProvider.TextReader.Data
         EventPattern = eventPattern;
         TimeStamp = File.GetLastWriteTime(EventPattern.EventArgs.FullPath);
       }
+
       public EventPattern<FileSystemEventArgs> EventPattern { get; private set; }
       public DateTime TimeStamp { get; private set; }
     }
+
     private FileSystemWatcher m_FileSystemWatcher;
-    private string m_FileFullPath;
+    private readonly string m_FileFullPath;
     private IObservable<IDataEntity> m_DataEntityObservable = null;
     private ITextReaderProtocolParameters m_Settings;
+
     private void LogException(Exception exception)
     {
       TraceSource.TraceMessage(TraceEventType.Error, 51, $"Recorded exception thrown on the data processing observable chain {exception}");
     }
-    #endregion
+
+    #endregion private
 
     #region ObservableBase
+
     /// <summary>
     /// Implement this method with the core subscription logic for the observable sequence.
     /// </summary>
@@ -62,9 +58,11 @@ namespace CAS.CommServer.DataProvider.TextReader.Data
     {
       return m_DataEntityObservable.Subscribe(observer);
     }
-    #endregion
+
+    #endregion ObservableBase
 
     #region API
+
     /// <summary>
     /// Initializes a new instance of the <see cref="DataObservable" /> class.
     /// </summary>
@@ -85,9 +83,9 @@ namespace CAS.CommServer.DataProvider.TextReader.Data
       m_Settings = settings;
       TraceSource = traceSource;
       m_FileFullPath = Path.GetFullPath(filename);
-      string _Path = Path.GetDirectoryName(m_FileFullPath);
+      string _path = Path.GetDirectoryName(m_FileFullPath);
       string _fileName = Path.GetFileName(m_FileFullPath);
-      m_FileSystemWatcher = new FileSystemWatcher(_Path, _fileName) { IncludeSubdirectories = false, EnableRaisingEvents = true, NotifyFilter = NotifyFilters.LastWrite };
+      m_FileSystemWatcher = new FileSystemWatcher(_path, _fileName) { IncludeSubdirectories = false, EnableRaisingEvents = true, NotifyFilter = NotifyFilters.LastWrite };
       m_DataEntityObservable = Observable
         .FromEventPattern<FileSystemEventHandler, FileSystemEventArgs>(x => m_FileSystemWatcher.Changed += x, y => m_FileSystemWatcher.Changed -= y)
         .Buffer<EventPattern<FileSystemEventArgs>>(TimeSpan.FromMilliseconds(settings.DelayFileScan))
@@ -96,8 +94,9 @@ namespace CAS.CommServer.DataProvider.TextReader.Data
         .Delay<FileSystemEventPattern>(TimeSpan.FromMilliseconds(settings.DelayFileScan))
         .Select<FileSystemEventPattern, IDataEntity>(x => DataEntity.ReadFile(x.EventPattern.EventArgs.FullPath, x.TimeStamp, m_Settings.ColumnSeparator))
         .Do<IDataEntity>(data => { }, exception => LogException(exception));
-      TraceSource.TraceMessage(TraceEventType.Verbose, 107, $"Succesfully created data obserwer for the file {filename} with parameters {settings}");
+      TraceSource.TraceMessage(TraceEventType.Verbose, 107, $"Successfully created data observer for the file {filename} with parameters {settings}");
     }
+
     /// <summary>
     /// Gets or sets the trace source <see cref="ITraceSource"/>.
     /// </summary>
@@ -106,10 +105,13 @@ namespace CAS.CommServer.DataProvider.TextReader.Data
     /// </remarks>
     /// <value>The trace source to be used for logging important data.</value>
     internal ITraceSource TraceSource { get; set; } = AssemblyTraceEvent.Tracer;
-    #endregion
+
+    #endregion API
 
     #region IDisposable Support
+
     private bool disposedValue = false; // To detect redundant calls
+
     /// <summary>
     /// Releases unmanaged and - optionally - managed resources.
     /// </summary>
@@ -121,11 +123,12 @@ namespace CAS.CommServer.DataProvider.TextReader.Data
         if (disposing)
         {
           m_FileSystemWatcher.Dispose();
-          TraceSource.TraceMessage( TraceEventType.Information, 130, "Disposing the data observer");
+          TraceSource.TraceMessage(TraceEventType.Information, 130, "Disposing the data observer");
         }
         disposedValue = true;
       }
     }
+
     /// <summary>
     /// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
     /// </summary>
@@ -134,8 +137,7 @@ namespace CAS.CommServer.DataProvider.TextReader.Data
       // Do not change this code. Put cleanup code in Dispose(bool disposing) above.
       Dispose(true);
     }
-    #endregion
 
+    #endregion IDisposable Support
   }
-
 }
