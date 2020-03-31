@@ -108,6 +108,7 @@
     <Compile Include="Data\IDataEntity.cs" />
     <Compile Include="Data\ReadDataEntity.cs" />
     <Compile Include="ITextReaderProtocolParameters.cs" />
+    <Compile Include="ITraceSource.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
